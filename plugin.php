@@ -17,3 +17,14 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Block Initializer.
  */
 require_once plugin_dir_path( __FILE__ ) . 'src/init.php';
+
+/**
+ * Update Checker for Krenl.us
+ */
+require 'plugin_update_check.php';
+$MyUpdateChecker = new PluginUpdateChecker_2_0 (
+   'https://kernl.us/api/v1/updates/5bedddc4b4555c4c52a591aa /',
+   __FILE__,
+   'my-plugin-slug',
+   1
+);
