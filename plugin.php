@@ -23,7 +23,7 @@ require_once plugin_dir_path( __FILE__ ) . 'src/init.php';
  */
 require 'plugin_update_check.php';
 $MyUpdateChecker = new PluginUpdateChecker_2_0 (
-   'https://kernl.us/api/v1/updates/5bedddc4b4555c4c52a591aa /',
+   'https://kernl.us/api/v1/updates/5c13a3859e9cea4aa2fd8fbd/',
    __FILE__,
    'my-plugin-slug',
    1
