@@ -14,7 +14,6 @@ import './blocks/blockquote/block.js';
 import './blocks/content-block/block.js';
 import './blocks/content-expand/block.js';
 import './blocks/content-show-more/block.js';
-import './blocks/paragraph/block.js';
 import './blocks/highlighted-paragraph/block.js';
 import './blocks/image-breakout/block.js';
 import './blocks/image-2up/block.js';
