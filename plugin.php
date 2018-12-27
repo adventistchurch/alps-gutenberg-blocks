@@ -1,15 +1,11 @@
 <?php
 /**
  * Plugin Name: ALPS Gutenberg Blocks
- * Plugin URI: https://github.com/ahmadawais/create-guten-block/
- * Description: Creates custom blocks in Gutenberg specific to the ALPS v3 theme. This Gutenberg plugin was created via create-guten-block.
- * Author: mrahmadawais, maedahbatool
- * Author URI: https://AhmadAwais.com/
- * Version: 1.0.0
- * License: GPL2+
- * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
- *
- * @package CGB
+ * Plugin URI: https://adventist.io/themes
+ * Description: Creates custom blocks in Gutenberg specific to the ALPS v3 theme.
+ * Author: Seventh-day Adventist Church and SouthLeft
+ * Author URI: https://adventist.io/themes
+ * Version: 1.0.1
  */
 
 // Exit if accessed directly.
@@ -21,3 +17,14 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Block Initializer.
  */
 require_once plugin_dir_path( __FILE__ ) . 'src/init.php';
+
+/**
+ * Update Checker for Krenl.us
+ */
+require 'plugin_update_check.php';
+$MyUpdateChecker = new PluginUpdateChecker_2_0 (
+   'https://kernl.us/api/v1/updates/5c13a3859e9cea4aa2fd8fbd/',
+   __FILE__,
+   'my-plugin-slug',
+   1
+);

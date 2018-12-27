@@ -1,0 +1,9 @@
+
+{
+  "1.0.1" : {
+    "description" : "Adding Kernl support and adding an editor dependency."
+  },
+  "1.0.0" : {
+    "description" : "Inital commit"
+  },
+}
