@@ -5,7 +5,7 @@
 import './style.scss';
 import './editor.scss';
 
-( function( blocks, components, i18n, element ) {
+( function( blocks, components, i18n, element, editor ) {
   var __ = wp.i18n.__;
   var el = element.createElement;
   var registerBlockType = wp.blocks.registerBlockType;
@@ -101,4 +101,5 @@ import './editor.scss';
   window.wp.components,
   window.wp.i18n,
   window.wp.element,
+  window.wp.editor,
 );
