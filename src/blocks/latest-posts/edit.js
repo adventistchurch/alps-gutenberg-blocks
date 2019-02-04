@@ -1,8 +1,9 @@
 /**
  * External dependencies
  */
-const { isUndefined, pickBy } = lodash;
-import classnames from 'classnames';
+const { isUndefined, pickBy } = require('lodash');
+const classnames = require('classnames');
+import './editor.scss';
 
 /**
  * WordPress dependencies
@@ -105,7 +106,7 @@ class LatestPostsEdit extends Component {
 							value={ columns }
 							onChange={ ( value ) => setAttributes( { columns: value } ) }
 							min={ 2 }
-							max={ 3 }
+							max={ ! hasPosts ? MAX_POSTS_COLUMNS : Math.min( MAX_POSTS_COLUMNS, latestPosts.length ) }
 						/>
 					}
 				</PanelBody>

@@ -6,14 +6,13 @@
   * WordPress dependencies
   */
 const { __ } = wp.i18n;
-const { Path, Rect, SVG } = wp.components;
 const { registerBlockType } = wp.blocks;
 
 /**
  * Internal dependencies
  */
-import Edit from './edit';
-const name = 'core/latest-posts';
+import './style.scss';
+import edit from './edit';
 
 registerBlockType( 'alps-gutenberg-blocks/latest-posts', {
 	title: __( 'Latest Posts' ),
@@ -32,11 +31,10 @@ registerBlockType( 'alps-gutenberg-blocks/latest-posts', {
 		}
 	},
 
-	edit: function( props ) {
-  	return <Edit {...props} />
-  },
+	edit,
 
-  save: function() {
-		return null;
+	save: function() {
+    // Rendering in PHP
+    return null;
   },
 });
