@@ -25,7 +25,6 @@ const { dateI18n, format, __experimentalGetSettings } = wp.date;
 const { decodeEntities } = wp.htmlEntities;
 const {
 	InspectorControls,
-	BlockAlignmentToolbar,
 	BlockControls,
 } = wp.editor;
 const { withSelect } = wp.data;
@@ -36,7 +35,7 @@ const { withSelect } = wp.data;
 const CATEGORIES_LIST_QUERY = {
 	per_page: -1,
 };
-const MAX_POSTS_COLUMNS = 6;
+const MAX_POSTS_COLUMNS = 3;
 
 class LatestPostsEdit extends Component {
 	constructor() {
@@ -44,7 +43,10 @@ class LatestPostsEdit extends Component {
 		this.state = {
 			categoriesList: [],
 		};
-		this.toggleDisplayPostDate = this.toggleDisplayPostDate.bind( this );
+		this.toggleHidePostDate = this.toggleHidePostDate.bind( this );
+		this.toggleHideCategoryName = this.toggleHideCategoryName.bind( this );
+		this.toggleAlignRight = this.toggleAlignRight.bind( this );
+		this.toggleImage = this.toggleImage.bind( this );
 	}
 
 	componentWillMount() {
@@ -70,17 +72,38 @@ class LatestPostsEdit extends Component {
 		this.isStillMounted = false;
 	}
 
-	toggleDisplayPostDate() {
-		const { displayPostDate } = this.props.attributes;
+	toggleHidePostDate() {
+		const { hidePostDate } = this.props.attributes;
 		const { setAttributes } = this.props;
 
-		setAttributes( { displayPostDate: ! displayPostDate } );
+		setAttributes( { hidePostDate: ! hidePostDate } );
+	}
+
+	toggleHideCategoryName() {
+		const { hideCategoryName } = this.props.attributes;
+		const { setAttributes } = this.props;
+
+		setAttributes( { hideCategoryName: ! hideCategoryName } );
+	}
+
+	toggleAlignRight() {
+		const { alignRight } = this.props.attributes;
+		const { setAttributes } = this.props;
+
+		setAttributes( { alignRight: ! alignRight } );
+	}
+
+	toggleImage() {
+		const { hideImage } = this.props.attributes;
+		const { setAttributes } = this.props;
+
+		setAttributes( { hideImage: ! hideImage } );
 	}
 
 	render() {
 		const { attributes, setAttributes, latestPosts } = this.props;
 		const { categoriesList } = this.state;
-		const { displayPostDate, align, postLayout, columns, order, orderBy, categories, postsToShow } = attributes;
+		const { hidePostDate, hideCategoryName, alignRight, hideImage, postLayout, order, orderBy, categories, postsToShow } = attributes;
 
 		const inspectorControls = (
 			<InspectorControls>
@@ -96,19 +119,25 @@ class LatestPostsEdit extends Component {
 						onNumberOfItemsChange={ ( value ) => setAttributes( { postsToShow: value } ) }
 					/>
 					<ToggleControl
-						label={ __( 'Display post date' ) }
-						checked={ displayPostDate }
-						onChange={ this.toggleDisplayPostDate }
+						label={ __( 'Hide category name' ) }
+						checked={ hideCategoryName }
+						onChange={ this.toggleHideCategoryName }
 					/>
-					{ postLayout === 'grid' &&
-						<RangeControl
-							label={ __( 'Columns' ) }
-							value={ columns }
-							onChange={ ( value ) => setAttributes( { columns: value } ) }
-							min={ 2 }
-							max={ ! hasPosts ? MAX_POSTS_COLUMNS : Math.min( MAX_POSTS_COLUMNS, latestPosts.length ) }
-						/>
-					}
+					<ToggleControl
+						label={ __( 'Hide post date' ) }
+						checked={ hidePostDate }
+						onChange={ this.toggleHidePostDate }
+					/>
+					<ToggleControl
+						label={ __( 'Hide image' ) }
+						checked={ hideImage }
+						onChange={ this.toggleImage }
+					/>
+					<ToggleControl
+						label={ __( 'Align the image right' ) }
+						checked={ alignRight }
+						onChange={ this.toggleAlignRight }
+					/>
 				</PanelBody>
 			</InspectorControls>
 		);
@@ -157,30 +186,32 @@ class LatestPostsEdit extends Component {
 			<Fragment>
 				{ inspectorControls }
 				<BlockControls>
-					<BlockAlignmentToolbar
-						value={ align }
-						onChange={ ( nextAlign ) => {
-							setAttributes( { align: nextAlign } );
-						} }
-						controls={ [ 'center', 'wide', 'full' ] }
-					/>
 					<Toolbar controls={ layoutControls } />
 				</BlockControls>
 				<ul
 					className={ classnames( this.props.className, {
-						'is-grid': postLayout === 'grid',
-						'has-dates': displayPostDate,
-						[ `columns-${ columns }` ]: postLayout === 'grid',
+						'l-grid l-grid--3-col': postLayout === 'grid',
+						'u-align--right': alignRight,
+						'u-hide--image': hideImage,
+						'u-hide--date': hidePostDate,
+						'u-hide--category': hideCategoryName,
 					} ) }
 				>
 					{ displayPosts.map( ( post, i ) =>
 						<li key={ i }>
-							<a href={ post.link } target="_blank">{ decodeEntities( post.title.rendered.trim() ) || __( '(Untitled)' ) }</a>
-							{ displayPostDate && post.date_gmt &&
-								<time dateTime={ format( 'c', post.date_gmt ) } className="wp-block-latest-posts__post-date">
-									{ dateI18n( dateFormat, post.date_gmt ) }
-								</time>
-							}
+							<a href={ post.link } class="wp-block-alps-gutenberg-blocks-latest-posts__title" target="_blank">{ decodeEntities( post.title.rendered.trim() ) || __( '(Untitled)' ) }</a>
+							<div class="wp-block-alps-gutenberg-blocks-latest-posts__meta">
+								{ !hidePostDate &&
+									<span className="wp-block-alps-gutenberg-blocks-latest-posts__date">
+										{ dateI18n( dateFormat, post.date_gmt ) }
+									</span>
+								}
+								{ !hideCategoryName &&
+									<span className="wp-block-alps-gutenberg-blocks-latest-posts__category">
+									  { categoriesList[0].name }
+									</span>
+								}
+							</div>
 						</li>
 					) }
 				</ul>

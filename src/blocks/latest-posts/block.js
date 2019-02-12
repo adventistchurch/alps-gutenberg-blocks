@@ -24,13 +24,6 @@ registerBlockType( 'alps-gutenberg-blocks/latest-posts', {
 		html: false,
 	},
 
-	getEditWrapperProps( attributes ) {
-		const { align } = attributes;
-		if ( [ 'left', 'center', 'right', 'wide', 'full' ].includes( align ) ) {
-			return { 'data-align': align };
-		}
-	},
-
 	edit,
 
 	save: function() {
