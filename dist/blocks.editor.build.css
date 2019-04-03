@@ -694,12 +694,25 @@ video,
     float: right;
     margin-right: 0;
     margin-left: 20px; }
+  .wp-block-alps-gutenberg-blocks-latest-posts__content {
+    overflow: hidden; }
   .wp-block-alps-gutenberg-blocks-latest-posts__title {
     font-size: 20px; }
+  .wp-block-alps-gutenberg-blocks-latest-posts__excerpt {
+    display: block;
+    color: lightgrey; }
   .wp-block-alps-gutenberg-blocks-latest-posts__meta {
     font-size: 15px; }
     .wp-block-alps-gutenberg-blocks-latest-posts__meta > * + * {
       margin-left: 20px; }
+  .wp-block-alps-gutenberg-blocks-latest-posts__button {
+    background-color: #222222;
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin-top: 10px; }
   .wp-block-alps-gutenberg-blocks-latest-posts.l-grid {
     display: -ms-flexbox;
     display: flex;

@@ -238,6 +238,32 @@ function alps_gutenberg_blocks_render_block_latest_post($attributes) {
 			}
 		}
 
+
+		if ($thumb_id && $attributes['hideImage'] != true) {
+			// If image is visible
+			$excerpt_length = 100;
+		} else {
+			// If image is hidden
+			$excerpt_length = 200;
+		}
+		if (!empty(get_the_excerpt($post_id))) {
+			$excerpt = get_the_excerpt($post_id);
+			if (strlen($excerpt) > $excerpt_length) {
+        $excerpt = trim(mb_substr($excerpt, 0, $excerpt_length)) . '&hellip;';
+      } else {
+        $excerpt = $excerpt;
+      }
+		} elseif (!empty(get_the_content($post_id))) {
+			$body = get_the_content($post_id);
+			if (strlen($body) > $excerpt_length) {
+        $excerpt = trim(mb_substr($body, 0, $excerpt_length)) . '&hellip;';
+      } else {
+        $excerpt = $body;
+      }
+		} else {
+			$excerpt = NULL;
+		}
+
 		$list_items_markup .= sprintf(
 			'<div class="c-media-block c-block %1$s">',
 			esc_html($block_class)
@@ -271,33 +297,55 @@ function alps_gutenberg_blocks_render_block_latest_post($attributes) {
 					<div class="u-spacing u-width--100p">
 						<h3 class="c-media-block__title c-block__title %3$s">
 							<a class="c-block__title-link u-theme--link-hover--dark" href="%4$s">%5$s</a>
-						</h3>
-					</div>
-					<div class="c-media-block__meta c-block__meta %6$s">',
-					esc_html($block_content_class),
-					esc_html($block_group_class),
-					esc_html($block_title_class),
-					esc_html($link),
-					esc_html($title),
-					esc_html($block_meta_class)
+						</h3>',
+						esc_html($block_content_class),
+						esc_html($block_group_class),
+						esc_html($block_title_class),
+						esc_html($link),
+						esc_html($title)
 		);
 
-		if ($attributes['hideCategoryName'] != true) {
+		if ($attributes['hideExcerpt'] != true) {
 			$list_items_markup .= sprintf(
-				'<span class="c-block__category u-text-transform--upper">%1$s</span>',
-				esc_html($category)
+				'<p class="c-block__description">%1$s</p>',
+				esc_html($excerpt)
 			);
 		}
 
-		if ($attributes['hidePostDate'] != true) {
+		if ($attributes['hideButton'] != true) {
 			$list_items_markup .= sprintf(
-				'<time datetime="%1$s" class="c-block__date u-text-transform--upper">%2$s</time>',
-				esc_attr(get_the_date('c', $post_id)),
-				esc_html(get_the_date('', $post_id))
+				'<a href="%1$s" class="c-block__button o-button o-button--outline">Read More<span class="u-icon u-icon--m u-path-fill--base u-space--half--left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>o-arrow__long--left</title><path d="M18.29,8.59l-3.5-3.5L13.38,6.5,15.88,9H.29v2H15.88l-2.5,2.5,1.41,1.41,3.5-3.5L19.71,10Z" fill="#9b9b9b"></path></svg></span></a>',
+				esc_html($link)
 			);
 		}
 
-		$list_items_markup .= "</div></div></div>\n";
+		$list_items_markup .= "</div>\n";
+
+		if ($attributes['hideCategoryName'] != true || $attributes['hidePostDate'] != true) {
+			$list_items_markup .= sprintf(
+				'<div class="c-media-block__meta c-block__meta %1$s">',
+					esc_html($block_meta_class)
+			);
+
+			if ($attributes['hideCategoryName'] != true) {
+				$list_items_markup .= sprintf(
+					'<span class="c-block__category u-text-transform--upper">%1$s</span>',
+					esc_html($category)
+				);
+			}
+
+			if ($attributes['hidePostDate'] != true) {
+				$list_items_markup .= sprintf(
+					'<time datetime="%1$s" class="c-block__date u-text-transform--upper">%2$s</time>',
+					esc_attr(get_the_date('c', $post_id)),
+					esc_html(get_the_date('', $post_id))
+				);
+			}
+
+			$list_items_markup .= "</div>\n";
+		}
+
+		$list_items_markup .= "</div></div>\n";
 		$list_items_markup .= "</div>\n";
 	}
 
@@ -359,11 +407,19 @@ function register_block_alps_latest_posts() {
 					'type'    => 'number',
 					'default' => 4,
 				),
+				'hideExcerpt' => array(
+					'type'    => 'boolean',
+					'default' => false,
+				),
 				'hidePostDate' => array(
 					'type'    => 'boolean',
 					'default' => false,
 				),
 				'hideCategoryName' => array(
+					'type'    => 'boolean',
+					'default' => false,
+				),
+				'hideButton' => array(
 					'type'    => 'boolean',
 					'default' => false,
 				),

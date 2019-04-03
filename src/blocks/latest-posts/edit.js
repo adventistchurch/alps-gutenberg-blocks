@@ -43,8 +43,10 @@ class LatestPostsEdit extends Component {
 		this.state = {
 			categoriesList: [],
 		};
+		this.toggleHideExcerpt = this.toggleHideExcerpt.bind( this );
 		this.toggleHidePostDate = this.toggleHidePostDate.bind( this );
 		this.toggleHideCategoryName = this.toggleHideCategoryName.bind( this );
+		this.toggleHideButton = this.toggleHideButton.bind( this );
 		this.toggleAlignRight = this.toggleAlignRight.bind( this );
 		this.toggleImage = this.toggleImage.bind( this );
 	}
@@ -72,6 +74,13 @@ class LatestPostsEdit extends Component {
 		this.isStillMounted = false;
 	}
 
+	toggleHideExcerpt() {
+		const { hideExcerpt } = this.props.attributes;
+		const { setAttributes } = this.props;
+
+		setAttributes( { hideExcerpt: ! hideExcerpt } );
+	}
+
 	toggleHidePostDate() {
 		const { hidePostDate } = this.props.attributes;
 		const { setAttributes } = this.props;
@@ -84,6 +93,13 @@ class LatestPostsEdit extends Component {
 		const { setAttributes } = this.props;
 
 		setAttributes( { hideCategoryName: ! hideCategoryName } );
+	}
+
+	toggleHideButton() {
+		const { hideButton } = this.props.attributes;
+		const { setAttributes } = this.props;
+
+		setAttributes( { hideButton: ! hideButton } );
 	}
 
 	toggleAlignRight() {
@@ -103,7 +119,7 @@ class LatestPostsEdit extends Component {
 	render() {
 		const { attributes, setAttributes, latestPosts } = this.props;
 		const { categoriesList } = this.state;
-		const { hidePostDate, hideCategoryName, alignRight, hideImage, postLayout, order, orderBy, categories, postsToShow } = attributes;
+		const { hideExcerpt, hidePostDate, hideCategoryName, alignRight, hideButton, hideImage, postLayout, order, orderBy, categories, postsToShow } = attributes;
 
 		const inspectorControls = (
 			<InspectorControls>
@@ -119,14 +135,24 @@ class LatestPostsEdit extends Component {
 						onNumberOfItemsChange={ ( value ) => setAttributes( { postsToShow: value } ) }
 					/>
 					<ToggleControl
-						label={ __( 'Hide category name' ) }
-						checked={ hideCategoryName }
-						onChange={ this.toggleHideCategoryName }
+						label={ __( 'Hide excerpt' ) }
+						checked={ hideExcerpt }
+						onChange={ this.toggleHideExcerpt }
 					/>
 					<ToggleControl
 						label={ __( 'Hide post date' ) }
 						checked={ hidePostDate }
 						onChange={ this.toggleHidePostDate }
+					/>
+					<ToggleControl
+						label={ __( 'Hide category name' ) }
+						checked={ hideCategoryName }
+						onChange={ this.toggleHideCategoryName }
+					/>
+					<ToggleControl
+						label={ __( 'Hide button' ) }
+						checked={ hideButton }
+						onChange={ this.toggleHideButton }
 					/>
 					<ToggleControl
 						label={ __( 'Hide image' ) }
@@ -193,23 +219,37 @@ class LatestPostsEdit extends Component {
 						'l-grid l-grid--3-col': postLayout === 'grid',
 						'u-align--right': alignRight,
 						'u-hide--image': hideImage,
+						'u-hide--excerpt': hideExcerpt,
 						'u-hide--date': hidePostDate,
 						'u-hide--category': hideCategoryName,
+						'u-hide--button': hideButton,
 					} ) }
 				>
 					{ displayPosts.map( ( post, i ) =>
 						<li key={ i }>
-							<a href={ post.link } class="wp-block-alps-gutenberg-blocks-latest-posts__title" target="_blank">{ decodeEntities( post.title.rendered.trim() ) || __( '(Untitled)' ) }</a>
-							<div class="wp-block-alps-gutenberg-blocks-latest-posts__meta">
-								{ !hidePostDate &&
-									<span className="wp-block-alps-gutenberg-blocks-latest-posts__date">
-										{ dateI18n( dateFormat, post.date_gmt ) }
-									</span>
+							<div class="wp-block-alps-gutenberg-blocks-latest-posts__content">
+								<a href={ post.link } class="wp-block-alps-gutenberg-blocks-latest-posts__title" target="_blank">{ decodeEntities( post.title.rendered.trim() ) || __( '(Untitled)' ) }</a>
+								{ !hideExcerpt &&
+									<div className="wp-block-alps-gutenberg-blocks-latest-posts__excerpt">
+										[Post excerpt is visible]
+									</div>
 								}
-								{ !hideCategoryName &&
-									<span className="wp-block-alps-gutenberg-blocks-latest-posts__category">
-									  { categoriesList[0].name }
-									</span>
+								<div class="wp-block-alps-gutenberg-blocks-latest-posts__meta">
+									{ !hidePostDate &&
+										<span className="wp-block-alps-gutenberg-blocks-latest-posts__date">
+											{ dateI18n( dateFormat, post.date_gmt ) }
+										</span>
+									}
+									{ !hideCategoryName &&
+										<span className="wp-block-alps-gutenberg-blocks-latest-posts__category">
+										  { categoriesList[0].name }
+										</span>
+									}
+								</div>
+								{ !hideButton &&
+									<button className="wp-block-alps-gutenberg-blocks-latest-posts__button">
+										Read More
+									</button>
 								}
 							</div>
 						</li>

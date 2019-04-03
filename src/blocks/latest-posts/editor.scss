@@ -44,8 +44,17 @@
     }
   }
 
+  &__content {
+    overflow: hidden;
+  }
+
   &__title {
     font-size: 20px;
+  }
+
+  &__excerpt {
+    display: block;
+    color: lightgrey;
   }
 
   &__meta {
@@ -54,6 +63,16 @@
     & > * + * {
       margin-left: 20px;
     }
+  }
+
+  &__button {
+    background-color: $c-gray--darker;
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin-top: 10px;
   }
 
   &.l-grid {
