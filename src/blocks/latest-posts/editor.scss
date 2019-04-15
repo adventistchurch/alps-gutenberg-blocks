@@ -1,0 +1,105 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+.wp-block-alps-gutenberg-blocks-latest-posts {
+  list-style-type: none;
+
+  li {
+    list-style: none;
+    margin-bottom: 20px;
+
+    &::before {
+      float: left;
+      position: relative;
+      display: block;
+      content: "";
+      width: 150px;
+      height: 113px;
+      margin-right: 20px;
+      background: #cccccc url("https://imgplaceholder.com/150x113/cccccc/757575/glyphicon-camera?font-size=30") center center no-repeat;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+
+  &.u-hide--image {
+    li::before {
+      display: none;
+    }
+  }
+
+  &.u-align--right {
+    li::before {
+      float: right;
+      margin-right: 0;
+      margin-left: 20px;
+    }
+  }
+
+  &__content {
+    overflow: hidden;
+  }
+
+  &__title {
+    font-size: 20px;
+  }
+
+  &__excerpt {
+    display: block;
+    color: lightgrey;
+  }
+
+  &__meta {
+    font-size: 15px;
+
+    & > * + * {
+      margin-left: 20px;
+    }
+  }
+
+  &__button {
+    background-color: $c-gray--darker;
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin-top: 10px;
+  }
+
+  &.l-grid {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin: 0 20px 20px 0;
+      width: 100%;
+
+      &::before {
+        float: none;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 10px;
+        max-width: 100%;
+        width: 100%;
+        padding-top: 75%;
+      }
+    }
+  }
+
+  @for $i from 2 through 3 {
+    &.l-grid--#{$i}-col li {
+      width: calc((100% / #{$i}) - 20px);
+    }
+  }
+}
