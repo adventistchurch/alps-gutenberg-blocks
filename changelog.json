@@ -1,4 +1,7 @@
 {
+  "1.1.0" : {
+    "description" : "Adds a Latest Posts block."
+  },
   "1.0.2" : {
     "description" : "Removes the custom paragraph block."
   },
