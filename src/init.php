@@ -59,11 +59,27 @@ function gutenberg_blocks_editor_assets() {
 		array('wp-edit-blocks') // Dependency to include the CSS after it.
 		// filemtime(plugin_dir_path(__DIR__) . 'dist/blocks.editor.build.css') // Version: filemtime — Gets file modification time.
 	);
+
+	wp_enqueue_style(
+		'gutenberg-blocks-block-style-css', // Handle.
+		plugins_url('dist/blocks.style.build.css', dirname(__FILE__)), // Block style CSS.
+		filemtime(plugin_dir_path(__DIR__) . 'dist/blocks.style.build.css') // Version: filemtime — Gets file modification time.
+	);
 } // End function gutenberg_blocks_editor_assets().
 
 // Hook: Editor assets.
 add_action('enqueue_block_editor_assets', 'gutenberg_blocks_editor_assets');
 
+function gutenberg_blocks_style_assets() {
+	// Styles.
+	wp_enqueue_style(
+		'gutenberg-blocks-block-style-css', // Handle.
+		plugins_url('dist/blocks.style.build.css', dirname(__FILE__)) // Block style CSS.
+	);
+} // End function gutenberg_blocks_editor_assets().
+
+// Hook: Editor assets.
+add_action('enqueue_block_assets', 'gutenberg_blocks_style_assets');
 
 /**
  * Server-side rendering of the `core/latest-posts` block.
