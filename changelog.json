@@ -1,4 +1,7 @@
 {
+  "1.1.1" : {
+    "description" : "Fixes the breakout block on the wrong grid alignment."
+  },
   "1.1.0" : {
     "description" : "Adds a Latest Posts block."
   },
