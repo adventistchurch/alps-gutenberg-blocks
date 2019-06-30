@@ -242,7 +242,7 @@ class LatestPostsEdit extends Component {
 									}
 									{ !hideCategoryName &&
 										<span className="wp-block-alps-gutenberg-blocks-latest-posts__category">
-										  { categoriesList[0].name }
+										  [Category name is visible]
 										</span>
 									}
 								</div>

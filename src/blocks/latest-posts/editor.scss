@@ -65,6 +65,10 @@
     }
   }
 
+  &__category {
+    color: lightgrey;
+  }
+
   &__button {
     background-color: $c-gray--darker;
     outline: none;

@@ -1,4 +1,7 @@
 {
+  "1.1.2" : {
+    "description" : "Fixes the Latest Posts not displaying more the one block on a page. #323"
+  },
   "1.1.1" : {
     "description" : "Fixes the breakout block on the wrong grid alignment."
   },
