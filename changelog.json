@@ -1,4 +1,7 @@
 {
+  "1.1.3" : {
+    "description" : "Fixes the 2up Images not going full width on pages without the Sabbath column. #332"
+  },
   "1.1.2" : {
     "description" : "Fixes the Latest Posts not displaying more the one block on a page. #323"
   },
