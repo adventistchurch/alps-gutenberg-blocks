@@ -32,9 +32,14 @@ const { withSelect } = wp.data;
 /**
  * Module Constants
  */
+// per_page CAN ONLY GO AS HIGH AS 100 WITHOUT REQUIRING A CUSTOM END POINT
+// PASSING -1 GENERATES AN ERROR
 const CATEGORIES_LIST_QUERY = {
-	per_page: -1,
+	per_page: 100,
 };
+const TAGS_LIST_QUERY = {
+	per_page: 100,
+}
 const MAX_POSTS_COLUMNS = 3;
 
 class LatestPostsEdit extends Component {
@@ -42,10 +47,12 @@ class LatestPostsEdit extends Component {
 		super( ...arguments );
 		this.state = {
 			categoriesList: [],
+			tagsList: [],
 		};
 		this.toggleHideExcerpt = this.toggleHideExcerpt.bind( this );
 		this.toggleHidePostDate = this.toggleHidePostDate.bind( this );
 		this.toggleHideCategoryName = this.toggleHideCategoryName.bind( this );
+		this.toggleHideTagName = this.toggleHideTagName.bind( this );
 		this.toggleHideButton = this.toggleHideButton.bind( this );
 		this.toggleAlignRight = this.toggleAlignRight.bind( this );
 		this.toggleImage = this.toggleImage.bind( this );
@@ -65,6 +72,21 @@ class LatestPostsEdit extends Component {
 			() => {
 				if ( this.isStillMounted ) {
 					this.setState( { categoriesList: [] } );
+				}
+			}
+		);
+		this.fetchTags = apiFetch( {
+			path: addQueryArgs( `/wp/v2/tags`, TAGS_LIST_QUERY ),
+		}).then(
+			( tagsList ) => {
+				if ( this.isStillMounted ) {
+					this.setState( { tagsList } );
+				}
+			}
+		).catch(
+			() => {
+				if ( this.isStillMounted ) {
+					this.setState( { tagsList: [] } );
 				}
 			}
 		);
@@ -95,6 +117,13 @@ class LatestPostsEdit extends Component {
 		setAttributes( { hideCategoryName: ! hideCategoryName } );
 	}
 
+	toggleHideTagName() {
+		const { hideTagName } = this.props.attributes;
+		const { setAttributes } = this.props;
+
+		setAttributes( { hideTagName: ! hideTagName } );
+	}
+
 	toggleHideButton() {
 		const { hideButton } = this.props.attributes;
 		const { setAttributes } = this.props;
@@ -118,8 +147,8 @@ class LatestPostsEdit extends Component {
 
 	render() {
 		const { attributes, setAttributes, latestPosts } = this.props;
-		const { categoriesList } = this.state;
-		const { hideExcerpt, hidePostDate, hideCategoryName, alignRight, hideButton, hideImage, postLayout, order, orderBy, categories, postsToShow } = attributes;
+		const { categoriesList, tagsList } = this.state;
+		const { hideExcerpt, hidePostDate, hideCategoryName, hideTagName, alignRight, hideButton, hideImage, postLayout, order, orderBy, categories, postsToShow } = attributes;
 
 		const inspectorControls = (
 			<InspectorControls>
@@ -129,6 +158,8 @@ class LatestPostsEdit extends Component {
 						numberOfItems={ postsToShow }
 						categoriesList={ categoriesList }
 						selectedCategoryId={ categories }
+						tagsList={ tagsList }
+						selectedTagId={ tags }
 						onOrderChange={ ( value ) => setAttributes( { order: value } ) }
 						onOrderByChange={ ( value ) => setAttributes( { orderBy: value } ) }
 						onCategoryChange={ ( value ) => setAttributes( { categories: '' !== value ? value : undefined } ) }
@@ -148,6 +179,11 @@ class LatestPostsEdit extends Component {
 						label={ __( 'Hide category name' ) }
 						checked={ hideCategoryName }
 						onChange={ this.toggleHideCategoryName }
+					/>
+					<ToggleControl
+						label={ __( 'Hide tag name' ) }
+						checked={ hideTagName }
+						onChange={ this.toggleHideTagName }
 					/>
 					<ToggleControl
 						label={ __( 'Hide button' ) }
@@ -265,6 +301,7 @@ export default withSelect( ( select, props ) => {
 	const { getEntityRecords } = select( 'core' );
 	const latestPostsQuery = pickBy( {
 		categories,
+		tags,
 		order,
 		orderby: orderBy,
 		per_page: postsToShow,
