@@ -3,3 +3,26 @@
  *
  * CSS for both Frontend+Backend.
  */
+
+.body.hide-sabbath--all .wp-block-alps-gutenberg-blocks-image-2up .l-grid .l-grid-item--m--3-col:last-of-type {
+  width: calc((100vw/7) * 4 - 0.01px);
+}
+
+/* UNTIL SMALL */
+@media(max-width:500px) {
+  .body.hide-sabbath--until-small .wp-block-alps-gutenberg-blocks-image-2up .l-grid .l-grid-item--m--3-col:last-of-type {
+    width: calc((100vw/7) * 4 - 0.01px);
+  }
+}
+/* UNTIL MEDIUM */
+@media(max-width:700px) {
+  .body.hide-sabbath--until-medium .wp-block-alps-gutenberg-blocks-image-2up .l-grid .l-grid-item--m--3-col:last-of-type {
+    width: calc((100vw/7) * 4 - 0.01px);
+  }
+}
+/* UNTIL LARGE */
+@media(max-width:900px) {
+  .body.hide-sabbath--until-large .wp-block-alps-gutenberg-blocks-image-2up .l-grid .l-grid-item--m--3-col:last-of-type {
+    width: calc((100vw/7) * 4 - 0.01px);
+  }
+}
