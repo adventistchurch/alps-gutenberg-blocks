@@ -17,7 +17,6 @@ const {
 	RangeControl,
 	Spinner,
 	ToggleControl,
-	SelectControl,
 	Toolbar,
 } = wp.components;
 const apiFetch = wp.apiFetch;
