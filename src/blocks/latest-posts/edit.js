@@ -4,6 +4,7 @@
 const { isUndefined, pickBy } = require('lodash');
 const classnames = require('classnames');
 import './editor.scss';
+import TagSelect from './tag-select';
 
 /**
  * WordPress dependencies
@@ -16,6 +17,7 @@ const {
 	RangeControl,
 	Spinner,
 	ToggleControl,
+	SelectControl,
 	Toolbar,
 } = wp.components;
 const apiFetch = wp.apiFetch;
@@ -52,7 +54,6 @@ class LatestPostsEdit extends Component {
 		this.toggleHideExcerpt = this.toggleHideExcerpt.bind( this );
 		this.toggleHidePostDate = this.toggleHidePostDate.bind( this );
 		this.toggleHideCategoryName = this.toggleHideCategoryName.bind( this );
-		this.toggleHideTagName = this.toggleHideTagName.bind( this );
 		this.toggleHideButton = this.toggleHideButton.bind( this );
 		this.toggleAlignRight = this.toggleAlignRight.bind( this );
 		this.toggleImage = this.toggleImage.bind( this );
@@ -60,7 +61,7 @@ class LatestPostsEdit extends Component {
 
 	componentWillMount() {
 		this.isStillMounted = true;
-		this.fetchRequest = apiFetch( {
+		this.fetchCategories = apiFetch( {
 			path: addQueryArgs( `/wp/v2/categories`, CATEGORIES_LIST_QUERY ),
 		} ).then(
 			( categoriesList ) => {
@@ -117,13 +118,6 @@ class LatestPostsEdit extends Component {
 		setAttributes( { hideCategoryName: ! hideCategoryName } );
 	}
 
-	toggleHideTagName() {
-		const { hideTagName } = this.props.attributes;
-		const { setAttributes } = this.props;
-
-		setAttributes( { hideTagName: ! hideTagName } );
-	}
-
 	toggleHideButton() {
 		const { hideButton } = this.props.attributes;
 		const { setAttributes } = this.props;
@@ -148,7 +142,7 @@ class LatestPostsEdit extends Component {
 	render() {
 		const { attributes, setAttributes, latestPosts } = this.props;
 		const { categoriesList, tagsList } = this.state;
-		const { hideExcerpt, hidePostDate, hideCategoryName, hideTagName, alignRight, hideButton, hideImage, postLayout, order, orderBy, categories, postsToShow } = attributes;
+		const { hideExcerpt, hidePostDate, hideCategoryName, alignRight, hideButton, hideImage, postLayout, order, orderBy, categories, tags, postsToShow } = attributes;
 
 		const inspectorControls = (
 			<InspectorControls>
@@ -163,7 +157,16 @@ class LatestPostsEdit extends Component {
 						onOrderChange={ ( value ) => setAttributes( { order: value } ) }
 						onOrderByChange={ ( value ) => setAttributes( { orderBy: value } ) }
 						onCategoryChange={ ( value ) => setAttributes( { categories: '' !== value ? value : undefined } ) }
+						onTagChange={ ( value ) => setAttributes( { tags: '' !== value ? value : undefined } ) }
 						onNumberOfItemsChange={ ( value ) => setAttributes( { postsToShow: value } ) }
+					/>
+					<TagSelect
+						key="query-controls-tag-select"
+						tagsList={ tagsList }
+						label={ __( 'Tag' ) }
+						noOptionLabel={ __( 'All' ) }
+						selectedTagId={ tags }
+						onChange={ ( value ) => setAttributes( { tags: '' !== value ? value : undefined } ) }
 					/>
 					<ToggleControl
 						label={ __( 'Hide excerpt' ) }
@@ -179,11 +182,6 @@ class LatestPostsEdit extends Component {
 						label={ __( 'Hide category name' ) }
 						checked={ hideCategoryName }
 						onChange={ this.toggleHideCategoryName }
-					/>
-					<ToggleControl
-						label={ __( 'Hide tag name' ) }
-						checked={ hideTagName }
-						onChange={ this.toggleHideTagName }
 					/>
 					<ToggleControl
 						label={ __( 'Hide button' ) }
@@ -297,7 +295,7 @@ class LatestPostsEdit extends Component {
 }
 
 export default withSelect( ( select, props ) => {
-	const { postsToShow, order, orderBy, categories } = props.attributes;
+	const { postsToShow, order, orderBy, categories, tags } = props.attributes;
 	const { getEntityRecords } = select( 'core' );
 	const latestPostsQuery = pickBy( {
 		categories,
