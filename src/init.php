@@ -109,6 +109,10 @@ function alps_gutenberg_blocks_render_block_latest_post($attributes) {
 		$args['category'] = $attributes['categories'];
 	}
 
+	if (isset($attributes['tags'])) {
+		$args['tag'] = $attributes['tags'];
+	}
+
 	$recent_posts = wp_get_recent_posts($args);
 
 	$list_items_markup = '';
@@ -414,6 +418,9 @@ function register_block_alps_latest_posts() {
 		array(
 			'attributes'      => array(
 				'categories'      => array(
+					'type' => 'string',
+				),
+				'tags'      => array(
 					'type' => 'string',
 				),
 				'className'       => array(
