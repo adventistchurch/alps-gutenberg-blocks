@@ -61,8 +61,7 @@ import './editor.scss';
 
       var onSelectImage = function( media ) {
         return props.setAttributes( {
-          media: media,
-          imageUrl: media.url,
+          imageUrl: media.sizes.large.url,
           imageId: media.id,
         } );
       };
