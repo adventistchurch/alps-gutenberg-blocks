@@ -14,6 +14,7 @@ import './editor.scss';
   var InspectorControls = wp.editor.InspectorControls;
   var ToggleControl = wp.components.ToggleControl;
   var MediaUpload = wp.editor.MediaUpload;
+  var IconButton = wp.components.IconButton;
 
   registerBlockType( 'alps-gutenberg-blocks/cta', {
     title: __('CTA'),
@@ -31,6 +32,18 @@ import './editor.scss';
         type: 'array',
         source: 'children',
         selector: 'p',
+      },
+      button1Url: {
+        type: 'string',
+      },
+      button1Text: {
+        type: 'string',
+      },
+      button2Url: {
+        type: 'string',
+      },
+      button2Text: {
+        type: 'string',
       },
       imageId: {
         type: 'number',
@@ -52,7 +65,7 @@ import './editor.scss';
       },
       blockClass: {
         type: 'string',
-        default: ' has-image',
+        default: ' ',
       },
     },
 
@@ -64,6 +77,16 @@ import './editor.scss';
           media: media,
           imageUrl: media.url,
           imageId: media.id,
+          blockClass: ' has-image',
+        } );
+      };
+
+      var onRemoveImage = function( media ) {
+        return props.setAttributes( {
+          media: null,
+          imageUrl: null,
+          imageId: null,
+          blockClass: '',
         } );
       };
 
@@ -80,10 +103,10 @@ import './editor.scss';
       function updateBackgroundImage() {
         if (attributes.hasBackgroundImage) {
           props.setAttributes( { hasBackgroundImage: false } );
-          props.setAttributes( { blockClass: ' has-image' } );
+          props.setAttributes( { blockClass: '' } );
         } else {
           props.setAttributes( { hasBackgroundImage: true } );
-          props.setAttributes( { blockClass: ' has-background-image o-background-image u-background--cover u-theme--gradient--bottom' } );
+          props.setAttributes( { blockClass: ' has-background-image u-background--cover u-theme--gradient--bottom' } );
         }
       }
 
@@ -119,9 +142,22 @@ import './editor.scss';
             render: function( obj ) {
               return el( components.Button, {
                 className: attributes.imageId ? 'image-button' : 'button button-large',
-                onClick: obj.open
+                onClick: ! attributes.imageId ? obj.open : obj.close
                 },
-                ! attributes.imageId ? __( 'Upload Image' ) : el( 'img', { src: attributes.imageUrl } )
+                ! attributes.imageId ? __( 'Upload Image' ) :
+                el( 'div', {
+                  className: 'o-image--edit',
+                },
+                  el( IconButton, {
+                    icon: 'no-alt',
+                    onClick: onRemoveImage,
+                    className: 'blocks-gallery-item__remove',
+                    label: 'Remove Image',
+                  } ),
+                  el( 'img', {
+                    src: attributes.imageUrl
+                  } ),
+                ),
               );
             }
           } ),
@@ -204,17 +240,21 @@ import './editor.scss';
     save: function( props ) {
       var attributes = props.attributes;
       var image = '';
+      var backgroundImageClass = '';
+      var buttons = '';
 
       if (attributes.imageUrl) {
-        var image = <style type="text/css">.o-background-image {`{ background-image: url('${ attributes.imageUrl }') }`}</style>;
+        var image = <style type="text/css">.o-background-image--{ attributes.imageId } { `{ background-image: url('${ attributes.imageUrl }') }` }</style>;
         if (attributes.hasBackgroundImage) {
+          var backgroundImageClass = ' o-background-image--'+ attributes.imageId;
           var picture = '';
         } else {
-          var picture = <div class="c-cta-block__image c-block__image o-background-image u-background--cover"></div>;
+          var backgroundImageClass = ' has-image';
+          var picture = <div class={ 'c-cta-block__image c-block__image o-background-image--' + attributes.imageId + ' u-background--cover' }></div>;
         }
       }
 
-      if ((attributes.title != "" && attributes.title.length > 0) && (attributes.description != "" && attributes.description.length > 0)) {
+      if ( ( attributes.title != "" && attributes.title.length > 0 ) && ( attributes.description != "" && attributes.description.length > 0 ) ) {
         var titleClass = ' u-font--primary--l';
         var descriptionClass = ' u-font--secondary';
       } else {
@@ -222,41 +262,44 @@ import './editor.scss';
         var descriptionClass = ' u-font--secondary--m';
       }
 
-      if (attributes.title != "" && attributes.title.length > 0) {
+      if ( attributes.title != "" && attributes.title.length > 0 ) {
         var title = <h3 class={ 'c-cta-block__title c-block__title u-theme--color--darker' + titleClass }>{ attributes.title }</h3>;
       } else {
         var title = attributes.title;
       }
 
-      if (attributes.description != "" && attributes.description.length > 0) {
+      if ( attributes.description != "" && attributes.description.length > 0 ) {
         var description = <p class={ 'c-cta-block__description c-block__description u-font--secondary' + descriptionClass }>{ attributes.description }</p>;
       } else {
         var description = attributes.description;
       }
 
-      if (attributes.button1Url || attributes.button2Url) {
-        if (attributes.button1Url) {
-          var buttonArrow = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M18.29,8.59l-3.5-3.5L13.38,6.5,15.88,9H.29v2H15.88l-2.5,2.5,1.41,1.41,3.5-3.5L19.71,10Z" fill="#9b9b9b"/></svg>;
-          var button1 = <a href={attributes.button1Url} class="c-block__button o-button o-button--outline">{attributes.button1Text}<span class="u-icon u-icon--m u-path-fill--base u-space--half--left">{buttonArrow}</span></a>;
+      if ( attributes.button1Url || attributes.button2Url ) {
+        if ( attributes.button1Url ) {
+          var button1 = <a href={ attributes.button1Url } class="c-block__button o-button o-button--outline">{ attributes.button1Text }<span class="u-icon u-icon--m u-path-fill--base u-space--half--left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M18.29,8.59l-3.5-3.5L13.38,6.5,15.88,9H.29v2H15.88l-2.5,2.5,1.41,1.41,3.5-3.5L19.71,10Z" fill="#9b9b9b"/></svg></span></a>;
+        } else {
+          var button1 = '';
         }
-        if (attributes.button2Url) {
-          var button2 = <a href={attributes.button2Url} class="c-block__button o-button o-button--simple">{attributes.button2Text}</a>;
+        if ( attributes.button2Url ) {
+          var button2 = <a href={ attributes.button2Url } class="c-block__button o-button o-button--simple">{ attributes.button2Text }</a>;
+        } else {
+          var button2 = '';
         }
-        var buttons = <div class="c-cta-block__buttons c-block__buttons">{button1}{button2}</div>;
+        var buttons = <div class="c-cta-block__buttons c-block__buttons">{ button1 }{ button2 }</div>;
       }
 
       return (
         <div>
-          <style type="text/css">.o-background-image {`{ background-image: url('${ attributes.imageUrl }') }`}</style>
-          <div class={'c-cta-block c-block u-border--left u-theme--border-color--darker--left can-be--dark-dark' + attributes.blockClass + attributes.themeClass}>
+          { image }
+          <div class={'c-cta-block c-block u-border--left u-theme--border-color--darker--left can-be--dark-dark' + attributes.blockClass + attributes.themeClass + backgroundImageClass}>
             <div class="c-cta-block__content c-block__content u-spacing">
               <div class="c-cta-block__group c-block__group u-spacing">
-                {title}
-                {description}
+                { title }
+                { description }
               </div>
-              {buttons}
+              { buttons }
             </div>
-            <div class="c-cta-block__image c-block__image o-background-image u-background--cover"></div>
+            { picture }
           </div>
         </div>
       );
