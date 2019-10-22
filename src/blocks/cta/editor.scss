@@ -1,0 +1,29 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+.wp-block-alps-gutenberg-blocks-cta {
+  background: $c-gray--light;
+  color: $c-black;
+  padding: $pad;
+}
+
+.o-buttons {
+  display: flex;
+  padding-top: $pad;
+
+  > * {
+    width: 50%;
+
+    &:first-child {
+      padding-right: $pad / 2;
+    }
+
+    &:last-child {
+      padding-left: $pad / 2;
+    }
+  }
+}

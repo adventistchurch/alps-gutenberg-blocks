@@ -11,7 +11,6 @@ import './editor.scss';
   var registerBlockType = wp.blocks.registerBlockType;
   var RichText = wp.editor.RichText;
   var InspectorControls = wp.editor.InspectorControls;
-  var ToggleControl = wp.components.ToggleControl;
   var BlockControls = wp.editor.BlockControls;
   var MediaUpload = wp.editor.MediaUpload;
 
