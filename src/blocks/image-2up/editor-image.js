@@ -50,7 +50,6 @@ class TwoUpImage extends Component {
   onImageClick() {
     if ( ! this.props.isSelected ) {
       this.props.onSelect();
-      console.log( 'image click' );
     }
 
     if ( this.state.captionSelected ) {
