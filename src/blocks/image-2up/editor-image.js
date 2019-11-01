@@ -50,6 +50,7 @@ class TwoUpImage extends Component {
   onImageClick() {
     if ( ! this.props.isSelected ) {
       this.props.onSelect();
+      console.log( 'image click' );
     }
 
     if ( this.state.captionSelected ) {
@@ -73,7 +74,7 @@ class TwoUpImage extends Component {
   componentWillReceiveProps( { isSelected, image, url } ) {
     if ( image && ! url ) {
       this.props.setAttributes( {
-        url: image.source_url,
+        url: image.sizes.large.url,
         alt: image.alt_text,
       } );
     }

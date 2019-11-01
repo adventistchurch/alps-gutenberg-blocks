@@ -5,7 +5,7 @@
 /**
  * WordPress dependencies
  */
-const { filter, pick } = lodash;
+const { filter, pick, get } = lodash;
 
 const { Component, Fragment } = wp.element;
 const { __ } = wp.i18n;
@@ -86,8 +86,14 @@ class TwoUpEdit extends Component {
   }
 
   onSelectImages( images ) {
+    // WE USE LODASH'S 'GET' TO GO DEEPER TO GET THE PROVIDED LARGE SIZE URL
+    let imageData = images.map( ( image ) => ({
+      ..._.pick( image, [ 'alt', 'caption', 'id' ] ),
+      url: get( image, 'sizes.large.url' )
+    }));
+
     this.props.setAttributes( {
-      images: images.map( ( image ) => pick( image, [ 'alt', 'caption', 'id', 'url' ] ) ),
+      images: imageData,
     } );
   }
 
