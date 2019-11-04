@@ -4,6 +4,14 @@ A record of the changes made to `ALPS Gutenberg Blocks`.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+##[1.3.1]
+### Fixed
+- Version number increment.
+
+##[1.3.0]
+### Added
+- Added a `Call to Action` block. [#342](https://github.com/adventistchurch/alps-wordpress/issues/342)
+
 ##[1.2.0]
 ### Added
 - Added a feature to the `Latest Posts` block that allows you filter posts by `tags`. [#336](https://github.com/adventistchurch/alps-wordpress/issues/336)
