@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-const { filter, every } = lodash;
+const { filter, every, get } = lodash;
 import './style.scss';
 import Edit, { defaultColumnsNumber } from './edit';
 

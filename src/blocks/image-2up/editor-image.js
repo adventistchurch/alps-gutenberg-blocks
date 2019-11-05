@@ -73,7 +73,7 @@ class TwoUpImage extends Component {
   componentWillReceiveProps( { isSelected, image, url } ) {
     if ( image && ! url ) {
       this.props.setAttributes( {
-        url: image.sizes.large.url,
+        url: image.media_details.sizes.large.source_url,
         alt: image.alt_text,
       } );
     }
