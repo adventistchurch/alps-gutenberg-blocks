@@ -17,7 +17,7 @@ import './editor.scss';
   var IconButton = wp.components.IconButton;
 
   registerBlockType( 'alps-gutenberg-blocks/cta', {
-    title: __('CTA'),
+    title: __('ALPS CTA'),
     icon: 'external',
     category: 'common',
     html: false,

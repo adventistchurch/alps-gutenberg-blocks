@@ -17,7 +17,7 @@ const editorMediaUpload = wp.editor.editorMediaUpload;
 const name = 'core/gallery';
 
 registerBlockType( 'alps-gutenberg-blocks/gallery', {
-  title: __('Gallery'),
+  title: __('ALPS Gallery'),
   description: __('Display a gallery images in a container that expands on click.'),
   icon: 'format-gallery',
   category: 'common',
