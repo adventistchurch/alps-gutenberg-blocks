@@ -1,7 +1,7 @@
 <?php
 /**
  * @package alps-gutenberg-blocks
- * @version 1.3.1
+ * @version 1.3.2
  */
 /**
  * Plugin Name: ALPS Gutenberg Blocks
