@@ -19,6 +19,7 @@ const {
   ToggleControl,
   Toolbar,
   withNotices,
+  Button,
 } = wp.components;
 const {
   RichText,
@@ -198,7 +199,6 @@ class TwoUpEdit extends Component {
         </Fragment>
       );
     }
-
     return (
       <Fragment>
         { controls }
@@ -219,21 +219,28 @@ class TwoUpEdit extends Component {
               />
             </li>
           ) ) }
-          { isSelected &&
-            <li className="blocks-gallery-item">
-              <FormFileUpload
-                multiple
-                isLarge
-                className="core-blocks-gallery-add-item-button"
-                onChange={ this.uploadFromFiles }
-                accept="image/*"
-                icon="insert"
-              >
-                { __( 'Upload an image' ) }
-              </FormFileUpload>
-            </li>
-          }
         </ul>
+        <MediaUpload
+          onSelect={ this.onSelectImages }
+          accept="image/*"
+          type="image"
+          gallery
+          multiple
+          addToGallery
+          notices={ noticeUI }
+          onError={ noticeOperations.createErrorNotice }
+          
+          value={ images.map( ( img ) => img.id ) }
+          render={ ( { open } ) => (
+            <div onClick={ open }>
+              <Button className="select-images-button is-button is-default is-large">
+                  Add / Edit Images
+              </Button>
+              <p><small><em>Please note: you can only have two images set at any one time.</em></small></p>
+            </div>
+          ) }
+        />
+        
       </Fragment>
     );
   }
