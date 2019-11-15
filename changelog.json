@@ -1,4 +1,7 @@
 {
+  "1.3.3" : {
+    "description" : "Fixed: Image Sizing on image blocks."
+  },
   "1.3.2" : {
     "description" : "Fixed: Added the prefix of ALPS to all the blocks privided here."
   },
