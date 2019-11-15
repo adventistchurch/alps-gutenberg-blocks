@@ -5,7 +5,7 @@
 /**
  * WordPress dependencies
  */
-const { filter, pick } = lodash;
+const { filter, pick, get } = lodash;
 
 const { Component, Fragment } = wp.element;
 const { __ } = wp.i18n;
@@ -19,6 +19,7 @@ const {
   ToggleControl,
   Toolbar,
   withNotices,
+  Button,
 } = wp.components;
 const {
   RichText,
@@ -86,8 +87,14 @@ class TwoUpEdit extends Component {
   }
 
   onSelectImages( images ) {
+    // WE USE LODASH'S 'GET' TO GO DEEPER TO GET THE PROVIDED LARGE SIZE URL
+    let imageData = images.map( ( image ) => ({
+      ..._.pick( image, [ 'alt', 'caption', 'id' ] ),
+      url: get( image, 'sizes.large.url' )
+    }));
+
     this.props.setAttributes( {
-      images: images.map( ( image ) => pick( image, [ 'alt', 'caption', 'id', 'url' ] ) ),
+      images: imageData,
     } );
   }
 
@@ -192,7 +199,6 @@ class TwoUpEdit extends Component {
         </Fragment>
       );
     }
-
     return (
       <Fragment>
         { controls }
@@ -213,21 +219,28 @@ class TwoUpEdit extends Component {
               />
             </li>
           ) ) }
-          { isSelected &&
-            <li className="blocks-gallery-item">
-              <FormFileUpload
-                multiple
-                isLarge
-                className="core-blocks-gallery-add-item-button"
-                onChange={ this.uploadFromFiles }
-                accept="image/*"
-                icon="insert"
-              >
-                { __( 'Upload an image' ) }
-              </FormFileUpload>
-            </li>
-          }
         </ul>
+        <MediaUpload
+          onSelect={ this.onSelectImages }
+          accept="image/*"
+          type="image"
+          gallery
+          multiple
+          addToGallery
+          notices={ noticeUI }
+          onError={ noticeOperations.createErrorNotice }
+          
+          value={ images.map( ( img ) => img.id ) }
+          render={ ( { open } ) => (
+            <div onClick={ open }>
+              <Button className="select-images-button is-button is-default is-large">
+                  Add / Edit Images
+              </Button>
+              <p><small><em>Please note: you can only have two images set at any one time.</em></small></p>
+            </div>
+          ) }
+        />
+        
       </Fragment>
     );
   }

@@ -1,7 +1,7 @@
 /**
  * External Dependencies
  */
-const { filter, pick } = lodash;
+const { filter, pick, get } = lodash;
 
 /**
  * WordPress dependencies
@@ -19,6 +19,7 @@ const {
   ToggleControl,
   Toolbar,
   withNotices,
+  Button,
 } = wp.components;
 const {
   RichText,
@@ -27,7 +28,6 @@ const {
   MediaUpload,
   MediaPlaceholder,
   InspectorControls,
-  editorMediaUpload,
 } = wp.editor;
 
 /**
@@ -44,7 +44,8 @@ const linkOptions = [
 ];
 
 export function defaultColumnsNumber( attributes ) {
-  return Math.min( 3, attributes.images.length );
+  //return Math.min( 1, attributes.images.length );
+  return 1;
 }
 
 class GalleryEdit extends Component {
@@ -56,9 +57,7 @@ class GalleryEdit extends Component {
     this.onChangeTitle = this.onChangeTitle.bind( this );
     this.onRemoveImage = this.onRemoveImage.bind( this );
     this.setImageAttributes = this.setImageAttributes.bind( this );
-    this.addFiles = this.addFiles.bind( this );
-    this.uploadFromFiles = this.uploadFromFiles.bind( this );
-
+  
     this.state = {
       selectedImage: null,
     };
@@ -81,14 +80,20 @@ class GalleryEdit extends Component {
       this.setState( { selectedImage: null } );
       this.props.setAttributes( {
         images,
-        columns: columns ? Math.min( images.length, columns ) : columns,
+        columns: 1,
       } );
     };
   }
 
   onSelectImages( images ) {
+    // WE USE LODASH'S 'GET' TO GO DEEPER TO GET THE PROVIDED LARGE SIZE URL
+    let imageData = images.map( ( image ) => ({
+      ..._.pick( image, [ 'alt', 'caption', 'id' ] ),
+      url: get( image, 'sizes.large.url' )
+    }));
+
     this.props.setAttributes( {
-      images: images.map( ( image ) => pick( image, [ 'alt', 'caption', 'id', 'url' ] ) ),
+      images: imageData,
     } );
   }
 
@@ -97,6 +102,7 @@ class GalleryEdit extends Component {
   }
 
   setImageAttributes( index, attributes ) {
+    // console.log( 'setImageAttributes ran: attributes: ', attributes );
     const { attributes: { images }, setAttributes } = this.props;
     if ( ! images[ index ] ) {
       return;
@@ -113,25 +119,6 @@ class GalleryEdit extends Component {
     } );
   }
 
-  uploadFromFiles( event ) {
-    this.addFiles( event.target.files );
-  }
-
-  addFiles( files ) {
-    const currentImages = this.props.attributes.images || [];
-    const { noticeOperations, setAttributes } = this.props;
-    editorMediaUpload( {
-      allowedType: 'image',
-      filesList: files,
-      onFileChange: ( images ) => {
-        setAttributes( {
-          images: currentImages.concat( images ),
-        } );
-      },
-      onError: noticeOperations.createErrorNotice,
-    } );
-  }
-
   componentWillReceiveProps( nextProps ) {
     // Deselect images when deselecting the block
     if ( ! nextProps.isSelected && this.props.isSelected ) {
@@ -145,19 +132,14 @@ class GalleryEdit extends Component {
   render() {
     const { attributes, isSelected, className, noticeOperations, noticeUI } = this.props;
     const { images, columns = defaultColumnsNumber( attributes ), title } = attributes;
-
-    const dropZone = (
-      <DropZone
-        onFilesDrop={ this.addFiles }
-      />
-    );
-
+    // console.log( 'from render - images: ', images );
+    // console.log( 'from render - state: ', this.state );
     const controls = (
       <BlockControls>
         { !! images.length && (
           <Toolbar>
             <MediaUpload
-              onSelect={ this.onSelectImages }
+              onSelect={ this.onSelectImage }
               type="image"
               multiple
               gallery
@@ -177,6 +159,7 @@ class GalleryEdit extends Component {
     );
 
     if ( images.length === 0 ) {
+      console.log( 'render: images === 0' );
       return (
         <Fragment>
           { controls }
@@ -190,6 +173,7 @@ class GalleryEdit extends Component {
             onSelect={ this.onSelectImages }
             accept="image/*"
             type="image"
+            gallery
             multiple
             notices={ noticeUI }
             onError={ noticeOperations.createErrorNotice }
@@ -197,6 +181,7 @@ class GalleryEdit extends Component {
         </Fragment>
       );
     }
+
 
     return (
       <Fragment>
@@ -209,10 +194,10 @@ class GalleryEdit extends Component {
         />
         { controls }
         { noticeUI }
-        <ul className={ `${ className }` }>
-          { dropZone }
+        <ul className={ `${ className }` + ` wp-block-gallery alps-block-gallery` }>
+          <DropZone />
           { images.map( ( img, index ) => (
-            <li className="blocks-gallery-item" key={ img.id || img.url }>
+            <li className="blocks-gallery-item alps-gallery-item" key={ img.id || img.url }>
               <GalleryImage
                 url={ img.url }
                 alt={ img.alt }
@@ -225,21 +210,26 @@ class GalleryEdit extends Component {
               />
             </li>
           ) ) }
-          { isSelected &&
-            <li className="blocks-gallery-item">
-              <FormFileUpload
-                multiple
-                isLarge
-                className="core-blocks-gallery-add-item-button"
-                onChange={ this.uploadFromFiles }
-                accept="image/*"
-                icon="insert"
-              >
-                { __( 'Upload an image' ) }
-              </FormFileUpload>
-            </li>
-          }
         </ul>
+        <MediaUpload
+          onSelect={ this.onSelectImages }
+          accept="image/*"
+          type="image"
+          gallery
+          multiple
+          addToGallery
+          notices={ noticeUI }
+          onError={ noticeOperations.createErrorNotice }
+          
+          value={ images.map( ( img ) => img.id ) }
+          render={ ( { open } ) => (
+            <div onClick={ open }>
+              <Button className="select-images-button is-button is-default is-large">
+                  Add / Edit Images
+              </Button>
+            </div>
+          ) }
+        />
       </Fragment>
     );
   }

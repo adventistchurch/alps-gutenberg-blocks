@@ -13,7 +13,7 @@
   }
 
   .blocks-gallery-item .is-selected {
-    border: 3px solid $c-black;
+    border: 3px solid $c-gray;
     outline: none;
     outline-offset: 0;
 
@@ -21,27 +21,52 @@
       width: 100%;
       left: 0;
       margin-top: 0;
+      background: #eee;
+      color: #333;
     }
+  }
+
+ li.blocks-gallery-item.alps-gallery-item {
+    width: 100% !important;
+
   }
 
   li {
     border: 1px solid $c-gray--light;
     margin: $space/2 0;
+    width: 100% !important;
   }
 
   figure {
     margin: 0;
     padding: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
   }
 
   img {
+    width: 100%;
     margin: 0 auto;
     padding: $pad/2;
     display: block;
   }
 
-  figcaption {
-    background-color: $c-gray--light;
+
+  .core-blocks-gallery-item__inline-menu {
+    position: absolute;
+    width: 100%;
+    background: #fff; 
+    padding-top: 5px;
+  }
+
+  // TRYING TO OVERRIDE WP
+  .blocks-gallery-image figcaption, .blocks-gallery-item figcaption {
+    background: #eee;
+    color: #333;
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
     padding: $pad/2;
   }
 }

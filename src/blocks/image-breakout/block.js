@@ -40,7 +40,7 @@ import './editor.scss';
       return [
         el( MediaUpload, {
           onSelect: function( media ) {
-            props.setAttributes( { url: media.url } );
+            props.setAttributes( { url: media.sizes.large.url } );
             props.setAttributes( { id: media.id } );
           },
           type: 'image',
