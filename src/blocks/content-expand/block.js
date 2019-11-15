@@ -12,7 +12,7 @@ import './editor.scss';
   var RichText = wp.editor.RichText;
 
   registerBlockType( 'alps-gutenberg-blocks/content-expand', {
-    title: __('Content Expand'),
+    title: __('ALPS Content Expand'),
     icon: 'arrow-down-alt',
     description: 'Content block that expands the content on click.',
     category: 'common',

@@ -15,7 +15,7 @@ import './style.scss';
 import edit from './edit';
 
 registerBlockType( 'alps-gutenberg-blocks/latest-posts', {
-	title: __( 'Latest Posts' ),
+	title: __( 'ALPS Latest Posts' ),
 	description: __( 'Display a list of your most recent posts.' ),
 	icon: 'megaphone',
 	category: 'widgets',

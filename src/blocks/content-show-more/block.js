@@ -13,7 +13,7 @@ import './editor.scss';
   var MediaUpload = wp.editor.MediaUpload;
 
   registerBlockType( 'alps-gutenberg-blocks/content-show-more', {
-    title: __('Content Show More'),
+    title: __('ALPS Content Show More'),
     icon: 'editor-expand',
     description: 'Content block that has a toggle button to show more.',
     category: 'common',

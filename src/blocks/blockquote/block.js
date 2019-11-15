@@ -14,7 +14,7 @@ import './editor.scss';
   var ToggleControl = wp.components.ToggleControl;
 
   registerBlockType( 'alps-gutenberg-blocks/blockquote', {
-    title: __('Blockquote'),
+    title: __('ALPS Blockquote'),
     icon: 'format-quote',
     category: 'common',
     html: false,

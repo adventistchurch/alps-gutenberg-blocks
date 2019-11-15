@@ -12,7 +12,7 @@ import './editor.scss';
   var RichText = wp.editor.RichText
 
   registerBlockType( 'alps-gutenberg-blocks/highlighted-paragraph', {
-    title: __('Highlighted Paragraph'),
+    title: __('ALPS Highlighted Paragraph'),
     icon: 'media-text',
     description: 'Highlight a block of text.',
     category: 'common',

@@ -14,7 +14,7 @@ import './editor.scss';
   var AlignmentToolbar = wp.editor.AlignmentToolbar;
 
   registerBlockType( 'alps-gutenberg-blocks/accordion', {
-    title: __('Accordion'),
+    title: __('ALPS Accordion'),
     icon: 'welcome-add-page',
     description: 'Add heading and basic text.',
     category: 'common',

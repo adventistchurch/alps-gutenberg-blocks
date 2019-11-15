@@ -15,7 +15,7 @@ import './editor.scss';
   var AlignmentToolbar = wp.editor.AlignmentToolbar;
 
   registerBlockType( 'alps-gutenberg-blocks/content-block', {
-    title: __('Content Block'),
+    title: __('ALPS Content Block'),
     description: 'Content block that highlights a row to text.',
     icon: 'welcome-write-blog',
     category: 'common',

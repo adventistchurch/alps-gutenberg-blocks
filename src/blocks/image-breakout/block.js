@@ -15,7 +15,7 @@ import './editor.scss';
   var MediaUpload = wp.editor.MediaUpload;
 
   registerBlockType( 'alps-gutenberg-blocks/image-breakout', {
-    title: __('Image (Breakout)'),
+    title: __('ALPS Image (Breakout)'),
     icon: 'format-image',
     description: 'Image that expands the width of the page.',
     category: 'common',
