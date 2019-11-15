@@ -19,7 +19,7 @@ registerBlockType( 'alps-gutenberg-blocks/latest-posts', {
 	description: __( 'Display a list of your most recent posts.' ),
 	icon: 'megaphone',
 	category: 'widgets',
-	keywords: [ __( 'recent posts' ) ],
+	keywords: [ __( 'latest posts' ) ],
 	supports: {
 		html: false,
 	},
