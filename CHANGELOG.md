@@ -4,10 +4,13 @@ A record of the changes made to `ALPS Gutenberg Blocks`.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+##[1.3.4]
+### Fixed
+- Version number increment.
+
 ##[1.3.3]
 ### Fixed
 - Image Sizing on image blocks [#334](https://github.com/adventistchurch/alps-wordpress/issues/334)
-
 
 ##[1.3.2]
 ### Fixed

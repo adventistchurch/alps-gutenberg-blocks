@@ -1,4 +1,7 @@
 {
+  "1.3.4" : {
+    "description" : "Fixed: Version number increment."
+  },
   "1.3.3" : {
     "description" : "Fixed: Image Sizing on image blocks."
   },
