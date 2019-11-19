@@ -110,7 +110,7 @@ function alps_gutenberg_blocks_render_block_latest_post($attributes) {
 	}
 
 	if (isset($attributes['tags'])) {
-		$args['tag'] = $attributes['tags'];
+		$args['tag_id'] = $attributes['tags'];
 	}
 
 	$recent_posts = wp_get_recent_posts($args);
