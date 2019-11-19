@@ -1,4 +1,7 @@
 {
+  "1.3.5" : {
+    "description" : "Fixed: Filtering by tags not working."
+  },
   "1.3.4" : {
     "description" : "Fixed: Version number increment."
   },
