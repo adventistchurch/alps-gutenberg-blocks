@@ -70,6 +70,13 @@ import './editor.scss';
 
     save: function( props ) {
       var attributes = props.attributes;
+      var paragraphClasses = [
+          'o-highlight',
+          'u-padding',
+          'u-background-color--gray--light',
+          'u-text-align--' + attributes.alignment,
+          'can-be--dark-dark',
+      ];
 
       return (
         el( 'div', {
@@ -77,7 +84,7 @@ import './editor.scss';
         },
           el( RichText.Content, {
             tagName: 'p',
-            className: 'o-highlight u-padding u-background-color--gray--light can-be--dark-dark has-text-align-' + attributes.alignment,
+            className: paragraphClasses.join(' '),
             value: attributes.content
           } )
         )
