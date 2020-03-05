@@ -1,4 +1,7 @@
 {
+  "1.3.6" : {
+    "description" : "Added: More html formatting options to the highlight block."
+  },
   "1.3.5" : {
     "description" : "Fixed: Filtering by tags not working."
   },
