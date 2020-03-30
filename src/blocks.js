@@ -19,4 +19,6 @@ import './blocks/image-breakout/block.js';
 import './blocks/image-2up/block.js';
 import './blocks/gallery/block.js';
 import './blocks/latest-posts/block.js';
+import './blocks/media-testimonies/block.js';
+import './blocks/media-testimony/block.js';
 import './blocks/cta/block.js';

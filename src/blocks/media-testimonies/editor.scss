@@ -1,0 +1,24 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+.wp-block-alps-gutenberg-blocks-media-testimonies {
+  width: 100% !important;
+  margin-left: 0 !important;
+
+  .o-editor-heading {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $c-gray--light;
+    padding: $space;
+
+    h3 {
+      margin-right: $space;
+      border-left: 4px solid;
+      padding-left: $space;
+    }
+  }
+}
