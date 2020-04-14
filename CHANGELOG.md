@@ -6,10 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 
+##[1.3.8]
+### Fixed
+- Fixed version numbering.
+
 ##[1.3.7]
 ### Added
 - Added a "Open in New Window" option to the CTA block. [#404](https://github.com/adventistchurch/alps-wordpress/issues/404)
-
 
 ##[1.3.6]
 ### Added
