@@ -71,6 +71,9 @@ import icons from '../../icons/icons.js'
             template: [
               [ 'alps-gutenberg-blocks/media-testimony' ],
             ],
+            allowedBlocks: [
+              [ 'alps-gutenberg-blocks/media-testimony' ],
+            ],
           } )
         )
       ];

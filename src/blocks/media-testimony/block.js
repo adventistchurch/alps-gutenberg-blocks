@@ -75,7 +75,7 @@ import icons from '../../icons/icons.js'
           },
             el( RichText, {
               key: 'editable',
-              tagName: 'p',
+              tagName: 'h4',
               placeholder: 'Enter Quote',
               keepPlaceholderOnFocus: true,
               isSelected: false,
