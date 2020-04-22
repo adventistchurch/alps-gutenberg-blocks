@@ -3,3 +3,12 @@
  *
  * CSS for both Frontend+Backend.
  */
+.image-button {
+  height: auto;
+  min-height: 36px;
+  padding: 2px;
+
+  &:hover {
+    box-shadow: inset 0 0 0 1px #555d66, inset 0 0 0 2px #fff;
+  }
+}
