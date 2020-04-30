@@ -11,6 +11,7 @@ import './editor.scss';
   var registerBlockType = wp.blocks.registerBlockType;
   var RichText = wp.editor.RichText;
   var TextControl = wp.components.TextControl;
+  var CheckboxControl = wp.components.CheckboxControl;
   var InspectorControls = wp.editor.InspectorControls;
   var ToggleControl = wp.components.ToggleControl;
   var MediaUpload = wp.editor.MediaUpload;
@@ -39,11 +40,19 @@ import './editor.scss';
       button1Text: {
         type: 'string',
       },
+      button1NewWindow: {
+        type: 'boolean',
+        default: false,
+      },
       button2Url: {
         type: 'string',
       },
       button2Text: {
         type: 'string',
+      },
+      button2NewWindow: {
+        type: 'boolean',
+        default: false,
       },
       imageId: {
         type: 'number',
@@ -207,6 +216,13 @@ import './editor.scss';
                   props.setAttributes( { button1Text: newButton1Text } );
                 }
               } ),
+              el( CheckboxControl, {
+                label: __( 'Open in new window' ),
+                checked: attributes.button1NewWindow,
+                onChange: function() {
+                  props.setAttributes( { button1NewWindow: !attributes.button1NewWindow } );
+                }
+              } ),
             ),
             el ( 'div', {
               className: 'o-button--2',
@@ -228,6 +244,13 @@ import './editor.scss';
                 isSelected: false,
                 onChange: function( newButton2Text ) {
                   props.setAttributes( { button2Text: newButton2Text } );
+                }
+              } ),
+              el( CheckboxControl, {
+                label: __( 'Open in new window' ),
+                checked: attributes.button2NewWindow,
+                onChange: function() {
+                  props.setAttributes( { button2NewWindow: !attributes.button2NewWindow } );
                 }
               } ),
             ),
@@ -275,12 +298,14 @@ import './editor.scss';
 
       if ( attributes.button1Url || attributes.button2Url ) {
         if ( attributes.button1Url ) {
-          var button1 = <a href={ attributes.button1Url } class="c-block__button o-button o-button--outline">{ attributes.button1Text }<span class="u-icon u-icon--m u-path-fill--base u-space--half--left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M18.29,8.59l-3.5-3.5L13.38,6.5,15.88,9H.29v2H15.88l-2.5,2.5,1.41,1.41,3.5-3.5L19.71,10Z" fill="#9b9b9b"/></svg></span></a>;
+          var target1 = attributes.button1NewWindow ? '_blank' : '_self';
+          var button1 = <a href={ attributes.button1Url } class="c-block__button o-button o-button--outline" target={ target1 }>{ attributes.button1Text }<span class="u-icon u-icon--m u-path-fill--base u-space--half--left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M18.29,8.59l-3.5-3.5L13.38,6.5,15.88,9H.29v2H15.88l-2.5,2.5,1.41,1.41,3.5-3.5L19.71,10Z" fill="#9b9b9b"/></svg></span></a>;
         } else {
           var button1 = '';
         }
         if ( attributes.button2Url ) {
-          var button2 = <a href={ attributes.button2Url } class="c-block__button o-button o-button--simple">{ attributes.button2Text }</a>;
+          var target2 = attributes.button2NewWindow ? '_blank' : '_self';
+          var button2 = <a href={ attributes.button2Url } class="c-block__button o-button o-button--simple" target={ target2 }>{ attributes.button2Text }</a>;
         } else {
           var button2 = '';
         }

@@ -48,7 +48,6 @@ import icons from '../../icons/icons.js'
               placeholder: 'Enter Section Title',
               className: 'o-heading--l',
               keepPlaceholderOnFocus: true,
-              isSelected: false,
               value: attributes.title,
               onChange: function( newTitle ) {
                 props.setAttributes( { title: newTitle } );
@@ -61,7 +60,6 @@ import icons from '../../icons/icons.js'
               placeholder: 'http://',
               className: 'o-link',
               keepPlaceholderOnFocus: true,
-              isSelected: false,
               onChange: function( newLink ) {
                 props.setAttributes( { link: newLink } );
               }

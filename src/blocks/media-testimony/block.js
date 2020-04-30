@@ -33,8 +33,8 @@ import icons from '../../icons/icons.js'
         selector: 'strong',
       },
       quote: {
-        type: 'array',
-        source: 'children',
+        type: 'string',
+        source: 'html',
         selector: 'p',
       },
       readMoreLink: {
@@ -74,11 +74,9 @@ import icons from '../../icons/icons.js'
             className: 'o-editor-block--left'
           },
             el( RichText, {
-              key: 'editable',
               tagName: 'h4',
               placeholder: 'Enter Quote',
               keepPlaceholderOnFocus: true,
-              isSelected: false,
               value: attributes.quote,
               onChange: function( newQuote ) {
                 props.setAttributes( { quote: newQuote } );
@@ -90,7 +88,6 @@ import icons from '../../icons/icons.js'
               value: attributes.readMoreLink,
               placeholder: 'http://',
               keepPlaceholderOnFocus: true,
-              isSelected: false,
               onChange: function( newReadMoreLink ) {
                 props.setAttributes( { readMoreLink: newReadMoreLink } );
               }
@@ -121,7 +118,6 @@ import icons from '../../icons/icons.js'
               placeholder: 'Enter Video Title',
               className: 'o-heading--l',
               keepPlaceholderOnFocus: true,
-              isSelected: false,
               value: attributes.title,
               onChange: function( newTitle ) {
                 props.setAttributes( { title: newTitle } );
@@ -133,7 +129,6 @@ import icons from '../../icons/icons.js'
               value: attributes.watchVideoLink,
               placeholder: 'http://',
               keepPlaceholderOnFocus: true,
-              isSelected: false,
               onChange: function( newWatchVideoLink ) {
                 props.setAttributes( { watchVideoLink: newWatchVideoLink } );
               }
