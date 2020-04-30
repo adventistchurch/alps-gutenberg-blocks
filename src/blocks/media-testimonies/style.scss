@@ -1,0 +1,144 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+
+.has-sidebar .wp-block-alps-gutenberg-blocks-media-testimonies {
+  margin-left: 0;
+
+  @media (min-width: 700px) {
+    margin-left: calc(100vw/7 * -1);
+  }
+
+  @media (min-width: 900px) {
+    margin-left: 0;
+    width: calc(100vw/7 * 4);
+  }
+
+  @media (min-width: 1300px) {
+    margin-left: calc(100vw/7 * -1);
+  }
+
+  .c-testimonies-media__heading,
+  .c-testimonies-media__blocks .slick-track,
+  .c-testimonies-media__buttons {
+    @media (min-width: 1300px) {
+      margin-left: $space;
+    }
+  }
+
+  .u-theme--gradient--left::before {
+    @media (min-width: 1300px) {
+      display: none;
+    }
+  }
+}
+
+.wp-block-alps-gutenberg-blocks-media-testimonies {
+  width: calc(100vw/7 * 6);
+
+  @media (min-width: 700px) {
+    margin-left: calc(100vw/7 * -1);
+  }
+
+  .o-link {
+    border-color: transparent !important;
+  }
+
+  .o-dots li::before {
+    display: none !important;
+  }
+}
+
+.hide-sabbath--all .wp-block-alps-gutenberg-blocks-media-testimonies {
+  width: 100vw;
+
+  @media (min-width: 500px) {
+    margin-left: calc(100vw/7 * -1);
+  }
+
+  @media (min-width: 700px) {
+    margin-left: 0;
+  }
+
+  @media (min-width: 1300px) {
+    margin-left: calc(100vw/7 * -1);
+
+    .c-testimonies-media--inner {
+      margin-left: calc(100vw/7 * 1 - #{$space});
+    }
+  }
+}
+
+.hide-sabbath--until-small .wp-block-alps-gutenberg-blocks-media-testimonies {
+  width: 100vw;
+
+  @media (min-width: 500px) {
+    width: calc(100vw/7 * 6);
+  }
+
+  @media (min-width: 700px) {
+    margin-left: calc(100vw/7 * -1);
+  }
+
+  @media (min-width: 900px) {
+    margin-left: 0;
+  }
+
+  @media (min-width: 1300px) {
+    margin-left: calc(100vw/7 * -1);
+
+    .c-testimonies-media--inner {
+      margin-left: calc(100vw/7 * 1 - #{$space});
+    }
+  }
+}
+
+.hide-sabbath--until-medium .wp-block-alps-gutenberg-blocks-media-testimonies {
+  width: 100vw;
+
+  @media (min-width: 500px) {
+    margin-left: calc(100vw/7 * -1);
+  }
+
+  @media (min-width: 700px) {
+    width: calc(100vw/7 * 6);
+  }
+
+  @media (min-width: 900px) {
+    margin-left: 0;
+  }
+
+  @media (min-width: 1300px) {
+    margin-left: calc(100vw/7 * -1);
+
+    .c-testimonies-media--inner {
+      margin-left: calc(100vw/7 * 1 - #{$space});
+    }
+  }
+}
+
+.hide-sabbath--until-large .wp-block-alps-gutenberg-blocks-media-testimonies {
+  width: 100vw;
+
+  @media (min-width: 500px) {
+    margin-left: calc(100vw/7 * -1);
+  }
+
+  @media (min-width: 700px) {
+    margin-left: 0;
+  }
+
+  @media (min-width: 900px) {
+    width: calc(100vw/7 * 6);
+  }
+
+  @media (min-width: 1300px) {
+    margin-left: calc(100vw/7 * -1);
+
+    .c-testimonies-media--inner {
+      margin-left: calc(100vw/7 * 1 - #{$space});
+    }
+  }
+}
