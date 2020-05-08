@@ -37,12 +37,8 @@ import icons from '../../icons/icons.js'
       var attributes = props.attributes;
 
       return [
-        el( 'div', {
-          className: props.className
-        },
-          el( 'div', {
-            className: 'o-editor-heading',
-          },
+        el( 'div', { className: props.className },
+          el( 'div', { className: 'o-editor-heading', },
             el( RichText, {
               tagName: 'h3',
               placeholder: 'Enter Section Title',

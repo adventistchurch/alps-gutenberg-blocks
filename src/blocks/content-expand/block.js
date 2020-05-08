@@ -9,7 +9,9 @@ import './editor.scss';
   var __ = wp.i18n.__;
   var el = element.createElement;
   var registerBlockType = wp.blocks.registerBlockType;
-  var RichText = wp.editor.RichText;
+  var RichText = wp.blockEditor.RichText;
+  var BlockControls = wp.blockEditor.BlockControls;
+  var AlignmentToolbar = wp.blockEditor.AlignmentToolbar;
 
   registerBlockType( 'alps-gutenberg-blocks/content-expand', {
     title: __('ALPS Content Expand'),
@@ -34,32 +36,41 @@ import './editor.scss';
         source: 'children',
         selector: 'p',
       },
+      alignment: {
+        type: 'string',
+      },
     },
 
     edit: function( props ) {
       var attributes = props.attributes;
 
-      return (
-        el( 'div', {
-          className: props.className
-        },
+      function onChangeAlignment( newAlignment ) {
+        props.setAttributes( { alignment: newAlignment === undefined ? 'left' : newAlignment } );
+      }
+
+      return [
+        el( BlockControls, { key: 'controls' },
+          el( AlignmentToolbar, {
+            value: attributes.alignment,
+            onChange: onChangeAlignment,
+          } )
+        ),
+        el( 'div', { className: props.className },
           el( RichText, {
             tagName: 'em',
             placeholder: 'Kicker',
             className: 'o-kicker',
             keepPlaceholderOnFocus: true,
-            isSelected: false,
             value: attributes.kicker,
             onChange: function( newKicker ) {
               props.setAttributes( { kicker: newKicker } );
             }
           } ),
           el( RichText, {
-            tagName: 'font',
-            placeholder: 'Title',
+            tagName: 'strong',
             className: 'o-heading--l',
+            placeholder: 'Title',
             keepPlaceholderOnFocus: true,
-            isSelected: false,
             value: attributes.title,
             onChange: function( newTitle ) {
               props.setAttributes( { title: newTitle } );
@@ -67,16 +78,17 @@ import './editor.scss';
           } ),
           el( RichText, {
             tagName: 'p',
+            className: 'o-paragraph',
             placeholder: 'Body',
             keepPlaceholderOnFocus: true,
-            isSelected: false,
+            style: { textAlign: attributes.alignment },
             value: attributes.body,
             onChange: function( newBody ) {
               props.setAttributes( { body: newBody } );
             }
           } )
         )
-      );
+      ];
     },
 
     save: function( props ) {
@@ -96,7 +108,7 @@ import './editor.scss';
               </div>
             </div>
             <div className="c-block__body u-padding u-padding--zero--top u-spacing">
-              <p>{ attributes.body }</p>
+              <p style={ { textAlign: attributes.alignment } }>{ attributes.body }</p>
             </div>
           </div>
         </div>

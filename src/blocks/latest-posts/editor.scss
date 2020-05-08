@@ -7,10 +7,12 @@
 
 .wp-block-alps-gutenberg-blocks-latest-posts {
   list-style-type: none;
+  margin: 0 !important;
+  padding: 0 !important;
 
   li {
     list-style: none;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
 
     &::before {
       float: left;

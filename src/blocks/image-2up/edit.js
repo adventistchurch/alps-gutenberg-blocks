@@ -10,7 +10,7 @@ const { filter, pick, get } = lodash;
 const { Component, Fragment } = wp.element;
 const { __ } = wp.i18n;
 const {
-  IconButton,
+  Button,
   DropZone,
   FormFileUpload,
   PanelBody,
@@ -19,7 +19,6 @@ const {
   ToggleControl,
   Toolbar,
   withNotices,
-  Button,
 } = wp.components;
 const {
   RichText,
@@ -29,7 +28,7 @@ const {
   MediaPlaceholder,
   InspectorControls,
   editorMediaUpload,
-} = wp.editor;
+} = wp.blockEditor;
 
 /**
  * Internal dependencies
@@ -90,7 +89,7 @@ class TwoUpEdit extends Component {
     // WE USE LODASH'S 'GET' TO GO DEEPER TO GET THE PROVIDED LARGE SIZE URL
     let imageData = images.map( ( image ) => ({
       ..._.pick( image, [ 'alt', 'caption', 'id' ] ),
-      url: get( image, 'sizes.large.url' )
+      url: get( image, 'sizes["horiz__16x9--m"].url' )
     }));
 
     this.props.setAttributes( {
@@ -165,7 +164,7 @@ class TwoUpEdit extends Component {
               gallery
               value={ images.map( ( img ) => img.id ) }
               render={ ( { open } ) => (
-                <IconButton
+                <Button
                   className="components-toolbar__control"
                   label={ __( 'Edit Images' ) }
                   icon="edit"
@@ -229,18 +228,17 @@ class TwoUpEdit extends Component {
           addToGallery
           notices={ noticeUI }
           onError={ noticeOperations.createErrorNotice }
-          
           value={ images.map( ( img ) => img.id ) }
           render={ ( { open } ) => (
             <div onClick={ open }>
               <Button className="select-images-button is-button is-default is-large">
-                  Add / Edit Images
+                Add / Edit Images
               </Button>
               <p><small><em>Please note: you can only have two images set at any one time.</em></small></p>
             </div>
           ) }
         />
-        
+
       </Fragment>
     );
   }

@@ -3,3 +3,17 @@
  *
  * CSS for both Frontend+Backend.
  */
+
+.wp-block-alps-gutenberg-blocks-cta {
+  .u-theme--background-color--darker {
+    .c-cta-block__description a {
+      color: white;
+    }
+  }
+
+  .u-background-color--gray--light {
+    .c-cta-block__description a {
+      color: $c-black;
+    }
+  }
+}
