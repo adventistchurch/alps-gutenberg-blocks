@@ -9,10 +9,10 @@ import './editor.scss';
   var __ = wp.i18n.__;
   var el = element.createElement;
   var registerBlockType = wp.blocks.registerBlockType;
-  var RichText = wp.editor.RichText;
-  var InspectorControls = wp.editor.InspectorControls;
-  var BlockControls = wp.editor.BlockControls;
-  var MediaUpload = wp.editor.MediaUpload;
+  var RichText = wp.blockEditor.RichText;
+  var InspectorControls = wp.blockEditor.InspectorControls;
+  var BlockControls = wp.blockEditor.BlockControls;
+  var MediaUpload = wp.blockEditor.MediaUpload;
 
   registerBlockType( 'alps-gutenberg-blocks/image-breakout', {
     title: __('ALPS Image (Breakout)'),
@@ -56,9 +56,9 @@ import './editor.scss';
         } ),
         el( RichText, {
           tagName: 'p',
+          className: 'o-caption',
           placeholder: 'Caption',
           keepPlaceholderOnFocus: true,
-          isSelected: false,
           value: attributes.caption,
           onChange: function( newCaption ) {
             props.setAttributes( { caption: newCaption } );

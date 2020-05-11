@@ -9,10 +9,10 @@ import './editor.scss';
   var __ = wp.i18n.__;
   var el = element.createElement;
   var registerBlockType = wp.blocks.registerBlockType;
-  var RichText = wp.editor.RichText;
+  var RichText = wp.blockEditor.RichText;
   var TextControl = wp.components.TextControl;
-  var BlockControls = wp.editor.BlockControls;
-  var AlignmentToolbar = wp.editor.AlignmentToolbar;
+  var BlockControls = wp.blockEditor.BlockControls;
+  var AlignmentToolbar = wp.blockEditor.AlignmentToolbar;
 
   registerBlockType( 'alps-gutenberg-blocks/content-block', {
     title: __('ALPS Content Block'),
@@ -35,48 +35,58 @@ import './editor.scss';
       link: {
         type: 'url',
       },
+      alignment: {
+        type: 'string',
+      },
     },
 
     edit: function( props ) {
       var attributes = props.attributes;
 
+      function onChangeAlignment( newAlignment ) {
+        props.setAttributes( { alignment: newAlignment === undefined ? 'left' : newAlignment } );
+      }
+
       return [
-        el ( 'div', {
-          className: props.className,
-        },
-          el ( 'div', {},
-            el( RichText, {
-              tagName: 'strong',
-              value: attributes.title,
-              placeholder: 'Title',
-              keepPlaceholderOnFocus: true,
-              isSelected: false,
-              onChange: function( newTitle ) {
-                props.setAttributes( { title: newTitle } );
-              }
-            } ),
-            el( RichText, {
-              tagName: 'p',
-              value: attributes.body,
-              placeholder: 'Write a description...',
-              keepPlaceholderOnFocus: true,
-              isSelected: false,
-              onChange: function( newBody ) {
-                props.setAttributes( { body: newBody } );
-              }
-            } ),
-            el( TextControl, {
-              type: 'url',
-              label: __( 'Link Url' ),
-              value: attributes.link,
-              placeholder: 'http://',
-              keepPlaceholderOnFocus: true,
-              isSelected: false,
-              onChange: function( newLink ) {
-                props.setAttributes( { link: newLink } );
-              }
-            } ),
-          ),
+        el( BlockControls, { key: 'controls' },
+          el( AlignmentToolbar, {
+            value: attributes.alignment,
+            onChange: onChangeAlignment,
+          } )
+        ),
+        el ( 'div', { className: props.className },
+          el( RichText, {
+            tagName: 'strong',
+            className: 'o-heading--l',
+            placeholder: 'Title',
+            keepPlaceholderOnFocus: true,
+            value: attributes.title,
+            onChange: function( newTitle ) {
+              props.setAttributes( { title: newTitle } );
+            }
+          } ),
+          el( RichText, {
+            tagName: 'p',
+            className: 'o-paragraph',
+            placeholder: 'Write a description...',
+            keepPlaceholderOnFocus: true,
+            style: { textAlign: attributes.alignment },
+            value: attributes.body,
+            onChange: function( newBody ) {
+              props.setAttributes( { body: newBody } );
+            }
+          } ),
+          el( TextControl, {
+            type: 'url',
+            label: __( 'Link Url' ),
+            className: 'o-link',
+            placeholder: 'http://',
+            keepPlaceholderOnFocus: true,
+            value: attributes.link,
+            onChange: function( newLink ) {
+              props.setAttributes( { link: newLink } );
+            }
+          } ),
         )
       ];
     },
@@ -104,7 +114,7 @@ import './editor.scss';
         <div>
           <div className="c-block c-block__text u-theme--border-color--darker u-border--left u-spacing--half">
             {title}
-            <p className="c-block__body text">{ attributes.body }</p>
+            <p className="c-block__body text" style={ { textAlign: attributes.alignment } }>{ attributes.body }</p>
             {button}
           </div>
         </div>

@@ -9,9 +9,9 @@ import './editor.scss';
   var __ = wp.i18n.__;
   var el = element.createElement;
   var registerBlockType = wp.blocks.registerBlockType;
-  var RichText = wp.editor.RichText;
-  var AlignmentToolbar = wp.editor.AlignmentToolbar;
-  var BlockControls = wp.editor.BlockControls;
+  var RichText = wp.blockEditor.RichText;
+  var AlignmentToolbar = wp.blockEditor.AlignmentToolbar;
+  var BlockControls = wp.blockEditor.BlockControls;
 
   registerBlockType( 'alps-gutenberg-blocks/highlighted-paragraph', {
     title: __('ALPS Highlighted Paragraph'),
@@ -42,25 +42,19 @@ import './editor.scss';
       }
 
       return [
-        el(
-          BlockControls,
-          { key: 'controls' },
-          el(
-              AlignmentToolbar,
-              {
-                  value: attributes.alignment,
-                  onChange: onChangeAlignment,
-              }
-          )
+        el( BlockControls, { key: 'controls' },
+          el( AlignmentToolbar, {
+            value: attributes.alignment,
+            onChange: onChangeAlignment,
+          } )
         ),
-        el( 'div', {
-          className: props.className
-        },
+        el( 'div', { className: props.className },
           el( RichText, {
             tagName: 'p',
+            className: 'o-paragraph',
             placeholder: 'Content goes here...',
-            style: { textAlign: attributes.alignment },
             keepPlaceholderOnFocus: true,
+            style: { textAlign: attributes.alignment },
             value: attributes.content,
             onChange: onChangeContent,
           } )
@@ -71,17 +65,15 @@ import './editor.scss';
     save: function( props ) {
       var attributes = props.attributes;
       var paragraphClasses = [
-          'o-highlight',
-          'u-padding',
-          'u-background-color--gray--light',
-          'u-text-align--' + attributes.alignment,
-          'can-be--dark-dark',
+        'o-highlight',
+        'u-padding',
+        'u-background-color--gray--light',
+        'u-text-align--' + attributes.alignment,
+        'can-be--dark-dark',
       ];
 
       return (
-        el( 'div', {
-          className: props.className
-        },
+        el( 'div', { className: props.className },
           el( RichText.Content, {
             tagName: 'p',
             className: paragraphClasses.join(' '),

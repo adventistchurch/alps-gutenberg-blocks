@@ -12,7 +12,7 @@ import Edit, { defaultColumnsNumber } from './edit';
 const { __ } = wp.i18n;
 const el = wp.element.createElement;
 const { registerBlockType } = wp.blocks;
-const RichText = wp.editor.RichText;
+const RichText = wp.blockEditor.RichText;
 const editorMediaUpload = wp.editor.editorMediaUpload;
 const name = 'core/gallery';
 

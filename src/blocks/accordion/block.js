@@ -9,9 +9,10 @@ import './editor.scss';
   var __ = wp.i18n.__;
   var el = element.createElement;
   var registerBlockType = wp.blocks.registerBlockType;
-  var RichText = wp.editor.RichText;
-  var BlockControls = wp.editor.BlockControls;
-  var AlignmentToolbar = wp.editor.AlignmentToolbar;
+  var RichText = wp.blockEditor.RichText;
+  var BlockControls = wp.blockEditor.BlockControls;
+  var AlignmentToolbar = wp.blockEditor.AlignmentToolbar;
+  var TextControl = wp.components.TextControl;
 
   registerBlockType( 'alps-gutenberg-blocks/accordion', {
     title: __('ALPS Accordion'),
@@ -39,38 +40,33 @@ import './editor.scss';
     edit: function( props ) {
       var attributes = props.attributes;
 
+      function onChangeAlignment( newAlignment ) {
+        props.setAttributes( { alignment: newAlignment === undefined ? 'left' : newAlignment } );
+      }
+
       return [
         el( BlockControls, { key: 'controls' },
           el( AlignmentToolbar, {
-              value: attributes.alignment,
-              onChange: function( newAlignment ) {
-                props.setAttributes( { alignment: newAlignment } );
-              }
-            }
-          )
+            value: attributes.alignment,
+            onChange: onChangeAlignment,
+          } )
         ),
-        el( 'div', {
-          className: props.className
-        },
-          el( RichText, {
-            tagName: 'strong',
+        el( 'div', { className: props.className },
+          el( TextControl, {
             placeholder: 'Title',
-            className: 'o-heading--l',
             keepPlaceholderOnFocus: true,
-            isSelected: false,
             value: attributes.title,
             onChange: function( newTitle ) {
               props.setAttributes( { title: newTitle } );
             }
           } ),
           el( RichText, {
-            key: 'editable',
             tagName: 'p',
+            className: 'o-paragraph',
             placeholder: 'Body',
             keepPlaceholderOnFocus: true,
-            isSelected: false,
-            value: attributes.body,
             style: { textAlign: attributes.alignment },
+            value: attributes.body,
             onChange: function( newBody ) {
               props.setAttributes( { body: newBody } );
             }

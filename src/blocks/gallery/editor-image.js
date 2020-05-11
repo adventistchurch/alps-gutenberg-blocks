@@ -8,11 +8,11 @@ const classnames = require('classnames');
  * WordPress Dependencies
  */
 const { Component } = wp.element;
-const { IconButton, Spinner } = wp.components;
+const { Button, Spinner } = wp.components;
 const { __ } = wp.i18n;
 const { BACKSPACE, DELETE } = wp.keycodes;
 const { withSelect } = wp.data;
-const { RichText } = wp.editor;
+const { RichText } = wp.blockEditor;
 
 /**
  * Module constants
@@ -118,7 +118,7 @@ class GalleryImage extends Component {
       <figure className={ className } tabIndex="-1" onKeyDown={ this.onKeyDown } ref={ this.bindContainer }>
         { isSelected &&
           <div className="core-blocks-gallery-item__inline-menu">
-            <IconButton
+            <Button
               icon="no-alt"
               onClick={ onRemove }
               className="blocks-gallery-item__remove"
