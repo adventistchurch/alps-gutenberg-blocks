@@ -9,15 +9,16 @@
   background: $c-gray--light;
   color: $c-black;
   padding: $pad;
+  border-left: 1px solid $c-black;
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
 
-  .editor-rich-text:first-child {
-    padding-right: $pad/2;
+  .o-kicker {
+    margin-right: $pad / 2;
   }
 
-  .editor-rich-text:last-child {
+  p {
     flex: 100%;
     flex-grow: 2;
   }

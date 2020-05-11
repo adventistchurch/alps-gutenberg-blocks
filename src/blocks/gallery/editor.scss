@@ -8,33 +8,37 @@
 .wp-block-alps-gutenberg-blocks-gallery {
   list-style-type: none !important;
 
-  .blocks-gallery-item .editor-rich-text {
-    position: relative;
+  &.wp-block-gallery {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
   }
 
-  .blocks-gallery-item .is-selected {
-    border: 3px solid $c-gray;
-    outline: none;
-    outline-offset: 0;
+  .blocks-gallery-item {
+    width: 100%;
+    margin: 0;
 
-    .editor-rich-text {
-      width: 100%;
-      left: 0;
-      margin-top: 0;
-      background: #eee;
-      color: #333;
+    .is-selected {
+      border: 1px solid $c-gray;
+      border-radius: 3px;
+      outline: none;
+      outline-offset: 0;
+
+      .editor-rich-text {
+        width: 100%;
+        left: 0;
+        margin-top: 0;
+        background: #eee;
+        color: #333;
+      }
     }
-  }
-
- li.blocks-gallery-item.alps-gallery-item {
-    width: 100% !important;
-
   }
 
   li {
     border: 1px solid $c-gray--light;
-    margin: $space/2 0;
-    width: 100% !important;
+    margin: 0;
+    padding: 0;
   }
 
   figure {
@@ -48,25 +52,7 @@
   img {
     width: 100%;
     margin: 0 auto;
-    padding: $pad/2;
+    padding: 2px;
     display: block;
-  }
-
-
-  .core-blocks-gallery-item__inline-menu {
-    position: absolute;
-    width: 100%;
-    background: #fff; 
-    padding-top: 5px;
-  }
-
-  // TRYING TO OVERRIDE WP
-  .blocks-gallery-image figcaption, .blocks-gallery-item figcaption {
-    background: #eee;
-    color: #333;
-    width: 96%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: $pad/2;
   }
 }

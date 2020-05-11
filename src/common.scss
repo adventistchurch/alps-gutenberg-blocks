@@ -20,10 +20,10 @@ $c-white: #ffffff;
  * Default Spacing/Padding
  */
 
-$space: 1.25rem; // 20px
-$pad: 1.25rem; // 20px
+$space: 1.25rem;
+$pad: 1.25rem;
 
-.gutenberg-editor-page {
+.block-editor {
   .o-kicker {
     font-style: italic;
     font-weight: bold;
@@ -67,4 +67,21 @@ video,
 
 .wp-block-spacer {
   margin: 0 !important;
+}
+
+.components-button,
+figure.is-selected {
+  position: relative;
+}
+
+figure.is-selected .components-button.blocks-gallery-item__remove,
+.image-button .components-button.blocks-gallery-item__remove {
+  display: flex;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  z-index: 9;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: white;
 }

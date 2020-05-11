@@ -10,7 +10,7 @@ const { filter, pick, get } = lodash;
 const { Component, Fragment } = wp.element;
 const { __ } = wp.i18n;
 const {
-  IconButton,
+  Button,
   DropZone,
   FormFileUpload,
   PanelBody,
@@ -19,7 +19,6 @@ const {
   ToggleControl,
   Toolbar,
   withNotices,
-  Button,
 } = wp.components;
 const {
   RichText,
@@ -28,7 +27,7 @@ const {
   MediaUpload,
   MediaPlaceholder,
   InspectorControls,
-} = wp.editor;
+} = wp.blockEditor;
 
 /**
  * Internal dependencies
@@ -57,7 +56,7 @@ class GalleryEdit extends Component {
     this.onChangeTitle = this.onChangeTitle.bind( this );
     this.onRemoveImage = this.onRemoveImage.bind( this );
     this.setImageAttributes = this.setImageAttributes.bind( this );
-  
+
     this.state = {
       selectedImage: null,
     };
@@ -89,7 +88,7 @@ class GalleryEdit extends Component {
     // WE USE LODASH'S 'GET' TO GO DEEPER TO GET THE PROVIDED LARGE SIZE URL
     let imageData = images.map( ( image ) => ({
       ..._.pick( image, [ 'alt', 'caption', 'id' ] ),
-      url: get( image, 'sizes.large.url' )
+      url: get( image, 'sizes["horiz__16x9--m"].url' )
     }));
 
     this.props.setAttributes( {
@@ -145,7 +144,7 @@ class GalleryEdit extends Component {
               gallery
               value={ images.map( ( img ) => img.id ) }
               render={ ( { open } ) => (
-                <IconButton
+                <Button
                   className="components-toolbar__control"
                   label={ __( 'Edit Gallery' ) }
                   icon="edit"
@@ -220,7 +219,7 @@ class GalleryEdit extends Component {
           addToGallery
           notices={ noticeUI }
           onError={ noticeOperations.createErrorNotice }
-          
+
           value={ images.map( ( img ) => img.id ) }
           render={ ( { open } ) => (
             <div onClick={ open }>

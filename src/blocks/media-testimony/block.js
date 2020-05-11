@@ -67,12 +67,8 @@ import icons from '../../icons/icons.js'
       };
 
       return [
-        el( 'div', {
-          className: props.className
-        },
-          el( 'div', {
-            className: 'o-editor-block--left'
-          },
+        el( 'div', { className: props.className },
+          el( 'div', { className: 'o-editor-block--left' },
             el( RichText, {
               tagName: 'h4',
               placeholder: 'Enter Quote',
@@ -93,12 +89,8 @@ import icons from '../../icons/icons.js'
               }
             } ),
           ),
-          el( 'div', {
-            className: 'o-editor-block--right'
-          },
-            el( 'div', {
-              className: 'o-image--' + attributes.imageID + ' o-image'
-            },
+          el( 'div', { className: 'o-editor-block--right' },
+            el( 'div', { className: 'o-image--' + attributes.imageID + ' o-image' },
               el( MediaUpload, {
                 onSelect: onSelectImage,
                 type: 'image',

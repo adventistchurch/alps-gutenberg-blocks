@@ -4,18 +4,22 @@
 
 import './style.scss';
 import './editor.scss';
+import icons from '../../icons/icons.js'
 
 ( function( blocks, components, i18n, element ) {
   var __ = wp.i18n.__;
   var el = element.createElement;
   var registerBlockType = wp.blocks.registerBlockType;
-  var RichText = wp.editor.RichText;
+  var RichText = wp.blockEditor.RichText;
   var TextControl = wp.components.TextControl;
   var CheckboxControl = wp.components.CheckboxControl;
-  var InspectorControls = wp.editor.InspectorControls;
+  var InspectorControls = wp.blockEditor.InspectorControls;
   var ToggleControl = wp.components.ToggleControl;
-  var MediaUpload = wp.editor.MediaUpload;
-  var IconButton = wp.components.IconButton;
+  var MediaUpload = wp.blockEditor.MediaUpload;
+  var Button = wp.components.Button;
+  var BlockControls = wp.blockEditor.BlockControls;
+  var AlignmentToolbar = wp.blockEditor.AlignmentToolbar;
+  var { Icon } = wp.components;
 
   registerBlockType( 'alps-gutenberg-blocks/cta', {
     title: __('ALPS CTA'),
@@ -76,6 +80,9 @@ import './editor.scss';
         type: 'string',
         default: ' ',
       },
+      alignment: {
+        type: 'string',
+      },
     },
 
     edit: function( props ) {
@@ -118,31 +125,32 @@ import './editor.scss';
         }
       }
 
+      function onChangeAlignment( newAlignment ) {
+        props.setAttributes( { alignment: newAlignment === undefined ? 'left' : newAlignment } );
+      }
+
       return [
-        el(
-          InspectorControls, {
-            key: 'inspector'
-          },
-          el(
-            ToggleControl, {
-              label: 'Dark Background',
-              help: 'Makes the CTA background dark.',
-              checked: attributes.isDark,
-              onChange: updateBackgroundColor
-            }
-          ),
-          el(
-            ToggleControl, {
-              label: 'Background Image',
-              help: 'Sets the image as a background image.',
-              checked: attributes.hasBackgroundImage,
-              onChange: updateBackgroundImage
-            }
-          ),
+        el( InspectorControls, { key: 'inspector' },
+          el( ToggleControl, {
+            label: 'Dark Background',
+            help: 'Makes the CTA background dark.',
+            checked: attributes.isDark,
+            onChange: updateBackgroundColor
+          } ),
+          el( ToggleControl, {
+            label: 'Background Image',
+            help: 'Sets the image as a background image.',
+            checked: attributes.hasBackgroundImage,
+            onChange: updateBackgroundImage
+          } ),
         ),
-        el( 'div', {
-          className: props.className
-        },
+        el( BlockControls, { key: 'controls' },
+          el( AlignmentToolbar, {
+            value: attributes.alignment,
+            onChange: onChangeAlignment,
+          } )
+        ),
+        el( 'div', { className: props.className },
           el( MediaUpload, {
             onSelect: onSelectImage,
             type: 'image',
@@ -153,10 +161,8 @@ import './editor.scss';
                 onClick: ! attributes.imageId ? obj.open : obj.close
                 },
                 ! attributes.imageId ? __( 'Upload Image' ) :
-                el( 'div', {
-                  className: 'o-image--edit',
-                },
-                  el( IconButton, {
+                el( 'div', { className: 'o-image--edit', },
+                  el( Button, {
                     icon: 'no-alt',
                     onClick: onRemoveImage,
                     className: 'blocks-gallery-item__remove',
@@ -174,7 +180,6 @@ import './editor.scss';
             placeholder: 'Title',
             className: 'o-heading--l',
             keepPlaceholderOnFocus: true,
-            isSelected: false,
             value: attributes.title,
             onChange: function( newTitle ) {
               props.setAttributes( { title: newTitle } );
@@ -185,33 +190,29 @@ import './editor.scss';
             placeholder: 'Description',
             className: 'o-description',
             keepPlaceholderOnFocus: true,
-            isSelected: false,
+            style: { textAlign: attributes.alignment },
             value: attributes.description,
             onChange: function( newDescription ) {
               props.setAttributes( { description: newDescription } );
             }
           } ),
-          el ( 'div', {
-            className: 'o-buttons',
-          },
-            el ( 'div', {
-              className: 'o-button--1',
-            },
+          el ( 'div', { className: 'o-buttons', },
+            el ( 'div', { className: 'o-button--1', },
               el( TextControl, {
                 type: 'url',
                 label: __( 'Button 1 Url' ),
                 value: attributes.button1Url,
                 placeholder: 'http://',
                 keepPlaceholderOnFocus: true,
-                isSelected: false,
                 onChange: function( newButton1Url ) {
                   props.setAttributes( { button1Url: newButton1Url } );
                 }
               } ),
               el( TextControl, {
                 label: __( 'Button 1 Text' ),
+                placeholder: 'Learn more',
+                keepPlaceholderOnFocus: true,
                 value: attributes.button1Text,
-                isSelected: false,
                 onChange: function( newButton1Text ) {
                   props.setAttributes( { button1Text: newButton1Text } );
                 }
@@ -224,24 +225,22 @@ import './editor.scss';
                 }
               } ),
             ),
-            el ( 'div', {
-              className: 'o-button--2',
-            },
+            el ( 'div', { className: 'o-button--2', },
               el( TextControl, {
                 type: 'url',
                 label: __( 'Button 2 Url' ),
                 value: attributes.button2Url,
                 placeholder: 'http://',
                 keepPlaceholderOnFocus: true,
-                isSelected: false,
                 onChange: function( newButton2Url ) {
                   props.setAttributes( { button2Url: newButton2Url } );
                 }
               } ),
               el( TextControl, {
                 label: __( 'Button 2 Text' ),
+                placeholder: 'Learn more',
+                keepPlaceholderOnFocus: true,
                 value: attributes.button2Text,
-                isSelected: false,
                 onChange: function( newButton2Text ) {
                   props.setAttributes( { button2Text: newButton2Text } );
                 }
@@ -291,7 +290,7 @@ import './editor.scss';
       }
 
       if ( attributes.description != "" && attributes.description.length > 0 ) {
-        var description = <p class={ 'c-cta-block__description c-block__description u-font--secondary' + descriptionClass }>{ attributes.description }</p>;
+        var description = <p class={ 'c-cta-block__description c-block__description u-font--secondary' + descriptionClass } style={ { textAlign: attributes.alignment } }>{ attributes.description }</p>;
       } else {
         var description = attributes.description;
       }
@@ -299,13 +298,13 @@ import './editor.scss';
       if ( attributes.button1Url || attributes.button2Url ) {
         if ( attributes.button1Url ) {
           var target1 = attributes.button1NewWindow ? '_blank' : '_self';
-          var button1 = <a href={ attributes.button1Url } class="c-block__button o-button o-button--outline" target={ target1 }>{ attributes.button1Text }<span class="u-icon u-icon--m u-path-fill--base u-space--half--left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M18.29,8.59l-3.5-3.5L13.38,6.5,15.88,9H.29v2H15.88l-2.5,2.5,1.41,1.41,3.5-3.5L19.71,10Z" fill="#9b9b9b"/></svg></span></a>;
+          var button1 = <a href={ attributes.button1Url } class="c-block__button o-button o-button--outline" target={ target1 } rel="noopener noreferrer">{ attributes.button1Text }<span class="u-icon u-icon--m u-path-fill--base u-space--half--left"><Icon className="icon" icon={ icons.arrowLong } /></span></a>;
         } else {
           var button1 = '';
         }
         if ( attributes.button2Url ) {
           var target2 = attributes.button2NewWindow ? '_blank' : '_self';
-          var button2 = <a href={ attributes.button2Url } class="c-block__button o-button o-button--simple" target={ target2 }>{ attributes.button2Text }</a>;
+          var button2 = <a href={ attributes.button2Url } class="c-block__button o-button o-button--simple" target={ target2 } rel="noopener noreferrer">{ attributes.button2Text }</a>;
         } else {
           var button2 = '';
         }

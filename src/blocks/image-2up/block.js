@@ -55,7 +55,7 @@ wp.blocks.registerBlockType( 'alps-gutenberg-blocks/image-2up', {
   save: function( { attributes } ) {
     return (
       <div>
-        <section className="l-grid l-grid--7-col l-grid-wrap l-grid-wrap--6-of-7 u-shift--left--1-col--standard">
+        <section className="l-grid l-grid--7-col l-grid-wrap l-grid-wrap--6-of-7">
           { attributes.images.map( ( image ) =>
             <div className="l-grid-item--m--3-col u-padding--zero--left">
               <figure key={ image.id || image.url } className="o-figure">

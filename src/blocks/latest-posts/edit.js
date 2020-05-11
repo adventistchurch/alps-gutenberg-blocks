@@ -27,7 +27,7 @@ const { decodeEntities } = wp.htmlEntities;
 const {
 	InspectorControls,
 	BlockControls,
-} = wp.editor;
+} = wp.blockEditor;
 const { withSelect } = wp.data;
 
 /**

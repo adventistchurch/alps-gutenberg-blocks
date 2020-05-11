@@ -5,8 +5,14 @@
  * which makes it higher in priority.
  */
 
+.editor-styles-wrapper ul.wp-block-alps-gutenberg-blocks-image-2up {
+  margin: 0;
+  padding: 0;
+}
+
 .wp-block-alps-gutenberg-blocks-image-2up {
   margin: 0;
+  padding: 0;
   list-style-type: none !important;
   display: flex;
 
@@ -25,7 +31,8 @@
   }
 
   .blocks-gallery-item .is-selected {
-    border: 3px solid $c-black;
+    border: 1px solid $c-black;
+    border-radius: 3px;
     outline: none;
     outline-offset: 0;
 
@@ -38,7 +45,7 @@
 
   li {
     border: 1px solid $c-gray--light;
-    margin: $space/2 0;
+    margin: ($space / 2) 0;
   }
 
   figure {
@@ -48,12 +55,12 @@
 
   img {
     margin: 0 auto;
-    padding: $pad/2;
+    padding: 2px;
     display: block;
   }
 
   figcaption {
-    background-color: $c-gray--light;
-    padding: $pad/2;
+    padding: $pad / 2;
+    text-align: left;
   }
 }
