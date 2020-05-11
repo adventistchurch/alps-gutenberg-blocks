@@ -1,4 +1,8 @@
 {
+
+  "1.4.1" : {
+    "description" : "Cleanup of the blocks to improve their usage: Interface, copy/paste, and adding limited text styling."
+  },
   "1.4.0" : {
     "description" : "Added the Media Testimonies Gutenberg Block. "
   },

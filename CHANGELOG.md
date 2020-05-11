@@ -2,7 +2,11 @@
 A record of the changes made to `ALPS Gutenberg Blocks`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+and this project a
+
+##[1.4.1]
+### Fixed
+- Cleanup of the blocks to improve their usage: Interface, copy/paste, and adding limited text styling. [#28](https://github.com/adventistchurch/alps-gutenberg-blocks/pull/28)
 
 ##[1.4.0]
 ### Added
