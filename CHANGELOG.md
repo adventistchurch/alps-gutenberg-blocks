@@ -1,8 +1,11 @@
 # Changelog
 A record of the changes made to `ALPS Gutenberg Blocks`.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project a
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+##[1.4.2]
+### Fixed
+- Fixed a bug with the `image-2up` block not spacing right on the Sabbath columns. [#29](https://github.com/adventistchurch/alps-gutenberg-blocks/issues/29)
 
 ##[1.4.1]
 ### Fixed

@@ -1,5 +1,8 @@
 {
 
+  "1.4.2" : {
+    "description" : "Fixed a bug with the `image-2up` block not spacing right on the Sabbath columns."
+  },
   "1.4.1" : {
     "description" : "Cleanup of the blocks to improve their usage: Interface, copy/paste, and adding limited text styling."
   },

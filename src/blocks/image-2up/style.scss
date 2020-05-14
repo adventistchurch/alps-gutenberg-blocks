@@ -8,6 +8,12 @@
   @media (min-width: 700px) {
     margin-left: calc((100vw / 7) * -1);
   }
+  @media (min-width: 901px) {
+    margin-left: 0;
+  }
+  @media (min-width: 1301px) {
+    margin-left: calc((100vw / 7) * -1);
+  }
 }
 
 body.hide-sabbath .wp-block-alps-gutenberg-blocks-image-2up {
@@ -16,16 +22,13 @@ body.hide-sabbath .wp-block-alps-gutenberg-blocks-image-2up {
       width: 50%;
     }
   }
-
-  @media (min-width: 500px) {
-    margin-left: calc((100vw / 7) * -1);
-  }
+  margin-left: calc((100vw / 7) * -1);
 
   @media (min-width: 700px) {
     margin-left: 0;
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 1301px) {
     margin-left: calc((100vw / 7) * -1);
   }
 }

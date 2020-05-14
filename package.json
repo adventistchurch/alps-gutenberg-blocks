@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@wordpress/block-editor": "^3.7.7",
-    "cgb-scripts": "1.9.7"
+    "cgb-scripts": "^1.9.7"
   },
   "devDependencies": {
     "classnames": "^2.2.6",
