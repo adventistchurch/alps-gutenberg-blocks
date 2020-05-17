@@ -1,5 +1,7 @@
 {
-
+  "1.4.3" : {
+    "description" : "Fixing a versioning error."
+  },
   "1.4.2" : {
     "description" : "Fixed a bug with the `image-2up` block not spacing right on the Sabbath columns."
   },
