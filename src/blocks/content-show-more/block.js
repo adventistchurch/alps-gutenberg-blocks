@@ -9,8 +9,10 @@ import './editor.scss';
   var __ = wp.i18n.__;
   var el = element.createElement;
   var registerBlockType = wp.blocks.registerBlockType;
-  var RichText = wp.editor.RichText;
-  var MediaUpload = wp.editor.MediaUpload;
+  var RichText = wp.blockEditor.RichText;
+  var MediaUpload = wp.blockEditor.MediaUpload;
+  var BlockControls = wp.blockEditor.BlockControls;
+  var AlignmentToolbar = wp.blockEditor.AlignmentToolbar;
 
   registerBlockType( 'alps-gutenberg-blocks/content-show-more', {
     title: __('ALPS Content Show More'),
@@ -44,6 +46,9 @@ import './editor.scss';
         attribute: 'src',
         selector: 'img',
       },
+      alignment: {
+        type: 'string',
+      },
     },
 
     edit: function( props ) {
@@ -51,18 +56,24 @@ import './editor.scss';
 
       var onSelectImage = function( media ) {
         return props.setAttributes( {
-          imageURL: media.url,
+          imageURL: media.sizes.thumbnail.url,
           imageID: media.id,
         } );
       };
 
-      return (
-        el( 'div', {
-          className: props.className
-        },
-          el( 'div', {
-            className: 'o-image--' + attributes.imageID + ' o-image'
-          },
+      function onChangeAlignment( newAlignment ) {
+        props.setAttributes( { alignment: newAlignment === undefined ? 'left' : newAlignment } );
+      }
+
+      return [
+        el( BlockControls, { key: 'controls' },
+          el( AlignmentToolbar, {
+            value: attributes.alignment,
+            onChange: onChangeAlignment,
+          } )
+        ),
+        el( 'div', { className: props.className },
+          el( 'div', {   className: 'o-image--' + attributes.imageID + ' o-image' },
             el( MediaUpload, {
               onSelect: onSelectImage,
               type: 'image',
@@ -79,10 +90,9 @@ import './editor.scss';
           ),
           el( RichText, {
             tagName: 'strong',
-            placeholder: 'Title',
             className: 'o-heading--l',
+            placeholder: 'Title',
             keepPlaceholderOnFocus: true,
-            isSelected: false,
             value: attributes.title,
             onChange: function( newTitle ) {
               props.setAttributes( { title: newTitle } );
@@ -93,7 +103,7 @@ import './editor.scss';
             className: 'o-description',
             placeholder: 'Description',
             keepPlaceholderOnFocus: true,
-            isSelected: false,
+            style: { textAlign: attributes.alignment },
             value: attributes.description,
             onChange: function( newDescription ) {
               props.setAttributes( { description: newDescription } );
@@ -104,14 +114,14 @@ import './editor.scss';
             className: 'o-paragraph',
             placeholder: 'Body (Display on click of show more button)',
             keepPlaceholderOnFocus: true,
-            isSelected: false,
+            style: { textAlign: attributes.alignment },
             value: attributes.body,
             onChange: function( newBody ) {
               props.setAttributes( { body: newBody } );
             }
           } )
         )
-      );
+      ];
     },
 
     save: function( props ) {
@@ -129,9 +139,9 @@ import './editor.scss';
             <h3 className="u-theme--color--darker u-font--primary--m">
               <strong>{ attributes.title }</strong>
             </h3>
-            <p className="c-block__body text o-description">{ attributes.description }</p>
+            <p className="c-block__body text o-description" style={ { textAlign: attributes.alignment } }>{ attributes.description }</p>
             <div className="c-block__content">
-              <p className="o-paragraph">{ attributes.body }</p>
+              <p className="o-paragraph" style={ { textAlign: attributes.alignment } }>{ attributes.body }</p>
             </div>
             <a className="o-button o-button--outline o-button--expand js-toggle-parent"></a>
           </div>

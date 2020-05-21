@@ -4,29 +4,27 @@
  * CSS for both Frontend+Backend.
  */
 
-figure.wp-block-image img {
-  width: 100%;
-  height: auto;
-}
-
 .wp-block-alps-gutenberg-blocks-image-breakout {
   @media (min-width: 700px) {
-    margin-left: calc(100vw/7 * -1);
+    margin-left: calc((100vw / 7) * -1);
   }
 }
 
-.has-sidebar .wp-block-alps-gutenberg-blocks-image-breakout {
-  margin-left: 0;
-
-  @media (min-width: 700px) {
-    margin-left: calc(100vw/7 * -1);
+body.hide-sabbath .wp-block-alps-gutenberg-blocks-image-breakout {
+  @media (min-width: 500px) {
+    margin-left: calc((100vw / 7) * -1);
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 700px) {
     margin-left: 0;
   }
 
-  @media (min-width: 1300px) {
-    margin-left: calc(100vw/7 * -1);
+  @media (min-width: 900px) {
+    margin-left: calc((100vw / 7) * -1);
   }
+}
+
+figure.wp-block-image img {
+  width: 100%;
+  height: auto;
 }

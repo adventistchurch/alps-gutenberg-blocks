@@ -1,10 +1,23 @@
 # Changelog
 A record of the changes made to `ALPS Gutenberg Blocks`.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+##[1.4.3]
+### Fixed
+- Fixed version numbering.
 
+##[1.4.2]
+### Fixed
+- Fixed a bug with the `image-2up` block not spacing right on the Sabbath columns. [#29](https://github.com/adventistchurch/alps-gutenberg-blocks/issues/29)
+
+##[1.4.1]
+### Fixed
+- Cleanup of the blocks to improve their usage: Interface, copy/paste, and adding limited text styling. [#28](https://github.com/adventistchurch/alps-gutenberg-blocks/pull/28)
+
+##[1.4.0]
+### Added
+- Added the Media Testimonies Gutenberg Block. [#23](https://github.com/adventistchurch/alps-gutenberg-blocks/issues/23)
 
 ##[1.3.8]
 ### Fixed

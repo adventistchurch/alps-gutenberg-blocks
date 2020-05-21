@@ -9,8 +9,8 @@ import './editor.scss';
   var __ = wp.i18n.__;
   var el = element.createElement;
   var registerBlockType = wp.blocks.registerBlockType;
-  var RichText = wp.editor.RichText;
-  var InspectorControls = wp.editor.InspectorControls;
+  var RichText = wp.blockEditor.RichText;
+  var InspectorControls = wp.blockEditor.InspectorControls;
   var ToggleControl = wp.components.ToggleControl;
 
   registerBlockType( 'alps-gutenberg-blocks/blockquote', {
@@ -55,10 +55,7 @@ import './editor.scss';
       }
 
       return [
-        el(
-          InspectorControls, {
-            key: 'inspector'
-          },
+        el( InspectorControls, { key: 'inspector' },
           el(
             ToggleControl, {
               label: 'Extend Quote',
@@ -76,15 +73,13 @@ import './editor.scss';
             }
           ),
         ),
-        el ( 'blockquote', {
-          className: props.className,
-        },
+        el ( 'blockquote', { className: props.className },
           el ( 'blockquote', {},
             el( RichText, {
               tagName: 'p',
+              className: 'o-paragraph',
               placeholder: 'Write a quote...',
               keepPlaceholderOnFocus: true,
-              isSelected: false,
               value: attributes.body,
               onChange: function( newBody ) {
                 props.setAttributes( { body: newBody } );
@@ -92,9 +87,9 @@ import './editor.scss';
             } ),
             el( RichText, {
               tagName: 'cite',
+              className: 'o-citation',
               placeholder: 'Citation',
               keepPlaceholderOnFocus: true,
-              isSelected: false,
               value: attributes.citation,
               onChange: function( newCitation ) {
                 props.setAttributes( { citation: newCitation } );
