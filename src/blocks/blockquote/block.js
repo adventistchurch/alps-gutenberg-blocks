@@ -34,6 +34,10 @@ import './editor.scss';
         type: 'string',
         default: '',
       },
+      isStrong: {
+        type: 'boolean',
+        default: false,
+      },
     },
 
     edit: function( props ) {
@@ -45,6 +49,9 @@ import './editor.scss';
         } else {
           props.setAttributes( { applyStyles: 'o-pullquote--extended' } );
         }
+      }
+      function setStrong() {
+        props.setAttributes( { isStrong: !attributes.isStrong } );
       }
 
       return [
@@ -58,6 +65,14 @@ import './editor.scss';
               help: 'Extends the quote outside the page content.',
               checked: attributes.applyStyles,
               onChange: updateStyles
+            }
+          ),
+          el(
+            ToggleControl, {
+              label: 'Strong Quote',
+              help: 'Set strong style for the quote content.',
+              checked: attributes.isStrong,
+              onChange: setStrong
             }
           ),
         ),
@@ -92,9 +107,19 @@ import './editor.scss';
 
     save: function( props ) {
       var attributes = props.attributes;
+      var classes = [
+        'pullquote',
+        'u-theme--border-color--darker--left',
+        'u-theme--color--darker',
+        'u-padding--right',
+        attributes.applyStyles,
+      ];
+      if (attributes.isStrong) {
+        classes.push('o-pullquote--strong');
+      }
 
       return (
-        <blockquote className={ 'pullquote u-theme--border-color--darker--left u-theme--color--darker u-padding--right ' + attributes.applyStyles }>
+        <blockquote className={ classes.join(' ') }>
           <p className="o-paragraph">{ attributes.body }</p>
           <cite className="o-citation u-theme--color--base">{ attributes.citation }</cite>
         </blockquote>
