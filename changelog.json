@@ -1,4 +1,7 @@
 {
+  "1.4.4" : {
+    "description" : "Fixed the Image 2up block on singe post and page."
+  },
   "1.4.3" : {
     "description" : "Fixing a versioning error."
   },
