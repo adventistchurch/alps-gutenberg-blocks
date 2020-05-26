@@ -4,6 +4,11 @@ A record of the changes made to `ALPS Gutenberg Blocks`.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+
+##[1.5.0]
+### Added
+- Add the "Strong" property to the ALPS Blockquote block. [#340](https://github.com/adventistchurch/alps-wordpress/issues/340)
+
 ##[1.4.4]
 ### Fixed
 - Fixed the Image 2up block on singe post and page.
