@@ -23,6 +23,20 @@ registerBlockType( 'alps-gutenberg-blocks/latest-posts', {
 	supports: {
 		html: false,
 	},
+	attributes: {
+		title: {
+			type: 'string',
+			default: 'News',
+		},
+		linkLabel: {
+			type: 'string',
+			default: 'See All',
+		},
+		linkUrl: {
+			type: 'string',
+			default: '',
+		},
+	},
 
 	edit,
 
