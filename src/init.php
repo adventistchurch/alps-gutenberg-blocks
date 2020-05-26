@@ -389,8 +389,6 @@ HTML;
 		$class .= ' ' . $attributes['className'];
 	}
 
-	// Set block heading
-
 	if (isset($attributes['postLayout']) && 'grid' === $attributes['postLayout']) {
 		// If is grid
 		$class .= ' is-grid l-section__block-row l-section__block-row--6-col';
