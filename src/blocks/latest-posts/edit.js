@@ -18,6 +18,7 @@ const {
 	Spinner,
 	ToggleControl,
 	Toolbar,
+	TextControl,
 } = wp.components;
 const apiFetch = wp.apiFetch;
 const { addQueryArgs } = wp.url;
@@ -27,6 +28,7 @@ const { decodeEntities } = wp.htmlEntities;
 const {
 	InspectorControls,
 	BlockControls,
+	RichText,
 } = wp.blockEditor;
 const { withSelect } = wp.data;
 
@@ -247,6 +249,29 @@ class LatestPostsEdit extends Component {
 				<BlockControls>
 					<Toolbar controls={ layoutControls } />
 				</BlockControls>
+				<div className="c-block__heading u-theme--border-color--darker">
+					<RichText
+						tagName="h3"
+						className="c-block__heading-title u-theme--color--darker"
+						value={ attributes.title }
+						formattingControls={ [] }
+						onChange={ (title) => setAttributes({ title }) }
+					/>
+					<RichText
+						tagName="a"
+						className="c-block__heading-link u-theme--color--base u-theme--link-hover--dark"
+						value={ attributes.linkLabel }
+						formattingControls={ [] }
+						onChange={ (linkLabel) => setAttributes({ linkLabel }) }
+					/>
+					<TextControl
+						label="See All URL"
+						placeholder="Enter url here"
+						keepPlaceholderOnFocus={ true }
+						value={ attributes.linkUrl }
+						onChange={ (linkUrl) => setAttributes({ linkUrl }) }
+					/>
+				</div>
 				<ul
 					className={ classnames( this.props.className, {
 						'l-grid l-grid--3-col': postLayout === 'grid',

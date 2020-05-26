@@ -119,6 +119,21 @@ function alps_gutenberg_blocks_render_block_latest_post($attributes) {
 	$theme_options = get_option('alps_theme_settings');
   $hide_sidebar = $theme_options['index_hide_sidebar'];
 
+  // Set block heading
+    $headingTitle = $attributes['title'];
+    $headingLinkLabel = $attributes['linkLabel'];
+    $headingLinkUrl = $attributes['linkUrl'];
+
+    if ($headingTitle) {
+        $list_items_markup .= <<<HTML
+<div class="c-block__heading u-theme--border-color--darker">
+  <h3 class="c-block__heading-title u-theme--color--darker">$headingTitle</h3>
+  <a href="$headingLinkUrl" class="c-block__heading-link u-theme--color--base u-theme--link-hover--dark" style="border-bottom: 0">$headingLinkLabel</a>
+</div>
+HTML;
+
+    }
+
 	foreach ($recent_posts as $post) {
 		$post_id = $post['ID'];
 		$title = get_the_title($post_id);
@@ -373,6 +388,8 @@ function alps_gutenberg_blocks_render_block_latest_post($attributes) {
 	if (isset($attributes['className'])) {
 		$class .= ' ' . $attributes['className'];
 	}
+
+	// Set block heading
 
 	if (isset($attributes['postLayout']) && 'grid' === $attributes['postLayout']) {
 		// If is grid
