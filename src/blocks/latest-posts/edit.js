@@ -253,6 +253,7 @@ class LatestPostsEdit extends Component {
 					<RichText
 						tagName="h3"
 						className="c-block__heading-title u-theme--color--darker"
+						placeholder="Enter a block title"
 						value={ attributes.title }
 						formattingControls={ [] }
 						onChange={ (title) => setAttributes({ title }) }
@@ -260,6 +261,7 @@ class LatestPostsEdit extends Component {
 					<RichText
 						tagName="a"
 						className="c-block__heading-link u-theme--color--base u-theme--link-hover--dark"
+						placeholder="Enter a link label"
 						value={ attributes.linkLabel }
 						formattingControls={ [] }
 						onChange={ (linkLabel) => setAttributes({ linkLabel }) }

@@ -26,11 +26,11 @@ registerBlockType( 'alps-gutenberg-blocks/latest-posts', {
 	attributes: {
 		title: {
 			type: 'string',
-			default: 'News',
+			default: '',
 		},
 		linkLabel: {
 			type: 'string',
-			default: 'See All',
+			default: '',
 		},
 		linkUrl: {
 			type: 'string',
