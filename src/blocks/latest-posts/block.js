@@ -24,6 +24,52 @@ registerBlockType( 'alps-gutenberg-blocks/latest-posts', {
 		html: false,
 	},
 	attributes: {
+		categories: {
+			type: 'string',
+		},
+		tags: {
+			type: 'string',
+		},
+		postsToShow: {
+			type: 'number',
+			default: 4,
+		},
+		hideExcerpt: {
+			type: 'boolean',
+			default: false,
+		},
+		hidePostDate: {
+			type: 'boolean',
+			default: false,
+		},
+		hideCategoryName: {
+			type: 'boolean',
+			default: false,
+		},
+		hideButton: {
+			type: 'boolean',
+			default: false,
+		},
+		hideImage: {
+			type: 'boolean',
+			default: false,
+		},
+		alignRight: {
+			type: 'boolean',
+			default: false,
+		},
+		postLayout: {
+			type: 'string',
+			default: 'list',
+		},
+		order: {
+			type: 'string',
+			default: 'desc',
+		},
+		orderBy: {
+			type: 'string',
+			default: 'date',
+		},
 		title: {
 			type: 'string',
 			default: '',

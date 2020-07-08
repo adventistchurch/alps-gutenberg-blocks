@@ -430,60 +430,72 @@ function register_block_alps_latest_posts() {
 	);
 	register_block_type(
 		'alps-gutenberg-blocks/latest-posts',
-		array(
-			'attributes'      => array(
-				'categories'      => array(
-					'type' => 'string',
-				),
-				'tags'      => array(
-					'type' => 'string',
-				),
-				'className'       => array(
-					'type' => 'string',
-				),
-				'postsToShow'     => array(
-					'type'    => 'number',
-					'default' => 4,
-				),
-				'hideExcerpt' => array(
-					'type'    => 'boolean',
-					'default' => false,
-				),
-				'hidePostDate' => array(
-					'type'    => 'boolean',
-					'default' => false,
-				),
-				'hideCategoryName' => array(
-					'type'    => 'boolean',
-					'default' => false,
-				),
-				'hideButton' => array(
-					'type'    => 'boolean',
-					'default' => false,
-				),
-				'hideImage' => array(
-					'type'    => 'boolean',
-					'default' => false,
-				),
-				'alignRight' => array(
-					'type'    => 'boolean',
-					'default' => false,
-				),
-				'postLayout'      => array(
-					'type'    => 'string',
-					'default' => 'list',
-				),
-				'order'           => array(
-					'type'    => 'string',
-					'default' => 'desc',
-				),
-				'orderBy'         => array(
-					'type'    => 'string',
-					'default' => 'date',
-				),
-			),
-			'render_callback' => 'alps_gutenberg_blocks_render_block_latest_post',
-		)
+		[
+            'attributes' => [
+                'categories' => [
+                    'type' => 'string',
+                ],
+                'tags' => [
+                    'type' => 'string',
+                ],
+                'className' => [
+                    'type' => 'string',
+                ],
+                'postsToShow' => [
+                    'type'    => 'number',
+                    'default' => 4,
+                ],
+                'hideExcerpt' => [
+                    'type'    => 'boolean',
+                    'default' => false,
+                ],
+                'hidePostDate' => [
+                    'type'    => 'boolean',
+                    'default' => false,
+                ],
+                'hideCategoryName' => [
+                    'type'    => 'boolean',
+                    'default' => false,
+                ],
+                'hideButton' => [
+                    'type'    => 'boolean',
+                    'default' => false,
+                ],
+                'hideImage' => [
+                    'type'    => 'boolean',
+                    'default' => false,
+                ],
+                'alignRight' => [
+                    'type'    => 'boolean',
+                    'default' => false,
+                ],
+                'postLayout' => [
+                    'type'    => 'string',
+                    'default' => 'list',
+                ],
+                'order' => [
+                    'type'    => 'string',
+                    'default' => 'desc',
+                ],
+                'orderBy' => [
+                    'type'    => 'string',
+                    'default' => 'date',
+                ],
+                'title' => [
+                    'type' => 'string',
+                    'default' => '',
+                ],
+                'linkLabel' => [
+                    'type' => 'string',
+                    'default' => '',
+                ],
+                'linkUrl' => [
+                    'type' => 'string',
+                    'default' => '',
+                ],
+            ],
+            'render_callback' => 'alps_gutenberg_blocks_render_block_latest_post',
+		]
 	);
 }
 
