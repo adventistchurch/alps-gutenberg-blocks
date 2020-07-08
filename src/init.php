@@ -223,7 +223,7 @@ HTML;
 				}
 				$block_img_wrap_class = NULL;
 				$block_group_class = "u-flex--justify-start";
-				$block_title_class = "u-theme--color--darker u-font--primary--l";
+				$block_title_class = "u-theme--color--darker u-font--primary--m";
 				$block_meta_class = "u-theme--color--base";
 			}
 		} else {
@@ -268,7 +268,7 @@ HTML;
 				}
 				$block_img_wrap_class = NULL;
 				$block_group_class = "u-flex--justify-start";
-				$block_title_class = "u-theme--color--darker u-font--primary--l";
+				$block_title_class = "u-theme--color--darker u-font--primary--m";
 				$block_meta_class = "u-theme--color--base";
 			}
 		}

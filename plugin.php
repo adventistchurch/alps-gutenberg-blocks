@@ -1,7 +1,7 @@
 <?php
 /**
  * @package alps-gutenberg-blocks
- * @version 1.5.0
+ * @version 1.5.1
  */
 /**
  * Plugin Name: ALPS Gutenberg Blocks
@@ -9,7 +9,7 @@
  * Description: Creates custom blocks in Gutenberg specific to the ALPS v3 theme.
  * Author: Seventh-day Adventist Church and SouthLeft
  * Author URI: https://adventist.io/themes
- * Version: 1.5.0
+ * Version: 1.5.1
  */
 
 // Exit if accessed directly.
