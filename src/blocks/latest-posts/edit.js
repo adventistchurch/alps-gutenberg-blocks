@@ -38,10 +38,10 @@ const { withSelect } = wp.data;
 // per_page CAN ONLY GO AS HIGH AS 100 WITHOUT REQUIRING A CUSTOM END POINT
 // PASSING -1 GENERATES AN ERROR
 const CATEGORIES_LIST_QUERY = {
-	per_page: 100,
+	per_page: 999,
 };
 const TAGS_LIST_QUERY = {
-	per_page: 100,
+	per_page: 999,
 }
 const MAX_POSTS_COLUMNS = 3;
 
