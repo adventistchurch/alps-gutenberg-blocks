@@ -421,13 +421,18 @@ HTML;
  * Registers the `core/latest-posts` block on server.
  */
 function register_block_alps_latest_posts() {
+//    load_plugin_textdomain( 'alps-gutenberg-blocks', false,  plugin_dir_path( __FILE__ ) . '../languages' );
+    // TODO move enqueue sccripts to separate function
 	wp_enqueue_script(
-		'gutenberg-blocks-block-js', // Handle.
+		'alps-gb', // Handle.
 		plugins_url('/dist/blocks.build.js', dirname(__FILE__)), // Block.build.js: We register the block here. Built with Webpack.
-		array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-data'), // Dependencies, defined above.
-		// filemtime(plugin_dir_path(__DIR__) . 'dist/blocks.build.js'), // Version: filemtime — Gets file modification time.
+		['wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-data'], // Dependencies, defined above.
+		'1.5.1', // Version: filemtime — Gets file modification time.
 		true // Enqueue the script in the footer.
 	);
+	// TODO move i18n init to separate function
+    wp_set_script_translations('alps-gb', 'alps-gutenberg-blocks',plugin_dir_path( __FILE__ ) . '../languages' );
+
 	register_block_type(
 		'alps-gutenberg-blocks/latest-posts',
 		[

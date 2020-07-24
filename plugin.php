@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 require_once plugin_dir_path( __FILE__ ) . 'src/init.php';
 
 /**
- * Update Checker for Krenl.us
+ * Update Checker for Kernl.us
  */
 require 'plugin_update_check.php';
 $KernlUpdater = new PluginUpdateChecker_2_0 (
@@ -32,4 +32,3 @@ $KernlUpdater = new PluginUpdateChecker_2_0 (
    'alps-gutenberg-blocks',
    1
 );
-   

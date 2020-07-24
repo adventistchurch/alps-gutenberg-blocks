@@ -1,0 +1,81 @@
+{
+  "translation-revision-date": "2020-07-24 15:12+0300",
+  "generator": "WP-CLI\/2.4.0",
+  "source": "blocks\/latest-posts\/edit.js",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "ru",
+        "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);"
+      },
+      "ALPS Latest Posts": [
+        "ALPS \u0421\u0432\u0435\u0436\u0438\u0435 \u0437\u0430\u043f\u0438\u0441\u0438"
+      ],
+      "Display a list of your most recent posts.": [
+        "\u041e\u0442\u043e\u0431\u0440\u0430\u0436\u0430\u0435\u0442 \u0441\u043f\u0438\u0441\u043e\u043a \u0441\u0432\u0435\u0436\u0438\u0445 \u0437\u0430\u043f\u0438\u0441\u0435\u0439"
+      ],
+      "latest posts": [
+        ""
+      ],
+      "Latest Posts Settings": [
+        ""
+      ],
+      "Tag": [
+        ""
+      ],
+      "All": [
+        ""
+      ],
+      "Hide excerpt": [
+        "Скрыть описание"
+      ],
+      "Hide post date": [
+        ""
+      ],
+      "Hide category name": [
+        ""
+      ],
+      "Hide button": [
+        ""
+      ],
+      "Hide image": [
+        ""
+      ],
+      "Align the image right": [
+        ""
+      ],
+      "Latest Posts": [
+        ""
+      ],
+      "No posts found.": [
+        ""
+      ],
+      "List View": [
+        ""
+      ],
+      "Grid View": [
+        ""
+      ],
+      "Enter a block title": [
+        "Заголовок блока"
+      ],
+      "Enter a link label": [
+        ""
+      ],
+      "Enter url here": [
+        ""
+      ],
+      "Post excerpt is visible": [
+        ""
+      ],
+      "Category name is visible": [
+        ""
+      ],
+      "Read More": [
+        "Смотреть еще"
+      ]
+    }
+  }
+}

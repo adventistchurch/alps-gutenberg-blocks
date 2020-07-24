@@ -1,11 +1,11 @@
 /**
- * Internal dependencies
+ * Wordpress dependencies
  */
-const {
+import {
 	TreeSelect,
-} = wp.components;
+} from '@wordpress/components';
 
-export default function TagSelect( { label, noOptionLabel, tagsList, selectedTagId, onChange } ) {
+export const TagSelect = ({ label, noOptionLabel, tagsList, selectedTagId, onChange }) => {
 	return (
 		<TreeSelect
 			{ ...{ label, noOptionLabel, onChange } }

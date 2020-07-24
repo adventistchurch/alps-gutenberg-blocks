@@ -1,16 +1,20 @@
 /**
  * External dependencies
  */
-const { isUndefined, pickBy } = require('lodash');
-const classnames = require('classnames');
+import { isUndefined, pickBy } from 'lodash';
+import classnames from 'classnames';
+
+/**
+ * Internal dependencies
+ */
 import './editor.scss';
-import TagSelect from './tag-select';
+import { TagSelect } from './tag-select';
 
 /**
  * WordPress dependencies
  */
-const { Component, Fragment } = wp.element;
-const {
+import { Component, Fragment } from '@wordpress/element';
+import {
 	PanelBody,
 	Placeholder,
 	QueryControls,
@@ -19,18 +23,18 @@ const {
 	ToggleControl,
 	Toolbar,
 	TextControl,
-} = wp.components;
-const apiFetch = wp.apiFetch;
-const { addQueryArgs } = wp.url;
-const { __ } = wp.i18n;
-const { dateI18n, format, __experimentalGetSettings } = wp.date;
-const { decodeEntities } = wp.htmlEntities;
-const {
+} from '@wordpress/components';
+import apiFetch from '@wordpress/api-fetch';
+import { addQueryArgs } from '@wordpress/url';
+import { __ } from '@wordpress/i18n';
+import { dateI18n, format, __experimentalGetSettings } from '@wordpress/date';
+import { decodeEntities } from '@wordpress/html-entities';
+import {
 	InspectorControls,
 	BlockControls,
 	RichText,
-} = wp.blockEditor;
-const { withSelect } = wp.data;
+} from '@wordpress/block-editor';
+import { withSelect } from '@wordpress/data';
 
 /**
  * Module Constants
@@ -147,7 +151,7 @@ class LatestPostsEdit extends Component {
 
 		const inspectorControls = (
 			<InspectorControls>
-				<PanelBody title={ __( 'Latest Posts Settings' ) }>
+				<PanelBody title={ __('Latest Posts Settings', 'alps-gutenberg-blocks') }>
 					<QueryControls
 						{ ...{ order, orderBy } }
 						numberOfItems={ postsToShow }
@@ -164,38 +168,38 @@ class LatestPostsEdit extends Component {
 					<TagSelect
 						key="query-controls-tag-select"
 						tagsList={ tagsList }
-						label={ __( 'Tag' ) }
-						noOptionLabel={ __( 'All' ) }
+						label={ __( 'Tag', 'alps-gutenberg-blocks' ) }
+						noOptionLabel={ __( 'All', 'alps-gutenberg-blocks' ) }
 						selectedTagId={ tags }
 						onChange={ ( value ) => setAttributes( { tags: '' !== value ? value : undefined } ) }
 					/>
 					<ToggleControl
-						label={ __( 'Hide excerpt' ) }
+						label={ __( 'Hide excerpt', 'alps-gutenberg-blocks' ) }
 						checked={ hideExcerpt }
 						onChange={ this.toggleHideExcerpt }
 					/>
 					<ToggleControl
-						label={ __( 'Hide post date' ) }
+						label={ __( 'Hide post date', 'alps-gutenberg-blocks' ) }
 						checked={ hidePostDate }
 						onChange={ this.toggleHidePostDate }
 					/>
 					<ToggleControl
-						label={ __( 'Hide category name' ) }
+						label={ __( 'Hide category name', 'alps-gutenberg-blocks' ) }
 						checked={ hideCategoryName }
 						onChange={ this.toggleHideCategoryName }
 					/>
 					<ToggleControl
-						label={ __( 'Hide button' ) }
+						label={ __( 'Hide button', 'alps-gutenberg-blocks' ) }
 						checked={ hideButton }
 						onChange={ this.toggleHideButton }
 					/>
 					<ToggleControl
-						label={ __( 'Hide image' ) }
+						label={ __( 'Hide image', 'alps-gutenberg-blocks' ) }
 						checked={ hideImage }
 						onChange={ this.toggleImage }
 					/>
 					<ToggleControl
-						label={ __( 'Align the image right' ) }
+						label={ __( 'Align the image right', 'alps-gutenberg-blocks' ) }
 						checked={ alignRight }
 						onChange={ this.toggleAlignRight }
 					/>
@@ -210,11 +214,11 @@ class LatestPostsEdit extends Component {
 					{ inspectorControls }
 					<Placeholder
 						icon="admin-post"
-						label={ __( 'Latest Posts' ) }
+						label={ __( 'Latest Posts', 'alps-gutenberg-blocks' ) }
 					>
 						{ ! Array.isArray( latestPosts ) ?
 							<Spinner /> :
-							__( 'No posts found.' )
+							__( 'No posts found.', 'alps-gutenberg-blocks' )
 						}
 					</Placeholder>
 				</Fragment>
@@ -229,13 +233,13 @@ class LatestPostsEdit extends Component {
 		const layoutControls = [
 			{
 				icon: 'list-view',
-				title: __( 'List View' ),
+				title: __( 'List View', 'alps-gutenberg-blocks' ),
 				onClick: () => setAttributes( { postLayout: 'list' } ),
 				isActive: postLayout === 'list',
 			},
 			{
 				icon: 'grid-view',
-				title: __( 'Grid View' ),
+				title: __( 'Grid View', 'alps-gutenberg-blocks' ),
 				onClick: () => setAttributes( { postLayout: 'grid' } ),
 				isActive: postLayout === 'grid',
 			},
@@ -253,7 +257,7 @@ class LatestPostsEdit extends Component {
 					<RichText
 						tagName="h3"
 						className="c-block__heading-title u-theme--color--darker"
-						placeholder="Enter a block title"
+						placeholder={ __('Enter a block title', 'alps-gutenberg-blocks') }
 						value={ attributes.title }
 						formattingControls={ [] }
 						onChange={ (title) => setAttributes({ title }) }
@@ -261,14 +265,14 @@ class LatestPostsEdit extends Component {
 					<RichText
 						tagName="a"
 						className="c-block__heading-link u-theme--color--base u-theme--link-hover--dark"
-						placeholder="Enter a link label"
+						placeholder={ __('Enter a link label', 'alps-gutenberg-blocks') }
 						value={ attributes.linkLabel }
 						formattingControls={ [] }
 						onChange={ (linkLabel) => setAttributes({ linkLabel }) }
 					/>
 					<TextControl
 						label="See All URL"
-						placeholder="Enter url here"
+						placeholder={ __('Enter url here', 'alps-gutenberg-blocks') }
 						keepPlaceholderOnFocus={ true }
 						value={ attributes.linkUrl }
 						onChange={ (linkUrl) => setAttributes({ linkUrl }) }
@@ -291,7 +295,7 @@ class LatestPostsEdit extends Component {
 								<a href={ post.link } class="wp-block-alps-gutenberg-blocks-latest-posts__title" target="_blank">{ decodeEntities( post.title.rendered.trim() ) || __( '(Untitled)' ) }</a>
 								{ !hideExcerpt &&
 									<div className="wp-block-alps-gutenberg-blocks-latest-posts__excerpt">
-										[Post excerpt is visible]
+										[{ __('Post excerpt is visible', 'alps-gutenberg-blocks') }]
 									</div>
 								}
 								<div class="wp-block-alps-gutenberg-blocks-latest-posts__meta">
@@ -302,13 +306,13 @@ class LatestPostsEdit extends Component {
 									}
 									{ !hideCategoryName &&
 										<span className="wp-block-alps-gutenberg-blocks-latest-posts__category">
-										  [Category name is visible]
+										  [{ __('Category name is visible', 'alps-gutenberg-blocks') }]
 										</span>
 									}
 								</div>
 								{ !hideButton &&
 									<button className="wp-block-alps-gutenberg-blocks-latest-posts__button">
-										Read More
+										{ __('Read More', 'alps-gutenberg-blocks') }
 									</button>
 								}
 							</div>
@@ -320,9 +324,9 @@ class LatestPostsEdit extends Component {
 	}
 }
 
-export default withSelect( ( select, props ) => {
+export default withSelect( (select, props) => {
 	const { postsToShow, order, orderBy, categories, tags } = props.attributes;
-	const { getEntityRecords } = select( 'core' );
+	const { getEntityRecords } = select('core');
 	const latestPostsQuery = pickBy( {
 		categories,
 		tags,
@@ -331,6 +335,6 @@ export default withSelect( ( select, props ) => {
 		per_page: postsToShow,
 	}, ( value ) => ! isUndefined( value ) );
 	return {
-		latestPosts: getEntityRecords( 'postType', 'post', latestPostsQuery ),
+		latestPosts: getEntityRecords('postType', 'post', latestPostsQuery),
 	};
-} )( LatestPostsEdit );
+})(LatestPostsEdit);

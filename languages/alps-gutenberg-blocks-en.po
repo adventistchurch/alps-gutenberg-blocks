@@ -1,0 +1,104 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ALPS Gutenberg Blocks v1.5.1\n"
+"Report-Msgid-Bugs-To: https://github.com/adventistchurch/alps-gutenberg-"
+"blocks/issues\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-07-24T09:56:02+00:00\n"
+"PO-Revision-Date: 2020-07-24 12:57+0300\n"
+"X-Generator: Poedit 2.4\n"
+"X-Domain: alps-gutenberg-blocks\n"
+"Last-Translator: Sergii Sadovyi <s.sadovyi@deepvision.team>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: en\n"
+
+#: blocks/latest-posts/block.js:18
+msgid "ALPS Latest Posts"
+msgstr "ALPS Latest Posts"
+
+#: blocks/latest-posts/block.js:19
+msgid "Display a list of your most recent posts."
+msgstr "Display a list of your most recent posts."
+
+#: blocks/latest-posts/block.js:22
+msgid "latest posts"
+msgstr "latest posts"
+
+#: blocks/latest-posts/edit.js:154
+msgid "Latest Posts Settings"
+msgstr "Latest Posts Settings"
+
+#: blocks/latest-posts/edit.js:171
+msgid "Tag"
+msgstr "Tag"
+
+#: blocks/latest-posts/edit.js:172
+msgid "All"
+msgstr "All"
+
+#: blocks/latest-posts/edit.js:177
+msgid "Hide excerpt"
+msgstr "Hide excerpt"
+
+#: blocks/latest-posts/edit.js:182
+msgid "Hide post date"
+msgstr "Hide post date"
+
+#: blocks/latest-posts/edit.js:187
+msgid "Hide category name"
+msgstr "Hide category name"
+
+#: blocks/latest-posts/edit.js:192
+msgid "Hide button"
+msgstr "Hide button"
+
+#: blocks/latest-posts/edit.js:197
+msgid "Hide image"
+msgstr "Hide image"
+
+#: blocks/latest-posts/edit.js:202
+msgid "Align the image right"
+msgstr "Align the image right"
+
+#: blocks/latest-posts/edit.js:217
+msgid "Latest Posts"
+msgstr "Latest Posts"
+
+#: blocks/latest-posts/edit.js:221
+msgid "No posts found."
+msgstr "No posts found."
+
+#: blocks/latest-posts/edit.js:236
+msgid "List View"
+msgstr "List View"
+
+#: blocks/latest-posts/edit.js:242
+msgid "Grid View"
+msgstr "Grid View"
+
+#: blocks/latest-posts/edit.js:260
+msgid "Enter a block title"
+msgstr "Enter a block title"
+
+#: blocks/latest-posts/edit.js:268
+msgid "Enter a link label"
+msgstr "Enter a link label"
+
+#: blocks/latest-posts/edit.js:275
+msgid "Enter url here"
+msgstr "Enter url here"
+
+#: blocks/latest-posts/edit.js:298
+msgid "Post excerpt is visible"
+msgstr "Post excerpt is visible"
+
+#: blocks/latest-posts/edit.js:309
+msgid "Category name is visible"
+msgstr "Category name is visible"
+
+#: blocks/latest-posts/edit.js:315
+msgid "Read More"
+msgstr "Read More"
