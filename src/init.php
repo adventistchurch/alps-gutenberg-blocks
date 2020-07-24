@@ -48,7 +48,7 @@ function gutenberg_blocks_editor_assets() {
 		'gutenberg-blocks-block-js', // Handle.
 		plugins_url('/dist/blocks.build.js', dirname(__FILE__)), // Block.build.js: We register the block here. Built with Webpack.
 		array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-data'), // Dependencies, defined above.
-		// filemtime(plugin_dir_path(__DIR__) . 'dist/blocks.build.js'), // Version: filemtime — Gets file modification time.
+        ALPS_GUTENBERG_VERSION,
 		true // Enqueue the script in the footer.
 	);
 
