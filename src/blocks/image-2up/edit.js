@@ -38,9 +38,9 @@ import TwoUpImage from './editor-image';
 
 const MAX_COLUMNS = 2;
 const linkOptions = [
-  { value: 'attachment', label: __( 'Attachment Page' ) },
-  { value: 'media', label: __( 'Media File' ) },
-  { value: 'none', label: __( 'None' ) },
+  { value: 'attachment', label: __( 'Attachment Page', 'alps-gutenberg-blocks' ) },
+  { value: 'media', label: __( 'Media File', 'alps-gutenberg-blocks' ) },
+  { value: 'none', label: __( 'None', 'alps-gutenberg-blocks' ) },
 ];
 
 export function defaultColumnsNumber( attributes ) {
@@ -166,7 +166,7 @@ class TwoUpEdit extends Component {
               render={ ( { open } ) => (
                 <Button
                   className="components-toolbar__control"
-                  label={ __( 'Edit Images' ) }
+                  label={ __( 'Edit Images', 'alps-gutenberg-blocks' ) }
                   icon="edit"
                   onClick={ open }
                 />
@@ -185,8 +185,8 @@ class TwoUpEdit extends Component {
             icon="format-gallery"
             className={ className }
             labels={ {
-              title: __( 'Image (2up)' ),
-              name: __( 'images' ),
+              title: __( 'Image (2up)', 'alps-gutenberg-blocks' ),
+              name: __( 'images', 'alps-gutenberg-blocks' ),
             } }
             onSelect={ this.onSelectImages }
             accept="image/*"

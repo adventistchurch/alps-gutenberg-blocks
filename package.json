@@ -7,7 +7,7 @@
   "scripts": {
     "start": "cgb-scripts start",
     "build": "cgb-scripts build",
-    "eject": "cgb-scripts eject",
+    "i18n-create-pot": "wp i18n make-pot ./src languages/alps-gutenberg-blocks.pot --domain=alps-gutenberg-blocks",
     "i18n-create-json": "node bin/i18n-create-json.js"
   },
   "dependencies": {

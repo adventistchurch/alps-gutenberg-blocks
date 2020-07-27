@@ -5,14 +5,14 @@
 /**
  * WordPress dependencies
  */
-import {__} from '@wordpress/i18n';
-import {registerBlockType} from '@wordpress/blocks';
+import { __ } from '@wordpress/i18n';
+import { registerBlockType } from '@wordpress/blocks';
 
 /**
  * Internal dependencies
  */
 import './style.scss';
-import edit from './edit';
+import edit from './components/edit';
 
 registerBlockType('alps-gutenberg-blocks/latest-posts', {
     title: __('ALPS Latest Posts', 'alps-gutenberg-blocks'),

@@ -14,9 +14,9 @@ import './editor.scss';
   var BlockControls = wp.blockEditor.BlockControls;
 
   registerBlockType( 'alps-gutenberg-blocks/highlighted-paragraph', {
-    title: __('ALPS Highlighted Paragraph'),
+    title: __('ALPS Highlighted Paragraph', 'alps-gutenberg-blocks'),
     icon: 'media-text',
-    description: 'Highlight a block of text.',
+    description: __('Highlight a block of text.', 'alps-gutenberg-blocks'),
     category: 'common',
 
     attributes: {
@@ -52,7 +52,7 @@ import './editor.scss';
           el( RichText, {
             tagName: 'p',
             className: 'o-paragraph',
-            placeholder: 'Content goes here...',
+            placeholder: __('Content goes here...', 'alps-gutenberg-blocks'),
             keepPlaceholderOnFocus: true,
             style: { textAlign: attributes.alignment },
             value: attributes.content,

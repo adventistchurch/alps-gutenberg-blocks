@@ -27,15 +27,16 @@ Below you will find some information on how to run scripts.
 # i18n
 Install the WP-CLI from the official source https://wp-cli.org/
 
-Generate `pot` file with command
+Update `pot` file with command when new strings are added to files
 ```
-wp i18n make-pot ./ languages/alps-gutenberg-blocks.pot --domain=alps-gutenberg-blocks
+npm run i18n-create-pot
 ```
 
 Use https://poedit.net/ to edit the language files and create new translations.
-Open `alps-gutenberg-blocks.pot` in POEdit, create new translation and save to `languages/alps-gutenberg-blocks-{lang}.po`
+Open `languages/alps-gutenberg-blocks.pot` in POEdit, create new translation and save to `languages/alps-gutenberg-blocks-{lang}.po`
+Use language code in `en_US` format.
 
 Create a json file with locale data
 ```
-wp i18n make-json languages/alps-gutenberg-blocks-{lang}.po --no-purge 
+npm run i18n-create-json
 ``` 

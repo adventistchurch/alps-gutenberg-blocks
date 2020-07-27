@@ -7,7 +7,7 @@ import classnames from 'classnames';
 /**
  * Internal dependencies
  */
-import './editor.scss';
+import '../editor.scss';
 import { TagSelect } from './tag-select';
 
 /**
@@ -18,7 +18,6 @@ import {
 	PanelBody,
 	Placeholder,
 	QueryControls,
-	RangeControl,
 	Spinner,
 	ToggleControl,
 	Toolbar,
@@ -56,6 +55,7 @@ class LatestPostsEdit extends Component {
 			categoriesList: [],
 			tagsList: [],
 		};
+
 		this.toggleHideExcerpt = this.toggleHideExcerpt.bind( this );
 		this.toggleHidePostDate = this.toggleHidePostDate.bind( this );
 		this.toggleHideCategoryName = this.toggleHideCategoryName.bind( this );
@@ -64,38 +64,34 @@ class LatestPostsEdit extends Component {
 		this.toggleImage = this.toggleImage.bind( this );
 	}
 
-	componentWillMount() {
+	async componentWillMount() {
 		this.isStillMounted = true;
-		this.fetchCategories = apiFetch( {
-			path: addQueryArgs( `/wp/v2/categories`, CATEGORIES_LIST_QUERY ),
-		} ).then(
-			( categoriesList ) => {
-				if ( this.isStillMounted ) {
-					this.setState( { categoriesList } );
-				}
+
+		try {
+			const categoriesList = await apiFetch({
+				path: addQueryArgs( `/wp/v2/categories`, CATEGORIES_LIST_QUERY ),
+			});
+			if (this.isStillMounted) {
+				this.setState({ categoriesList });
 			}
-		).catch(
-			() => {
-				if ( this.isStillMounted ) {
-					this.setState( { categoriesList: [] } );
-				}
+		} catch (err) {
+			if (this.isStillMounted) {
+				this.setState({ categoriesList: [] });
 			}
-		);
-		this.fetchTags = apiFetch( {
-			path: addQueryArgs( `/wp/v2/tags`, TAGS_LIST_QUERY ),
-		}).then(
-			( tagsList ) => {
-				if ( this.isStillMounted ) {
-					this.setState( { tagsList } );
-				}
+		}
+
+		try {
+			const tagsList = await apiFetch({
+				path: addQueryArgs( `/wp/v2/tags`, TAGS_LIST_QUERY ),
+			});
+			if (this.isStillMounted) {
+				this.setState({ tagsList });
 			}
-		).catch(
-			() => {
-				if ( this.isStillMounted ) {
-					this.setState( { tagsList: [] } );
-				}
+		} catch (err) {
+			if (this.isStillMounted) {
+				this.setState({ tagsList: [] });
 			}
-		);
+		}
 	}
 
 	componentWillUnmount() {

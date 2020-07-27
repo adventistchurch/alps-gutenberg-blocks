@@ -14,9 +14,9 @@ import './editor.scss';
   var AlignmentToolbar = wp.blockEditor.AlignmentToolbar;
 
   registerBlockType( 'alps-gutenberg-blocks/content-expand', {
-    title: __('ALPS Content Expand'),
+    title: __('ALPS Content Expand', 'alps-gutenberg-blocks'),
     icon: 'arrow-down-alt',
-    description: 'Content block that expands the content on click.',
+    description: __('Content block that expands the content on click.', 'alps-gutenberg-blocks'),
     category: 'common',
     html: false,
 
@@ -58,7 +58,7 @@ import './editor.scss';
         el( 'div', { className: props.className },
           el( RichText, {
             tagName: 'em',
-            placeholder: 'Kicker',
+            placeholder: __('Kicker', 'alps-gutenberg-blocks'),
             className: 'o-kicker',
             keepPlaceholderOnFocus: true,
             value: attributes.kicker,
@@ -69,7 +69,7 @@ import './editor.scss';
           el( RichText, {
             tagName: 'strong',
             className: 'o-heading--l',
-            placeholder: 'Title',
+            placeholder: __('Title', 'alps-gutenberg-blocks'),
             keepPlaceholderOnFocus: true,
             value: attributes.title,
             onChange: function( newTitle ) {
@@ -79,7 +79,7 @@ import './editor.scss';
           el( RichText, {
             tagName: 'p',
             className: 'o-paragraph',
-            placeholder: 'Body',
+            placeholder: __('Body', 'alps-gutenberg-blocks'),
             keepPlaceholderOnFocus: true,
             style: { textAlign: attributes.alignment },
             value: attributes.body,

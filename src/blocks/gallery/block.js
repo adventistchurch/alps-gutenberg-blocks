@@ -17,8 +17,8 @@ const editorMediaUpload = wp.editor.editorMediaUpload;
 const name = 'core/gallery';
 
 registerBlockType( 'alps-gutenberg-blocks/gallery', {
-  title: __('ALPS Gallery'),
-  description: __('Display a gallery images in a container that expands on click.'),
+  title: __('ALPS Gallery', 'alps-gutenberg-blocks'),
+  description: __('Display a gallery images in a container that expands on click.', 'alps-gutenberg-blocks'),
   icon: 'format-gallery',
   category: 'common',
   attributes: {
@@ -75,7 +75,7 @@ registerBlockType( 'alps-gutenberg-blocks/gallery', {
           <div className="c-gallery-block__header">
             <div className="c-gallery-block__title u-padding u-spacing--half">
               <h2 className="u-font--primary--s u-theme--color--darker">
-                <span className="u-theme--color--base"><em>Gallery</em></span> <span className="o-title">{ attributes.title }</span>
+                <span className="u-theme--color--base"><em>{ __('Gallery', 'alps-gutenberg-blocks') }</em></span> <span className="o-title">{ attributes.title }</span>
               </h2>
               <button className="c-gallery-block__toggle js-toggle o-button o-button--outline o-button--toggle o-button--small" data-toggled="this" data-prefix="this"><span class="u-icon u-icon--xs u-path-fill--white"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><title>o-icon__plus</title><path d="M10,4H6V0H4V4H0V6H4v4H6V6h4Z" fill="#9b9b9b"/></svg></span></button>
             </div>
