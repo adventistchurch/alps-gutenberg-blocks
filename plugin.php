@@ -17,6 +17,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+define('ALPS_GUTENBERG_VERSION', '1.5.1');
+
 /**
  * Block Initializer.
  */

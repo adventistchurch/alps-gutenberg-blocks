@@ -7,7 +7,8 @@
   "scripts": {
     "start": "cgb-scripts start",
     "build": "cgb-scripts build",
-    "eject": "cgb-scripts eject"
+    "eject": "cgb-scripts eject",
+    "i18n-create-json": "node bin/i18n-create-json.js"
   },
   "dependencies": {
     "@wordpress/api-fetch": "^3.18.0",
@@ -21,7 +22,10 @@
     "@wordpress/i18n": "^3.14.0",
     "@wordpress/url": "^2.17.0",
     "cgb-scripts": "^1.23.1",
+    "chalk": "^4.1.0",
     "classnames": "^2.2.6",
-    "lodash": "^4.17.19"
+    "gettext-parser": "^4.0.4",
+    "lodash": "^4.17.19",
+    "winston": "^3.3.3"
   }
 }

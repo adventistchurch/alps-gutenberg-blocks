@@ -44,28 +44,26 @@ add_action('enqueue_block_assets', 'gutenberg_blocks_block_assets');
  */
 function gutenberg_blocks_editor_assets() {
 	// Scripts.
-	wp_enqueue_script(
-		'gutenberg-blocks-block-js', // Handle.
-		plugins_url('/dist/blocks.build.js', dirname(__FILE__)), // Block.build.js: We register the block here. Built with Webpack.
-		array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-data'), // Dependencies, defined above.
-		// filemtime(plugin_dir_path(__DIR__) . 'dist/blocks.build.js'), // Version: filemtime — Gets file modification time.
-		true // Enqueue the script in the footer.
-	);
+    wp_enqueue_script(
+        'alps-gb',
+        plugins_url('/dist/blocks.build.js', dirname(__FILE__)),
+        ['wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-data'],
+        ALPS_GUTENBERG_VERSION,
+        true
+    );
+    wp_set_script_translations('alps-gb', 'alps-gutenberg-blocks',plugin_dir_path( __FILE__ ) . '../languages' );
 
 	// Styles.
 	wp_enqueue_style(
-		'gutenberg-blocks-block-editor-css', // Handle.
-		plugins_url('dist/blocks.editor.build.css', dirname(__FILE__)), // Block editor CSS.
-		array('wp-edit-blocks') // Dependency to include the CSS after it.
-		// filemtime(plugin_dir_path(__DIR__) . 'dist/blocks.editor.build.css') // Version: filemtime — Gets file modification time.
+		'alps-gb-editor',
+		plugins_url('dist/blocks.editor.build.css', dirname(__FILE__)),
+		['wp-edit-blocks']
 	);
-
 	wp_enqueue_style(
-		'gutenberg-blocks-block-style-css', // Handle.
-		plugins_url('dist/blocks.style.build.css', dirname(__FILE__)), // Block style CSS.
-		filemtime(plugin_dir_path(__DIR__) . 'dist/blocks.style.build.css') // Version: filemtime — Gets file modification time.
+		'alps-gb-style',
+		plugins_url('dist/blocks.style.build.css', dirname(__FILE__))
 	);
-} // End function gutenberg_blocks_editor_assets().
+}
 
 // Hook: Editor assets.
 add_action('enqueue_block_editor_assets', 'gutenberg_blocks_editor_assets');
@@ -421,18 +419,6 @@ HTML;
  * Registers the `core/latest-posts` block on server.
  */
 function register_block_alps_latest_posts() {
-//    load_plugin_textdomain( 'alps-gutenberg-blocks', false,  plugin_dir_path( __FILE__ ) . '../languages' );
-    // TODO move enqueue sccripts to separate function
-	wp_enqueue_script(
-		'alps-gb', // Handle.
-		plugins_url('/dist/blocks.build.js', dirname(__FILE__)), // Block.build.js: We register the block here. Built with Webpack.
-		['wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-data'], // Dependencies, defined above.
-		'1.5.1', // Version: filemtime — Gets file modification time.
-		true // Enqueue the script in the footer.
-	);
-	// TODO move i18n init to separate function
-    wp_set_script_translations('alps-gb', 'alps-gutenberg-blocks',plugin_dir_path( __FILE__ ) . '../languages' );
-
 	register_block_type(
 		'alps-gutenberg-blocks/latest-posts',
 		[
