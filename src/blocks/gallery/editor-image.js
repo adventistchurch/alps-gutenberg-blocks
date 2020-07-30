@@ -73,8 +73,17 @@ class GalleryImage extends Component {
 
   componentWillReceiveProps( { isSelected, image, url } ) {
     if ( image && ! url ) {
+      let url = null;
+      if (image.media_details.sizes.large) {
+        url = image.media_details.sizes.large.source_url;
+      } else if (image.media_details.sizes.full) {
+        url = image.media_details.sizes.full.source_url;
+      } else if (image.media_details.sizes.medium) {
+        url = image.media_details.sizes.medium.source_url;
+      }
+
       this.props.setAttributes( {
-        url: image.media_details.sizes.large.source_url,
+        url: url,
         alt: image.alt_text,
       } );
     }
