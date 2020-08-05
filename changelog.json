@@ -1,4 +1,7 @@
 {
+  "1.5.2" : {
+    "description" : "Gallery: fix image size select."
+  },
   "1.5.1" : {
     "description" : "Fixed: ALPS Latest Posts settings not working and reduced the size of the title type."
   },
