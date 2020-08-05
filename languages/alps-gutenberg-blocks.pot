@@ -1,380 +1,456 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-05 18:58+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-07-27T20:13:04+00:00\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.4.0\n"
-"X-Domain: alps-gutenberg-blocks\n"
 
-#: blocks/accordion/block.js:20
-msgid "ALPS Accordion"
-msgstr ""
-
-#: blocks/accordion/block.js:22
-msgid "Add heading and basic text."
-msgstr ""
-
-#: blocks/accordion/components/edit.js:40
-#: blocks/content-block/block.js:61
-#: blocks/content-expand/block.js:72
-#: blocks/content-show-more/block.js:94
-#: blocks/cta/block.js:180
-msgid "Title"
-msgstr ""
-
-#: blocks/accordion/components/edit.js:48
-#: blocks/content-expand/block.js:82
-msgid "Body"
-msgstr ""
-
-#: blocks/blockquote/block.js:17
-msgid "ALPS Blockquote"
-msgstr ""
-
-#: blocks/blockquote/block.js:61
-msgid "Extend Quote"
-msgstr ""
-
-#: blocks/blockquote/block.js:62
-msgid "Extends the quote outside the page content."
-msgstr ""
-
-#: blocks/blockquote/block.js:69
-msgid "Strong Quote"
-msgstr ""
-
-#: blocks/blockquote/block.js:70
-msgid "Set strong style for the quote content."
-msgstr ""
-
-#: blocks/blockquote/block.js:81
-msgid "Write a quote..."
-msgstr ""
-
-#: blocks/blockquote/block.js:91
-msgid "Citation"
-msgstr ""
-
-#: blocks/content-block/block.js:18
+#: src/blocks/content-block/block.js:18
+msgctxt "alps-gutenberg-blocks"
 msgid "ALPS Content Block"
 msgstr ""
 
-#: blocks/content-block/block.js:19
+#: src/blocks/content-block/block.js:19
+msgctxt "alps-gutenberg-blocks"
 msgid "Content block that highlights a row to text."
 msgstr ""
 
-#: blocks/content-block/block.js:71
+#: src/blocks/content-block/block.js:61
+#: src/blocks/content-show-more/block.js:94
+#: src/blocks/content-expand/block.js:72
+#: src/blocks/accordion/components/edit.js:40 src/blocks/cta/block.js:180
+msgctxt "alps-gutenberg-blocks"
+msgid "Title"
+msgstr ""
+
+#: src/blocks/content-block/block.js:71
+msgctxt "alps-gutenberg-blocks"
 msgid "Write a description..."
 msgstr ""
 
-#: blocks/content-block/block.js:81
+#: src/blocks/content-block/block.js:81
+msgctxt "alps-gutenberg-blocks"
 msgid "Link Url"
 msgstr ""
 
-#: blocks/content-block/block.js:105
-#: blocks/latest-posts/components/edit.js:311
-msgid "Read More"
-msgstr ""
-
-#: blocks/content-expand/block.js:17
-msgid "ALPS Content Expand"
-msgstr ""
-
-#: blocks/content-expand/block.js:19
-msgid "Content block that expands the content on click."
-msgstr ""
-
-#: blocks/content-expand/block.js:61
-msgid "Kicker"
-msgstr ""
-
-#: blocks/content-show-more/block.js:18
-msgid "ALPS Content Show More"
-msgstr ""
-
-#: blocks/content-show-more/block.js:20
-msgid "Content block that has a toggle button to show more."
-msgstr ""
-
-#: blocks/content-show-more/block.js:86
-#: blocks/cta/block.js:163
-#: blocks/image-breakout/block.js:53
-#: blocks/media-testimony/block.js:103
-msgid "Upload Image"
-msgstr ""
-
-#: blocks/content-show-more/block.js:104
-#: blocks/cta/block.js:190
-msgid "Description"
-msgstr ""
-
-#: blocks/content-show-more/block.js:115
-msgid "Body (Display on click of show more button)"
-msgstr ""
-
-#: blocks/cta/block.js:25
-msgid "ALPS CTA"
-msgstr ""
-
-#: blocks/cta/block.js:135
-msgid "Dark Background"
-msgstr ""
-
-#: blocks/cta/block.js:136
-msgid "Makes the CTA background dark."
-msgstr ""
-
-#: blocks/cta/block.js:141
-msgid "Background Image"
-msgstr ""
-
-#: blocks/cta/block.js:142
-msgid "Sets the image as a background image."
-msgstr ""
-
-#: blocks/cta/block.js:169
-#: blocks/gallery/editor-image.js:125
-#: blocks/image-2up/editor-image.js:124
-msgid "Remove Image"
-msgstr ""
-
-#: blocks/cta/block.js:203
-msgid "Button 1 Url"
-msgstr ""
-
-#: blocks/cta/block.js:212
-msgid "Button 1 Text"
-msgstr ""
-
-#: blocks/cta/block.js:221
-#: blocks/cta/block.js:249
-msgid "Open in new window"
-msgstr ""
-
-#: blocks/cta/block.js:231
-msgid "Button 2 Url"
-msgstr ""
-
-#: blocks/cta/block.js:240
-msgid "Button 2 Text"
-msgstr ""
-
-#: blocks/gallery/block.js:20
-msgid "ALPS Gallery"
-msgstr ""
-
-#: blocks/gallery/block.js:21
-msgid "Display a gallery images in a container that expands on click."
-msgstr ""
-
-#: blocks/gallery/block.js:78
-#: blocks/gallery/edit.js:169
-msgid "Gallery"
-msgstr ""
-
-#: blocks/gallery/edit.js:40
-#: blocks/image-2up/edit.js:41
-msgid "Attachment Page"
-msgstr ""
-
-#: blocks/gallery/edit.js:41
-#: blocks/image-2up/edit.js:42
-msgid "Media File"
-msgstr ""
-
-#: blocks/gallery/edit.js:42
-#: blocks/image-2up/edit.js:43
-msgid "None"
-msgstr ""
-
-#: blocks/gallery/edit.js:149
-msgid "Edit Gallery"
-msgstr ""
-
-#: blocks/gallery/edit.js:170
-#: blocks/image-2up/edit.js:189
-msgid "images"
-msgstr ""
-
-#: blocks/gallery/edit.js:192
-msgid "Enter a gallery title.."
-msgstr ""
-
-#: blocks/gallery/editor-image.js:133
-#: blocks/image-2up/editor-image.js:132
-msgid "Write caption…"
-msgstr ""
-
-#: blocks/highlighted-paragraph/block.js:17
-msgid "ALPS Highlighted Paragraph"
-msgstr ""
-
-#: blocks/highlighted-paragraph/block.js:19
-msgid "Highlight a block of text."
-msgstr ""
-
-#: blocks/highlighted-paragraph/block.js:55
-msgid "Content goes here..."
-msgstr ""
-
-#: blocks/image-2up/block.js:10
-msgid "ALPS Image (2up)"
-msgstr ""
-
-#: blocks/image-2up/block.js:11
-msgid "Two images organized in a two column layout."
-msgstr ""
-
-#: blocks/image-2up/edit.js:169
-msgid "Edit Images"
-msgstr ""
-
-#: blocks/image-2up/edit.js:188
-msgid "Image (2up)"
-msgstr ""
-
-#: blocks/image-breakout/block.js:18
-msgid "ALPS Image (Breakout)"
-msgstr ""
-
-#: blocks/image-breakout/block.js:20
-msgid "Image that expands the width of the page."
-msgstr ""
-
-#: blocks/image-breakout/block.js:60
-msgid "Caption"
-msgstr ""
-
-#: blocks/latest-posts/block.js:18
-msgid "ALPS Latest Posts"
-msgstr ""
-
-#: blocks/latest-posts/block.js:19
-msgid "Display a list of your most recent posts."
-msgstr ""
-
-#: blocks/latest-posts/block.js:22
-msgid "latest posts"
-msgstr ""
-
-#: blocks/latest-posts/components/edit.js:150
-msgid "Latest Posts Settings"
-msgstr ""
-
-#: blocks/latest-posts/components/edit.js:167
-msgid "Tag"
-msgstr ""
-
-#: blocks/latest-posts/components/edit.js:168
-msgid "All"
-msgstr ""
-
-#: blocks/latest-posts/components/edit.js:173
-msgid "Hide excerpt"
-msgstr ""
-
-#: blocks/latest-posts/components/edit.js:178
-msgid "Hide post date"
-msgstr ""
-
-#: blocks/latest-posts/components/edit.js:183
-msgid "Hide category name"
-msgstr ""
-
-#: blocks/latest-posts/components/edit.js:188
-msgid "Hide button"
-msgstr ""
-
-#: blocks/latest-posts/components/edit.js:193
-msgid "Hide image"
-msgstr ""
-
-#: blocks/latest-posts/components/edit.js:198
-msgid "Align the image right"
-msgstr ""
-
-#: blocks/latest-posts/components/edit.js:213
-msgid "Latest Posts"
-msgstr ""
-
-#: blocks/latest-posts/components/edit.js:217
-msgid "No posts found."
-msgstr ""
-
-#: blocks/latest-posts/components/edit.js:232
-msgid "List View"
-msgstr ""
-
-#: blocks/latest-posts/components/edit.js:238
-msgid "Grid View"
-msgstr ""
-
-#: blocks/latest-posts/components/edit.js:256
-msgid "Enter a block title"
-msgstr ""
-
-#: blocks/latest-posts/components/edit.js:264
-msgid "Enter a link label"
-msgstr ""
-
-#: blocks/latest-posts/components/edit.js:271
-msgid "Enter url here"
-msgstr ""
-
-#: blocks/latest-posts/components/edit.js:294
-msgid "Post excerpt is visible"
-msgstr ""
-
-#: blocks/latest-posts/components/edit.js:305
-msgid "Category name is visible"
-msgstr ""
-
-#: blocks/media-testimonies/block.js:19
-msgid "ALPS Media Testimonies"
-msgstr ""
-
-#: blocks/media-testimonies/block.js:20
-msgid "Display your media testimonies."
-msgstr ""
-
-#: blocks/media-testimonies/block.js:44
-msgid "Enter Section Title"
-msgstr ""
-
-#: blocks/media-testimonies/block.js:54
-msgid "See All Link Url"
-msgstr ""
-
-#: blocks/media-testimony/block.js:19
+#: src/blocks/media-testimony/block.js:19
+msgctxt "alps-gutenberg-blocks"
 msgid "ALPS Media Testimony Block"
 msgstr ""
 
-#: blocks/media-testimony/block.js:20
+#: src/blocks/media-testimony/block.js:20
+msgctxt "alps-gutenberg-blocks"
 msgid "Single media testimony."
 msgstr ""
 
-#: blocks/media-testimony/block.js:74
+#: src/blocks/media-testimony/block.js:74
+msgctxt "alps-gutenberg-blocks"
 msgid "Enter Quote"
 msgstr ""
 
-#: blocks/media-testimony/block.js:83
+#: src/blocks/media-testimony/block.js:83
+msgctxt "alps-gutenberg-blocks"
 msgid "Read More Link"
 msgstr ""
 
-#: blocks/media-testimony/block.js:110
+#: src/blocks/media-testimony/block.js:103
+#: src/blocks/content-show-more/block.js:86 src/blocks/cta/block.js:163
+#: src/blocks/image-breakout/block.js:53
+msgctxt "alps-gutenberg-blocks"
+msgid "Upload Image"
+msgstr ""
+
+#: src/blocks/media-testimony/block.js:110
+msgctxt "alps-gutenberg-blocks"
 msgid "Enter Video Title"
 msgstr ""
 
-#: blocks/media-testimony/block.js:120
+#: src/blocks/media-testimony/block.js:120
+msgctxt "alps-gutenberg-blocks"
 msgid "Watch Video Link"
 msgstr ""
 
-#: blocks/media-testimony/block.js:146
-msgid "Watch Video"
+#: src/blocks/content-show-more/block.js:18
+msgctxt "alps-gutenberg-blocks"
+msgid "ALPS Content Show More"
+msgstr ""
+
+#: src/blocks/content-show-more/block.js:20
+msgctxt "alps-gutenberg-blocks"
+msgid "Content block that has a toggle button to show more."
+msgstr ""
+
+#: src/blocks/content-show-more/block.js:104 src/blocks/cta/block.js:190
+msgctxt "alps-gutenberg-blocks"
+msgid "Description"
+msgstr ""
+
+#: src/blocks/content-show-more/block.js:115
+msgctxt "alps-gutenberg-blocks"
+msgid "Body (Display on click of show more button)"
+msgstr ""
+
+#: src/blocks/content-expand/block.js:17
+msgctxt "alps-gutenberg-blocks"
+msgid "ALPS Content Expand"
+msgstr ""
+
+#: src/blocks/content-expand/block.js:19
+msgctxt "alps-gutenberg-blocks"
+msgid "Content block that expands the content on click."
+msgstr ""
+
+#: src/blocks/content-expand/block.js:61
+msgctxt "alps-gutenberg-blocks"
+msgid "Kicker"
+msgstr ""
+
+#: src/blocks/content-expand/block.js:82
+#: src/blocks/accordion/components/edit.js:48
+msgctxt "alps-gutenberg-blocks"
+msgid "Body"
+msgstr ""
+
+#: src/blocks/accordion/block.js:20
+msgctxt "alps-gutenberg-blocks"
+msgid "ALPS Accordion"
+msgstr ""
+
+#: src/blocks/accordion/block.js:22
+msgctxt "alps-gutenberg-blocks"
+msgid "Add heading and basic text."
+msgstr ""
+
+#: src/blocks/cta/block.js:25
+msgctxt "alps-gutenberg-blocks"
+msgid "ALPS CTA"
+msgstr ""
+
+#: src/blocks/cta/block.js:135
+msgctxt "alps-gutenberg-blocks"
+msgid "Dark Background"
+msgstr ""
+
+#: src/blocks/cta/block.js:136
+msgctxt "alps-gutenberg-blocks"
+msgid "Makes the CTA background dark."
+msgstr ""
+
+#: src/blocks/cta/block.js:141
+msgctxt "alps-gutenberg-blocks"
+msgid "Background Image"
+msgstr ""
+
+#: src/blocks/cta/block.js:142
+msgctxt "alps-gutenberg-blocks"
+msgid "Sets the image as a background image."
+msgstr ""
+
+#: src/blocks/cta/block.js:169 src/blocks/gallery/editor-image.js:125
+#: src/blocks/image-2up/editor-image.js:124
+msgctxt "alps-gutenberg-blocks"
+msgid "Remove Image"
+msgstr ""
+
+#: src/blocks/cta/block.js:203
+msgctxt "alps-gutenberg-blocks"
+msgid "Button 1 Url"
+msgstr ""
+
+#: src/blocks/cta/block.js:212
+msgctxt "alps-gutenberg-blocks"
+msgid "Button 1 Text"
+msgstr ""
+
+#: src/blocks/cta/block.js:221 src/blocks/cta/block.js:249
+msgctxt "alps-gutenberg-blocks"
+msgid "Open in new window"
+msgstr ""
+
+#: src/blocks/cta/block.js:231
+msgctxt "alps-gutenberg-blocks"
+msgid "Button 2 Url"
+msgstr ""
+
+#: src/blocks/cta/block.js:240
+msgctxt "alps-gutenberg-blocks"
+msgid "Button 2 Text"
+msgstr ""
+
+#: src/blocks/gallery/edit.js:40 src/blocks/image-2up/edit.js:41
+msgctxt "alps-gutenberg-blocks"
+msgid "Attachment Page"
+msgstr ""
+
+#: src/blocks/gallery/edit.js:41 src/blocks/image-2up/edit.js:42
+msgctxt "alps-gutenberg-blocks"
+msgid "Media File"
+msgstr ""
+
+#: src/blocks/gallery/edit.js:42 src/blocks/image-2up/edit.js:43
+msgctxt "alps-gutenberg-blocks"
+msgid "None"
+msgstr ""
+
+#: src/blocks/gallery/edit.js:149
+msgctxt "alps-gutenberg-blocks"
+msgid "Edit Gallery"
+msgstr ""
+
+#: src/blocks/gallery/edit.js:169
+msgctxt "alps-gutenberg-blocks"
+msgid "Gallery"
+msgstr ""
+
+#: src/blocks/gallery/edit.js:170 src/blocks/image-2up/edit.js:189
+msgctxt "alps-gutenberg-blocks"
+msgid "images"
+msgstr ""
+
+#: src/blocks/gallery/edit.js:192
+msgctxt "alps-gutenberg-blocks"
+msgid "Enter a gallery title.."
+msgstr ""
+
+#: src/blocks/gallery/block.js:20
+msgctxt "alps-gutenberg-blocks"
+msgid "ALPS Gallery"
+msgstr ""
+
+#: src/blocks/gallery/block.js:21
+msgctxt "alps-gutenberg-blocks"
+msgid "Display a gallery images in a container that expands on click."
+msgstr ""
+
+#: src/blocks/gallery/editor-image.js:133
+#: src/blocks/image-2up/editor-image.js:132
+msgctxt "alps-gutenberg-blocks"
+msgid "Write caption…"
+msgstr ""
+
+#: src/blocks/highlighted-paragraph/block.js:17
+msgctxt "alps-gutenberg-blocks"
+msgid "ALPS Highlighted Paragraph"
+msgstr ""
+
+#: src/blocks/highlighted-paragraph/block.js:19
+msgctxt "alps-gutenberg-blocks"
+msgid "Highlight a block of text."
+msgstr ""
+
+#: src/blocks/highlighted-paragraph/block.js:55
+msgctxt "alps-gutenberg-blocks"
+msgid "Content goes here..."
+msgstr ""
+
+#: src/blocks/blockquote/block.js:17
+msgctxt "alps-gutenberg-blocks"
+msgid "ALPS Blockquote"
+msgstr ""
+
+#: src/blocks/blockquote/block.js:61
+msgctxt "alps-gutenberg-blocks"
+msgid "Extend Quote"
+msgstr ""
+
+#: src/blocks/blockquote/block.js:62
+msgctxt "alps-gutenberg-blocks"
+msgid "Extends the quote outside the page content."
+msgstr ""
+
+#: src/blocks/blockquote/block.js:69
+msgctxt "alps-gutenberg-blocks"
+msgid "Strong Quote"
+msgstr ""
+
+#: src/blocks/blockquote/block.js:70
+msgctxt "alps-gutenberg-blocks"
+msgid "Set strong style for the quote content."
+msgstr ""
+
+#: src/blocks/blockquote/block.js:81
+msgctxt "alps-gutenberg-blocks"
+msgid "Write a quote..."
+msgstr ""
+
+#: src/blocks/blockquote/block.js:91
+msgctxt "alps-gutenberg-blocks"
+msgid "Citation"
+msgstr ""
+
+#: src/blocks/media-testimonies/block.js:19
+msgctxt "alps-gutenberg-blocks"
+msgid "ALPS Media Testimonies"
+msgstr ""
+
+#: src/blocks/media-testimonies/block.js:20
+msgctxt "alps-gutenberg-blocks"
+msgid "Display your media testimonies."
+msgstr ""
+
+#: src/blocks/media-testimonies/block.js:44
+msgctxt "alps-gutenberg-blocks"
+msgid "Enter Section Title"
+msgstr ""
+
+#: src/blocks/media-testimonies/block.js:54
+msgctxt "alps-gutenberg-blocks"
+msgid "See All Link Url"
+msgstr ""
+
+#: src/blocks/image-2up/edit.js:169
+msgctxt "alps-gutenberg-blocks"
+msgid "Edit Images"
+msgstr ""
+
+#: src/blocks/image-2up/edit.js:188
+msgctxt "alps-gutenberg-blocks"
+msgid "Image (2up)"
+msgstr ""
+
+#: src/blocks/image-2up/block.js:10
+msgctxt "alps-gutenberg-blocks"
+msgid "ALPS Image (2up)"
+msgstr ""
+
+#: src/blocks/image-2up/block.js:11
+msgctxt "alps-gutenberg-blocks"
+msgid "Two images organized in a two column layout."
+msgstr ""
+
+#: src/blocks/image-breakout/block.js:18
+msgctxt "alps-gutenberg-blocks"
+msgid "ALPS Image (Breakout)"
+msgstr ""
+
+#: src/blocks/image-breakout/block.js:20
+msgctxt "alps-gutenberg-blocks"
+msgid "Image that expands the width of the page."
+msgstr ""
+
+#: src/blocks/image-breakout/block.js:60
+msgctxt "alps-gutenberg-blocks"
+msgid "Caption"
+msgstr ""
+
+#: src/blocks/latest-posts/components/edit.js:150
+msgctxt "alps-gutenberg-blocks"
+msgid "Latest Posts Settings"
+msgstr ""
+
+#: src/blocks/latest-posts/components/edit.js:167
+msgctxt "alps-gutenberg-blocks"
+msgid "Tag"
+msgstr ""
+
+#: src/blocks/latest-posts/components/edit.js:168
+msgctxt "alps-gutenberg-blocks"
+msgid "All"
+msgstr ""
+
+#: src/blocks/latest-posts/components/edit.js:173
+msgctxt "alps-gutenberg-blocks"
+msgid "Hide excerpt"
+msgstr ""
+
+#: src/blocks/latest-posts/components/edit.js:178
+msgctxt "alps-gutenberg-blocks"
+msgid "Hide post date"
+msgstr ""
+
+#: src/blocks/latest-posts/components/edit.js:183
+msgctxt "alps-gutenberg-blocks"
+msgid "Hide category name"
+msgstr ""
+
+#: src/blocks/latest-posts/components/edit.js:188
+msgctxt "alps-gutenberg-blocks"
+msgid "Hide button"
+msgstr ""
+
+#: src/blocks/latest-posts/components/edit.js:193
+msgctxt "alps-gutenberg-blocks"
+msgid "Hide image"
+msgstr ""
+
+#: src/blocks/latest-posts/components/edit.js:198
+msgctxt "alps-gutenberg-blocks"
+msgid "Align the image right"
+msgstr ""
+
+#: src/blocks/latest-posts/components/edit.js:213
+msgctxt "alps-gutenberg-blocks"
+msgid "Latest Posts"
+msgstr ""
+
+#: src/blocks/latest-posts/components/edit.js:217
+msgctxt "alps-gutenberg-blocks"
+msgid "No posts found."
+msgstr ""
+
+#: src/blocks/latest-posts/components/edit.js:232
+msgctxt "alps-gutenberg-blocks"
+msgid "List View"
+msgstr ""
+
+#: src/blocks/latest-posts/components/edit.js:238
+msgctxt "alps-gutenberg-blocks"
+msgid "Grid View"
+msgstr ""
+
+#: src/blocks/latest-posts/components/edit.js:256
+msgctxt "alps-gutenberg-blocks"
+msgid "Enter a block title"
+msgstr ""
+
+#: src/blocks/latest-posts/components/edit.js:264
+msgctxt "alps-gutenberg-blocks"
+msgid "Enter a link label"
+msgstr ""
+
+#: src/blocks/latest-posts/components/edit.js:271
+msgctxt "alps-gutenberg-blocks"
+msgid "Enter url here"
+msgstr ""
+
+#: src/blocks/latest-posts/components/edit.js:294
+msgctxt "alps-gutenberg-blocks"
+msgid "Post excerpt is visible"
+msgstr ""
+
+#: src/blocks/latest-posts/components/edit.js:305
+msgctxt "alps-gutenberg-blocks"
+msgid "Category name is visible"
+msgstr ""
+
+#: src/blocks/latest-posts/components/edit.js:311
+msgctxt "alps-gutenberg-blocks"
+msgid "Read More"
+msgstr ""
+
+#: src/blocks/latest-posts/block.js:18
+msgctxt "alps-gutenberg-blocks"
+msgid "ALPS Latest Posts"
+msgstr ""
+
+#: src/blocks/latest-posts/block.js:19
+msgctxt "alps-gutenberg-blocks"
+msgid "Display a list of your most recent posts."
+msgstr ""
+
+#: src/blocks/latest-posts/block.js:22
+msgctxt "alps-gutenberg-blocks"
+msgid "latest posts"
 msgstr ""

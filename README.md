@@ -25,11 +25,9 @@ Below you will find some information on how to run scripts.
 - You don't normally have to `eject` a project because by ejecting you lose the connection with `create-guten-block` and from there onwards you have to update and maintain all the dependencies on your own.
 
 # i18n
-Install the WP-CLI from the official source https://wp-cli.org/
-
-Update `pot` file with command when new strings are added to files
+Update `pot` file with command when new strings added to files
 ```
-npm run i18n-create-pot
+npm run i18n-update
 ```
 
 Use https://poedit.net/ to edit the language files and create new translations.
