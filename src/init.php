@@ -21,16 +21,13 @@ if (! defined('ABSPATH')) {
  * @since 1.0.0
  */
 function gutenberg_blocks_block_assets() {
-	// Styles.
-	wp_enqueue_style(
-		'gutenberg-blocks-style-css', // Handle.
-		plugins_url('dist/blocks.style.build.css', dirname(__FILE__)), // Block style CSS.
-		array('wp-blocks') // Dependency to include the CSS after it.
-		// filemtime(plugin_dir_path(__DIR__) . 'dist/blocks.style.build.css') // Version: filemtime — Gets file modification time.
-	);
-} // End function gutenberg_blocks_block_assets().
-
-// Hook: Frontend assets.
+    wp_enqueue_style(
+        'alps-gb-style',
+        plugins_url('/dist/blocks.style.build.css', dirname(__FILE__)),
+        [],
+        ALPS_GUTENBERG_VERSION
+    );
+}
 add_action('enqueue_block_assets', 'gutenberg_blocks_block_assets');
 
 /**
@@ -56,28 +53,12 @@ function gutenberg_blocks_editor_assets() {
 	// Styles.
 	wp_enqueue_style(
 		'alps-gb-editor',
-		plugins_url('dist/blocks.editor.build.css', dirname(__FILE__)),
-		['wp-edit-blocks']
-	);
-	wp_enqueue_style(
-		'alps-gb-style',
-		plugins_url('dist/blocks.style.build.css', dirname(__FILE__))
+		plugins_url('/dist/blocks.editor.build.css', dirname(__FILE__)),
+		['wp-edit-blocks'],
+        ALPS_GUTENBERG_VERSION
 	);
 }
-
-// Hook: Editor assets.
 add_action('enqueue_block_editor_assets', 'gutenberg_blocks_editor_assets');
-
-function gutenberg_blocks_style_assets() {
-	// Styles.
-	wp_enqueue_style(
-		'gutenberg-blocks-block-style-css', // Handle.
-		plugins_url('dist/blocks.style.build.css', dirname(__FILE__)) // Block style CSS.
-	);
-} // End function gutenberg_blocks_editor_assets().
-
-// Hook: Editor assets.
-add_action('enqueue_block_assets', 'gutenberg_blocks_style_assets');
 
 /**
  * Server-side rendering of the `core/latest-posts` block.

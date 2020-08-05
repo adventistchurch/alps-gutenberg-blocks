@@ -8,7 +8,7 @@ import Edit, { defaultColumnsNumber } from './edit';
 
 wp.blocks.registerBlockType( 'alps-gutenberg-blocks/image-2up', {
   title: wp.i18n.__('ALPS Image (2up)', 'alps-gutenberg-blocks'),
-  description: __('Two images organized in a two column layout.', 'alps-gutenberg-blocks'),
+  description: wp.i18n.__('Two images organized in a two column layout.', 'alps-gutenberg-blocks'),
   icon: 'format-gallery',
   category: 'common',
   attributes: {
