@@ -8,9 +8,7 @@
     "sort-packages": true
   },
   "autoload": {
-    "psr-4": {
-      "ALPS\\Gutenberg\\": "src"
-    }
+    "classmap": ["src/blocks/"]
   },
   "prefer-stable": true
 }
