@@ -19,18 +19,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define('ALPS_GUTENBERG_VERSION', '1.5.1');
 
+if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+    require __DIR__ . '/vendor/autoload.php';
+}
+
 /**
  * Block Initializer.
  */
-require_once plugin_dir_path( __FILE__ ) . 'src/init.php';
-
-/**
- * Update Checker for Kernl.us
- */
-require 'plugin_update_check.php';
-$KernlUpdater = new PluginUpdateChecker_2_0 (
-   'https://kernl.us/api/v1/updates/5c13a3859e9cea4aa2fd8fbd/',
-   __FILE__,
-   'alps-gutenberg-blocks',
-   1
-);
+require_once __DIR__ . '/src/init.php';
