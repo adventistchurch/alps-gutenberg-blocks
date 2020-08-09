@@ -8,7 +8,9 @@
     "sort-packages": true
   },
   "autoload": {
-    "classmap": ["src/blocks/"]
+    "classmap": [
+      "src/blocks/"
+    ]
   },
   "prefer-stable": true
 }
