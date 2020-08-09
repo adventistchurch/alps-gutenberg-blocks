@@ -1,4 +1,6 @@
 const fs = require('fs').promises;
+const util = require('util');
+const exec = util.promisify(require('child_process').exec);
 const chalk = require('chalk');
 
 const parseChangelog = async () => {
@@ -105,6 +107,12 @@ const setVersionInPackageJson = async (version) => {
     pkg.version = version.version;
 
     await fs.writeFile('package.json', JSON.stringify(pkg, null, 2));
+
+    const packageLockContent = await fs.readFile('package-lock.json', { encoding: 'utf-8' });
+    const pkgLock = JSON.parse(packageLockContent);
+    pkgLock.version = version.version;
+
+    await fs.writeFile('package-lock.json', JSON.stringify(pkgLock, null, 2));
 };
 
 const setVersionInComposerJson = async (version) => {
@@ -115,11 +123,41 @@ const setVersionInComposerJson = async (version) => {
     await fs.writeFile('composer.json', JSON.stringify(composer, null, 2));
 };
 
+const setVersionInPlugin = async (version) => {
+    const pluginContent = await fs.readFile('plugin.php', { encoding: 'utf-8' });
+
+    const exprPluginVersion = /Version: ([\d.]+)/u;
+    const exprVersionConst = /'ALPS_GUTENBERG_VERSION', '([\d.]+)'/;
+    const plugin = pluginContent
+        .replace(exprPluginVersion, `Version: ${version.version}`)
+        .replace(exprVersionConst, `'ALPS_GUTENBERG_VERSION', '${version.version}'`)
+    ;
+
+    await fs.writeFile('plugin.php', plugin);
+};
+
+const isWorkdirClean = async () => {
+    const { stdout, stderr } = await exec('git status --porcelain');
+    if (stderr !== '') {
+        throw new Error(`Git Status not working: ${stderr}`);
+    }
+
+    return stdout === '';
+};
+
+const createReleaseCommit = async (version) => {
+    const { stdout, stderr } = await exec(`git commit -m "release: v${version.version}"`);
+    console.log(stdout);
+};
 
 const setVersion = async (opts) => {
     const { logger } = opts;
 
-    logger.info(chalk.bold('❗ You should commit and push changes to create a new release.'));
+    if (!await isWorkdirClean()) {
+        logger.error(chalk.bold('❗ Commit all changes before release'));
+
+        return;
+    }
 
     // Get current version
     const changelog = await parseChangelog();
@@ -136,6 +174,15 @@ const setVersion = async (opts) => {
     // Update composer.json
     await setVersionInComposerJson(currentVersion);
     logger.info(`💚 ${chalk.yellow('composer.json')} updated`);
+
+    // Update plugin info
+    await setVersionInPlugin(currentVersion);
+    logger.info(`💚 ${chalk.yellow('plugin.php')} updated`);
+
+    // Create commit and tag
+    await createReleaseCommit(currentVersion);
+
+    logger.info(chalk.bold('❗ Now push changes to GitHub and new Release will be created'));
 }
 
 module.exports = setVersion;
