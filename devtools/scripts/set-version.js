@@ -3,6 +3,9 @@ const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 const chalk = require('chalk');
 
+/**
+ * Creates Changelog Object from CHANGELOG.md
+ */
 const parseChangelog = async () => {
     const POS = {
         OUT: 'OUT',
@@ -101,36 +104,51 @@ const parseChangelog = async () => {
     return changelog;
 }
 
+/**
+ * Update the version in package.json and package-lock.json
+ *
+ * @param {string} version Semver version value
+ */
 const setVersionInPackageJson = async (version) => {
     const packageContent = await fs.readFile('package.json', { encoding: 'utf-8' });
     const pkg = JSON.parse(packageContent);
-    pkg.version = version.version;
+    pkg.version = version;
 
     await fs.writeFile('package.json', JSON.stringify(pkg, null, 2));
 
     const packageLockContent = await fs.readFile('package-lock.json', { encoding: 'utf-8' });
     const pkgLock = JSON.parse(packageLockContent);
-    pkgLock.version = version.version;
+    pkgLock.version = version;
 
     await fs.writeFile('package-lock.json', JSON.stringify(pkgLock, null, 2));
 };
 
+/**
+ * Update the version in composer.json
+ *
+ * @param {string} version Semver version value
+ */
 const setVersionInComposerJson = async (version) => {
     const composerContent = await fs.readFile('composer.json', { encoding: 'utf-8' });
     const composer = JSON.parse(composerContent);
-    composer.version = version.version;
+    composer.version = version;
 
     await fs.writeFile('composer.json', JSON.stringify(composer, null, 2));
 };
 
+/**
+ * Update the version in plugin.php
+ *
+ * @param {string} version Semver version value
+ */
 const setVersionInPlugin = async (version) => {
     const pluginContent = await fs.readFile('plugin.php', { encoding: 'utf-8' });
 
     const exprPluginVersion = /Version: ([\d.]+)/u;
     const exprVersionConst = /'ALPS_GUTENBERG_VERSION', '([\d.]+)'/;
     const plugin = pluginContent
-        .replace(exprPluginVersion, `Version: ${version.version}`)
-        .replace(exprVersionConst, `'ALPS_GUTENBERG_VERSION', '${version.version}'`)
+        .replace(exprPluginVersion, `Version: ${version}`)
+        .replace(exprVersionConst, `'ALPS_GUTENBERG_VERSION', '${version}'`)
     ;
 
     await fs.writeFile('plugin.php', plugin);
@@ -168,15 +186,15 @@ const setVersion = async (opts) => {
     logger.info(`🟡 Current version: ${chalk.bold(chalk.green(currentVersion.version))}\n`);
 
     // Update package.json
-    await setVersionInPackageJson(currentVersion);
+    await setVersionInPackageJson(currentVersion.version);
     logger.info(`💚 ${chalk.yellow('package.json')} updated`);
 
     // Update composer.json
-    await setVersionInComposerJson(currentVersion);
+    await setVersionInComposerJson(currentVersion.version);
     logger.info(`💚 ${chalk.yellow('composer.json')} updated`);
 
     // Update plugin info
-    await setVersionInPlugin(currentVersion);
+    await setVersionInPlugin(currentVersion.version);
     logger.info(`💚 ${chalk.yellow('plugin.php')} updated`);
 
     // Create commit and tag
