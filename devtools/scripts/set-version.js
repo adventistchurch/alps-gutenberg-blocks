@@ -164,8 +164,16 @@ const isWorkdirClean = async () => {
 };
 
 const createReleaseCommit = async (version) => {
-    const { stdout, stderr } = await exec(`git commit -m "release: v${version.version}"`);
-    console.log(stdout);
+    try {
+        await exec(`git add .`);
+        await exec(`git commit --porcelain -m "release: v${version.version}"`);
+        await exec(`git tag v${version.version}`);
+    } catch (error) {
+        if (error.stderr.match(/tag .* already exists/um)) {
+            throw new Error('Version tag is already exists. Please delete it or increase the version number.');
+        }
+        console.log(error);
+    }
 };
 
 const setVersion = async (opts) => {
@@ -200,7 +208,7 @@ const setVersion = async (opts) => {
     // Create commit and tag
     await createReleaseCommit(currentVersion);
 
-    logger.info(chalk.bold('❗ Now push changes to GitHub and new Release will be created'));
+    logger.info(chalk.bold('\n❗ Now push changes to GitHub and new Release will be created'));
 }
 
 module.exports = setVersion;

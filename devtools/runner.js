@@ -17,6 +17,6 @@ const scripts = {
 })().then(() => {
     process.exit(0);
 }).catch((err) => {
-    logger.error(`❌ ${err}`);
+    logger.error(`\n❌ ${err}`);
     process.exit(1);
 });
