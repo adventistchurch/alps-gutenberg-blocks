@@ -1,6 +1,5 @@
 const winston = require('winston');
 const { combine, timestamp, printf } = winston.format;
-const chalk = require('chalk');
 
 const logger = winston.createLogger({
     format: combine(
