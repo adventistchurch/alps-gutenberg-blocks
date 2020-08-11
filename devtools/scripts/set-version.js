@@ -3,7 +3,7 @@ const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 const chalk = require('chalk');
 
-const parseChangelog = require('../lib/parse-changelog');
+const getChangelog = require('../lib/get-changelog');
 
 /**
  * Update the version in package.json and package-lock.json
@@ -88,8 +88,7 @@ const setVersion = async (opts) => {
     }
 
     // Get current version
-    const changelogContent = await fs.readFile('CHANGELOG.md', { encoding: 'utf-8' });
-    const changelog = await parseChangelog(changelogContent);
+    const changelog = await getChangelog();
     if (changelog.length === 0) {
         throw new Error(`Changelog has no entries`);
     }

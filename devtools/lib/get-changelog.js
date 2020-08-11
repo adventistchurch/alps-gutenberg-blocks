@@ -1,7 +1,9 @@
+const fs = require('fs').promises;
+
 /**
  * Creates Changelog Object from CHANGELOG.md
  */
-module.exports = async (changelogContent) => {
+const getChangelog = async () => {
     const POS = {
         OUT: 'OUT',
         VER: 'VER',
@@ -9,6 +11,7 @@ module.exports = async (changelogContent) => {
         ENTRY: 'ENTRY',
     };
     const changelog = [];
+    const changelogFile = 'CHANGELOG.md';
 
     const exprVersion = /^## \[(?<version>[\d.]+)\]/u;
     const exprTypeStart = /^### (?<type>[a-zA-Z]+)/u;
@@ -19,6 +22,8 @@ module.exports = async (changelogContent) => {
         version: null,
         type: null,
     };
+
+    const changelogContent = await fs.readFile(changelogFile, { encoding: 'utf-8' });
     for (const entry of changelogContent.split("\n")) {
         /**
          * Version
@@ -95,3 +100,5 @@ module.exports = async (changelogContent) => {
 
     return changelog;
 }
+
+module.exports = getChangelog;

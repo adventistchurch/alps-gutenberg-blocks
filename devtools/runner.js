@@ -1,7 +1,13 @@
 const logger = require('./lib/logger');
 
+if (process.env.NODE_ENV === 'development') {
+    require('dotenv').config();
+}
+
 const scripts = {
     'set-version': require('./scripts/set-version'),
+    'build-plugin': require('./scripts/build-plugin'),
+    'create-release': require('./scripts/create-release'),
 };
 
 (async () => {
@@ -12,6 +18,7 @@ const scripts = {
 
     await scripts[scriptName]({
         logger,
+        env: process.env,
     });
 
 })().then(() => {

@@ -1,5 +1,5 @@
 {
-  "name": "alps-guten-block",
+  "name": "alps-gutenberg-blocks",
   "version": "1.5.1",
   "author": "Seventh-day Adventist Church",
   "description": "Creates custom blocks in Gutenberg specific to the ALPS v3 theme.",
@@ -10,8 +10,8 @@
     "dev:set-version": "node devtools/runner.js set-version",
     "i18n:update": "bin/i18n-update.sh",
     "i18n:create-json": "node bin/i18n-create-json.js",
-    "wp:plugin:build": "bin/build.sh",
-    "wp:plugin:release": "node bin/release.js"
+    "wp:plugin:build": "node devtools/runner.js build-plugin",
+    "wp:plugin:release": "node devtools/runner.js create-release"
   },
   "dependencies": {
     "@wordpress/api-fetch": "^3.18.0",
@@ -30,9 +30,12 @@
   },
   "devDependencies": {
     "@octokit/rest": "^18.0.3",
-    "ssh2-sftp-client": "^5.2.1",
+    "archiver": "^5.0.0",
     "cgb-scripts": "^1.23.1",
     "chalk": "^4.1.0",
+    "dotenv": "^8.2.0",
+    "fs-extra": "^9.0.1",
+    "ssh2-sftp-client": "^5.2.1",
     "winston": "^3.3.3"
   }
 }
