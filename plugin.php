@@ -20,4 +20,12 @@ if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
     require __DIR__ . '/vendor/autoload.php';
 }
 
+require_once __DIR__ . '/updater.php';
+$updater = new \ALPS\Gutenberg\PluginUpdater(
+    ALPS_GUTENBERG_NAME,
+    ALPS_GUTENBERG_VERSION,
+    'https://cdn.adventist.org/wordpress/plugins/' . ALPS_GUTENBERG_NAME . '/' . ALPS_GUTENBERG_NAME . '.json'
+);
+$updater->init();
+
 require_once __DIR__ . '/src/init.php';

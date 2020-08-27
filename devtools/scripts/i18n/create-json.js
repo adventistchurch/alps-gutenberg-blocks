@@ -1,28 +1,15 @@
-const gettext = require('gettext-parser');
-const winston = require('winston');
-const { combine, timestamp, printf } = winston.format;
-const chalk = require('chalk');
-const path = require('path');
 const fs = require('fs').promises;
+const getPackageInfo = require('../../lib/get-package-info');
 
-const pluginName = 'alps-gutenberg-blocks';
-const wpScriptHandler = 'alps-gb';
-const langRoot = path.resolve(__dirname, '../languages');
-const poFilePattern = new RegExp(`^${pluginName}-(?<lang>[a-z]{2}_[A-Z]{2})\.po$`, 'u');
+const i18nCreateJson = async (opts) => {
+    const { logger, projectRoot } = opts;
 
-const logger = winston.createLogger({
-    format: combine(
-        timestamp(),
-        printf(({ message }) => {
-            return message;
-        })
-    ),
-    transports: [
-        new winston.transports.Console(),
-    ],
-});
+    const pkg = await getPackageInfo();
 
-(async () => {
+    const wpScriptHandler = 'alps-gb';
+    const langRoot = `${projectRoot}/languages`;
+    const poFilePattern = new RegExp(`^${pkg.name}-(?<lang>[a-z]{2}_[A-Z]{2})\.po$`, 'u');
+
     logger.info(`📖 Reading the ${chalk.green('*.po')} language files from ${chalk.green(langRoot)}`);
     const langFiles = await fs.readdir(langRoot);
 
@@ -50,7 +37,7 @@ const logger = winston.createLogger({
             jsonMessages[msg.msgid] = msg.msgstr;
         }
 
-        const jsonFileName = `${pluginName}-${match.groups.lang}-${wpScriptHandler}.json`;
+        const jsonFileName = `${pkg.name}-${match.groups.lang}-${wpScriptHandler}.json`;
         const jsonContent = {
             locale_data: {
                 messages: jsonMessages,
@@ -60,9 +47,6 @@ const logger = winston.createLogger({
         await fs.writeFile(`${langRoot}/${jsonFileName}`, JSON.stringify(jsonContent));
         logger.info(`✏️ ${chalk.yellow(match.groups.lang)} converted to JSON format and saved to ${chalk.green(jsonFileName)}`);
     }
-})().then(() => {
-    process.exit(0);
-}).catch((err) => {
-    logger.error(err);
-    process.exit(1);
-});
+};
+
+module.exports = i18nCreateJson;

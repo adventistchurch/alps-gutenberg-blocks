@@ -2,10 +2,10 @@ const fs = require('fs-extra');
 const archiver = require('archiver');
 const chalk = require('chalk');
 const { DateTime } = require('luxon');
-const exec = require('../lib/exec');
-const dirTree = require('../lib/dir-tree');
-const getPackageInfo = require('../lib/get-package-info');
-const getPluginMeta = require('../lib/get-plugin-meta');
+const exec = require('../../lib/exec');
+const dirTree = require('../../lib/dir-tree');
+const getPackageInfo = require('../../lib/get-package-info');
+const getPluginMeta = require('../../lib/get-plugin-meta');
 
 const createArchive = (src, name, logger) => {
     return new Promise((resolve, reject) => {
@@ -38,7 +38,7 @@ const createArchive = (src, name, logger) => {
     });
 };
 
-const buildPlugin = async (opts) => {
+const pluginBuild = async (opts) => {
     const { logger, env } = opts;
 
     const pkg = await getPackageInfo();
@@ -52,7 +52,7 @@ const buildPlugin = async (opts) => {
 
     await exec('npm install', logger);
     await exec('composer install', logger);
-    await exec('npm run blocks:build', logger);
+    await exec('npm run project:build-blocks', logger);
 
     logger.info(`💼 Copy plugin files to ${chalk.yellow(pluginDir)}`);
 
@@ -91,4 +91,4 @@ const buildPlugin = async (opts) => {
     logger.info(`💚 Plugin metadata saved to ${chalk.yellow(`${pkg.name}.json`)}`);
 }
 
-module.exports = buildPlugin;
+module.exports = pluginBuild;

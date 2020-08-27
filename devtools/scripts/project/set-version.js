@@ -3,7 +3,7 @@ const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 const chalk = require('chalk');
 
-const getChangelog = require('../lib/get-changelog');
+const getChangelog = require('../../lib/get-changelog');
 
 /**
  * Update the version in package.json and package-lock.json

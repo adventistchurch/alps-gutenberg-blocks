@@ -3,9 +3,10 @@ const yaml = require('yaml');
 const logger = require('./lib/logger');
 
 const scripts = {
-    'set-version': require('./scripts/set-version'),
-    'build-plugin': require('./scripts/build-plugin'),
-    'create-release': require('./scripts/create-release'),
+    'project:set-version': require('./scripts/project/set-version'),
+    'plugin:build': require('./scripts/plugin/build'),
+    'plugin:release': require('./scripts/plugin/release'),
+    'i18n:create-json': require('./scripts/i18n/create-json'),
 };
 
 (async () => {
@@ -30,6 +31,7 @@ const scripts = {
     await scripts[scriptName]({
         logger,
         env,
+        projectRoot: process.cwd(),
     });
 
 })().then(() => {

@@ -1,10 +1,10 @@
 const fs = require('fs').promises;
 const SFTPClient = require('ssh2-sftp-client');
 const { Octokit } = require("@octokit/rest");
-const getChangelog = require('../lib/get-changelog');
-const getPackageInfo = require('../lib/get-package-info');
+const getChangelog = require('../../lib/get-changelog');
+const getPackageInfo = require('../../lib/get-package-info');
 
-const createRelease = async (opts) => {
+const pluginRelease = async (opts) => {
     const { logger, env } = opts;
 
     const githubToken = env.GITHUB_TOKEN || null;
@@ -76,4 +76,4 @@ const createRelease = async (opts) => {
     await sftp.put(`${buildDir}${metadataFileName}`, `${cdnRootPath}/${metadataFileName}`);
 };
 
-module.exports = createRelease;
+module.exports = pluginRelease;
