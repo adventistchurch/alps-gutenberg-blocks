@@ -1,8 +1,6 @@
+const fs = require('fs').promises;
+const yaml = require('yaml');
 const logger = require('./lib/logger');
-
-if (process.env.NODE_ENV === 'development') {
-    require('dotenv').config();
-}
 
 const scripts = {
     'set-version': require('./scripts/set-version'),
@@ -11,6 +9,19 @@ const scripts = {
 };
 
 (async () => {
+    let env = { ...process.env };
+
+    if (process.env.NODE_ENV === 'development') {
+        try {
+            const envYaml = await fs.readFile('.env.yml', { encoding: 'utf-8' });
+            const localEnv = yaml.parse(envYaml);
+            env = {
+                ...env,
+                ...localEnv,
+            };
+        } catch (err) {}
+    }
+
     const scriptName = process.argv[2];
     if (typeof scripts[scriptName] !== 'function') {
         throw new Error(`DevTools script "${scriptName}" is not found.`);
@@ -18,7 +29,7 @@ const scripts = {
 
     await scripts[scriptName]({
         logger,
-        env: process.env,
+        env,
     });
 
 })().then(() => {

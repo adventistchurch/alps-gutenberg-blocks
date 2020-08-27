@@ -1,13 +1,15 @@
 const fs = require('fs-extra');
 const archiver = require('archiver');
 const chalk = require('chalk');
+const { DateTime } = require('luxon');
 const exec = require('../lib/exec');
 const dirTree = require('../lib/dir-tree');
 const getPackageInfo = require('../lib/get-package-info');
+const getPluginMeta = require('../lib/get-plugin-meta');
 
 const createArchive = (src, name, logger) => {
     return new Promise((resolve, reject) => {
-        const archiveOutput = fs.createWriteStream(`${name}.zip`);
+        const archiveOutput = fs.createWriteStream(`${src}${name}.zip`);
         const archive = archiver('zip', {
             zlib: { level: 9 },
         });
@@ -31,7 +33,7 @@ const createArchive = (src, name, logger) => {
         });
 
         archive.pipe(archiveOutput);
-        archive.directory(`${src}/`, name);
+        archive.directory(`${src}${name}`, name);
         archive.finalize();
     });
 };
@@ -41,8 +43,10 @@ const buildPlugin = async (opts) => {
 
     const pkg = await getPackageInfo();
 
-    const buildDir = 'build/';
+    const buildDir = `build/`;
+    const pluginDir = `${buildDir}${pkg.name}/`;
     await fs.emptyDir(buildDir);
+    await fs.emptyDir(pluginDir);
 
     logger.info('🎯 Build plugin');
 
@@ -50,7 +54,7 @@ const buildPlugin = async (opts) => {
     await exec('composer install', logger);
     await exec('npm run blocks:build', logger);
 
-    logger.info(`💼 Copy plugin files to ${chalk.yellow(buildDir)}`);
+    logger.info(`💼 Copy plugin files to ${chalk.yellow(pluginDir)}`);
 
     const whiteList = [
         /^\/src\/.+\.php$/u,
@@ -64,12 +68,27 @@ const buildPlugin = async (opts) => {
     });
 
     for (const pf of pluginFiles) {
-        await fs.copy(`./${pf}`, `${buildDir}${pf}`);
+        await fs.copy(`./${pf}`, `${pluginDir}${pf}`);
     }
 
     // Package plugin
     await createArchive(buildDir, pkg.name);
     logger.info(`💚 Plugin packaged to ${chalk.yellow(`${pkg.name}.zip`)}`);
+
+    // Gather metadata
+    const pluginMeta = {
+        ...await getPluginMeta(),
+        version: pkg.version,
+        last_updated: DateTime.utc().toFormat('yyyy-LL-dd HH:mm:ss ZZZZ'),
+    };
+
+    pluginMeta.download_url = pluginMeta.download_url
+        .replace('{name}', pkg.name)
+        .replace('{file}', `${pkg.name}-v${pkg.version}.zip`);
+
+    await fs.writeFile(`${buildDir}${pkg.name}.json`, JSON.stringify(pluginMeta, null, 2));
+
+    logger.info(`💚 Plugin metadata saved to ${chalk.yellow(`${pkg.name}.json`)}`);
 }
 
 module.exports = buildPlugin;
