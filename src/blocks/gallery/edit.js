@@ -88,7 +88,7 @@ class GalleryEdit extends Component {
     // WE USE LODASH'S 'GET' TO GO DEEPER TO GET THE PROVIDED LARGE SIZE URL
     let imageData = images.map( ( image ) => ({
       ..._.pick( image, [ 'alt', 'caption', 'id' ] ),
-      url: get( image, 'sizes["horiz__16x9--m"].url' )
+      url: get( image, 'sizes["flex-height--m"].url' )
     }));
 
     this.props.setAttributes( {
