@@ -50,7 +50,6 @@ const pluginBuild = async (opts) => {
 
     logger.info('🎯 Build plugin');
 
-    await exec('npm install', logger);
     await exec('composer install', logger);
     await exec('npm run project:build-blocks', logger);
 
