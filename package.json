@@ -1,6 +1,6 @@
 {
   "name": "alps-gutenberg-blocks",
-  "version": "1.99.104",
+  "version": "1.99.105",
   "author": "Seventh-day Adventist Church",
   "description": "Creates custom blocks in Gutenberg specific to the ALPS v3 theme.",
   "private": true,
