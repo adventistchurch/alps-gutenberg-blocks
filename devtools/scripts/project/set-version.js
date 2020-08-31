@@ -67,7 +67,7 @@ const isWorkdirClean = async () => {
 const createReleaseCommit = async (version) => {
     try {
         await exec(`git add .`);
-        await exec(`git commit --porcelain -m "release: v${version.version}"`);
+        await exec(`git commit -m "release: v${version.version}"`);
         await exec(`git tag v${version.version}`);
     } catch (error) {
         if (error.stderr.match(/tag .* already exists/um)) {
