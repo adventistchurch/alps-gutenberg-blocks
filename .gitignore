@@ -1,5 +1,10 @@
-# Include your project-specific ignores in this file
-# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
-npm-debug.log
-node_modules
-.DS_Store
+# NodeJS packages installed by NPM
+node_modules/
+# PHP packages installed by Composer
+vendor/
+
+#
+dist/
+
+# Build step artifacts
+build/

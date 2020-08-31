@@ -1,25 +1,69 @@
 ## ALPS Gutenbreg Plugin
 
-This plugin is designed to support the [ALPS for Wordpress](https://github.com/adventistchurch/alps-wordpress), to provide Gutenberg Blocks with ALPS markup.
+This plugin is created to support the [ALPS for Wordpress](https://github.com/adventistchurch/alps-wordpress),
+to provide Gutenberg Blocks with ALPS markup.
 
 ---
 
-This project was bootstrapped with [Create Guten Block](https://github.com/ahmadawais/create-guten-block).
+This project is based on [Create Guten Block](https://github.com/ahmadawais/create-guten-block).
 
-Below you will find some information on how to run scripts.
+## Local development
 
->You can find the most recent version of this guide [here](https://github.com/ahmadawais/create-guten-block).
+### 👉 Init
+On first run of the plugin locally you should install required dependencies
+```
+npm install
+composer install
+```
 
-## 👉  `npm start`
-- Use to compile and run the block in development mode.
+Composer could be downloaded from https://getcomposer.org/
+
+### 👉  `npm run dev`
+- Use to compile and run the blocks in development mode.
 - Watches for any changes and reports back any errors in your code.
 
-## 👉  `npm run build`
-- Use to build production code for your block inside `dist` folder.
+### 👉  `npm run project:build-blocks`
+- Use to build production code for your blocks inside `dist` folder.
 - Runs once and reports back the gzip file sizes of the produced code.
 
-## 👉  `npm run eject`
-- Use to eject your plugin out of `create-guten-block`.
-- Provides all the configurations so you can customize the project as you want.
-- It's a one-way street, `eject` and you have to maintain everything yourself.
-- You don't normally have to `eject` a project because by ejecting you lose the connection with `create-guten-block` and from there onwards you have to update and maintain all the dependencies on your own.
+### 👉  `npm run project:set-version`
+- Use to sync the current version in code with `CHANGELOG.md`
+- Sets the plugin version in `package.json`, `plugin.php`, commits the changes and creates a related git tag.
+- Push result to the GitHub to run the build and release processes.
+
+## i18n
+### 👉  `npm run i18n:update-pot`
+- Use to generate master file for internationalization.
+- Scans the project files for localizable strings and dumps them to the `languages/alps-gutenberg-blocks.pot`
+- Open `alps-gutenberg-blocks.pot` with [POEdit](https://poedit.net/) to create new and update existing locale files with string translations.
+- Translation files should be named as `languages/alps-gutenberg-blocks-{lang_LANG}.po`
+- Set language code in `en_US` format.
+
+### 👉  `npm run i18n:create-json`
+- Use to convert `.po` files to `.json`
+- Iterates over each `.po` file in `languages` and generates `.json` file with strings.
+- `.json` files are used for js scripts.
+
+## Plugin release
+### 👉  `npm run wp:plugin:build`
+- Use on Continuous Integration server to create a plugin archive for distribution
+- Builds plugin artifacts in `build` directory
+- `alps-gutenberg-blocks` directory with plugin files
+- `alps-gutenberg-blocks.zip` – plugin distribution archive
+- `alps-gutenberg-blocks.json` – plugin metadata for Wordpress updates
+
+### 👉  `npm run wp:plugin:release`
+- Use on Continuous Integration server to publish the new version
+- Uploads `alps-gutenberg-blocks.zip` and `alps-gutenberg-blocks.json` to CN
+- Creates GitHub release for manual installation
+
+## CI Config
+Build script uses Environment Variables to get the config
+
+| Var | Description | Example |
+|-----|-------------|---------|
+|**CDN_HOST**| SSH host | some.server.com |
+|**CDN_USER**| SSH user | username |
+|**CDN_PRIVATE_KEY**| SSH private key content (multiline) |  |
+|**CDN_PRIVATE_KEY_PASS**| SSH private key passphrase |  |
+|**CDN_ROOT_PATH**| Path on server for artifacts uploading | /var/www |

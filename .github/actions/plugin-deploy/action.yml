@@ -1,0 +1,5 @@
+name: 'WP Plugin::Deploy'
+description: 'Build and Deploy WordPress plugin'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

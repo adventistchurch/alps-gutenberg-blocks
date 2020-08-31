@@ -130,7 +130,7 @@ class TwoUpImage extends Component {
               icon="no-alt"
               onClick={ onRemove }
               className="blocks-gallery-item__remove"
-              label={ __( 'Remove Image' ) }
+              label={ __( 'Remove Image', 'alps-gutenberg-blocks' ) }
             />
           </div>
         }
@@ -138,7 +138,7 @@ class TwoUpImage extends Component {
         { ( caption && caption.length > 0 ) || isSelected ? (
           <RichText
             tagName="figcaption"
-            placeholder={ __( 'Write caption…' ) }
+            placeholder={ __( 'Write caption…', 'alps-gutenberg-blocks' ) }
             value={ caption }
             isSelected={ this.state.captionSelected }
             onChange={ ( newCaption ) => setAttributes( { caption: newCaption } ) }

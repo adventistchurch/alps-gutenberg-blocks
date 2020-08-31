@@ -1,0 +1,9 @@
+{
+  "requires": "5.0",
+  "requires_php": "7.0",
+  "tested": "5.5",
+  "sections" : {
+    "description" : "Creates custom blocks in Gutenberg specific to the ALPS v3 theme."
+  },
+  "download_url": "https://cdn.adventist.org/wordpress/plugins/{name}/{file}"
+}

@@ -15,9 +15,9 @@ import './editor.scss';
   var MediaUpload = wp.blockEditor.MediaUpload;
 
   registerBlockType( 'alps-gutenberg-blocks/image-breakout', {
-    title: __('ALPS Image (Breakout)'),
+    title: __('ALPS Image (Breakout)', 'alps-gutenberg-blocks'),
     icon: 'format-image',
-    description: 'Image that expands the width of the page.',
+    description: __('Image that expands the width of the page.', 'alps-gutenberg-blocks'),
     category: 'common',
 
     attributes: {
@@ -50,14 +50,14 @@ import './editor.scss';
               className: attributes.id ? 'image-button' : 'button button-large',
               onClick: obj.open
               },
-              ! attributes.id ? __( 'Upload Image' ) : el( 'img', { src: attributes.url } )
+              ! attributes.id ? __( 'Upload Image', 'alps-gutenberg-blocks' ) : el( 'img', { src: attributes.url } )
             );
           }
         } ),
         el( RichText, {
           tagName: 'p',
           className: 'o-caption',
-          placeholder: 'Caption',
+          placeholder: __('Caption', 'alps-gutenberg-blocks'),
           keepPlaceholderOnFocus: true,
           value: attributes.caption,
           onChange: function( newCaption ) {
