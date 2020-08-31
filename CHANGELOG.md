@@ -3,7 +3,13 @@ A record of the changes made to `ALPS Gutenberg Blocks`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-##[1.5.2]
+
+## [1.6.0]
+### Add
+- Rebuild the deployment system. 
+- Build the new the i18n system. [#36](https://github.com/adventistchurch/alps-gutenberg-blocks/pull/36)
+
+## [1.5.2]
 ### Fixed
 - Gallery: fix image size select. [#503](https://github.com/adventistchurch/alps-wordpress/issues/503)
 
