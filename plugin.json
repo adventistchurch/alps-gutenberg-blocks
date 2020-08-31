@@ -5,5 +5,5 @@
   "sections" : {
     "description" : "Creates custom blocks in Gutenberg specific to the ALPS v3 theme."
   },
-  "download_url": "https://cdn.adventist.org/plugins/{name}/{file}"
+  "download_url": "https://cdn.adventist.org/wordpress/plugins/{name}/{file}"
 }
