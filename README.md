@@ -8,6 +8,16 @@ to provide Gutenberg Blocks with ALPS markup.
 This project is based on [Create Guten Block](https://github.com/ahmadawais/create-guten-block).
 
 ## Local development
+
+### 👉 Init
+On first run of the plugin locally you should install required dependencies
+```
+npm install
+composer install
+```
+
+Composer could be downloaded from https://getcomposer.org/
+
 ### 👉  `npm run dev`
 - Use to compile and run the blocks in development mode.
 - Watches for any changes and reports back any errors in your code.
