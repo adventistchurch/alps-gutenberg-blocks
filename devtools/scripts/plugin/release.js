@@ -60,7 +60,7 @@ const pluginRelease = async (opts) => {
     await octokit.repos.uploadReleaseAsset({
         url: createReleaseResponse.data.upload_url,
         name: distFileName,
-        data: await fs.readFile(localFileName),
+        data: await fs.readFile(`${buildDir}${localFileName}`),
     });
     logger.info(`🍀 Release ${chalk.green(tag)} published on GitHub`);
 
