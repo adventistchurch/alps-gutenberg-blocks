@@ -3,7 +3,7 @@
  * Plugin Name: ALPS Gutenberg Blocks
  * Plugin URI: https://adventist.io/themes
  * Description: Creates custom blocks in Gutenberg specific to the ALPS v3 theme.
- * Author: Seventh-day Adventist Church and SouthLeft
+ * Author: Seventh-day Adventist Church
  * Author URI: https://adventist.io/themes
  * Version: 1.6.0
  */
