@@ -54,7 +54,6 @@ const pluginRelease = async (opts) => {
         tag_name: tag,
         name: tag,
         body: releaseDesc.join("\n"),
-        draft: true,
     });
 
     await octokit.repos.uploadReleaseAsset({
