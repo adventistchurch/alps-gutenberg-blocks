@@ -1,5 +1,6 @@
 const fs = require('fs').promises;
 const SFTPClient = require('ssh2-sftp-client');
+const chalk = require('chalk');
 const { Octokit } = require("@octokit/rest");
 const getChangelog = require('../../lib/get-changelog');
 const getPackageInfo = require('../../lib/get-package-info');
@@ -43,7 +44,6 @@ const pluginRelease = async (opts) => {
     }
 
     // Create Release on GitHub
-    logger.info(`Publishing a Release ${tag}`);
     const octokit = new Octokit({
         auth: githubToken,
     });
@@ -62,9 +62,9 @@ const pluginRelease = async (opts) => {
         name: distFileName,
         data: await fs.readFile(localFileName),
     });
+    logger.info(`🍀 Release ${chalk.green(tag)} published on GitHub`);
 
     // Upload to CDN
-    logger.info(`Uploading ${distFileName} to CDN`);
     const sftp = new SFTPClient();
     await sftp.connect({
         host: cdnHost,
@@ -72,8 +72,12 @@ const pluginRelease = async (opts) => {
         privateKey: cdnPrivateKey,
         passphrase: cdnPrivateKeyPass,
     });
+
     await sftp.put(`${buildDir}${localFileName}`, `${cdnRootPath}/${distFileName}`);
+    logger.info(`🔼 ${chalk.yellow(distFileName)} pushed to CDN`);
+
     await sftp.put(`${buildDir}${metadataFileName}`, `${cdnRootPath}/${metadataFileName}`);
+    logger.info(`🔼 ${chalk.yellow(metadataFileName)} pushed to CDN`);
 };
 
 module.exports = pluginRelease;
