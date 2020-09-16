@@ -42,6 +42,7 @@ Composer could be downloaded from https://getcomposer.org/
 ### 👉  `npm run i18n:create-json`
 - Use to convert `.po` files to `.json`
 - Iterates over each `.po` file in `languages` and generates `.json` file with strings.
+- `.po` file names should be like `alps-gutenberg-blocks-en_US.po`
 - `.json` files are used for js scripts.
 
 ## Plugin release

@@ -1,4 +1,5 @@
 const fs = require('fs').promises;
+const chalk = require('chalk');
 const getPackageInfo = require('../../lib/get-package-info');
 
 const i18nCreateJson = async (opts) => {
@@ -12,6 +13,10 @@ const i18nCreateJson = async (opts) => {
 
     logger.info(`📖 Reading the ${chalk.green('*.po')} language files from ${chalk.green(langRoot)}`);
     const langFiles = await fs.readdir(langRoot);
+
+    if (langFiles.length === 0) {
+        logger.warn(`Language files not found. Check the naming of po to b`)
+    }
 
     for (const poFileName of langFiles) {
         const match = poFileName.match(poFilePattern);
