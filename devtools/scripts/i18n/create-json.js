@@ -1,5 +1,6 @@
 const fs = require('fs').promises;
 const chalk = require('chalk');
+const gettext = require("gettext-parser");
 const getPackageInfo = require('../../lib/get-package-info');
 
 const i18nCreateJson = async (opts) => {
