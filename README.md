@@ -64,7 +64,7 @@ The `alps-gutenbers-blocks` directory should appear in `wp-content/plugins`.
 
 ### 👉  `npm run wp:plugin:release`
 - Use on Continuous Integration server to publish the new version
-- Uploads `alps-gutenberg-blocks.zip` and `alps-gutenberg-blocks.json` to CN
+- Uploads `alps-gutenberg-blocks.zip` and `alps-gutenberg-blocks.json` to CDN
 - Creates GitHub release for manual installation
 
 ## CI Config
