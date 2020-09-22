@@ -22,8 +22,10 @@ Composer could be downloaded from https://getcomposer.org/
 You should link the `build/alps-gutenberg-blocks` into `wp-content/plugins` of the local WP.
 
 ```
-ln -s path/to/plugin/build/alps-gutenberg-blocks path/to/wp/wp-content/plugins
+ln -s path/to/plugin/ path/to/wp/wp-content/plugins/alps-gutenberg-blocks
 ```
+
+The `alps-gutenbers-blocks` directory should appear in `wp-content/plugins`.
 
 ### 👉  `npm run dev`
 - Use to compile and run the blocks in development mode.
