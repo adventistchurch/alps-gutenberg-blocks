@@ -33,7 +33,11 @@ function alps_gutenberg_blocks_init()
         ALPS_GUTENBERG_VERSION,
         true
     );
-    wp_set_script_translations('alps-gb', 'alps-gutenberg-blocks',$pluginRoot . '/languages' );
+    wp_set_script_translations(
+        'alps-gb',
+        'alps-gutenberg-blocks',
+        dirname($pluginRoot) . '/languages'
+    );
 
     // Register block editor styles for backend.
     wp_register_style(

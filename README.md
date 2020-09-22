@@ -18,6 +18,15 @@ composer install
 
 Composer could be downloaded from https://getcomposer.org/
 
+### Link to the WP installation
+You should link the `build/alps-gutenberg-blocks` into `wp-content/plugins` of the local WP.
+
+```
+ln -s path/to/plugin/ path/to/wp/wp-content/plugins/alps-gutenberg-blocks
+```
+
+The `alps-gutenbers-blocks` directory should appear in `wp-content/plugins`.
+
 ### 👉  `npm run dev`
 - Use to compile and run the blocks in development mode.
 - Watches for any changes and reports back any errors in your code.
