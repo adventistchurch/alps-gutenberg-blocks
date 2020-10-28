@@ -37,9 +37,9 @@ import GalleryImage from './editor-image';
 
 const MAX_COLUMNS = 8;
 const linkOptions = [
-  { value: 'attachment', label: __( 'Attachment Page' ) },
-  { value: 'media', label: __( 'Media File' ) },
-  { value: 'none', label: __( 'None' ) },
+  { value: 'attachment', label: __( 'Attachment Page', 'alps-gutenberg-blocks' ) },
+  { value: 'media', label: __( 'Media File', 'alps-gutenberg-blocks' ) },
+  { value: 'none', label: __( 'None', 'alps-gutenberg-blocks' ) },
 ];
 
 export function defaultColumnsNumber( attributes ) {
@@ -88,7 +88,7 @@ class GalleryEdit extends Component {
     // WE USE LODASH'S 'GET' TO GO DEEPER TO GET THE PROVIDED LARGE SIZE URL
     let imageData = images.map( ( image ) => ({
       ..._.pick( image, [ 'alt', 'caption', 'id' ] ),
-      url: get( image, 'sizes["horiz__16x9--m"].url' )
+      url: get( image, 'sizes["flex-height--m"].url' )
     }));
 
     this.props.setAttributes( {
@@ -146,7 +146,7 @@ class GalleryEdit extends Component {
               render={ ( { open } ) => (
                 <Button
                   className="components-toolbar__control"
-                  label={ __( 'Edit Gallery' ) }
+                  label={ __( 'Edit Gallery', 'alps-gutenberg-blocks' ) }
                   icon="edit"
                   onClick={ open }
                 />
@@ -166,8 +166,8 @@ class GalleryEdit extends Component {
             icon="format-gallery"
             className={ className }
             labels={ {
-              title: __( 'Gallery' ),
-              name: __( 'images' ),
+              title: __( 'Gallery', 'alps-gutenberg-blocks' ),
+              name: __( 'images', 'alps-gutenberg-blocks' ),
             } }
             onSelect={ this.onSelectImages }
             accept="image/*"
@@ -189,7 +189,7 @@ class GalleryEdit extends Component {
           className={ className }
           value={ title }
           onChange={ this.onChangeTitle }
-          placeholder="Enter a gallery title.."
+          placeholder={ __('Enter a gallery title..', 'alps-gutenberg-blocks') }
         />
         { controls }
         { noticeUI }

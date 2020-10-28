@@ -16,8 +16,8 @@ import icons from '../../icons/icons.js'
   var { Icon } = wp.components;
 
   registerBlockType( 'alps-gutenberg-blocks/media-testimony', {
-		title: __('ALPS Media Testimony Block'),
-		description: __('Single media testimony.'),
+		title: __('ALPS Media Testimony Block', 'alps-gutenberg-blocks'),
+		description: __('Single media testimony.', 'alps-gutenberg-blocks'),
 		icon: 'format-chat',
 		category: 'widgets',
     parent: [ 'alps-gutenberg-blocks/media-testimonies' ],
@@ -71,7 +71,7 @@ import icons from '../../icons/icons.js'
           el( 'div', { className: 'o-editor-block--left' },
             el( RichText, {
               tagName: 'h4',
-              placeholder: 'Enter Quote',
+              placeholder: __('Enter Quote', 'alps-gutenberg-blocks'),
               keepPlaceholderOnFocus: true,
               value: attributes.quote,
               onChange: function( newQuote ) {
@@ -80,7 +80,7 @@ import icons from '../../icons/icons.js'
             } ),
             el( TextControl, {
               type: 'url',
-              label: __( 'Read More Link' ),
+              label: __( 'Read More Link', 'alps-gutenberg-blocks' ),
               value: attributes.readMoreLink,
               placeholder: 'http://',
               keepPlaceholderOnFocus: true,
@@ -100,14 +100,14 @@ import icons from '../../icons/icons.js'
                     className: attributes.imageID ? 'image-button' : 'button button-large',
                     onClick: obj.open
                     },
-                    ! attributes.imageID ? __( 'Upload Image' ) : el( 'img', { src: attributes.imageURL } )
+                    ! attributes.imageID ? __( 'Upload Image', 'alps-gutenberg-blocks' ) : el( 'img', { src: attributes.imageURL } )
                   );
                 }
               } )
             ),
             el( RichText, {
               tagName: 'strong',
-              placeholder: 'Enter Video Title',
+              placeholder: __('Enter Video Title', 'alps-gutenberg-blocks'),
               className: 'o-heading--l',
               keepPlaceholderOnFocus: true,
               value: attributes.title,
@@ -117,7 +117,7 @@ import icons from '../../icons/icons.js'
             } ),
             el( TextControl, {
               type: 'url',
-              label: __( 'Watch Video Link' ),
+              label: __( 'Watch Video Link', 'alps-gutenberg-blocks' ),
               value: attributes.watchVideoLink,
               placeholder: 'http://',
               keepPlaceholderOnFocus: true,
@@ -143,7 +143,7 @@ import icons from '../../icons/icons.js'
       }
 
       if (attributes.watchVideoLink) {
-        var watchVideoButton = <a href={ `${ attributes.watchVideoLink }` } className="o-button o-button--outline o-button--outline--white o-watch-video"><span className="u-icon u-icon--xs u-space--half--right"><Icon className="icon" icon={ icons.play } /></span>Watch Video</a>;
+        var watchVideoButton = <a href={ `${ attributes.watchVideoLink }` } className="o-button o-button--outline o-button--outline--white o-watch-video"><span className="u-icon u-icon--xs u-space--half--right"><Icon className="icon" icon={ icons.play } /></span>{ __('Watch Video', 'alps-gutenberg-blocks') }</a>;
       }
 
       if (attributes.imageURL) {

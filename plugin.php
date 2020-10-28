@@ -1,15 +1,11 @@
 <?php
 /**
- * @package alps-gutenberg-blocks
- * @version 1.5.1
- */
-/**
  * Plugin Name: ALPS Gutenberg Blocks
  * Plugin URI: https://adventist.io/themes
  * Description: Creates custom blocks in Gutenberg specific to the ALPS v3 theme.
- * Author: Seventh-day Adventist Church and SouthLeft
+ * Author: Seventh-day Adventist Church
  * Author URI: https://adventist.io/themes
- * Version: 1.5.1
+ * Version: 1.6.1
  */
 
 // Exit if accessed directly.
@@ -17,19 +13,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-/**
- * Block Initializer.
- */
-require_once plugin_dir_path( __FILE__ ) . 'src/init.php';
+define('ALPS_GUTENBERG_VERSION', '1.6.1');
+define('ALPS_GUTENBERG_NAME', 'alps-gutenberg-blocks');
 
-/**
- * Update Checker for Krenl.us
- */
-require 'plugin_update_check.php';
-$KernlUpdater = new PluginUpdateChecker_2_0 (
-   'https://kernl.us/api/v1/updates/5c13a3859e9cea4aa2fd8fbd/',
-   __FILE__,
-   'alps-gutenberg-blocks',
-   1
+if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+    require __DIR__ . '/vendor/autoload.php';
+}
+
+require_once __DIR__ . '/updater.php';
+$updater = new \ALPS\Gutenberg\PluginUpdater(
+    ALPS_GUTENBERG_NAME,
+    ALPS_GUTENBERG_VERSION,
+    'https://cdn.adventist.org/wordpress/plugins/' . ALPS_GUTENBERG_NAME . '/' . ALPS_GUTENBERG_NAME . '.json'
 );
-   
+$updater->init();
+
+require_once __DIR__ . '/src/init.php';

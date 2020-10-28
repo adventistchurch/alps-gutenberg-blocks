@@ -16,8 +16,8 @@ import icons from '../../icons/icons.js'
   var { Icon } = wp.components;
 
   registerBlockType( 'alps-gutenberg-blocks/media-testimonies', {
-    title: __('ALPS Media Testimonies'),
-    description: __('Display your media testimonies.'),
+    title: __('ALPS Media Testimonies', 'alps-gutenberg-blocks'),
+    description: __('Display your media testimonies.', 'alps-gutenberg-blocks'),
     icon: 'format-chat',
     category: 'widgets',
     html: false,
@@ -41,7 +41,7 @@ import icons from '../../icons/icons.js'
           el( 'div', { className: 'o-editor-heading', },
             el( RichText, {
               tagName: 'h3',
-              placeholder: 'Enter Section Title',
+              placeholder: __('Enter Section Title', 'alps-gutenberg-blocks'),
               className: 'o-heading--l',
               keepPlaceholderOnFocus: true,
               value: attributes.title,
@@ -51,7 +51,7 @@ import icons from '../../icons/icons.js'
             } ),
             el( TextControl, {
               type: 'url',
-              label: __( 'See All Link Url' ),
+              label: __( 'See All Link Url', 'alps-gutenberg-blocks' ),
               value: attributes.link,
               placeholder: 'http://',
               className: 'o-link',

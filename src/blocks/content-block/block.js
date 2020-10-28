@@ -15,8 +15,8 @@ import './editor.scss';
   var AlignmentToolbar = wp.blockEditor.AlignmentToolbar;
 
   registerBlockType( 'alps-gutenberg-blocks/content-block', {
-    title: __('ALPS Content Block'),
-    description: 'Content block that highlights a row to text.',
+    title: __('ALPS Content Block', 'alps-gutenberg-blocks'),
+    description: __('Content block that highlights a row to text.', 'alps-gutenberg-blocks'),
     icon: 'welcome-write-blog',
     category: 'common',
     html: false,
@@ -58,7 +58,7 @@ import './editor.scss';
           el( RichText, {
             tagName: 'strong',
             className: 'o-heading--l',
-            placeholder: 'Title',
+            placeholder: __('Title', 'alps-gutenberg-blocks'),
             keepPlaceholderOnFocus: true,
             value: attributes.title,
             onChange: function( newTitle ) {
@@ -68,7 +68,7 @@ import './editor.scss';
           el( RichText, {
             tagName: 'p',
             className: 'o-paragraph',
-            placeholder: 'Write a description...',
+            placeholder: __('Write a description...', 'alps-gutenberg-blocks'),
             keepPlaceholderOnFocus: true,
             style: { textAlign: attributes.alignment },
             value: attributes.body,
@@ -78,7 +78,7 @@ import './editor.scss';
           } ),
           el( TextControl, {
             type: 'url',
-            label: __( 'Link Url' ),
+            label: __('Link Url', 'alps-gutenberg-blocks'),
             className: 'o-link',
             placeholder: 'http://',
             keepPlaceholderOnFocus: true,
@@ -102,7 +102,7 @@ import './editor.scss';
           </a>
         </h3>;
         var button =
-        <a href={ `${ attributes.link }` } className="c-block__button o-button o-button--outline">Read More<span className="u-icon u-icon--m u-path-fill--base u-space--half--left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M18.29,8.59l-3.5-3.5L13.38,6.5,15.88,9H.29v2H15.88l-2.5,2.5,1.41,1.41,3.5-3.5L19.71,10Z"></path></svg></span></a>;
+        <a href={ `${ attributes.link }` } className="c-block__button o-button o-button--outline">{ __('Read More', 'alps-gutenberg-blocks') }<span className="u-icon u-icon--m u-path-fill--base u-space--half--left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M18.29,8.59l-3.5-3.5L13.38,6.5,15.88,9H.29v2H15.88l-2.5,2.5,1.41,1.41,3.5-3.5L19.71,10Z"></path></svg></span></a>;
       } else {
         var title =
         <h3 className="u-theme--color--darker u-font--secondary--m u-text-transform--upper">

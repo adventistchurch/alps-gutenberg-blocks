@@ -22,7 +22,7 @@ import icons from '../../icons/icons.js'
   var { Icon } = wp.components;
 
   registerBlockType( 'alps-gutenberg-blocks/cta', {
-    title: __('ALPS CTA'),
+    title: __('ALPS CTA', 'alps-gutenberg-blocks'),
     icon: 'external',
     category: 'common',
     html: false,
@@ -132,14 +132,14 @@ import icons from '../../icons/icons.js'
       return [
         el( InspectorControls, { key: 'inspector' },
           el( ToggleControl, {
-            label: 'Dark Background',
-            help: 'Makes the CTA background dark.',
+            label: __('Dark Background', 'alps-gutenberg-blocks'),
+            help: __('Makes the CTA background dark.', 'alps-gutenberg-blocks'),
             checked: attributes.isDark,
             onChange: updateBackgroundColor
           } ),
           el( ToggleControl, {
-            label: 'Background Image',
-            help: 'Sets the image as a background image.',
+            label: __('Background Image', 'alps-gutenberg-blocks'),
+            help: __('Sets the image as a background image.', 'alps-gutenberg-blocks'),
             checked: attributes.hasBackgroundImage,
             onChange: updateBackgroundImage
           } ),
@@ -160,13 +160,13 @@ import icons from '../../icons/icons.js'
                 className: attributes.imageId ? 'image-button' : 'button button-large',
                 onClick: ! attributes.imageId ? obj.open : obj.close
                 },
-                ! attributes.imageId ? __( 'Upload Image' ) :
+                ! attributes.imageId ? __( 'Upload Image', 'alps-gutenberg-blocks' ) :
                 el( 'div', { className: 'o-image--edit', },
                   el( Button, {
                     icon: 'no-alt',
                     onClick: onRemoveImage,
                     className: 'blocks-gallery-item__remove',
-                    label: 'Remove Image',
+                    label: __('Remove Image', 'alps-gutenberg-blocks'),
                   } ),
                   el( 'img', {
                     src: attributes.imageUrl
@@ -177,7 +177,7 @@ import icons from '../../icons/icons.js'
           } ),
           el( RichText, {
             tagName: 'h3',
-            placeholder: 'Title',
+            placeholder: __('Title', 'alps-gutenberg-blocks'),
             className: 'o-heading--l',
             keepPlaceholderOnFocus: true,
             value: attributes.title,
@@ -187,7 +187,7 @@ import icons from '../../icons/icons.js'
           } ),
           el( RichText, {
             tagName: 'p',
-            placeholder: 'Description',
+            placeholder: __('Description', 'alps-gutenberg-blocks'),
             className: 'o-description',
             keepPlaceholderOnFocus: true,
             style: { textAlign: attributes.alignment },
@@ -200,7 +200,7 @@ import icons from '../../icons/icons.js'
             el ( 'div', { className: 'o-button--1', },
               el( TextControl, {
                 type: 'url',
-                label: __( 'Button 1 Url' ),
+                label: __( 'Button 1 Url', 'alps-gutenberg-blocks' ),
                 value: attributes.button1Url,
                 placeholder: 'http://',
                 keepPlaceholderOnFocus: true,
@@ -209,7 +209,7 @@ import icons from '../../icons/icons.js'
                 }
               } ),
               el( TextControl, {
-                label: __( 'Button 1 Text' ),
+                label: __( 'Button 1 Text', 'alps-gutenberg-blocks' ),
                 placeholder: 'Learn more',
                 keepPlaceholderOnFocus: true,
                 value: attributes.button1Text,
@@ -218,7 +218,7 @@ import icons from '../../icons/icons.js'
                 }
               } ),
               el( CheckboxControl, {
-                label: __( 'Open in new window' ),
+                label: __( 'Open in new window', 'alps-gutenberg-blocks' ),
                 checked: attributes.button1NewWindow,
                 onChange: function() {
                   props.setAttributes( { button1NewWindow: !attributes.button1NewWindow } );
@@ -228,7 +228,7 @@ import icons from '../../icons/icons.js'
             el ( 'div', { className: 'o-button--2', },
               el( TextControl, {
                 type: 'url',
-                label: __( 'Button 2 Url' ),
+                label: __( 'Button 2 Url', 'alps-gutenberg-blocks' ),
                 value: attributes.button2Url,
                 placeholder: 'http://',
                 keepPlaceholderOnFocus: true,
@@ -237,7 +237,7 @@ import icons from '../../icons/icons.js'
                 }
               } ),
               el( TextControl, {
-                label: __( 'Button 2 Text' ),
+                label: __( 'Button 2 Text', 'alps-gutenberg-blocks' ),
                 placeholder: 'Learn more',
                 keepPlaceholderOnFocus: true,
                 value: attributes.button2Text,
@@ -246,7 +246,7 @@ import icons from '../../icons/icons.js'
                 }
               } ),
               el( CheckboxControl, {
-                label: __( 'Open in new window' ),
+                label: __( 'Open in new window', 'alps-gutenberg-blocks' ),
                 checked: attributes.button2NewWindow,
                 onChange: function() {
                   props.setAttributes( { button2NewWindow: !attributes.button2NewWindow } );

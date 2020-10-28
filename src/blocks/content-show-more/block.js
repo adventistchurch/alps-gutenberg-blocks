@@ -15,9 +15,9 @@ import './editor.scss';
   var AlignmentToolbar = wp.blockEditor.AlignmentToolbar;
 
   registerBlockType( 'alps-gutenberg-blocks/content-show-more', {
-    title: __('ALPS Content Show More'),
+    title: __('ALPS Content Show More', 'alps-gutenberg-blocks'),
     icon: 'editor-expand',
-    description: 'Content block that has a toggle button to show more.',
+    description: __('Content block that has a toggle button to show more.', 'alps-gutenberg-blocks'),
     category: 'common',
     html: false,
 
@@ -83,7 +83,7 @@ import './editor.scss';
                   className: attributes.imageID ? 'image-button' : 'button button-large',
                   onClick: obj.open
                   },
-                  ! attributes.imageID ? __( 'Upload Image' ) : el( 'img', { src: attributes.imageURL } )
+                  ! attributes.imageID ? __( 'Upload Image', 'alps-gutenberg-blocks' ) : el( 'img', { src: attributes.imageURL } )
                 );
               }
             } )
@@ -91,7 +91,7 @@ import './editor.scss';
           el( RichText, {
             tagName: 'strong',
             className: 'o-heading--l',
-            placeholder: 'Title',
+            placeholder: __('Title', 'alps-gutenberg-blocks'),
             keepPlaceholderOnFocus: true,
             value: attributes.title,
             onChange: function( newTitle ) {
@@ -101,7 +101,7 @@ import './editor.scss';
           el( RichText, {
             tagName: 'p',
             className: 'o-description',
-            placeholder: 'Description',
+            placeholder: __('Description', 'alps-gutenberg-blocks'),
             keepPlaceholderOnFocus: true,
             style: { textAlign: attributes.alignment },
             value: attributes.description,
@@ -112,7 +112,7 @@ import './editor.scss';
           el( RichText, {
             tagName: 'p',
             className: 'o-paragraph',
-            placeholder: 'Body (Display on click of show more button)',
+            placeholder: __('Body (Display on click of show more button)', 'alps-gutenberg-blocks'),
             keepPlaceholderOnFocus: true,
             style: { textAlign: attributes.alignment },
             value: attributes.body,

@@ -14,7 +14,7 @@ import './editor.scss';
   var ToggleControl = wp.components.ToggleControl;
 
   registerBlockType( 'alps-gutenberg-blocks/blockquote', {
-    title: __('ALPS Blockquote'),
+    title: __('ALPS Blockquote', 'alps-gutenberg-blocks'),
     icon: 'format-quote',
     category: 'common',
     html: false,
@@ -58,16 +58,16 @@ import './editor.scss';
         el( InspectorControls, { key: 'inspector' },
           el(
             ToggleControl, {
-              label: 'Extend Quote',
-              help: 'Extends the quote outside the page content.',
+              label: __('Extend Quote', 'alps-gutenberg-blocks'),
+              help: __('Extends the quote outside the page content.', 'alps-gutenberg-blocks'),
               checked: attributes.applyStyles,
               onChange: updateStyles
             }
           ),
           el(
             ToggleControl, {
-              label: 'Strong Quote',
-              help: 'Set strong style for the quote content.',
+              label: __('Strong Quote', 'alps-gutenberg-blocks'),
+              help: __('Set strong style for the quote content.', 'alps-gutenberg-blocks'),
               checked: attributes.isStrong,
               onChange: setStrong
             }
@@ -78,7 +78,7 @@ import './editor.scss';
             el( RichText, {
               tagName: 'p',
               className: 'o-paragraph',
-              placeholder: 'Write a quote...',
+              placeholder: __('Write a quote...', 'alps-gutenberg-blocks'),
               keepPlaceholderOnFocus: true,
               value: attributes.body,
               onChange: function( newBody ) {
@@ -88,7 +88,7 @@ import './editor.scss';
             el( RichText, {
               tagName: 'cite',
               className: 'o-citation',
-              placeholder: 'Citation',
+              placeholder: __('Citation', 'alps-gutenberg-blocks'),
               keepPlaceholderOnFocus: true,
               value: attributes.citation,
               onChange: function( newCitation ) {

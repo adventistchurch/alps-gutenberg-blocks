@@ -1,18 +1,42 @@
 {
-  "name": "alps-guten-block",
-  "version": "1.0.0",
+  "name": "alps-gutenberg-blocks",
+  "version": "1.6.1",
+  "author": "Seventh-day Adventist Church",
+  "description": "Creates custom blocks in Gutenberg specific to the ALPS v3 theme.",
   "private": true,
   "scripts": {
-    "start": "cgb-scripts start",
-    "build": "cgb-scripts build",
-    "eject": "cgb-scripts eject"
+    "dev": "cgb-scripts start",
+    "project:build-blocks": "cgb-scripts build",
+    "project:set-version": "node devtools/runner.js project:set-version",
+    "i18n:update-pot": "bin/i18n-update.sh",
+    "i18n:create-json": "node devtools/runner.js i18n:create-json",
+    "wp:plugin:build": "node devtools/runner.js plugin:build",
+    "wp:plugin:release": "node devtools/runner.js plugin:release"
   },
   "dependencies": {
-    "@wordpress/block-editor": "^3.7.7",
-    "cgb-scripts": "^1.9.7"
+    "@wordpress/api-fetch": "^3.18.0",
+    "@wordpress/block-editor": "^4.3.7",
+    "@wordpress/blocks": "^6.20.3",
+    "@wordpress/components": "^10.0.6",
+    "@wordpress/data": "^4.22.3",
+    "@wordpress/date": "^3.10.0",
+    "@wordpress/element": "^2.16.0",
+    "@wordpress/html-entities": "^2.8.0",
+    "@wordpress/i18n": "^3.14.0",
+    "@wordpress/url": "^2.17.0",
+    "classnames": "^2.2.6",
+    "gettext-parser": "^4.0.4",
+    "lodash": "^4.17.20"
   },
   "devDependencies": {
-    "classnames": "^2.2.6",
-    "lodash": "^4.17.13"
+    "@octokit/rest": "^18.0.4",
+    "archiver": "^5.0.0",
+    "cgb-scripts": "^1.23.1",
+    "chalk": "^4.1.0",
+    "fs-extra": "^9.0.1",
+    "luxon": "^1.25.0",
+    "ssh2-sftp-client": "^5.2.2",
+    "winston": "^3.3.3",
+    "yaml": "^1.10.0"
   }
 }

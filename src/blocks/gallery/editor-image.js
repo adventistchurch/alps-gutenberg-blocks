@@ -73,8 +73,17 @@ class GalleryImage extends Component {
 
   componentWillReceiveProps( { isSelected, image, url } ) {
     if ( image && ! url ) {
+      let url = null;
+      if (image.media_details.sizes.large) {
+        url = image.media_details.sizes.large.source_url;
+      } else if (image.media_details.sizes.full) {
+        url = image.media_details.sizes.full.source_url;
+      } else if (image.media_details.sizes.medium) {
+        url = image.media_details.sizes.medium.source_url;
+      }
+
       this.props.setAttributes( {
-        url: image.media_details.sizes.large.source_url,
+        url: url,
         alt: image.alt_text,
       } );
     }
@@ -122,7 +131,7 @@ class GalleryImage extends Component {
               icon="no-alt"
               onClick={ onRemove }
               className="blocks-gallery-item__remove"
-              label={ __( 'Remove Image' ) }
+              label={ __( 'Remove Image', 'alps-gutenberg-blocks' ) }
             />
           </div>
         }
@@ -130,7 +139,7 @@ class GalleryImage extends Component {
         { ( caption && caption.length > 0 ) || isSelected ? (
           <RichText
             tagName="figcaption"
-            placeholder={ __( 'Write caption…' ) }
+            placeholder={ __( 'Write caption…', 'alps-gutenberg-blocks' ) }
             value={ caption }
             isSelected={ this.state.captionSelected }
             onChange={ ( newCaption ) => setAttributes( { caption: newCaption } ) }
