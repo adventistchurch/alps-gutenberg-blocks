@@ -2,10 +2,12 @@ const fs = require('fs-extra');
 const archiver = require('archiver');
 const chalk = require('chalk');
 const { DateTime } = require('luxon');
+const webpack = require('webpack');
 const exec = require('../../lib/exec');
 const dirTree = require('../../lib/dir-tree');
 const getPackageInfo = require('../../lib/get-package-info');
 const getPluginMeta = require('../../lib/get-plugin-meta');
+const devWebpackConfig = require('cgb-scripts/config/webpack.config.dev');
 
 const createArchive = (src, name, logger) => {
     return new Promise((resolve, reject) => {
@@ -54,10 +56,25 @@ const pluginBuild = async (opts) => {
         logger.info('🎯 Build plugin');
     }
 
-    if (!args.dev) {
+    if (args.dev) {
+        devWebpackConfig.devtool = false;
+        devWebpackConfig.plugins.push(new webpack.EvalSourceMapDevToolPlugin({}));
+        const compiler = await webpack(devWebpackConfig);
+
+        await new Promise((resolve, reject) => {
+            compiler.run((err, stats) => {
+                if (err) {
+                    return reject(err);
+                }
+
+                logger.info('💼 Compile JS files');
+                resolve();
+            });
+        });
+    } else  {
         await exec('composer install', logger);
+        await exec('npm run project:build-blocks', logger);
     }
-    await exec('npm run project:build-blocks', logger);
 
     logger.info(`💼 Copy plugin files to ${chalk.yellow(pluginDir)}`);
 

@@ -8,7 +8,6 @@ import classnames from 'classnames';
  * Internal dependencies
  */
 import '../editor.scss';
-import { TagSelect } from './tag-select';
 
 /**
  * WordPress dependencies
@@ -22,6 +21,7 @@ import {
 	ToggleControl,
 	Toolbar,
 	TextControl,
+	FormTokenField,
 } from '@wordpress/components';
 import apiFetch from '@wordpress/api-fetch';
 import { addQueryArgs } from '@wordpress/url';
@@ -41,12 +41,8 @@ import { withSelect } from '@wordpress/data';
 // per_page CAN ONLY GO AS HIGH AS 100 WITHOUT REQUIRING A CUSTOM END POINT
 // PASSING -1 GENERATES AN ERROR
 const CATEGORIES_LIST_QUERY = {
-	per_page: 999,
+	per_page: 100,
 };
-const TAGS_LIST_QUERY = {
-	per_page: 999,
-}
-const MAX_POSTS_COLUMNS = 3;
 
 class LatestPostsEdit extends Component {
 	constructor() {
@@ -82,7 +78,7 @@ class LatestPostsEdit extends Component {
 
 		try {
 			const tagsList = await apiFetch({
-				path: addQueryArgs( `/wp/v2/tags`, TAGS_LIST_QUERY ),
+				path: '/alps-gutenberg-blocks/latest-posts/tags',
 			});
 			if (this.isStillMounted) {
 				this.setState({ tagsList });
@@ -142,8 +138,45 @@ class LatestPostsEdit extends Component {
 
 	render() {
 		const { attributes, setAttributes, latestPosts } = this.props;
-		const { categoriesList, tagsList } = this.state;
+		const { categoriesList } = this.state;
 		const { hideExcerpt, hidePostDate, hideCategoryName, alignRight, hideButton, hideImage, postLayout, order, orderBy, categories, tags, postsToShow } = attributes;
+
+		const createTagSuggestions = () => {
+			const { tagsList } = this.state;
+
+			return Object.values(tagsList);
+		}
+		const createTagQuery = (selectedTags) => {
+			const { tagsList } = this.state;
+
+			const query = [];
+			for (const tagName of selectedTags) {
+				const tag = Object.entries(tagsList).find((el) => {
+					return el[1] === tagName;
+				});
+
+				if (tag) {
+					query.push(tag[0]);
+				}
+			}
+
+			return query;
+		}
+		const createTagValues = () => {
+			const { tags } = this.props.attributes;
+			const { tagsList } = this.state;
+
+			const values = [];
+			if (tags) {
+				for (const tagId of tags) {
+					if (tagsList[tagId]) {
+						values.push(tagsList[tagId]);
+					}
+				}
+			}
+
+			return values;
+		}
 
 		const inspectorControls = (
 			<InspectorControls>
@@ -153,21 +186,16 @@ class LatestPostsEdit extends Component {
 						numberOfItems={ postsToShow }
 						categoriesList={ categoriesList }
 						selectedCategoryId={ categories }
-						tagsList={ tagsList }
-						selectedTagId={ tags }
 						onOrderChange={ ( value ) => setAttributes( { order: value } ) }
 						onOrderByChange={ ( value ) => setAttributes( { orderBy: value } ) }
 						onCategoryChange={ ( value ) => setAttributes( { categories: '' !== value ? value : undefined } ) }
-						onTagChange={ ( value ) => setAttributes( { tags: '' !== value ? value : undefined } ) }
 						onNumberOfItemsChange={ ( value ) => setAttributes( { postsToShow: value } ) }
 					/>
-					<TagSelect
-						key="query-controls-tag-select"
-						tagsList={ tagsList }
-						label={ __( 'Tag', 'alps-gutenberg-blocks' ) }
-						noOptionLabel={ __( 'All', 'alps-gutenberg-blocks' ) }
-						selectedTagId={ tags }
-						onChange={ ( value ) => setAttributes( { tags: '' !== value ? value : undefined } ) }
+					<FormTokenField
+						label={ __('Tags', 'alps-gutenberg-blocks') }
+						value={ createTagValues() }
+						suggestions={ createTagSuggestions() }
+						onChange={ ( value ) => setAttributes( { tags: createTagQuery(value) } ) }
 					/>
 					<ToggleControl
 						label={ __( 'Hide excerpt', 'alps-gutenberg-blocks' ) }
