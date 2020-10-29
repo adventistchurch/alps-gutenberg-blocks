@@ -24,6 +24,8 @@ const scripts = {
     }
 
     const scriptName = process.argv[2];
+    const runFlag = process.argv[3];
+
     if (typeof scripts[scriptName] !== 'function') {
         throw new Error(`DevTools script "${scriptName}" is not found.`);
     }
@@ -32,6 +34,9 @@ const scripts = {
         logger,
         env,
         projectRoot: process.cwd(),
+        args: {
+            dev: runFlag === '--dev',
+        },
     });
 
 })().then(() => {
