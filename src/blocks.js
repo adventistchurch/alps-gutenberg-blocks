@@ -12,6 +12,7 @@
 import './blocks/accordion/block.js';
 import './blocks/blockquote/block.js';
 import './blocks/content-block/block.js';
+import './blocks/media-block/block.js';
 import './blocks/content-expand/block.js';
 import './blocks/content-show-more/block.js';
 import './blocks/highlighted-paragraph/block.js';
