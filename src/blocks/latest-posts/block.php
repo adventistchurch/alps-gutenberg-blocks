@@ -20,7 +20,7 @@ class LatestPostsBlock
                         'type' => 'string',
                     ],
                     'tags' => [
-                        'type' => 'string',
+                        'type' => 'array',
                     ],
                     'className' => [
                         'type' => 'string',
@@ -81,6 +81,26 @@ class LatestPostsBlock
                 'render_callback' => [$this, 'render'],
             ]
         );
+
+        add_action('rest_api_init', [$this, 'initRoutes']);
+    }
+
+    public function initRoutes()
+    {
+        register_rest_route( 'alps-gutenberg-blocks', '/latest-posts/tags', [
+            'methods' => 'GET',
+            'callback' => [$this, 'listTags'],
+        ]);
+    }
+
+    public function listTags()
+    {
+        return get_terms([
+            'taxonomy'   => 'post_tag',
+            'orderby'    => 'name',
+            'hide_empty' => false,
+            'fields'     => 'id=>name',
+        ]);
     }
 
     /**
@@ -107,7 +127,7 @@ class LatestPostsBlock
         }
 
         if (isset($attributes['tags'])) {
-            $args['tag_id'] = $attributes['tags'];
+            $args['tag__in'] = $attributes['tags'];
         }
 
         $recent_posts = wp_get_recent_posts($args);

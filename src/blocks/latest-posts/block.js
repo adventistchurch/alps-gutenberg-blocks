@@ -28,7 +28,7 @@ registerBlockType('alps-gutenberg-blocks/latest-posts', {
             type: 'string',
         },
         tags: {
-            type: 'string',
+            type: 'array',
         },
         postsToShow: {
             type: 'number',

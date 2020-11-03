@@ -1,0 +1,6 @@
+{
+  "ext": "js,php,scss",
+  "watch": [
+    "src"
+  ]
+}
