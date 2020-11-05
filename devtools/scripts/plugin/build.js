@@ -2,10 +2,12 @@ const fs = require('fs-extra');
 const archiver = require('archiver');
 const chalk = require('chalk');
 const { DateTime } = require('luxon');
+const webpack = require('webpack');
 const exec = require('../../lib/exec');
 const dirTree = require('../../lib/dir-tree');
 const getPackageInfo = require('../../lib/get-package-info');
 const getPluginMeta = require('../../lib/get-plugin-meta');
+const devWebpackConfig = require('cgb-scripts/config/webpack.config.dev');
 
 const createArchive = (src, name, logger) => {
     return new Promise((resolve, reject) => {
@@ -39,7 +41,7 @@ const createArchive = (src, name, logger) => {
 };
 
 const pluginBuild = async (opts) => {
-    const { logger, env } = opts;
+    const { logger, args } = opts;
 
     const pkg = await getPackageInfo();
 
@@ -48,10 +50,31 @@ const pluginBuild = async (opts) => {
     await fs.emptyDir(buildDir);
     await fs.emptyDir(pluginDir);
 
-    logger.info('🎯 Build plugin');
+    if (args.dev) {
+        logger.info('🎯 Build plugin in dev mode');
+    } else {
+        logger.info('🎯 Build plugin');
+    }
 
-    await exec('composer install', logger);
-    await exec('npm run project:build-blocks', logger);
+    if (args.dev) {
+        devWebpackConfig.devtool = false;
+        devWebpackConfig.plugins.push(new webpack.EvalSourceMapDevToolPlugin({}));
+        const compiler = await webpack(devWebpackConfig);
+
+        await new Promise((resolve, reject) => {
+            compiler.run((err, stats) => {
+                if (err) {
+                    return reject(err);
+                }
+
+                logger.info('💼 Compile JS files');
+                resolve();
+            });
+        });
+    } else  {
+        await exec('composer install', logger);
+        await exec('npm run project:build-blocks', logger);
+    }
 
     logger.info(`💼 Copy plugin files to ${chalk.yellow(pluginDir)}`);
 
@@ -71,23 +94,27 @@ const pluginBuild = async (opts) => {
     }
 
     // Package plugin
-    await createArchive(buildDir, pkg.name);
-    logger.info(`💚 Plugin packaged to ${chalk.yellow(`${pkg.name}.zip`)}`);
+    if (!args.dev) {
+        await createArchive(buildDir, pkg.name);
+        logger.info(`💚 Plugin packaged to ${chalk.yellow(`${pkg.name}.zip`)}`);
+    }
 
     // Gather metadata
-    const pluginMeta = {
-        ...await getPluginMeta(),
-        version: pkg.version,
-        last_updated: DateTime.utc().toFormat('yyyy-LL-dd HH:mm:ss ZZZZ'),
-    };
+    if (!args.dev) {
+        const pluginMeta = {
+            ...await getPluginMeta(),
+            version: pkg.version,
+            last_updated: DateTime.utc().toFormat('yyyy-LL-dd HH:mm:ss ZZZZ'),
+        };
 
-    pluginMeta.download_url = pluginMeta.download_url
-        .replace('{name}', pkg.name)
-        .replace('{file}', `${pkg.name}-v${pkg.version}.zip`);
+        pluginMeta.download_url = pluginMeta.download_url
+            .replace('{name}', pkg.name)
+            .replace('{file}', `${pkg.name}-v${pkg.version}.zip`);
 
-    await fs.writeFile(`${buildDir}${pkg.name}.json`, JSON.stringify(pluginMeta, null, 2));
+        await fs.writeFile(`${buildDir}${pkg.name}.json`, JSON.stringify(pluginMeta, null, 2));
 
-    logger.info(`💚 Plugin metadata saved to ${chalk.yellow(`${pkg.name}.json`)}`);
+        logger.info(`💚 Plugin metadata saved to ${chalk.yellow(`${pkg.name}.json`)}`);
+    }
 }
 
 module.exports = pluginBuild;
