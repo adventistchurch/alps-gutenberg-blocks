@@ -1,0 +1,42 @@
+@import "common";
+
+.wp-block-alps-gutenberg-blocks-media-block {
+  border: 1px solid $gray;
+  padding: 1rem;
+}
+
+.main {
+
+  display: flex;
+
+  &__left {
+    flex-direction: row;
+  }
+
+  &__center {
+    flex-direction: column;
+  }
+}
+
+.upload-image-block {
+  display: block;
+
+  &__left {
+    width: 30%;
+  }
+
+  &__center {
+    width: 100%;
+  }
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.image {
+  height: 15.7rem;
+  width: 100%;
+  object-fit: cover;
+}
