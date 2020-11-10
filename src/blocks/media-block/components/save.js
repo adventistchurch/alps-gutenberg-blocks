@@ -7,6 +7,12 @@ export class MediaBlockSaveComponent extends Component{
 
         const { attributes } = this.props;
 
+        const isLinkAvailable = attributes.url !== undefined;
+
+        let titleText = isLinkAvailable ?
+            <a href={ attributes.url } className={"c-block__title-link u-theme--link-hover--dark"}> {attributes.title} </a> :
+            attributes.title;
+
         const styles = cls(
             'c-media-block c-block',
             {'c-block__row': attributes.alignment === "left"},
@@ -26,9 +32,7 @@ export class MediaBlockSaveComponent extends Component{
                     <div className={"u-spacing c-block__group"}>
                         <div className={"u-width--100p u-spacing"}>
                             <h3 className={"c-block__title u-theme--color--darker"}>
-                                <a href="" className={"c-block__title-link u-theme--link-hover--dark"}>
-                                    { attributes.title }
-                                </a>
+                                { titleText }
                             </h3>
                             <p className={"c-block__description"}>
                                 { attributes.description }
@@ -43,6 +47,19 @@ export class MediaBlockSaveComponent extends Component{
                             </time>
                         </div>
                     </div>
+                    { ( isLinkAvailable && (attributes.alignment === 'center')) &&
+                        <a href={ attributes.url }
+                            className="c-block__button o-button o-button--outline o-button--small">
+                            { attributes.buttonText }
+                            <span className="u-icon u-icon--m u-path-fill--base u-space--half--left">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <title>Long right arrow</title>
+                                    <path d="M18.29,8.59l-3.5-3.5L13.38,6.5,15.88,9H.29v2H15.88l-2.5,2.5,1.41,1.41,3.5-3.5L19.71,10Z" fill="#9b9b9b"></path>
+                                </svg>
+                            </span>
+                        </a>
+                    }
                 </div>
             </div>
         );

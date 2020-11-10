@@ -9,36 +9,50 @@ export class MediaBlockEditComponent extends Component {
     constructor() {
         super(...arguments);
 
-        this.onChangeAlignment = this.onChangeAlignment.bind(this);
+        this.onChangeLayout = this.onChangeLayout.bind(this);
         this.onChangeTitle = this.onChangeTitle.bind(this);
+        this.onChangeUrl = this.onChangeUrl.bind(this);
         this.onChangeDescription = this.onChangeDescription.bind(this);
         this.onChangeCategory = this.onChangeCategory.bind(this);
         this.onChangeDate = this.onChangeDate.bind(this);
         this.onSelectImage = this.onSelectImage.bind(this);
+        this.onChangeButtonText = this.onChangeButtonText.bind(this);
     }
 
     onChangeTitle(title) {
-        this.props.setAttributes({ title: title });
+        this.props.setAttributes({ title });
+    }
+
+    onChangeUrl(url) {
+         if ( url === undefined || url === null || url === "" ) {
+             this.props.setAttributes({ url: url, buttonText: "" })
+         } else {
+             this.props.setAttributes({ url: url, buttonText: 'START THIS LESSON' });
+         }
     }
 
     onChangeDescription(description) {
-        this.props.setAttributes({ description: description });
+        this.props.setAttributes({ description });
     }
 
     onChangeCategory(category) {
-        this.props.setAttributes({ category: category });
+        this.props.setAttributes({ category });
     }
 
     onChangeDate(date) {
-        this.props.setAttributes({ date: date });
+        this.props.setAttributes({ date });
     }
 
     onSelectImage(media) {
         this.props.setAttributes({ imageURL: media.url, imageID: media.id });
     }
 
-    onChangeAlignment(nextAction) {
+    onChangeLayout(nextAction) {
         this.props.setAttributes({ alignment: nextAction});
+    }
+
+    onChangeButtonText(buttonText) {
+        this.props.setAttribute({ buttonText });
     }
 
     getImageButton(openEvent) {
@@ -75,7 +89,7 @@ export class MediaBlockEditComponent extends Component {
                     <BlockControls key="controls">
                         <AlignmentToolbar
                             value={attributes.alignment}
-                            onChange={nextAlign => this.onChangeAlignment(nextAlign)}
+                            onChange={nextAlign => this.onChangeLayout(nextAlign)}
                         />
                     </BlockControls>
                 )),
@@ -91,18 +105,18 @@ export class MediaBlockEditComponent extends Component {
                         <div>
                             <RichText
                                 tagName={"div"}
-                                placeholder={"Enter your title here..."}
+                                placeholder={ __("Enter your title here...") }
                                 value={ attributes.title }
                                 onChange={ this.onChangeTitle }
                             />
                             <RichText
-                                placeholder={"Enter your Description here..."}
+                                placeholder={ __("Enter your Description here...") }
                                 value={ attributes.description }
                                 onChange={ this.onChangeDescription }
                             />
                             <RichText
                                 tagName={"div"}
-                                placeholder={"Enter your Category here..."}
+                                placeholder={ __("Enter your Category here...") }
                                 value={ attributes.category }
                                 onChange={ this.onChangeCategory }
                             />
@@ -114,6 +128,20 @@ export class MediaBlockEditComponent extends Component {
                             />
                         </div>
                     </div>
+                    <RichText
+                        tagName={"div"}
+                        placeholder={ __("Title Link. If link is empty title will be just text.") }
+                        value={ attributes.url }
+                        onChange={ this.onChangeUrl }
+                    />
+                    { ( attributes.buttonText !== undefined && attributes.buttonText !== "" && attributes.alignment === "center") &&
+                        <RichText
+                            tagName={"div"}
+                            placeholder={ __("Text button.") }
+                            value={ attributes.buttonText }
+                            onChange={ this.onChangeButtonText }
+                        />
+                    }
                 </div>
             ]
         );

@@ -41,6 +41,9 @@ registerBlockType('alps-gutenberg-blocks/media-block', {
     title: {
       type: 'string',
     },
+    url: {
+      type: 'string'
+    },
     description: {
       type: 'string'
     },
@@ -48,6 +51,9 @@ registerBlockType('alps-gutenberg-blocks/media-block', {
       type: 'string'
     },
     date: {
+      type: 'string'
+    },
+    buttonText: {
       type: 'string'
     }
   },
