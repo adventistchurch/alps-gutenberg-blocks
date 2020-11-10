@@ -52,7 +52,7 @@ export class MediaBlockEditComponent extends Component {
     }
 
     onChangeButtonText(buttonText) {
-        this.props.setAttribute({ buttonText: buttonText });
+        this.props.setAttributes({ buttonText });
     }
 
     getImageButton(openEvent) {
@@ -74,7 +74,7 @@ export class MediaBlockEditComponent extends Component {
     render () {
         const { attributes, className, isSelected } = this.props;
 
-        const isButtonAvailable = attributes.buttonText !== undefined && attributes.buttonText !== "" && attributes.alignment === "center";
+        const isButtonAvailable = attributes.buttonText !== undefined && attributes.alignment === "center";
 
         const styles = cls(
             'main',
@@ -163,12 +163,12 @@ export class MediaBlockEditComponent extends Component {
                             onChange={ this.onChangeUrl }
                         />
                         { isButtonAvailable &&
-                        <RichText
-                            tagName={"div"}
-                            placeholder={ __("Text button.") }
-                            value={ attributes.buttonText }
-                            onChange={ this.onChangeButtonText }
-                        />
+                            <RichText
+                                tagName={"div"}
+                                placeholder={ __("Text button.") }
+                                value={ attributes.buttonText }
+                                onChange={ this.onChangeButtonText }
+                            />
                         }
                     </div>
 
