@@ -27,7 +27,7 @@ export class MediaBlockEditComponent extends Component {
          if ( url === undefined || url === null || url === "" ) {
              this.props.setAttributes({ url: url, buttonText: "" })
          } else {
-             this.props.setAttributes({ url: url, buttonText: 'START THIS LESSON' });
+             this.props.setAttributes({ url: url, buttonText: "START THIS LESSON" });
          }
     }
 
@@ -52,7 +52,7 @@ export class MediaBlockEditComponent extends Component {
     }
 
     onChangeButtonText(buttonText) {
-        this.props.setAttribute({ buttonText });
+        this.props.setAttribute({ buttonText: buttonText });
     }
 
     getImageButton(openEvent) {
@@ -73,6 +73,8 @@ export class MediaBlockEditComponent extends Component {
 
     render () {
         const { attributes, className, isSelected } = this.props;
+
+        const isButtonAvailable = attributes.buttonText !== undefined && attributes.buttonText !== "" && attributes.alignment === "center";
 
         const styles = cls(
             'main',
@@ -102,46 +104,74 @@ export class MediaBlockEditComponent extends Component {
                             value={ attributes.imageID }
                             render={ ({open}) => this.getImageButton(open)}
                         />
-                        <div>
-                            <RichText
-                                tagName={"div"}
-                                placeholder={ __("Enter your title here...") }
-                                value={ attributes.title }
-                                onChange={ this.onChangeTitle }
-                            />
-                            <RichText
-                                placeholder={ __("Enter your Description here...") }
-                                value={ attributes.description }
-                                onChange={ this.onChangeDescription }
-                            />
-                            <RichText
-                                tagName={"div"}
-                                placeholder={ __("Enter your Category here...") }
-                                value={ attributes.category }
-                                onChange={ this.onChangeCategory }
-                            />
-                            <RichText
-                                tagName={"div"}
-                                placeholder={"Date"}
-                                value={ attributes.date }
-                                onChange={ this.onChangeDate }
-                            />
+                        <div className={"text-block"}>
+                            <div className={"text-block__wrap"}>
+                                <div className={"text-block__first"}>
+                                    <RichText
+                                        className={"title"}
+                                        tagName={"div"}
+                                        placeholder={ __("Enter your title here...") }
+                                        value={ attributes.title }
+                                        onChange={ this.onChangeTitle }
+                                    />
+                                    <RichText
+                                        className={"description"}
+                                        placeholder={ __("Enter your Description here...") }
+                                        value={ attributes.description }
+                                        onChange={ this.onChangeDescription }
+                                    />
+                                </div>
+
+                                <div className={"meta-block"}>
+                                    <RichText
+                                        className={"meta-block__category"}
+                                        tagName={"div"}
+                                        placeholder={ __("Category") }
+                                        value={ attributes.category }
+                                        onChange={ this.onChangeCategory }
+                                    />
+                                    <RichText
+                                        className={"meta-block__date"}
+                                        tagName={"div"}
+                                        placeholder={"Date"}
+                                        value={ attributes.date }
+                                        onChange={ this.onChangeDate }
+                                    />
+                                </div>
+                            </div>
+                            { isButtonAvailable &&
+                                <a href={ attributes.url }
+                                   className="button">
+                                    { attributes.buttonText }
+                                    <span className="button__icon">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                            <title>Long right arrow</title>
+                                            <path d="M18.29,8.59l-3.5-3.5L13.38,6.5,15.88,9H.29v2H15.88l-2.5,2.5,1.41,1.41,3.5-3.5L19.71,10Z" fill="#9b9b9b"></path>
+                                        </svg>
+                                    </span>
+                                </a>
+                            }
                         </div>
                     </div>
-                    <RichText
-                        tagName={"div"}
-                        placeholder={ __("Title Link. If link is empty title will be just text.") }
-                        value={ attributes.url }
-                        onChange={ this.onChangeUrl }
-                    />
-                    { ( attributes.buttonText !== undefined && attributes.buttonText !== "" && attributes.alignment === "center") &&
+
+                    <div className={"settings"}>
+                        <RichText
+                            tagName={"div"}
+                            placeholder={ __("Title Link. If link is empty title will be just text.") }
+                            value={ attributes.url }
+                            onChange={ this.onChangeUrl }
+                        />
+                        { isButtonAvailable &&
                         <RichText
                             tagName={"div"}
                             placeholder={ __("Text button.") }
                             value={ attributes.buttonText }
                             onChange={ this.onChangeButtonText }
                         />
-                    }
+                        }
+                    </div>
+
                 </div>
             ]
         );
