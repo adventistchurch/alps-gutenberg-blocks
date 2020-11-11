@@ -60,9 +60,9 @@ export class MediaBlockEditComponent extends Component {
         const { attributes } = this.props;
 
         return (
-            <div className={attributes.alignment === "left" ? "upload-image-block__left" : "upload-image-block__center"}>
+            <div className={attributes.alignment === "left" ? "media-block__upload-image-section-left" : "media-block__upload-image-section-center"}>
                 <Button
-                    className={attributes.imageID ? "image-button" : "button button-large"}
+                    className={attributes.imageID ? "media-block-image-button" : "button button-large"}
                     onClick={openEvent}
                 >
                     {!attributes.imageID ? __("Upload/Edit Image") : <img src={attributes.imageURL} />}
@@ -74,17 +74,44 @@ export class MediaBlockEditComponent extends Component {
     render () {
         const { attributes, className, isSelected } = this.props;
 
-        const isButtonAvailable = attributes.buttonText !== undefined && attributes.alignment === "center";
+        const isButtonAvailable = attributes.url !== undefined && attributes.url !== "";
 
         const styles = cls(
-            'main',
-            { "main__left" :attributes.alignment === "left" },
-            { "main main__center" :attributes.alignment === "center" },
+            "media-block",
+            { "media-block__left" :attributes.alignment === "left" },
+            { "media-block__center" :attributes.alignment === "center" },
+        );
+
+        const textSectionStyles = cls(
+            "media-block__text-section",
+            { "media-block__text-section-left" :attributes.alignment === "left" },
+            { "media-block__text-section-center" :attributes.alignment === "center" },
         );
 
         return ([
                 <InspectorControls>
-                    Just for next options
+                    <div className={"settings"}>
+                        <p className={"settings__text"}>Provide link to button and Title</p>
+                        <RichText
+                            className={"settings__link"}
+                            tagName={"div"}
+                            placeholder={ __("Title Link. If link is empty title will be just text.") }
+                            value={ attributes.url }
+                            onChange={ this.onChangeUrl }
+                        />
+                        { isButtonAvailable &&
+                            <div>
+                                <p className={"settings__text"}>Provide Text Button</p>
+                                <RichText
+                                    className={"settings__button-text"}
+                                    tagName={"div"}
+                                    placeholder={ __("Text button.") }
+                                    value={ attributes.buttonText }
+                                    onChange={ this.onChangeButtonText }
+                                />
+                            </div>
+                        }
+                    </div>
                 </InspectorControls>,
 
                 (isSelected && (
@@ -104,72 +131,55 @@ export class MediaBlockEditComponent extends Component {
                             value={ attributes.imageID }
                             render={ ({open}) => this.getImageButton(open)}
                         />
-                        <div className={"text-block"}>
-                            <div className={"text-block__wrap"}>
-                                <div className={"text-block__first"}>
+                        <div className={textSectionStyles}>
+                            <div className={"media-block__text-section-wrap"}>
+                                <div className={"media-block__text-section-meta__top"}>
                                     <RichText
-                                        className={"title"}
+                                        className={"media-block__text-section-meta__top-title"}
                                         tagName={"div"}
                                         placeholder={ __("Enter your title here...") }
                                         value={ attributes.title }
                                         onChange={ this.onChangeTitle }
                                     />
                                     <RichText
-                                        className={"description"}
+                                        className={"media-block__text-section-meta__top-description"}
                                         placeholder={ __("Enter your Description here...") }
                                         value={ attributes.description }
                                         onChange={ this.onChangeDescription }
                                     />
                                 </div>
 
-                                <div className={"meta-block"}>
+                                <div className={"media-block__text-section-meta__buttom"}>
                                     <RichText
-                                        className={"meta-block__category"}
+                                        className={"media-block__text-section-meta__buttom__category"}
                                         tagName={"div"}
                                         placeholder={ __("Category") }
                                         value={ attributes.category }
                                         onChange={ this.onChangeCategory }
                                     />
                                     <RichText
-                                        className={"meta-block__date"}
+                                        className={"media-block__text-section-meta__buttom__date"}
                                         tagName={"div"}
                                         placeholder={"Date"}
                                         value={ attributes.date }
                                         onChange={ this.onChangeDate }
                                     />
                                 </div>
+                                { isButtonAvailable &&
+                                    <a href={ attributes.url }
+                                       className={"button"}>
+                                        { attributes.buttonText }
+                                        <span className={"button__icon"}>
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                                <title>Long right arrow</title>
+                                                <path d="M18.29,8.59l-3.5-3.5L13.38,6.5,15.88,9H.29v2H15.88l-2.5,2.5,1.41,1.41,3.5-3.5L19.71,10Z" fill="#9b9b9b"></path>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                }
                             </div>
-                            { isButtonAvailable &&
-                                <a href={ attributes.url }
-                                   className="button">
-                                    { attributes.buttonText }
-                                    <span className="button__icon">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                            <title>Long right arrow</title>
-                                            <path d="M18.29,8.59l-3.5-3.5L13.38,6.5,15.88,9H.29v2H15.88l-2.5,2.5,1.41,1.41,3.5-3.5L19.71,10Z" fill="#9b9b9b"></path>
-                                        </svg>
-                                    </span>
-                                </a>
-                            }
                         </div>
-                    </div>
-
-                    <div className={"settings"}>
-                        <RichText
-                            tagName={"div"}
-                            placeholder={ __("Title Link. If link is empty title will be just text.") }
-                            value={ attributes.url }
-                            onChange={ this.onChangeUrl }
-                        />
-                        { isButtonAvailable &&
-                            <RichText
-                                tagName={"div"}
-                                placeholder={ __("Text button.") }
-                                value={ attributes.buttonText }
-                                onChange={ this.onChangeButtonText }
-                            />
-                        }
                     </div>
 
                 </div>
