@@ -24,11 +24,7 @@ export class MediaBlockEditComponent extends Component {
     }
 
     onChangeUrl(url) {
-         if ( url === undefined || url === null || url === "" ) {
-             this.props.setAttributes({ url: url, buttonText: "" })
-         } else {
-             this.props.setAttributes({ url: url, buttonText: "START THIS LESSON" });
-         }
+        this.props.setAttributes({ url });
     }
 
     onChangeDescription(description) {
@@ -60,9 +56,9 @@ export class MediaBlockEditComponent extends Component {
         const { attributes } = this.props;
 
         return (
-            <div className={attributes.alignment === "left" ? "media-block__upload-image-section-left" : "media-block__upload-image-section-center"}>
+            <div className={attributes.alignment === "left" ? "alps__media-block__upload-image-section-left" : "alps__media-block__upload-image-section-center"}>
                 <Button
-                    className={attributes.imageID ? "media-block-image-button" : "button button-large"}
+                    className={attributes.imageID ? "alps__media-block-image-button" : "button button-large"}
                     onClick={openEvent}
                 >
                     {!attributes.imageID ? __("Upload/Edit Image") : <img src={attributes.imageURL} />}
@@ -77,23 +73,23 @@ export class MediaBlockEditComponent extends Component {
         const isButtonAvailable = attributes.url !== undefined && attributes.url !== "";
 
         const styles = cls(
-            "media-block",
-            { "media-block__left" :attributes.alignment === "left" },
-            { "media-block__center" :attributes.alignment === "center" },
+            "alps__media-block",
+            { "alps__media-block__left" :attributes.alignment === "left" },
+            { "alps__media-block__center" :attributes.alignment === "center" },
         );
 
         const textSectionStyles = cls(
-            "media-block__text-section",
-            { "media-block__text-section-left" :attributes.alignment === "left" },
-            { "media-block__text-section-center" :attributes.alignment === "center" },
+            "alps__media-block__text-section",
+            { "alps__media-block__text-section-left" :attributes.alignment === "left" },
+            { "alps__media-block__text-section-center" :attributes.alignment === "center" },
         );
 
         return ([
                 <InspectorControls>
-                    <div className={"settings"}>
-                        <p className={"settings__text"}>Provide link to button and Title</p>
+                    <div className={"alps__media-block__settings"}>
+                        <p className={"alps__media-block__settings__text"}>Provide link to button and Title</p>
                         <RichText
-                            className={"settings__link"}
+                            className={"alps__media-block__settings__link"}
                             tagName={"div"}
                             placeholder={ __("Title Link. If link is empty title will be just text.") }
                             value={ attributes.url }
@@ -101,9 +97,9 @@ export class MediaBlockEditComponent extends Component {
                         />
                         { isButtonAvailable &&
                             <div>
-                                <p className={"settings__text"}>Provide Text Button</p>
+                                <p className={"alps__media-block__settings__text"}>Provide Text Button</p>
                                 <RichText
-                                    className={"settings__button-text"}
+                                    className={"alps__media-block__settings__button-text"}
                                     tagName={"div"}
                                     placeholder={ __("Text button.") }
                                     value={ attributes.buttonText }
@@ -132,33 +128,33 @@ export class MediaBlockEditComponent extends Component {
                             render={ ({open}) => this.getImageButton(open)}
                         />
                         <div className={textSectionStyles}>
-                            <div className={"media-block__text-section-wrap"}>
-                                <div className={"media-block__text-section-meta__top"}>
+                            <div className={"alps__media-block__text-section-wrap"}>
+                                <div className={"alps__media-block__text-section-meta__top"}>
                                     <RichText
-                                        className={"media-block__text-section-meta__top-title"}
+                                        className={"alps__media-block__text-section-meta__top-title"}
                                         tagName={"div"}
                                         placeholder={ __("Enter your title here...") }
                                         value={ attributes.title }
                                         onChange={ this.onChangeTitle }
                                     />
                                     <RichText
-                                        className={"media-block__text-section-meta__top-description"}
+                                        className={"alps__media-block__text-section-meta__top-description"}
                                         placeholder={ __("Enter your Description here...") }
                                         value={ attributes.description }
                                         onChange={ this.onChangeDescription }
                                     />
                                 </div>
 
-                                <div className={"media-block__text-section-meta__buttom"}>
+                                <div className={"alps__media-block__text-section-meta__buttom"}>
                                     <RichText
-                                        className={"media-block__text-section-meta__buttom__category"}
+                                        className={"alps__media-block__text-section-meta__buttom__category"}
                                         tagName={"div"}
                                         placeholder={ __("Category") }
                                         value={ attributes.category }
                                         onChange={ this.onChangeCategory }
                                     />
                                     <RichText
-                                        className={"media-block__text-section-meta__buttom__date"}
+                                        className={"alps__media-block__text-section-meta__buttom__date"}
                                         tagName={"div"}
                                         placeholder={"Date"}
                                         value={ attributes.date }
@@ -167,9 +163,9 @@ export class MediaBlockEditComponent extends Component {
                                 </div>
                                 { isButtonAvailable &&
                                     <a href={ attributes.url }
-                                       className={"button"}>
+                                       className={"alps__media-block__button"}>
                                         { attributes.buttonText }
-                                        <span className={"button__icon"}>
+                                        <span className={"alps__media-block__button__icon"}>
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                                 <title>Long right arrow</title>

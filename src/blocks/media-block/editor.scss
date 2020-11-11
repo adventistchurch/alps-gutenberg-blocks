@@ -7,7 +7,7 @@
   font-family: "Noto Serif", Georgia, Times, "Times New Roman", serif;
 }
 
-.media-block {
+.alps__media-block {
 
   display: flex;
 
@@ -103,52 +103,52 @@
       }
     }
   }
-}
 
-.image {
-  height: 15.7rem;
-  width: 100%;
-  object-fit: cover;
-}
-
-.button {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  color: #2b8500;
-  border-color: #2b8500;
-
-  &__icon {
+  &__button {
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-right: .3125rem;
-    box-sizing: border-box;
+    background-color: transparent;
     color: #2b8500;
+    border-color: #2b8500;
+
+    &__icon {
+      margin-left: .625rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: .3125rem;
+      box-sizing: border-box;
+      color: #2b8500;
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+
+  // Settings section
+  &__settings {
+    padding-top: 30px;
+    font-size: 1rem;
+
+    &__text {
+      margin-left: 10px;
+    }
+
+    &__link {
+      border-radius: 3px;
+      border: 1px solid  $gray;
+      margin: 0 10px 10px 10px;
+      padding: 5px;
+    }
+
+    &__button-text {
+      border-radius: 3px;
+      border: 1px solid  $gray;
+      margin: 0 10px 10px 10px;
+      padding: 5px;
+    }
   }
 }
 
-.settings {
-  padding-top: 30px;
-  font-size: 1rem;
 
-  &__text {
-    margin-left: 10px;
-  }
-
-  &__link {
-    border-radius: 3px;
-    border: 1px solid  $gray;
-    margin: 0 10px 10px 10px;
-    padding: 5px;
-  }
-
-  &__button-text {
-    border-radius: 3px;
-    border: 1px solid  $gray;
-    margin: 0 10px 10px 10px;
-    padding: 5px;
-  }
-}
