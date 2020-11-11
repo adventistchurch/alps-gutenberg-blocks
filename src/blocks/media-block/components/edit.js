@@ -44,7 +44,7 @@ export class MediaBlockEditComponent extends Component {
     }
 
     onChangeLayout(nextAction) {
-        this.props.setAttributes({ alignment: nextAction});
+        this.props.setAttributes({ alignment: nextAction === undefined ? "left" : nextAction});
     }
 
     onChangeButtonText(buttonText) {
