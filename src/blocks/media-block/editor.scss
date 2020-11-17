@@ -110,8 +110,8 @@
     align-items: center;
     justify-content: center;
     background-color: transparent;
-    color: #2b8500;
-    border: 1px solid #2b8500;
+    color: $blue;
+    border: 1px solid $blue;
     text-align: center;
     border-radius: 15px;
     padding-left: 1rem;
@@ -124,32 +124,37 @@
       justify-content: center;
       margin-right: .3125rem;
       box-sizing: border-box;
-      color: #2b8500;
+      color: $blue;
       width: 1.25rem;
       height: 1.25rem;
     }
+  }
+
+  &__button:hover {
+    color: $blue;
   }
 
   // Settings section
   &__settings {
     padding-top: 30px;
     font-size: 1rem;
-
-    &__text {
-      margin-left: 10px;
-    }
+    margin-left: 10px;
 
     &__link {
       border-radius: 3px;
       border: 1px solid  $gray;
-      margin: 0 10px 10px 10px;
+      margin: 0 10px 10px 0;
       padding: 5px;
+    }
+
+    &__toggle {
+      margin-top: 20px;
     }
 
     &__button-text {
       border-radius: 3px;
       border: 1px solid  $gray;
-      margin: 0 10px 10px 10px;
+      margin: 0 10px 10px 0;
       padding: 5px;
     }
   }

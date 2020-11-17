@@ -1,8 +1,21 @@
 import { Component } from "@wordpress/element";
-import { InspectorControls, BlockControls, AlignmentToolbar, MediaUpload, RichText } from "@wordpress/block-editor";
+import { InspectorControls, BlockControls, MediaUpload, AlignmentToolbar, RichText } from "@wordpress/block-editor";
+import { ToggleControl } from '@wordpress/components';
 import {Button} from "@wordpress/components";
 import { __ } from '@wordpress/i18n';
 import cls from 'classnames';
+
+import { alignLeft, alignCenter } from '@wordpress/icons';
+
+const ALIGNMENT_CONTROLS = [{
+    icon: alignLeft,
+    title: __('Align text left'),
+    align: 'left'
+}, {
+    icon: alignCenter,
+    title: __('Align text center'),
+    align: 'center'
+}];
 
 export class MediaBlockEditComponent extends Component {
 
@@ -17,6 +30,7 @@ export class MediaBlockEditComponent extends Component {
         this.onChangeDate = this.onChangeDate.bind(this);
         this.onSelectImage = this.onSelectImage.bind(this);
         this.onChangeButtonText = this.onChangeButtonText.bind(this);
+        this.setActiveButton = this.setActiveButton.bind(this);
     }
 
     onChangeTitle(title) {
@@ -49,6 +63,10 @@ export class MediaBlockEditComponent extends Component {
 
     onChangeButtonText(buttonText) {
         this.props.setAttributes({ buttonText });
+    }
+
+    setActiveButton(buttonIsActive) {
+        this.props.setAttributes({ buttonIsActive });
     }
 
     getImageButton(openEvent) {
@@ -87,25 +105,41 @@ export class MediaBlockEditComponent extends Component {
         return ([
                 <InspectorControls>
                     <div className={"alps__media-block__settings"}>
-                        <p className={"alps__media-block__settings__text"}>Provide link to button and Title</p>
+                        <p>Provide link to button and Title</p>
                         <RichText
                             className={"alps__media-block__settings__link"}
                             tagName={"div"}
-                            placeholder={ __("Title Link. If link is empty title will be just text.") }
+                            placeholder={ __("Enter URL for title and button link here.") }
                             value={ attributes.url }
                             onChange={ this.onChangeUrl }
                         />
+
                         { isButtonAvailable &&
                             <div>
-                                <p className={"alps__media-block__settings__text"}>Provide Text Button</p>
-                                <RichText
-                                    className={"alps__media-block__settings__button-text"}
-                                    tagName={"div"}
-                                    placeholder={ __("Text button.") }
-                                    value={ attributes.buttonText }
-                                    onChange={ this.onChangeButtonText }
+                                <ToggleControl
+                                    className={"alps__media-block__settings__toggle"}
+                                    label={ __("Enable Button.") }
+                                    help={ __("If the button is enabled don't forget to specify the text for the button!") }
+                                    checked={ attributes.buttonIsActive }
+                                    onChange={ this.setActiveButton }
                                 />
+
+                                {/*TODO: see disable option fir this component (disable, disableEditMenu was not successfully)*/}
+                                {   attributes.buttonIsActive &&
+                                    <div>
+                                        <p>Provide Text Button</p>
+                                        <RichText
+                                            className={"alps__media-block__settings__button-text"}
+                                            tagName={"div"}
+                                            placeholder={ __("Text button.") }
+                                            value={ attributes.buttonText }
+                                            onChange={ this.onChangeButtonText }
+                                        />
+                                    </div>
+                                }
+
                             </div>
+
                         }
                     </div>
                 </InspectorControls>,
@@ -114,6 +148,7 @@ export class MediaBlockEditComponent extends Component {
                     <BlockControls key="controls">
                         <AlignmentToolbar
                             value={attributes.alignment}
+                            alignmentControls={ ALIGNMENT_CONTROLS }
                             onChange={nextAlign => this.onChangeLayout(nextAlign)}
                         />
                     </BlockControls>
@@ -161,7 +196,7 @@ export class MediaBlockEditComponent extends Component {
                                         onChange={ this.onChangeDate }
                                     />
                                 </div>
-                                { isButtonAvailable &&
+                                { attributes.buttonIsActive &&
                                     <a href={ attributes.url }
                                        className={"alps__media-block__button"}>
                                         { attributes.buttonText }

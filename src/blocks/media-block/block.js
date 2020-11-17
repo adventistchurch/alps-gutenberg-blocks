@@ -53,6 +53,10 @@ registerBlockType('alps-gutenberg-blocks/media-block', {
     date: {
       type: 'string'
     },
+    buttonIsActive: {
+      type: 'boolean',
+      default: false
+    },
     buttonText: {
       type: 'string'
     }

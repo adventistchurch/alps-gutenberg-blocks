@@ -28,7 +28,7 @@ export class MediaBlockSaveComponent extends Component{
                         </div>
                     </div>
                 </div>
-                <div className={"c-block__content u-spacing u-color--gray"}>
+                <div className={"c-block__content u-spacing u-color--gray u-border-left--black--at-large u-theme--border-color--darker--left"}>
                     <div className={"u-spacing c-block__group"}>
                         <div className={"u-width--100p u-spacing"}>
                             <h3 className={"c-block__title u-theme--color--darker"}>
@@ -46,7 +46,7 @@ export class MediaBlockSaveComponent extends Component{
                                 { attributes.date }
                             </time>
                         </div>
-                        { isLinkAvailable &&
+                        { attributes.buttonIsActive &&
                             <a href={ attributes.url }
                                className="c-block__button o-button o-button--outline o-button--small">
                                 { attributes.buttonText }
