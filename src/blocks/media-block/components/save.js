@@ -14,7 +14,7 @@ export class MediaBlockSaveComponent extends Component{
             attributes.title;
 
         const styles = cls(
-            'c-media-block c-block',
+            'c-media-block c-block l-grid-wrap',
             {'c-block__row': attributes.alignment === "left"},
             {'c-block__stacked': attributes.alignment === "center"}
         );

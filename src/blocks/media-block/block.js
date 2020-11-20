@@ -59,6 +59,9 @@ registerBlockType('alps-gutenberg-blocks/media-block', {
     },
     buttonText: {
       type: 'string'
+    },
+    showPageSideBar: {
+      type: 'boolean'
     }
   },
   edit: MediaBlockEditComponent,

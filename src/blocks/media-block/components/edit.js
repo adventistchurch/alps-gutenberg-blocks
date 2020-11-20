@@ -5,15 +5,16 @@ import {Button} from "@wordpress/components";
 import { __ } from '@wordpress/i18n';
 import cls from 'classnames';
 
-import { alignLeft, alignCenter } from '@wordpress/icons';
+import {alignLeft, alignCenter} from "../images";
+
 
 const ALIGNMENT_CONTROLS = [{
     icon: alignLeft,
-    title: __('Align text left'),
-    align: 'left'
+    title: __('Align block left'),
+    align: 'left',
 }, {
     icon: alignCenter,
-    title: __('Align text center'),
+    title: __('Align block center'),
     align: 'center'
 }];
 
@@ -86,6 +87,7 @@ export class MediaBlockEditComponent extends Component {
     }
 
     render () {
+
         const { attributes, className, isSelected } = this.props;
 
         const isButtonAvailable = attributes.url !== undefined && attributes.url !== "";
@@ -124,7 +126,7 @@ export class MediaBlockEditComponent extends Component {
                                     onChange={ this.setActiveButton }
                                 />
 
-                                {/*TODO: see disable option fir this component (disable, disableEditMenu was not successfully)*/}
+                                {/*TODO: see disable option for this component (disable, disableEditMenu was not successfully)*/}
                                 {   attributes.buttonIsActive &&
                                     <div>
                                         <p>Provide Text Button</p>
