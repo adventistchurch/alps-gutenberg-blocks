@@ -1,6 +1,6 @@
 jQuery(function($){
     var sidebarIsActive = $( ".c-sidebar" ).length === 1;
-    var mediaBlockIsActive = $( ".wp-block-alps-gutenberg-blocks-media-block").length === 1;
+    var mediaBlockIsActive = $( ".wp-block-alps-gutenberg-blocks-media-block").length > 0;
 
     if ( mediaBlockIsActive ) {
         if ( sidebarIsActive) {
