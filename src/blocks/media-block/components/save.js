@@ -14,21 +14,31 @@ export class MediaBlockSaveComponent extends Component{
             attributes.title;
 
         const styles = cls(
-            'c-media-block c-block l-grid-wrap',
+            'c-media-block c-block l-grid-wrap l-grid-wrap--3-of-7',
             {'c-block__row': attributes.alignment === "left"},
             {'c-block__stacked': attributes.alignment === "center"}
         );
 
+        const imageStyles = cls(
+            'c-block__image',
+            {'l-grid-item l-grid-item--s--1-col l-grid-item--m--1-col u-padding--zero--sides': attributes.alignment === "left"},
+        )
+
+        const contentStyles = cls(
+            'c-block__content l-grid-item u-spacing u-color--gray u-border-left--black--at-large u-theme--border-color--darker--left',
+            {'l-grid-item--s--2-col l-grid-item--m--2-col': attributes.alignment === "left"}
+        )
+
         return (
             <div className={styles}>
-                <div className={"c-block__image"}>
+                <div className={imageStyles}>
                     <div className="c-block__image-outer-wrap">
                         <div className="c-block__image-wrap">
                             <img src={ attributes.imageURL } />
                         </div>
                     </div>
                 </div>
-                <div className={"c-block__content u-spacing u-color--gray u-border-left--black--at-large u-theme--border-color--darker--left"}>
+                <div className={contentStyles}>
                     <div className={"u-spacing c-block__group"}>
                         <div className={"u-width--100p u-spacing"}>
                             <h3 className={"c-block__title u-theme--color--darker"}>
