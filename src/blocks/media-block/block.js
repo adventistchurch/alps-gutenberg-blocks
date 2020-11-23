@@ -35,9 +35,6 @@ registerBlockType('alps-gutenberg-blocks/media-block', {
       attribute: 'src',
       selector: 'img',
     },
-    imageAlt: {
-      attribute: 'alt'
-    },
     title: {
       type: 'string',
     },
@@ -59,9 +56,6 @@ registerBlockType('alps-gutenberg-blocks/media-block', {
     },
     buttonText: {
       type: 'string'
-    },
-    showPageSideBar: {
-      type: 'boolean'
     }
   },
   edit: MediaBlockEditComponent,

@@ -6,6 +6,7 @@ import { __ } from '@wordpress/i18n';
 import cls from 'classnames';
 
 import {alignLeft, alignCenter} from "../images";
+import ScaledImage from "./image-editor";
 
 
 const ALIGNMENT_CONTROLS = [{
@@ -80,7 +81,14 @@ export class MediaBlockEditComponent extends Component {
                     className={attributes.imageID ? "alps__media-block-image-button" : "button button-large"}
                     onClick={openEvent}
                 >
-                    {!attributes.imageID ? __("Upload/Edit Image") : <img src={attributes.imageURL} />}
+                    {!attributes.imageID ?
+                        __("Upload/Edit Image") :
+                        <ScaledImage
+                            url={attributes.imageURL}
+                            id={attributes.imageID}
+                            setAttributes={this.props.setAttributes}
+                        />
+                    }
                 </Button>
             </div>
         );
