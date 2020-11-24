@@ -11,7 +11,7 @@ import { registerBlockType } from '@wordpress/blocks';
 /**
  * Internal dependencies
  */
-// import './style.scss';
+import './style.scss';
 import './editor.scss';
 import { MediaBlockEditComponent } from './components/edit';
 import { MediaBlockSaveComponent } from './components/save';

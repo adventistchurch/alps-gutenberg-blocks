@@ -17,4 +17,12 @@ jQuery(function($){
             }
         }
     }
+
+    const columns = $( ".wp-block-columns").length > 0;
+
+    if (columns) {
+        $(".wp-block-column .c-media-block").css("width", "auto");
+        $(".wp-block-column .c-block__image").css("width", "auto");
+        $(".wp-block-column .c-block__content").css("width", "auto");
+    }
 });
