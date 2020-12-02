@@ -13,7 +13,7 @@ export class InlineSidebarSaveComponent extends Component {
                         <span className="u-theme--color--base">
                             <em>{ attributes.author }</em>
                         </span>
-                        { attributes.title }
+                        { " " + attributes.title }
                     </h2>
                     <button className="c-inline-sidebar-block__toggle js-toggle o-button o-button--outline o-button--toggle o-button--small" data-toggled="this" data-prefix="this">
                         <span className="u-icon u-icon--xs u-path-fill--white">

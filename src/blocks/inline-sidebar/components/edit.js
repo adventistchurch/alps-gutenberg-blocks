@@ -28,24 +28,38 @@ export class InlineSidebarEditComponent extends Component {
         const { className, attributes } = this.props;
 
         return (
-            <div className={ className}>
-                <RichText
-                    placeholder={ __("Enter Author...") }
-                    value={ attributes.author }
-                    onChange={ this.onChangeAuthor }
-                />
+            <div className={ className }>
+                <div className={"inline-sidebar"}>
+                    <fieldset>
+                        <legend>{ __("Author") }</legend>
+                        <RichText
+                            className={"inline-sidebar__input"}
+                            placeholder={ __("Martin Luther King Jr.") }
+                            value={ attributes.author }
+                            onChange={ this.onChangeAuthor }
+                        />
+                    </fieldset>
 
-                <RichText
-                    placeholder={ __("Enter your Title...") }
-                    value={ attributes.title }
-                    onChange={ this.onChangeTitle }
-                />
+                    <fieldset>
+                        <legend>{ __("Title") }</legend>
+                        <RichText
+                            className={"inline-sidebar__input"}
+                            placeholder={ __("The Autobiography of Martin Luther King, Jr.") }
+                            value={ attributes.title }
+                            onChange={ this.onChangeTitle }
+                        />
+                    </fieldset>
 
-                <RichText
-                    placeholder={ __("Enter your Description...") }
-                    value={ attributes.description }
-                    onChange={ this.onChangeDescription }
-                />
+                    <fieldset>
+                        <legend>{ __("Description") }</legend>
+                        <RichText
+                            className={"inline-sidebar__input"}
+                            placeholder={ __("Enter your Description...") }
+                            value={ attributes.description }
+                            onChange={ this.onChangeDescription }
+                        />
+                    </fieldset>
+                </div>
             </div>
         );
     }
