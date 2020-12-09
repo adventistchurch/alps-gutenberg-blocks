@@ -4,14 +4,13 @@
 
 import './style.scss';
 import './editor.scss';
+import {HighlightedParagraphEditComponent} from "./components/HighlightedParagraphEditComponent";
 
 ( function( blocks, components, i18n, element ) {
   var __ = wp.i18n.__;
   var el = element.createElement;
   var registerBlockType = wp.blocks.registerBlockType;
   var RichText = wp.blockEditor.RichText;
-  var AlignmentToolbar = wp.blockEditor.AlignmentToolbar;
-  var BlockControls = wp.blockEditor.BlockControls;
 
   registerBlockType( 'alps-gutenberg-blocks/highlighted-paragraph', {
     title: __('ALPS Highlighted Paragraph', 'alps-gutenberg-blocks'),
@@ -31,36 +30,7 @@ import './editor.scss';
       },
     },
 
-    edit: function( props ) {
-      var attributes = props.attributes;
-
-      function onChangeContent( newContent ) {
-        props.setAttributes( { content: newContent } );
-      }
-      function onChangeAlignment( newAlignment ) {
-        props.setAttributes( { alignment: newAlignment === undefined ? 'left' : newAlignment } );
-      }
-
-      return [
-        el( BlockControls, { key: 'controls' },
-          el( AlignmentToolbar, {
-            value: attributes.alignment,
-            onChange: onChangeAlignment,
-          } )
-        ),
-        el( 'div', { className: props.className },
-          el( RichText, {
-            tagName: 'p',
-            className: 'o-paragraph',
-            placeholder: __('Content goes here...', 'alps-gutenberg-blocks'),
-            keepPlaceholderOnFocus: true,
-            style: { textAlign: attributes.alignment },
-            value: attributes.content,
-            onChange: onChangeContent,
-          } )
-        )
-      ];
-    },
+    edit: HighlightedParagraphEditComponent,
 
     save: function( props ) {
       var attributes = props.attributes;
