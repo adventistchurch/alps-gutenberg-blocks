@@ -1,5 +1,5 @@
 import {Component} from "@wordpress/element";
-import {MediaUpload} from "@wordpress/block-editor/build/components";
+import {MediaUpload} from "@wordpress/block-editor";
 import {Button} from "@wordpress/components";
 import { __ } from '@wordpress/i18n';
 import {RichText} from "@wordpress/block-editor";
