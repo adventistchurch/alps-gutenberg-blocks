@@ -21,14 +21,14 @@ export class MediaBlockSaveComponent extends Component{
 
         const imageStyles = cls(
             'c-block__image',
-            {'l-grid-item--s--1-col l-grid-item--m--1-col l-grid-item--l--2-col l-grid-item--xl--1-col u-padding--zero--sides': attributes.alignment === "left"},
-            {'l-grid-item--s--6-col l-grid-item--m--4-col l-grid-item--xxl--3-col': attributes.alignment === "center"}
+            {'l-grid-item--s--1-col l-grid-item--m--1-col u-padding--zero--sides': attributes.alignment === "left"},
+            {'l-grid-item--s--6-col l-grid-item--m--4-col l-grid-item--l--3-col': attributes.alignment === "center"}
         )
 
         const contentStyles = cls(
             'c-block__content l-grid-item u-spacing u-color--gray u-border-left--black--at-large u-theme--border-color--darker--left',
-            {'l-grid-item--s--4-col l-grid-item--m--3-col l-grid-item--l--2-col l-grid-item--xl--3-col': attributes.alignment === "left"},
-            {'l-grid-item--s--6-col l-grid-item--m--4-col l-grid-item--xxl--3-col': attributes.alignment === "center"}
+            {'l-grid-item--s--4-col l-grid-item--m--3-col l-grid-item--l--2-col': attributes.alignment === "left"},
+            {'l-grid-item--s--6-col l-grid-item--m--4-col l-grid-item--l--3-col': attributes.alignment === "center"}
         )
 
         return (
