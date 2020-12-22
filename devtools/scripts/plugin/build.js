@@ -80,6 +80,7 @@ const pluginBuild = async (opts) => {
 
     const whiteList = [
         /^\/src\/.+\.php$/u,
+        /^\/src\/front\.js$/u,
         /^\/[^\/]+\.php$/u,
         /^\/dist/u,
         /^\/vendor/u,

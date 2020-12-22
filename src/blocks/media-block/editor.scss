@@ -1,0 +1,162 @@
+@import "src/blocks/media-block/common";
+
+.wp-block-alps-gutenberg-blocks-media-block {
+  border: 1px solid $gray;
+  padding: 0.3rem;
+
+  font-family: "Noto Serif", Georgia, Times, "Times New Roman", serif;
+}
+
+.alps__media-block {
+
+  display: flex;
+
+  &__left {
+    flex-direction: row;
+  }
+
+  &__center {
+    flex-direction: column;
+  }
+
+  &-image-button {
+    height: auto;
+    min-height: 36px;
+    padding: 0 !important;
+  }
+
+  // Upload Image Section
+  &__upload-image-section {
+    display: block;
+
+    &-left {
+      width: 30%;
+    }
+
+    &-center {
+      width: 100%;
+    }
+  }
+
+  // Text Section (Title, Description etc.)
+  &__text-section {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 0.3rem;
+    word-wrap: break-word;
+
+    &-left {
+      width: 70%;
+    }
+
+    &-center {
+      width: 100%;
+    }
+
+    &-wrap {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+
+    &-meta__top {
+      width: 100%;
+      display: block;
+      justify-content: flex-start;
+
+      &-title {
+        color: #002938;
+        font-weight: bold;
+        font-size: 1.5rem;
+        display: block;
+      }
+
+      &-description {
+        margin-top: 0.3rem;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #717171;
+      }
+    }
+
+    &-meta__buttom {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      text-transform: uppercase;
+      color: #255760;
+      font-weight: 600;
+      font-size: 1rem;
+      line-height: 1.6;
+
+      &__category {
+        margin-right: 1rem;
+        display: block;
+      }
+
+      &__date {
+        display: block;
+      }
+    }
+  }
+
+  &__button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    color: $blue;
+    border: 1px solid $blue;
+    text-align: center;
+    border-radius: 15px;
+    padding-left: 1rem;
+    text-decoration: none;
+
+    &__icon {
+      margin-left: .625rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: .3125rem;
+      box-sizing: border-box;
+      color: $blue;
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+
+  &__button:hover {
+    color: $blue;
+  }
+
+  // Settings section
+  &__settings {
+    padding-top: 30px;
+    font-size: 1rem;
+    margin-left: 10px;
+
+    &__link {
+      border-radius: 3px;
+      border: 1px solid  $gray;
+      margin: 0 10px 10px 0;
+      padding: 5px;
+    }
+
+    &__toggle {
+      margin-top: 20px;
+    }
+
+    &__button-text {
+      border-radius: 3px;
+      border: 1px solid  $gray;
+      margin: 0 10px 10px 0;
+      padding: 5px;
+    }
+  }
+}
+
+

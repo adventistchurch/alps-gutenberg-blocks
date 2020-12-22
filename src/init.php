@@ -51,3 +51,8 @@ function alps_gutenberg_blocks_init()
     (new \ALPS\Gutenberg\Blocks\LatestPostsBlock())->init();
 }
 add_action('init', 'alps_gutenberg_blocks_init');
+
+add_action( 'wp_enqueue_scripts', 'alps_gutenberg_blocks_scripts' );
+function alps_gutenberg_blocks_scripts(){
+  wp_enqueue_script( 'alps_gutenberg_front', plugins_url('src/front.js', WP_PLUGIN_DIR . '/' . ALPS_GUTENBERG_NAME . '/plugin.php'), array( 'jquery' ) );
+}
