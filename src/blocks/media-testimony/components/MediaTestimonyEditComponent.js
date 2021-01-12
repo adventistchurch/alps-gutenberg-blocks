@@ -1,10 +1,19 @@
 import {Component} from "@wordpress/element";
-import {RichText} from "@wordpress/block-editor";
+import {RichText, MediaUpload} from "@wordpress/block-editor";
 import {Button, TextControl} from "@wordpress/components";
-import {MediaUpload} from "@wordpress/block-editor/build/components";
 import { __ } from '@wordpress/i18n';
 
 export class MediaTestimonyEditComponent extends Component {
+
+    constructor() {
+        super(...arguments);
+
+        this.onChangeTitle = this.onChangeTitle.bind(this);
+        this.onChangeWatchVideoLink = this.onChangeWatchVideoLink.bind(this);
+        this.onChangeQuote = this.onChangeQuote.bind(this);
+        this.onChangeReadMoreLink = this.onChangeReadMoreLink.bind(this);
+        this.onSelectImage = this.onSelectImage.bind(this);
+    }
 
     onChangeTitle(title) {
         this.props.setAttributes({ title });
@@ -34,17 +43,15 @@ export class MediaTestimonyEditComponent extends Component {
         const { attributes } = this.props;
 
         return (
-            <div className={attributes.alignment === "left" ? "alps__media-block__upload-image-section-left" : "alps__media-block__upload-image-section-center"}>
-                <Button
-                    className={attributes.imageID ? 'image-button' : 'button button-large'}
-                    onClick={openEvent}
-                >
-                    {!attributes.imageID ?
-                        __( 'Upload Image', 'alps-gutenberg-blocks' ) :
-                        <img src={attributes.imageURL} />
-                    }
-                </Button>
-            </div>
+            <Button
+                className={attributes.imageID ? 'image-button' : 'button button-large'}
+                onClick={openEvent}
+            >
+                {!attributes.imageID ?
+                    __( 'Upload Image', 'alps-gutenberg-blocks' ) :
+                    <img src={attributes.imageURL} />
+                }
+            </Button>
         );
     }
 
