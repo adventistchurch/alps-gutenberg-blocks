@@ -11,7 +11,7 @@ export class InlineSidebarSaveComponent extends Component {
                 <div className="c-inline-sidebar-block__header u-padding">
                     <h2 className="c-inline-sidebar-block__title u-theme--color--darker">
                         <span className="u-theme--color--base">
-                            <em>{ attributes.author }</em>
+                            <em>{ attributes.preface }</em>
                         </span>
                         { " " + attributes.title }
                     </h2>

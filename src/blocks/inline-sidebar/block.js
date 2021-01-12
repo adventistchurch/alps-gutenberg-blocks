@@ -11,8 +11,8 @@ import { registerBlockType } from '@wordpress/blocks';
 /**
  * Internal dependencies
  */
-import { InlineSidebarEditComponent } from './components/edit';
-import { InlineSidebarSaveComponent } from './components/save';
+import { InlineSidebarEditComponent } from './components/InlineSidebarEditComponent';
+import { InlineSidebarSaveComponent } from './components/InlineSidebarSaveComponent';
 import './editor.scss';
 import './style.scss';
 
@@ -22,14 +22,17 @@ registerBlockType('alps-gutenberg-blocks/inline-sidebar', {
     icon: 'format-image',
     category: 'common',
     attributes: {
-        author: {
-            type: 'string',
+        preface: {
+            type: 'array',
+            source: 'children'
         },
         title: {
-            type: 'string',
+            type: 'array',
+            source: 'children'
         },
         description: {
-            type: 'string'
+            type: 'array',
+            source: 'children'
         }
     },
     edit: InlineSidebarEditComponent,
