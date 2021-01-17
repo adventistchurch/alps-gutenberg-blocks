@@ -24,15 +24,16 @@ registerBlockType('alps-gutenberg-blocks/inline-sidebar', {
     attributes: {
         preface: {
             type: 'array',
-            source: 'children'
+            source: 'children',
+            selector: 'em'
         },
         title: {
-            type: 'array',
-            source: 'children'
+            type: 'string'
         },
         description: {
             type: 'array',
-            source: 'children'
+            source: 'children',
+            selector: 'p'
         }
     },
     edit: InlineSidebarEditComponent,
