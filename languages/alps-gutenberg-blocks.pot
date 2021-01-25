@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-11 12:29+0300\n"
+"POT-Creation-Date: 2021-01-25 15:05-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -84,6 +84,14 @@ msgstr ""
 
 #: src/blocks/content-show-more/block.js:115
 msgid "Body (Display on click of show more button)"
+msgstr ""
+
+#: src/blocks/media-block/block.js:20
+msgid "ALPS Media Block"
+msgstr ""
+
+#: src/blocks/media-block/block.js:21
+msgid "Flexible media content."
 msgstr ""
 
 #: src/blocks/content-expand/block.js:17
@@ -281,79 +289,75 @@ msgstr ""
 msgid "Caption"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:150
+#: src/blocks/latest-posts/components/edit.js:183
 msgid "Latest Posts Settings"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:167
-msgid "Tag"
+#: src/blocks/latest-posts/components/edit.js:195
+msgid "Tags"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:168
-msgid "All"
-msgstr ""
-
-#: src/blocks/latest-posts/components/edit.js:173
+#: src/blocks/latest-posts/components/edit.js:201
 msgid "Hide excerpt"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:178
+#: src/blocks/latest-posts/components/edit.js:206
 msgid "Hide post date"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:183
+#: src/blocks/latest-posts/components/edit.js:211
 msgid "Hide category name"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:188
+#: src/blocks/latest-posts/components/edit.js:216
 msgid "Hide button"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:193
+#: src/blocks/latest-posts/components/edit.js:221
 msgid "Hide image"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:198
+#: src/blocks/latest-posts/components/edit.js:226
 msgid "Align the image right"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:213
+#: src/blocks/latest-posts/components/edit.js:241
 msgid "Latest Posts"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:217
+#: src/blocks/latest-posts/components/edit.js:245
 msgid "No posts found."
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:232
+#: src/blocks/latest-posts/components/edit.js:260
 msgid "List View"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:238
+#: src/blocks/latest-posts/components/edit.js:266
 msgid "Grid View"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:256
+#: src/blocks/latest-posts/components/edit.js:284
 msgid "Enter a block title"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:264
+#: src/blocks/latest-posts/components/edit.js:292
 msgid "Enter a link label"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:271
+#: src/blocks/latest-posts/components/edit.js:299
 msgid "Enter url here"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:294
+#: src/blocks/latest-posts/components/edit.js:322
 msgid "Post excerpt is visible"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:305
+#: src/blocks/latest-posts/components/edit.js:333
 msgid "Category name is visible"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:311
+#: src/blocks/latest-posts/components/edit.js:339
 msgid "Read More"
 msgstr ""
 
