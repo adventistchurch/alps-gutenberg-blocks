@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [1.8.0]
 ### Added 
 - ALPS Media Block adds a new block component that supports an image along with text beside or below. [#523](https://github.com/adventistchurch/alps-wordpress/issues/523)
+- Added Spanish localization to the plugin.
 
 
 ## [1.7.0]
