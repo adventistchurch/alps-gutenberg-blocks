@@ -1,0 +1,377 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-11 12:29+0300\n"
+"PO-Revision-Date: 2021-01-25 20:10-0500\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"Last-Translator: Roberto Valencia <r@rober.tv>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: es\n"
+
+#: src/blocks/content-block/block.js:18
+msgid "ALPS Content Block"
+msgstr "Bloque de contenido ALPS"
+
+# ? may need polishing, depending on context
+#: src/blocks/content-block/block.js:19
+msgid "Content block that highlights a row to text."
+msgstr "Bloque de contenido que resalta una fila en el texto."
+
+#: src/blocks/content-block/block.js:61
+#: src/blocks/content-show-more/block.js:94
+#: src/blocks/content-expand/block.js:72
+#: src/blocks/accordion/components/edit.js:40 src/blocks/cta/block.js:180
+msgid "Title"
+msgstr "Título"
+
+#: src/blocks/content-block/block.js:71
+msgid "Write a description..."
+msgstr "Escribe una descripción..."
+
+#: src/blocks/content-block/block.js:81
+msgid "Link Url"
+msgstr "URL de enlace"
+
+#: src/blocks/media-testimony/block.js:19
+msgid "ALPS Media Testimony Block"
+msgstr "Bloque de medios ALPS para testimonios"
+
+#: src/blocks/media-testimony/block.js:20
+msgid "Single media testimony."
+msgstr "Testimonio vía un solo medio de comunicación."
+
+#: src/blocks/media-testimony/block.js:74
+msgid "Enter Quote"
+msgstr "Introducir el texto citado"
+
+#: src/blocks/media-testimony/block.js:83
+msgid "Read More Link"
+msgstr "Enlace de «Leer más»"
+
+#: src/blocks/media-testimony/block.js:103
+#: src/blocks/content-show-more/block.js:86 src/blocks/cta/block.js:163
+#: src/blocks/image-breakout/block.js:53
+msgid "Upload Image"
+msgstr "Subir imagen"
+
+#: src/blocks/media-testimony/block.js:110
+msgid "Enter Video Title"
+msgstr "Introducir título de vídeo"
+
+#: src/blocks/media-testimony/block.js:120
+msgid "Watch Video Link"
+msgstr "Ver enlace de vídeo"
+
+# ? may need polishing if context is different.
+#: src/blocks/content-show-more/block.js:18
+msgid "ALPS Content Show More"
+msgstr "«Mostrar más» para contenidos ALPS"
+
+#: src/blocks/content-show-more/block.js:20
+msgid "Content block that has a toggle button to show more."
+msgstr "Bloque de contenido que tiene un botón de alternancia para mostrar más."
+
+#: src/blocks/content-show-more/block.js:104 src/blocks/cta/block.js:190
+msgid "Description"
+msgstr "Descripción"
+
+# ?
+#: src/blocks/content-show-more/block.js:115
+msgid "Body (Display on click of show more button)"
+msgstr "Cuerpo (Mostrar al hacer clic en botón de «mostrar más»)"
+
+# Expandir contenidos ALPS
+# Expansor de contenidos ALPS
+#: src/blocks/content-expand/block.js:17
+msgid "ALPS Content Expand"
+msgstr "Expansor de contenido ALPS"
+
+#: src/blocks/content-expand/block.js:19
+msgid "Content block that expands the content on click."
+msgstr "Bloque de contenido que expande el contenido al hacer clic."
+
+#: src/blocks/content-expand/block.js:61
+msgid "Kicker"
+msgstr "Antetítulo"
+
+#: src/blocks/content-expand/block.js:82
+#: src/blocks/accordion/components/edit.js:48
+msgid "Body"
+msgstr "Cuerpo"
+
+#: src/blocks/accordion/block.js:20
+msgid "ALPS Accordion"
+msgstr "Acordeón ALPS"
+
+#: src/blocks/accordion/block.js:22
+msgid "Add heading and basic text."
+msgstr "Añadir encabezado y texto básico."
+
+# ? may need polishing
+#: src/blocks/cta/block.js:25
+msgid "ALPS CTA"
+msgstr "CTA (Llamado a la acción) ALPS"
+
+#: src/blocks/cta/block.js:135
+msgid "Dark Background"
+msgstr "Fondo oscuro"
+
+#: src/blocks/cta/block.js:136
+msgid "Makes the CTA background dark."
+msgstr "Hace oscuro el fondo del CTA (llamado a la acción)."
+
+#: src/blocks/cta/block.js:141
+msgid "Background Image"
+msgstr "Imagen de fondo"
+
+#: src/blocks/cta/block.js:142
+msgid "Sets the image as a background image."
+msgstr "Establece la imagen como una imagen de fondo."
+
+#: src/blocks/cta/block.js:169 src/blocks/gallery/editor-image.js:134
+#: src/blocks/image-2up/editor-image.js:133
+msgid "Remove Image"
+msgstr "Eliminar imagen"
+
+#: src/blocks/cta/block.js:203
+msgid "Button 1 Url"
+msgstr "URL del botón 1"
+
+#: src/blocks/cta/block.js:212
+msgid "Button 1 Text"
+msgstr "Texto del botón 1"
+
+#: src/blocks/cta/block.js:221 src/blocks/cta/block.js:249
+msgid "Open in new window"
+msgstr "Abrir en Nueva ventana"
+
+#: src/blocks/cta/block.js:231
+msgid "Button 2 Url"
+msgstr "URL del botón 2"
+
+#: src/blocks/cta/block.js:240
+msgid "Button 2 Text"
+msgstr "Texto del botón 2"
+
+#: src/blocks/gallery/edit.js:40 src/blocks/image-2up/edit.js:41
+msgid "Attachment Page"
+msgstr "Página para adjuntos"
+
+#: src/blocks/gallery/edit.js:41 src/blocks/image-2up/edit.js:42
+msgid "Media File"
+msgstr "Archivo multimedia"
+
+#: src/blocks/gallery/edit.js:42 src/blocks/image-2up/edit.js:43
+msgid "None"
+msgstr "Ninguno"
+
+#: src/blocks/gallery/edit.js:149
+msgid "Edit Gallery"
+msgstr "Editar galería"
+
+#: src/blocks/gallery/edit.js:169
+msgid "Gallery"
+msgstr "Galería"
+
+#: src/blocks/gallery/edit.js:170 src/blocks/image-2up/edit.js:189
+msgid "images"
+msgstr "imágenes"
+
+#: src/blocks/gallery/edit.js:192
+msgid "Enter a gallery title.."
+msgstr "Introduzca un título de galería.."
+
+#: src/blocks/gallery/block.js:20
+msgid "ALPS Gallery"
+msgstr "Galería ALPS"
+
+#: src/blocks/gallery/block.js:21
+msgid "Display a gallery images in a container that expands on click."
+msgstr "Mostrar una galería de imágenes en un contenedor que se expande al hacer clic."
+
+#: src/blocks/gallery/editor-image.js:142
+#: src/blocks/image-2up/editor-image.js:141
+msgid "Write caption…"
+msgstr "Escribir subtítulo…"
+
+#: src/blocks/highlighted-paragraph/block.js:17
+msgid "ALPS Highlighted Paragraph"
+msgstr "Párrafo resaltado ALPS"
+
+#: src/blocks/highlighted-paragraph/block.js:19
+msgid "Highlight a block of text."
+msgstr "Resaltar un bloque de texto."
+
+#: src/blocks/highlighted-paragraph/block.js:55
+msgid "Content goes here..."
+msgstr "El contenido va aquí..."
+
+#: src/blocks/blockquote/block.js:17
+msgid "ALPS Blockquote"
+msgstr "Texto citado en bloque ALPS"
+
+#: src/blocks/blockquote/block.js:61
+msgid "Extend Quote"
+msgstr "Extender texto citado"
+
+#: src/blocks/blockquote/block.js:62
+msgid "Extends the quote outside the page content."
+msgstr "Extiende el texto citado fuera del contenido de la página."
+
+#: src/blocks/blockquote/block.js:69
+msgid "Strong Quote"
+msgstr "Cita destacada"
+
+#: src/blocks/blockquote/block.js:70
+msgid "Set strong style for the quote content."
+msgstr "Establezca un estilo destacado para el contenido del texto citado."
+
+#: src/blocks/blockquote/block.js:81
+msgid "Write a quote..."
+msgstr "Escribir un texto citado..."
+
+#: src/blocks/blockquote/block.js:91
+msgid "Citation"
+msgstr "Cita"
+
+#: src/blocks/media-testimonies/block.js:19
+msgid "ALPS Media Testimonies"
+msgstr "Medios ALPS para testimonios"
+
+#: src/blocks/media-testimonies/block.js:20
+msgid "Display your media testimonies."
+msgstr "Muestre sus testimonios vía múltiples medios."
+
+#: src/blocks/media-testimonies/block.js:44
+msgid "Enter Section Title"
+msgstr "Ingresar título de la sección"
+
+#: src/blocks/media-testimonies/block.js:54
+msgid "See All Link Url"
+msgstr "URL de enlace para «Ver todos»"
+
+#: src/blocks/image-2up/edit.js:169
+msgid "Edit Images"
+msgstr "Editar imágenes"
+
+#: src/blocks/image-2up/edit.js:188
+msgid "Image (2up)"
+msgstr "Imagen (de a dos)"
+
+#: src/blocks/image-2up/block.js:10
+msgid "ALPS Image (2up)"
+msgstr "Imagen de ALPS (de a 2)"
+
+#: src/blocks/image-2up/block.js:11
+msgid "Two images organized in a two column layout."
+msgstr "Dos imágenes organizadas en un diseño de dos columnas."
+
+#: src/blocks/image-breakout/block.js:18
+msgid "ALPS Image (Breakout)"
+msgstr "Imagen de ALPS (rebasada)"
+
+#: src/blocks/image-breakout/block.js:20
+msgid "Image that expands the width of the page."
+msgstr "Imagen que expande el ancho de la página."
+
+#: src/blocks/image-breakout/block.js:60
+msgid "Caption"
+msgstr "Leyenda"
+
+#: src/blocks/latest-posts/components/edit.js:150
+msgid "Latest Posts Settings"
+msgstr "Ajustes de entradas más recientes"
+
+#: src/blocks/latest-posts/components/edit.js:167
+msgid "Tag"
+msgstr "Etiqueta"
+
+#: src/blocks/latest-posts/components/edit.js:168
+msgid "All"
+msgstr "Todo"
+
+#: src/blocks/latest-posts/components/edit.js:173
+msgid "Hide excerpt"
+msgstr "Ocultar extracto"
+
+#: src/blocks/latest-posts/components/edit.js:178
+msgid "Hide post date"
+msgstr "Ocultar la fecha de publicación"
+
+#: src/blocks/latest-posts/components/edit.js:183
+msgid "Hide category name"
+msgstr "Ocultar el nombre de la categoría"
+
+#: src/blocks/latest-posts/components/edit.js:188
+msgid "Hide button"
+msgstr "Ocultar botón"
+
+#: src/blocks/latest-posts/components/edit.js:193
+msgid "Hide image"
+msgstr "Ocultar imagen"
+
+#: src/blocks/latest-posts/components/edit.js:198
+msgid "Align the image right"
+msgstr "Alinear la imagen a la derecha"
+
+#: src/blocks/latest-posts/components/edit.js:213
+msgid "Latest Posts"
+msgstr "Entradas más recientes"
+
+#: src/blocks/latest-posts/components/edit.js:217
+msgid "No posts found."
+msgstr "No se han encontrado publicaciones."
+
+#: src/blocks/latest-posts/components/edit.js:232
+msgid "List View"
+msgstr "Vista de lista"
+
+#: src/blocks/latest-posts/components/edit.js:238
+msgid "Grid View"
+msgstr "Vista de cuadrícula"
+
+#: src/blocks/latest-posts/components/edit.js:256
+msgid "Enter a block title"
+msgstr "Introduzca un título del bloque"
+
+#: src/blocks/latest-posts/components/edit.js:264
+msgid "Enter a link label"
+msgstr "Introduzca una etiqueta para el enlace"
+
+#: src/blocks/latest-posts/components/edit.js:271
+msgid "Enter url here"
+msgstr "Ingrese URL aquí"
+
+#: src/blocks/latest-posts/components/edit.js:294
+msgid "Post excerpt is visible"
+msgstr "El extracto de la publicación es visible"
+
+#: src/blocks/latest-posts/components/edit.js:305
+msgid "Category name is visible"
+msgstr "El nombre de la categoría es visible"
+
+#: src/blocks/latest-posts/components/edit.js:311
+msgid "Read More"
+msgstr "Leer más"
+
+#: src/blocks/latest-posts/block.js:18
+msgid "ALPS Latest Posts"
+msgstr "ALPS para entradas más recientes"
+
+#: src/blocks/latest-posts/block.js:19
+msgid "Display a list of your most recent posts."
+msgstr "Muestra una lista de tus entradas más recientes."
+
+#: src/blocks/latest-posts/block.js:22
+msgid "latest posts"
+msgstr "entradas más recientes"
