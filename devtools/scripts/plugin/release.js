@@ -70,6 +70,7 @@ const pluginRelease = async (opts) => {
         username: cdnUser,
         privateKey: cdnPrivateKey,
         passphrase: cdnPrivateKeyPass,
+        debug: console.log,
     });
 
     await sftp.put(`${buildDir}${localFileName}`, `${cdnRootPath}/${distFileName}`);
