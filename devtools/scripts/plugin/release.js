@@ -65,19 +65,14 @@ const pluginRelease = async (opts) => {
 
     // Upload to CDN
     const sftp = new SFTPClient();
-    console.log(`➡️ Check creating sftp client! Client was created!`);
+    logger.info(`➡️ Check creating sftp client! Client was created!`);
     await sftp.connect({
         host: cdnHost,
         username: cdnUser,
         privateKey: cdnPrivateKey,
         passphrase: cdnPrivateKeyPass,
         debug: console.log
-    }).then(async conn => {
-        console.log('connected');
-        let data = await conn.list('./');
-        console.log(data);
-        await sftp.end();
-    }).catch(e => console.log(`Unable to connect -- ${e.message}`));
+    }).catch(e => logger.info(`Unable to connect -- ${e.message}`));
 
     await sftp.put(`${buildDir}${localFileName}`, `${cdnRootPath}/${distFileName}`);
     logger.info(`🔼 ${chalk.yellow(distFileName)} pushed to CDN`);
