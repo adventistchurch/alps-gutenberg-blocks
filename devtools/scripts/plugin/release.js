@@ -65,7 +65,7 @@ const pluginRelease = async (opts) => {
 
     // Upload to CDN
     const sftp = new SFTPClient();
-    console.log(`➡️ Check creating sftp client! Client ${sftp.clientName} was created!`);
+    console.log(`➡️ Check creating sftp client! Client was created!`);
     await sftp.connect({
         host: cdnHost,
         username: cdnUser,
