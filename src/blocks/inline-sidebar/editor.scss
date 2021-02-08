@@ -1,0 +1,31 @@
+@import "src/common";
+
+.wp-block-alps-gutenberg-blocks-inline-sidebar {
+  border-left: 4px solid $c-blue;
+  padding: 0.3rem;
+  margin-bottom: 80px;
+
+  font-family: "Noto Serif", Georgia, Times, "Times New Roman", serif;
+}
+
+.inline-sidebar {
+  margin-left: 20px;
+
+  &__input {
+    font-family: Montserrat;
+  }
+}
+
+fieldset {
+  display: flex;
+  border-top: 1px solid lightgray;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+legend {
+  font-family: Nunito;
+  margin-left: 20px;
+  padding: 0 7px 0 7px;
+  color: $c-blue;
+}

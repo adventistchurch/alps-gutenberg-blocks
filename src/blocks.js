@@ -18,6 +18,7 @@ import './blocks/content-show-more/block.js';
 import './blocks/highlighted-paragraph/block.js';
 import './blocks/image-breakout/block.js';
 import './blocks/image-2up/block.js';
+import './blocks/inline-sidebar/block.js';
 import './blocks/gallery/block.js';
 import './blocks/latest-posts/block.js';
 import './blocks/media-testimonies/block.js';
