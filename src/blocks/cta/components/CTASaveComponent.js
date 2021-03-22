@@ -8,19 +8,17 @@ export class CTASaveComponent extends Component {
 
         const { attributes } = this.props;
 
-        const image = attributes.imageUrl ?
-            <style type="text/css">.o-background-image--{ attributes.imageId } { `{ background-image: url('${ attributes.imageUrl }') }` }</style>:
-            '';
-
         // Background condition
         let backgroundImageClass = '';
+        let image = '';
         let picture = '';
 
         if (attributes.imageUrl) {
+            image = <style type="text/css">.o-background-image--{ attributes.imageId } { `{ background-image: url('${ attributes.imageUrl }') }` }</style>;
             backgroundImageClass = attributes.hasBackgroundImage ?
                 ' o-background-image--'+ attributes.imageId :
                 ' has-image';
-            if (attributes.hasBackgroundImage) {
+            if (!attributes.hasBackgroundImage) {
                 picture = <div className={'c-cta-block__image c-block__image o-background-image--' + attributes.imageId + ' u-background--cover'}/>;
             }
         }

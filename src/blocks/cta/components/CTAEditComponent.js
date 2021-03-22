@@ -182,14 +182,14 @@ export class CTAEditComponent extends Component {
                         <h6>Primary Button</h6>
                         <TextControl
                             type={'url'}
-                            lable={__('Button 1 Url', 'alps-gutenberg-blocks')}
+                            label={__('Button 1 Url', 'alps-gutenberg-blocks')}
                             value={attributes.button1Url}
                             placeholder={'https://'}
                             keepPlaceholderOnFocus={true}
                             onChange={this.onChangeButton1Url}
                         />
                         <TextControl
-                            lable={__('Button 1 Text', 'alps-gutenberg-blocks')}
+                            label={__('Button 1 Text', 'alps-gutenberg-blocks')}
                             value={attributes.button1Text}
                             placeholder={'Learn more'}
                             keepPlaceholderOnFocus={true}
@@ -205,14 +205,14 @@ export class CTAEditComponent extends Component {
                         <h6>Secondary Button</h6>
                         <TextControl
                             type={'url'}
-                            lable={__('Button 2 Url', 'alps-gutenberg-blocks')}
+                            label={__('Button 2 Url', 'alps-gutenberg-blocks')}
                             value={attributes.button2Url}
                             placeholder={'https://'}
                             keepPlaceholderOnFocus={true}
                             onChange={this.onChangeButton2Url}
                         />
                         <TextControl
-                            lable={__('Button 2 Text', 'alps-gutenberg-blocks')}
+                            label={__('Button 2 Text', 'alps-gutenberg-blocks')}
                             value={attributes.button2Text}
                             placeholder={'Learn more'}
                             keepPlaceholderOnFocus={true}
