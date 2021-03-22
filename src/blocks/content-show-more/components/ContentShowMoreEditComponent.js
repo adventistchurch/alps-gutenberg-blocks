@@ -33,7 +33,7 @@ export class ContentShowMoreEditComponent extends Component {
 
     onSelectImage(media) {
         this.props.setAttributes({
-            imageURL: media.sizes.thumbnail.url,
+            imageURL: media.sizes.large.url,
             imageID: media.id
         });
     }
