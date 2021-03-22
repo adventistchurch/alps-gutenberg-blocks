@@ -11,6 +11,7 @@ export class ContentBlockEditComponent extends Component {
         this.onChangeTitle = this.onChangeTitle.bind(this);
         this.onChangeBody = this.onChangeBody.bind(this);
         this.onChangeLink = this.onChangeLink.bind(this);
+        this.onChangeReadMoreButton = this.onChangeReadMoreButton.bind(this);
         this.onChangeAlignment = this.onChangeAlignment.bind(this);
     }
 
@@ -24,6 +25,10 @@ export class ContentBlockEditComponent extends Component {
 
     onChangeLink(link) {
         this.props.setAttributes({ link });
+    }
+
+    onChangeReadMoreButton(readMoreButton) {
+        this.props.setAttributes({ readMoreButton: readMoreButton ? readMoreButton : 'Read More' });
     }
 
     onChangeAlignment(nextAction) {
@@ -72,6 +77,14 @@ export class ContentBlockEditComponent extends Component {
                     keepPlaceholderOnFocus={ true }
                     value={ attributes.link }
                     onChange={ this.onChangeLink }
+                />
+                <RichText
+                    type={'p'}
+                    placeholder={ 'Read more button. Default: READ MORE' }
+                    label={ __('Read More button', 'alps-gutenberg-blocks') }
+                    keepPlaceholderOnFocus={ true }
+                    value={ attributes.readMoreButton }
+                    onChange={ this.onChangeReadMoreButton }
                 />
             </div>
         ]);

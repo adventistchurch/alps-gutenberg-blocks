@@ -179,6 +179,7 @@ export class CTAEditComponent extends Component {
                 />
                 <div className={'o-buttons'}>
                     <div className={'o-button--1'}>
+                        <h6>Primary Button</h6>
                         <TextControl
                             type={'url'}
                             lable={__('Button 1 Url', 'alps-gutenberg-blocks')}
@@ -201,6 +202,7 @@ export class CTAEditComponent extends Component {
                         />
                     </div>
                     <div className={'o-button--2'}>
+                        <h6>Secondary Button</h6>
                         <TextControl
                             type={'url'}
                             lable={__('Button 2 Url', 'alps-gutenberg-blocks')}
