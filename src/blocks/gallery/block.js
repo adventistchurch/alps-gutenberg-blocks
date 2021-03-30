@@ -53,6 +53,7 @@ registerBlockType( 'alps-gutenberg-blocks/gallery', {
         caption: {
           type: 'array',
           source: 'children',
+          default: [],
           selector: '.c-gallery-block__caption',
         },
       },

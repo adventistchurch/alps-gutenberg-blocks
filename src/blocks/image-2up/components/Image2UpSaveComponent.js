@@ -20,7 +20,7 @@ export class Image2UpSaveComponent extends Component {
                                 </div>
                                 <div className={"o-figure__caption"}>
                                     <figcaption className={"o-figcaption"}>
-                                        <p className={"o-caption u-color--gray u-font--secondary--s"}>{ image.caption }</p>
+                                        <p className={"o-caption u-color--gray u-font--secondary--s"}>{[image.caption]}</p>
                                     </figcaption>
                                 </div>
                             </figure>

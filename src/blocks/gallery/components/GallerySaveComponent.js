@@ -40,7 +40,7 @@ export class GallerySaveComponent extends Component {
                                 <img src={image.url} alt={image.alt} data-id={image.id}/>
                                 <div
                                     className={"c-gallery-block__caption u-font--secondary--s u-color--gray u-padding u-padding--double--bottom"}>
-                                    {image.caption}
+                                    {[image.caption]}
                                 </div>
                             </div>
                         )}

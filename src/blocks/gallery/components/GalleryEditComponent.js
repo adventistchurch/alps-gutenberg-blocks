@@ -59,6 +59,9 @@ class GalleryEditComponent extends Component {
 
     onSelectImages( images ) {
         // WE USE LODASH'S 'GET' TO GO DEEPER TO GET THE PROVIDED LARGE SIZE URL
+        images.map( (image) => {
+            image.caption = [image.caption];
+        });
         let imageData = images.map( ( image ) => ({
             ..._.pick( image, [ 'alt', 'caption', 'id' ] ),
             url: get( image, 'sizes["flex-height--m"].url' )
@@ -129,7 +132,6 @@ class GalleryEditComponent extends Component {
         );
 
         if ( images.length === 0 ) {
-            console.log( 'render: images === 0' );
             return (
                 <Fragment>
                     { controls }

@@ -59,6 +59,9 @@ class Image2UpEditComponent extends Component {
 
     onSelectImages( images ) {
         // WE USE LODASH'S 'GET' TO GO DEEPER TO GET THE PROVIDED LARGE SIZE URL
+        images.map( (image) => {
+            image.caption = [image.caption];
+        });
         let imageData = images.map( ( image ) => ({
             ..._.pick( image, [ 'alt', 'caption', 'id' ] ),
             url: get( image, 'sizes["horiz__16x9--m"].url' )
