@@ -95,7 +95,7 @@ export class MediaTestimonyEditComponent extends Component {
                         value={attributes.title}
                         onChange={this.onChangeTitle}
                     />
-                    <RichText
+                    <TextControl
                         type={'url'}
                         label={__( 'Watch Video Link', 'alps-gutenberg-blocks' )}
                         value={attributes.watchVideoLink}

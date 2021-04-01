@@ -46,7 +46,7 @@ export class MediaTestimoniesEditComponent extends Component {
                     />
                 </div>
                 <InnerBlocks
-                    template={['alps-gutenberg-blocks/media-testimony' ]}
+                    template={[['alps-gutenberg-blocks/media-testimony', {} ]]}
                     allowedBlocks={['alps-gutenberg-blocks/media-testimony' ]}
                 />
             </div>
