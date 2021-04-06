@@ -18,7 +18,7 @@ export class MediaTestimoniesSaveComponent extends Component {
 
         return(
             <div>
-                <section className={"c-testimonies-media u-spacing u-posititon--relative u-theme--background-color--darker u-color--white"}>
+                <section className={"c-testimonies-media u-spacing u-position--relative u-theme--background-color--darker u-color--white"}>
                     <div className={"c-testimonies-media--inner u-spacing--double"}>
                         <div className={"c-testimonies-media__heading"}>
                             <div className={"c-block__heading u-theme--border-color--base"}>
