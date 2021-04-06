@@ -2,20 +2,16 @@
  * BLOCK: Media Testimonies
  */
 
+import { __ } from '@wordpress/i18n';
+import { registerBlockType } from '@wordpress/blocks';
+
 import './style.scss';
 import './editor.scss';
-import icons from '../../icons/icons.js'
 
-( function( blocks, components, i18n, element, editor, blockEditor ) {
-  var __ = wp.i18n.__;
-  var el = element.createElement;
-  var registerBlockType = wp.blocks.registerBlockType;
-  var RichText = wp.blockEditor.RichText;
-  var TextControl = wp.components.TextControl;
-  var InnerBlocks = wp.blockEditor.InnerBlocks;
-  var { Icon } = wp.components;
+import {MediaTestimoniesSaveComponent} from "./components/MediaTestimoniesSaveComponent";
+import {MediaTestimoniesEditComponent} from "./components/MediaTestimoniesEditComponent";
 
-  registerBlockType( 'alps-gutenberg-blocks/media-testimonies', {
+registerBlockType( 'alps-gutenberg-blocks/media-testimonies', {
     title: __('ALPS Media Testimonies', 'alps-gutenberg-blocks'),
     description: __('Display your media testimonies.', 'alps-gutenberg-blocks'),
     icon: 'format-chat',
@@ -33,96 +29,6 @@ import icons from '../../icons/icons.js'
       },
     },
 
-    edit: function( props ) {
-      var attributes = props.attributes;
-
-      return [
-        el( 'div', { className: props.className },
-          el( 'div', { className: 'o-editor-heading', },
-            el( RichText, {
-              tagName: 'h3',
-              placeholder: __('Enter Section Title', 'alps-gutenberg-blocks'),
-              className: 'o-heading--l',
-              keepPlaceholderOnFocus: true,
-              value: attributes.title,
-              onChange: function( newTitle ) {
-                props.setAttributes( { title: newTitle } );
-              }
-            } ),
-            el( TextControl, {
-              type: 'url',
-              label: __( 'See All Link Url', 'alps-gutenberg-blocks' ),
-              value: attributes.link,
-              placeholder: 'http://',
-              className: 'o-link',
-              keepPlaceholderOnFocus: true,
-              onChange: function( newLink ) {
-                props.setAttributes( { link: newLink } );
-              }
-            } ),
-          ),
-          el( InnerBlocks, {
-            template: [
-              [ 'alps-gutenberg-blocks/media-testimony' ],
-            ],
-            allowedBlocks: [
-              [ 'alps-gutenberg-blocks/media-testimony' ],
-            ],
-          } )
-        )
-      ];
-    },
-
-    save: function( props ) {
-      var attributes = props.attributes;
-
-      if ( attributes.link ) {
-        var seeAll = <a href={ `${ attributes.link }` } className="c-block__heading-link u-theme--color--light u-theme--link-hover--lighter o-link">See All</a>;
-        var seeAllStories = <a href={ `${ attributes.link }` } className="o-button o-button--outline--white">See all Stories<span className="u-icon u-icon--m u-space--half--left"><Icon className="icon" icon={ icons.arrowLong } /></span></a>;
-      } else {
-        var seeAll = '';
-        var seeAllStories = '';
-      }
-
-      return (
-        <div>
-          <section className="c-testimonies-media u-spacing u-posititon--relative u-theme--background-color--darker u-color--white">
-            <div className="c-testimonies-media--inner u-spacing--double">
-              <div className="c-testimonies-media__heading">
-                <div className="c-block__heading u-theme--border-color--base">
-                  <h3 className="c-block__heading-title">{ attributes.title }</h3>{ seeAll }
-                </div>
-                <div className="o-dots"></div>
-              </div>
-              <div className="c-testimonies-media__blocks js-carousel__testimonies-media u-theme--gradient--right u-theme--gradient--left">
-                <InnerBlocks.Content />
-              </div>
-              <div className="c-testimonies-media__buttons u-spacing--left--half">
-                <button className="o-button o-button--outline--white o-arrow o-arrow--prev">
-                  <span className="u-icon u-icon--s u-path-fill--white">
-                    <Icon className="icon" icon={ icons.arrowPrevious } />
-                  </span>
-                </button>
-                <button className="o-button o-button--outline--white o-arrow o-arrow--next">
-                  <span className="u-icon u-icon--s u-path-fill--white">
-                    <Icon className="icon" icon={ icons.arrowNext } />
-                  </span>
-                </button>
-                { seeAllStories }
-              </div>
-            </div>
-          </section>
-        </div>
-      );
-    }
-
-  });
-
-} )(
-  window.wp.blocks,
-  window.wp.components,
-  window.wp.i18n,
-  window.wp.element,
-  window.wp.editor,
-  window.wp.blockEditor,
-);
+    edit: MediaTestimoniesEditComponent,
+    save: MediaTestimoniesSaveComponent
+});

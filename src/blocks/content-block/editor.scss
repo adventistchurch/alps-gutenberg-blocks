@@ -9,3 +9,14 @@
   border-left: 1px solid black;
   padding-left: $pad;
 }
+
+.alps__content-block {
+
+  &__left {
+    text-align: left;
+  }
+
+  &__center {
+    text-align: center;
+  }
+}

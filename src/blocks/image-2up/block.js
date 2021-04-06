@@ -2,13 +2,21 @@
  * BLOCK: Image (2up)
  */
 
+/**
+ * WordPress dependencies
+ */
+import { __ } from '@wordpress/i18n';
+import { registerBlockType } from '@wordpress/blocks';
+
 import './style.scss';
 import './editor.scss';
-import Edit, { defaultColumnsNumber } from './edit';
 
-wp.blocks.registerBlockType( 'alps-gutenberg-blocks/image-2up', {
-  title: wp.i18n.__('ALPS Image (2up)', 'alps-gutenberg-blocks'),
-  description: wp.i18n.__('Two images organized in a two column layout.', 'alps-gutenberg-blocks'),
+import {Image2UpSaveComponent} from "./components/Image2UpSaveComponent";
+import Image2UpEditComponent from "./components/Image2UpEditComponent";
+
+registerBlockType( 'alps-gutenberg-blocks/image-2up', {
+  title: __('ALPS Image (2up)', 'alps-gutenberg-blocks'),
+  description: __('Two images organized in a two column layout.', 'alps-gutenberg-blocks'),
   icon: 'format-gallery',
   category: 'common',
   attributes: {
@@ -48,33 +56,7 @@ wp.blocks.registerBlockType( 'alps-gutenberg-blocks/image-2up', {
     },
   },
 
-  edit: function( props ) {
-    return <Edit {...props} />
-  },
-
-  save: function( { attributes } ) {
-    return (
-      <div>
-        <section className="l-grid l-grid--7-col l-grid-wrap l-grid-wrap--6-of-7">
-          { attributes.images.map( ( image ) =>
-            <div className="l-grid-item--m--3-col u-padding--zero--left">
-              <figure key={ image.id || image.url } className="o-figure">
-                <div className="o-figure__image">
-                  <picture className="picture">
-                    <img className={ 'wp-image-' + image.id + ' size-large'} itemprop="image" src={ image.url } alt={ image.alt } data-id={ image.id } />
-                  </picture>
-                </div>
-                <div className="o-figure__caption">
-                  <figcaption className="o-figcaption">
-                    <p className="o-caption u-color--gray u-font--secondary--s">{ image.caption }</p>
-                  </figcaption>
-                </div>
-              </figure>
-            </div>
-          ) }
-        </section>
-      </div>
-    );
-  }
+  edit: Image2UpEditComponent,
+  save: Image2UpSaveComponent
 
 })
