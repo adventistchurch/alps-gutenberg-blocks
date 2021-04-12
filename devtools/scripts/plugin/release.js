@@ -48,19 +48,18 @@ const pluginRelease = async (opts) => {
         auth: githubToken,
     });
 
-    const existingRelease = await octokit.repos.getReleaseByTag({
-        owner: githubOwner,
-        repo: githubRepo,
-        tag,
-    });
-
-    if (existingRelease) {
+    try {
+        const existingRelease = await octokit.repos.getReleaseByTag({
+            owner: githubOwner,
+            repo: githubRepo,
+            tag,
+        });
         await octokit.repos.deleteRelease({
             owner: githubOwner,
             repo: githubRepo,
             release_id: existingRelease.data.id,
         });
-    }
+    } catch (e) {}
 
     const createReleaseResponse = await octokit.repos.createRelease({
         owner: githubOwner,

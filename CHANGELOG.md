@@ -3,7 +3,7 @@ A record of the changes made to `ALPS Gutenberg Blocks`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.9.3]
+## [1.9.4]
 ### Fixed
 - Fixed: Incorrectly spelled class name on the Testimonies Media block.
 - Fixed: Refactored code to make the blocks more consistent. [#52](https://github.com/adventistchurch/alps-gutenberg-blocks/pull/52)
