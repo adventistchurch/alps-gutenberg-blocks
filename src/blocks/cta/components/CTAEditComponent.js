@@ -1,7 +1,9 @@
 import {Component} from "@wordpress/element";
 import {AlignmentToolbar, BlockControls, InspectorControls, MediaUpload, RichText} from "@wordpress/block-editor";
-import {Button, CheckboxControl, TextControl, ToggleControl} from "@wordpress/components";
+import {Button, CheckboxControl, Icon, TextControl, ToggleControl} from "@wordpress/components";
 import {__} from '@wordpress/i18n';
+import {DescCard} from "../../global-components/DescCard";
+import icons from "../../../icons/icons";
 
 export class CTAEditComponent extends Component {
 
@@ -112,15 +114,19 @@ export class CTAEditComponent extends Component {
                 onClick={!attributes.imageId ? obj.open : obj.close}
             >
                 { !attributes.imageId ?
-                    __('Upload Image', 'alps-gutenberg-blocks') :
+                    <div>
+                        <Icon style={{"margin-right": "8px"}} className={"icon"} icon={icons.upload} />
+                        { __( 'Upload Image', 'alps-gutenberg-blocks' ) }
+                    </div>
+                    :
                     <div className={'o-image--edit'}>
                         <Button
-                            icon={'no-alt'}
+                            icon={icons.remoteGalleryItem}
                             onClick={this.onRemoveImage}
                             className={'blocks-gallery-item__remove'}
                             label={__('Remove Image', 'alps-gutenberg-blocks')}
                         />
-                        <img src={attributes.imageUrl}/>
+                        <img className={"contentCard__image"} src={attributes.imageUrl}/>
                     </div>
                 }
 
@@ -154,76 +160,103 @@ export class CTAEditComponent extends Component {
                 />
             </BlockControls>,
             <div className={className}>
-                <MediaUpload
-                    onSelect={this.onSelectImage}
-                    type={'image'}
-                    value={attributes.imageId}
-                    render={(obj) => this.getImageButton(obj)}
+                <DescCard
+                    title={"CTA"}
+                    hasText={true}
+                    hasImage={true}
+                    hasImages={false}
                 />
-                <RichText
-                    className={'o-heading--l'}
-                    tagName={'h3'}
-                    placeholder={__('Title', 'alps-gutenberg-blocks')}
-                    keepPlaceholderOnFocus={true}
-                    value={attributes.title}
-                    onChange={this.onChangeTitle}
-                />
-                <RichText
-                    className={'o-description'}
-                    style={{textAlign: attributes.alignment}}
-                    tagName={'p'}
-                    placeholder={__('Description', 'alps-gutenberg-blocks')}
-                    keepPlaceholderOnFocus={true}
-                    value={attributes.description}
-                    onChange={this.onChangeDescription}
-                />
-                <div className={'o-buttons'}>
-                    <div className={'o-button--1'}>
-                        <h6>Primary Button</h6>
-                        <TextControl
-                            type={'url'}
-                            label={__('Button 1 Url', 'alps-gutenberg-blocks')}
-                            value={attributes.button1Url}
-                            placeholder={'https://'}
+                <div className={'contentCard'}>
+                    <fieldset>
+                        <legend>{ __("Title") }</legend>
+                        <RichText
+                            className={'o-heading--l contentCard__input'}
+                            placeholder={__('Title', 'alps-gutenberg-blocks')}
                             keepPlaceholderOnFocus={true}
-                            onChange={this.onChangeButton1Url}
+                            value={attributes.title}
+                            onChange={this.onChangeTitle}
                         />
-                        <TextControl
-                            label={__('Button 1 Text', 'alps-gutenberg-blocks')}
-                            value={attributes.button1Text}
-                            placeholder={'Learn more'}
+                    </fieldset>
+                    <fieldset>
+                        <legend>{ __("Description") }</legend>
+                        <RichText
+                            className={'o-description contentCard__input'}
+                            style={{textAlign: attributes.alignment}}
+                            placeholder={__('Description', 'alps-gutenberg-blocks')}
                             keepPlaceholderOnFocus={true}
-                            onChange={this.onChangeButton1Text}
+                            value={attributes.description}
+                            onChange={this.onChangeDescription}
                         />
-                        <CheckboxControl
-                            label={__('Open in new window', 'alps-gutenberg-blocks')}
-                            checked={attributes.button1NewWindow}
-                            onChange={this.onChangeButton1NewWindow}
-                        />
+                    </fieldset>
+
+                    <div className={"o-buttons"}>
+                        <div className={'o-button--1'}>
+                            <fieldset>
+                                <legend>{ __("Primary Button") }</legend>
+                                <div style={{"width": "100%"}}>
+                                    <TextControl
+                                        type={'url'}
+                                        value={attributes.button1Url}
+                                        placeholder={__('Button 1 Url - https://', 'alps-gutenberg-blocks')}
+                                        keepPlaceholderOnFocus={true}
+                                        onChange={this.onChangeButton1Url}
+                                    />
+                                    <TextControl
+                                        value={attributes.button1Text}
+                                        placeholder={__('Button 1 Text', 'alps-gutenberg-blocks')}
+                                        keepPlaceholderOnFocus={true}
+                                        onChange={this.onChangeButton1Text}
+                                    />
+                                    <div className={"contentCard__checkbox"}>
+                                        <CheckboxControl
+                                            label={__('Open in new window', 'alps-gutenberg-blocks')}
+                                            checked={attributes.button1NewWindow}
+                                            onChange={this.onChangeButton1NewWindow}
+                                        />
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div className={'o-button--2'} >
+                            <fieldset>
+                                <legend>{ __("Secondary Button") }</legend>
+                                <div style={{"width": "100%"}}>
+                                    <TextControl
+                                        type={'url'}
+                                        value={attributes.button2Url}
+                                        placeholder={ __('Button 2 Url - https://', 'alps-gutenberg-blocks')}
+                                        keepPlaceholderOnFocus={true}
+                                        onChange={this.onChangeButton2Url}
+                                    />
+                                    <TextControl
+                                        value={attributes.button2Text}
+                                        placeholder={__('Button 2 Text', 'alps-gutenberg-blocks')}
+                                        keepPlaceholderOnFocus={true}
+                                        onChange={this.onChangeButton2Text}
+                                    />
+                                    <div className={"contentCard__checkbox"}>
+                                        <CheckboxControl
+                                            label={__('Open in new window', 'alps-gutenberg-blocks')}
+                                            checked={attributes.button2NewWindow}
+                                            onChange={this.onChangeButton2NewWindow}
+                                        />
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
                     </div>
-                    <div className={'o-button--2'}>
-                        <h6>Secondary Button</h6>
-                        <TextControl
-                            type={'url'}
-                            label={__('Button 2 Url', 'alps-gutenberg-blocks')}
-                            value={attributes.button2Url}
-                            placeholder={'https://'}
-                            keepPlaceholderOnFocus={true}
-                            onChange={this.onChangeButton2Url}
-                        />
-                        <TextControl
-                            label={__('Button 2 Text', 'alps-gutenberg-blocks')}
-                            value={attributes.button2Text}
-                            placeholder={'Learn more'}
-                            keepPlaceholderOnFocus={true}
-                            onChange={this.onChangeButton2Text}
-                        />
-                        <CheckboxControl
-                            label={__('Open in new window', 'alps-gutenberg-blocks')}
-                            checked={attributes.button2NewWindow}
-                            onChange={this.onChangeButton2NewWindow}
-                        />
-                    </div>
+
+                    <fieldset>
+                        <legend>{ __("Image") }</legend>
+                        <div className={'o-image ' + 'o-image--' + attributes.imageID}>
+                            <MediaUpload
+                                onSelect={this.onSelectImage}
+                                type={'image'}
+                                value={attributes.imageId}
+                                render={(obj) => this.getImageButton(obj)}
+                            />
+                        </div>
+                    </fieldset>
                 </div>
             </div>
         ]);

@@ -11,10 +11,9 @@
 }
 
 .wp-block-alps-gutenberg-blocks-image-2up {
-  margin: 0;
-  padding: 0;
-  list-style-type: none !important;
-  display: flex;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px rgba(78, 100, 142, 0.15);
 
   .blocks-gallery-item {
     display: none;
@@ -23,7 +22,7 @@
   .blocks-gallery-item:nth-child(2),
   .blocks-gallery-item:nth-child(3) {
     display: block !important;
-    width: 50%;
+    width: 30%;
   }
 
   .blocks-gallery-item .editor-rich-text {

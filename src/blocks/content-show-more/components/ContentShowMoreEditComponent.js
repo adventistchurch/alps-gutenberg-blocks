@@ -1,7 +1,9 @@
 import {Component} from "@wordpress/element";
 import { BlockControls, MediaUpload, AlignmentToolbar, RichText } from "@wordpress/block-editor";
-import {Button} from "@wordpress/components";
+import {Button, Icon} from "@wordpress/components";
 import { __ } from '@wordpress/i18n';
+import {DescCard} from "../../global-components/DescCard";
+import icons from "../../../icons/icons";
 
 export class ContentShowMoreEditComponent extends Component {
 
@@ -42,14 +44,20 @@ export class ContentShowMoreEditComponent extends Component {
 
         const { attributes } = this.props;
 
+        //TODO add styles
+
         return (
             <Button
                 className={attributes.imageID ? 'image-button' : 'button button-large'}
                 onClick={openEvent}
             >
                 {!attributes.imageID ?
-                    __( 'Upload Image', 'alps-gutenberg-blocks' ) :
-                    <img src={attributes.imageURL} />
+                    <div>
+                        <Icon style={{"margin-right": "8px"}} className={"icon"} icon={icons.upload} />
+                        { __( 'Upload Image', 'alps-gutenberg-blocks' ) }
+                    </div>
+                    :
+                    <img className={'contentCard__image'} src={attributes.imageURL} />
                 }
             </Button>
         );
@@ -67,40 +75,58 @@ export class ContentShowMoreEditComponent extends Component {
                 />
             </BlockControls>,
             <div className={ className }>
-                <div className={'o-image ' + 'o-image--' + attributes.imageID}>
-                    <MediaUpload
-                        onSelect={ this.onSelectImage }
-                        type={'image'}
-                        value={ attributes.imageID }
-                        render={ ({open}) => this.getImageButton(open)}
-                    />
+                <DescCard
+                    title={"Content Show More"}
+                    hasText={true}
+                    hasImage={true}
+                    hasImages={false}
+                />
+                <div className={'contentCard'}>
+                    <fieldset>
+                        <legend>{ __("Title") }</legend>
+                        <RichText
+                            tagName={'strong'}
+                            className={'o-heading--l contentCard__input'}
+                            placeholder={ __('Title', 'alps-gutenberg-blocks') }
+                            keepPlaceholderOnFocus={ true }
+                            value={ attributes.title }
+                            onChange={ this.onChangeTitle }
+                        />
+                    </fieldset>
+                    <fieldset>
+                        <legend>{ __("Description") }</legend>
+                        <RichText
+                            className={'contentCard__input'}
+                            placeholder={ __('Description', 'alps-gutenberg-blocks') }
+                            keepPlaceholderOnFocus={ true }
+                            style={ {textAlign: attributes.alignment} }
+                            value={ attributes.description }
+                            onChange={ this.onChangeDescription }
+                        />
+                    </fieldset>
+                    <fieldset>
+                        <legend>{ __("Body") }</legend>
+                        <RichText
+                            className={'o-paragraph contentCard__input'}
+                            placeholder={ __('Body (Display on click of show more button)', 'alps-gutenberg-blocks') }
+                            keepPlaceholderOnFocus={ true }
+                            style={ {textAlign: attributes.alignment} }
+                            value={ attributes.body }
+                            onChange={ this.onChangeBody }
+                        />
+                    </fieldset>
+                    <fieldset>
+                        <legend>{ __("Image") }</legend>
+                        <div className={'o-image ' + 'o-image--' + attributes.imageID}>
+                            <MediaUpload
+                                onSelect={ this.onSelectImage }
+                                type={'image'}
+                                value={ attributes.imageID }
+                                render={ ({open}) => this.getImageButton(open)}
+                            />
+                        </div>
+                    </fieldset>
                 </div>
-                <RichText
-                    tagName={'strong'}
-                    className={'o-heading--l'}
-                    placeholder={ __('Title', 'alps-gutenberg-blocks') }
-                    keepPlaceholderOnFocus={ true }
-                    value={ attributes.title }
-                    onChange={ this.onChangeTitle }
-                />
-                <RichText
-                    tagName={'p'}
-                    className={'o-description'}
-                    placeholder={ __('Description', 'alps-gutenberg-blocks') }
-                    keepPlaceholderOnFocus={ true }
-                    style={ {textAlign: attributes.alignment} }
-                    value={ attributes.description }
-                    onChange={ this.onChangeDescription }
-                />
-                <RichText
-                    tagName={'p'}
-                    className={'o-paragraph'}
-                    placeholder={ __('Body (Display on click of show more button)', 'alps-gutenberg-blocks') }
-                    keepPlaceholderOnFocus={ true }
-                    style={ {textAlign: attributes.alignment} }
-                    value={ attributes.body }
-                    onChange={ this.onChangeBody }
-                />
             </div>
         ]);
     }

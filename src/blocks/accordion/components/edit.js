@@ -2,6 +2,7 @@ import { Component, Fragment } from '@wordpress/element';
 import { RichText, BlockControls, AlignmentToolbar } from '@wordpress/block-editor';
 import { TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
+import {DescCard} from "../../global-components/DescCard";
 
 export class AccordionEdit extends Component {
     constructor() {
@@ -36,21 +37,35 @@ export class AccordionEdit extends Component {
                     />
                 </BlockControls>
                 <div className={ className }>
-                    <TextControl
-                        placeholder={ __('Title', 'alps-gutenberg-blocks') }
-                        keepPlaceholderOnFocus={ true }
-                        value={ attributes.title }
-                        onChange={ this.onChangeTitle }
+                    <DescCard
+                        title={"Accordion"}
+                        hasText={true}
+                        hasImage={false}
+                        hasImages={false}
                     />
-                    <RichText
-                        tagName="p"
-                        className="o-paragraph"
-                        placeholder={ __('Body', 'alps-gutenberg-blocks') }
-                        keepPlaceholderOnFocus={ true }
-                        style={{ textAlign: attributes.alignment }}
-                        value={ attributes.body }
-                        onChange={ this.onChangeBody }
-                    />
+                    <div className={'contentCard'}>
+                        <fieldset>
+                            <legend>{ __("Title") }</legend>
+                            <RichText
+                                className={"contentCard__input"}
+                                placeholder={ __('Enter your Title', 'alps-gutenberg-blocks') }
+                                keepPlaceholderOnFocus={ true }
+                                value={ attributes.title }
+                                onChange={ this.onChangeTitle }
+                            />
+                        </fieldset>
+                        <fieldset>
+                            <legend>{ __("Body") }</legend>
+                            <RichText
+                                className={"contentCard__input"}
+                                placeholder={ __('Enter your Body', 'alps-gutenberg-blocks') }
+                                keepPlaceholderOnFocus={ true }
+                                style={{ textAlign: attributes.alignment }}
+                                value={ attributes.body }
+                                onChange={ this.onChangeBody }
+                            />
+                        </fieldset>
+                    </div>
                 </div>
             </Fragment>
         );

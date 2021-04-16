@@ -2,6 +2,8 @@
  * External Dependencies
  */
 
+import {DescCard} from "../../global-components/DescCard";
+
 /**
  * WordPress dependencies
  */
@@ -156,10 +158,20 @@ class Image2UpEditComponent extends Component {
             </BlockControls>
         );
 
+        const header = (
+            <DescCard
+                title={"Image (2UP)"}
+                hasText={true}
+                hasImage={true}
+                hasImages={true}
+            />
+        );
+
         if ( images.length === 0 ) {
             return (
                 <Fragment>
                     { controls }
+                    { header }
                     <MediaPlaceholder
                         icon="format-gallery"
                         className={ className }
@@ -182,6 +194,7 @@ class Image2UpEditComponent extends Component {
                 { controls }
                 { noticeUI }
                 <ul className={ className }>
+                    { header }
                     { dropZone }
                     { images.map( ( img, index ) => (
                         <li className={"blocks-gallery-item"} key={ img.id || img.url }>

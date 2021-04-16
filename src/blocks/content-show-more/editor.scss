@@ -6,25 +6,7 @@
  */
 
 .wp-block-alps-gutenberg-blocks-content-show-more {
-  clear: both;
-  background-color: $c-gray--light;
-  padding: $pad;
-  border-left: 1px solid $c-black;
-
-  .o-image {
-    width: 30%;
-    float: left;
-    margin-right: $space;
-    z-index: 999;
-    position: relative;
-    min-height: 150px;
-  }
-
-  .o-paragraph {
-    margin-top: $space;
-  }
-
-  .editor-rich-text {
-    overflow: hidden;
-  }
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px rgba(78, 100, 142, 0.15);
 }

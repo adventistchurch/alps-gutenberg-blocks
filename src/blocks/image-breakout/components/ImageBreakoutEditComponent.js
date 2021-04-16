@@ -1,8 +1,10 @@
 import {Component} from "@wordpress/element";
 import {MediaUpload} from "@wordpress/block-editor";
-import {Button} from "@wordpress/components";
+import {Button, Icon} from "@wordpress/components";
 import { __ } from '@wordpress/i18n';
 import {RichText} from "@wordpress/block-editor";
+import {DescCard} from "../../global-components/DescCard";
+import icons from "../../../icons/icons";
 
 export class ImageBreakoutEditComponent extends Component {
 
@@ -11,6 +13,7 @@ export class ImageBreakoutEditComponent extends Component {
 
         this.onChangeCaption = this.onChangeCaption.bind(this);
         this.onSelect = this.onSelect.bind(this);
+        this.onRemoveImage = this.onRemoveImage.bind(this);
     }
 
     onChangeCaption(caption) {
@@ -24,42 +27,80 @@ export class ImageBreakoutEditComponent extends Component {
         });
     }
 
-    getImageButton(openEvent) {
+    onRemoveImage() {
+        this.props.setAttributes({
+            url: null,
+            id: null
+        });
+    }
 
-        const { attributes } = this.props;
+    getImageButton(obj) {
+
+        const {attributes} = this.props;
 
         return (
             <Button
                 className={attributes.id ? 'image-button' : 'button button-large'}
-                onClick={ openEvent }
+                onClick={!attributes.id ? obj.open : obj.close}
             >
-                { ! attributes.id ?
-                    __( 'Upload Image', 'alps-gutenberg-blocks' ) :
-                    <img src={attributes.url}/>
+                { !attributes.id ?
+                    <div>
+                        <Icon style={{"margin-right": "8px"}} className={"icon"} icon={icons.upload} />
+                        { __( 'Upload Image', 'alps-gutenberg-blocks' ) }
+                    </div>
+                    :
+                    <div className={'o-image--edit'}>
+                        <Button
+                            icon={icons.remoteGalleryItem}
+                            onClick={this.onRemoveImage}
+                            className={'blocks-gallery-item__remove'}
+                            label={__('Remove Image', 'alps-gutenberg-blocks')}
+                        />
+                        <img className={"contentCard__image"} src={attributes.url}/>
+                    </div>
                 }
+
             </Button>
         );
     }
 
     render() {
 
-        const { attributes } = this.props;
+        const { attributes, className } = this.props;
 
-        return([
-            <MediaUpload
-                onSelect={ this.onSelect }
-                type={'image'}
-                value={ attributes.id }
-                render={ ({open}) => this.getImageButton(open)}
-            />,
-            <RichText
-                tagName={'p'}
-                className={'o-caption'}
-                placeholder={__('Caption', 'alps-gutenberg-blocks')}
-                keepPlaceholderOnFocus={true}
-                value={attributes.caption}
-                onChange={ this.onChangeCaption }
-            />
-        ])
+        return(
+            <div className={ className }>
+                <DescCard
+                    title={"Image Breakout"}
+                    hasText={true}
+                    hasImage={true}
+                    hasImages={false}
+                />
+                <div className={"contentCard"}>
+                    <fieldset>
+                        <legend>{ __("Image") }</legend>
+                        <div className={'o-image ' + 'o-image--' + attributes.imageID}>
+                            <MediaUpload
+                                onSelect={this.onSelect}
+                                type={'image'}
+                                value={attributes.imageId}
+                                render={(obj) => this.getImageButton(obj)}
+                            />
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>{ __("Caption") }</legend>
+                        <RichText
+                            className={'o-caption contentCard__input'}
+                            placeholder={__('Caption', 'alps-gutenberg-blocks')}
+                            keepPlaceholderOnFocus={true}
+                            value={attributes.caption}
+                            onChange={ this.onChangeCaption }
+                        />
+                    </fieldset>
+                </div>
+            </div>
+        )
     }
 }
