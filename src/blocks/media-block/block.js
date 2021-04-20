@@ -13,8 +13,8 @@ import { registerBlockType } from '@wordpress/blocks';
  */
 import './style.scss';
 import './editor.scss';
-import { MediaBlockEditComponent } from './components/edit';
-import { MediaBlockSaveComponent } from './components/save';
+import { MediaBlockEditComponent } from './components/MediaBlockEditComponent';
+import { MediaBlockSaveComponent } from './components/MediaBlockSaveComponent';
 
 registerBlockType('alps-gutenberg-blocks/media-block', {
   title: __('ALPS Media Block', 'alps-gutenberg-blocks'),

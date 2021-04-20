@@ -1,10 +1,9 @@
 @import "src/blocks/media-block/common";
 
 .wp-block-alps-gutenberg-blocks-media-block {
-  border: 1px solid $gray;
-  padding: 0.3rem;
-
-  font-family: "Noto Serif", Georgia, Times, "Times New Roman", serif;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px rgba(78, 100, 142, 0.15);
 }
 
 .alps__media-block {
@@ -68,37 +67,30 @@
       justify-content: flex-start;
 
       &-title {
-        color: #002938;
-        font-weight: bold;
-        font-size: 1.5rem;
         display: block;
       }
 
       &-description {
-        margin-top: 0.3rem;
-        font-size: 1rem;
-        line-height: 1.6;
-        color: #717171;
       }
     }
 
     &-meta__buttom {
-      display: flex;
       justify-content: flex-start;
       flex-wrap: wrap;
       text-transform: uppercase;
-      color: #255760;
-      font-weight: 600;
-      font-size: 1rem;
-      line-height: 1.6;
+      width: 100%;
 
       &__category {
-        margin-right: 1rem;
-        display: block;
+        display: inline-block;
+        width: 50%;
+        padding-right: 28px;
       }
 
       &__date {
-        display: block;
+        display: inline-block;
+        border-left: 1px solid #CCD5DE;
+        width: 50%;
+        padding-left: 28px
       }
     }
   }
