@@ -2,6 +2,7 @@ import {Component} from "@wordpress/element";
 import {InnerBlocks, RichText} from "@wordpress/block-editor";
 import {TextControl} from "@wordpress/components";
 import { __ } from '@wordpress/i18n';
+import {DescCard} from "../../global-components/DescCard";
 
 export class MediaTestimoniesEditComponent extends Component {
 
@@ -26,29 +27,42 @@ export class MediaTestimoniesEditComponent extends Component {
 
         return([
             <div className={className}>
-                <div className={'o-editor-heading'}>
-                    <RichText
-                        tagName={'h3'}
-                        placeholder={ __('Enter Section Title', 'alps-gutenberg-blocks')}
-                        className={'o-heading--l'}
-                        keepPlaceholderOnFocus={true}
-                        value={attributes.title}
-                        onChange={this.onChangeTitle}
-                    />
-                    <TextControl
-                        type={'url'}
-                        label={__( 'See All Link Url', 'alps-gutenberg-blocks' )}
-                        value={ attributes.link }
-                        placeholder={'http://'}
-                        className={'o-link'}
-                        keepPlaceholderOnFocus={true}
-                        onChange={ this.onChangeLink }
+                <DescCard
+                    title={"Media Testimonies"}
+                    hasText={true}
+                    hasImage={true}
+                    hasImages={true}
+                />
+                <div className={'contentCard'}>
+                    <fieldset>
+                        <legend>{ __("Title") }</legend>
+                        <RichText
+                            tagName={'h3'}
+                            placeholder={ __('Enter Section Title', 'alps-gutenberg-blocks')}
+                            className={'o-heading--l contentCard__input'}
+                            keepPlaceholderOnFocus={true}
+                            value={attributes.title}
+                            onChange={this.onChangeTitle}
+                        />
+                    </fieldset>
+                    <fieldset>
+                        <legend>{__( 'See All Link Url', 'alps-gutenberg-blocks' )}</legend>
+                        <div style={{"width": "100%"}}>
+                            <TextControl
+                                type={'url'}
+                                value={ attributes.link }
+                                placeholder={'http://'}
+                                className={'o-link'}
+                                keepPlaceholderOnFocus={true}
+                                onChange={ this.onChangeLink }
+                            />
+                        </div>
+                    </fieldset>
+                    <InnerBlocks
+                        template={[['alps-gutenberg-blocks/media-testimony', {} ]]}
+                        allowedBlocks={['alps-gutenberg-blocks/media-testimony' ]}
                     />
                 </div>
-                <InnerBlocks
-                    template={[['alps-gutenberg-blocks/media-testimony', {} ]]}
-                    allowedBlocks={['alps-gutenberg-blocks/media-testimony' ]}
-                />
             </div>
         ])
     }
