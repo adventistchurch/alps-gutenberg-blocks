@@ -1,0 +1,248 @@
+@import "./common.scss";
+
+.block-editor {
+  .o-kicker {
+    font-style: italic;
+    font-weight: bold;
+    color: $c-gray;
+  }
+
+  .o-heading--l {
+    font-size: 110%;
+    font-weight: bold;
+  }
+
+  .o-field__body {
+    border: 1px solid #ccd0d4;
+    padding: $pad;
+    margin-bottom: $space;
+  }
+
+  .components-base-control__label {
+    font-size: 14px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    font-weight: bold;
+    margin-top: $space;
+  }
+}
+
+.wp-block-video figcaption,
+.wp-block-embed figcaption,
+.wp-block-image figcaption {
+  text-align: left;
+  font-style: italic;
+  color: $c-gray;
+  font-size: 15px;
+  margin: 0;
+}
+
+video,
+.wp-block-video,
+.wp-block-embed-vimeo {
+  width: 100%;
+}
+
+.wp-block-spacer {
+  margin: 0 !important;
+}
+
+.components-button,
+figure.is-selected {
+  position: relative;
+}
+
+figure.is-selected .components-button.blocks-gallery-item__remove,
+.image-button .components-button.blocks-gallery-item__remove {
+  display: flex;
+  position: absolute;
+  top: 30px;
+  right: 2px;
+  z-index: 9;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: transparent;
+}
+
+.descCard {
+  height: 70px;
+  background: #F3F4F6;
+  border-radius: 4px 4px 0px 0px;
+
+  display: flex;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 33px;
+
+  color: #3E4E6C;
+
+  &__title-box {
+    display: inline;
+    padding-left: 26px;
+    padding-top: 4px;
+    margin-right: 8px;
+  }
+
+  &__title {
+    margin-top: -15px;
+    margin-left: 3px;
+  }
+
+  &__info-icon-box {
+    padding-top: 23px;
+    padding-bottom: 24px;
+  }
+
+  &__info-icon {
+    padding-right: 8px;
+    display: inline;
+    opacity: 0.5;
+  }
+}
+
+.contentCard {
+  padding: 28px 29px 29px 29px;
+
+  fieldset {
+    display: flex;
+    border-top: 1px solid #D2D9E4;
+    margin-bottom: 10px;
+    padding-left: 0;
+  }
+
+  legend {
+    font-weight: 600;
+    line-height: 135.7%;
+    font-size: 18px;
+    color: rgba(25, 37, 62, 0.7);
+    margin-left: 0;
+    padding: 0 15px 0 0;
+  }
+
+  &__legend-cta {
+    font-size: 14px;
+  }
+
+  .components-text-control__input {
+    border: none;
+    border-bottom: 1px solid #CCD5DE;
+    padding-left: 0;
+
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 135.7%;
+
+    color: #19253E;
+  }
+
+  .components-text-control__input::placeholder {
+    color: rgba(25, 37, 62, 0.7);
+  }
+
+  //Override
+  .block-editor-rich-text__editable {
+    padding-left: 0;
+
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 135.7%;
+
+    color: #19253E;
+  }
+
+  //Override
+  .block-editor-rich-text__editable::placeholder {
+    color: rgba(25, 37, 62, 0.7);
+  }
+
+  //Override
+  .button {
+    border: 1.5px solid #007cba;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: white;
+
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 135.7%;
+
+    color: #007cba;
+  }
+
+  //Override
+  .button.button-large {
+    padding: 0 14px 6px 14px;
+  }
+
+  //Override
+  .components-text-control__input {
+    width: 100%;
+    border: 1px solid #CCD5DE;
+    box-sizing: border-box;
+    border-radius: 6px;
+
+    padding: 10px 0 9px 18px;
+    margin-top: 20px;
+
+    color: rgba(25, 37, 62, 0.7);
+  }
+
+  //Override checkbox
+  .components-checkbox-control__input {
+    border: 1px solid #CCD5DE;
+    box-sizing: border-box;
+    border-radius: 2px;
+  }
+  .components-checkbox-control__input:checked {
+    background: #3E4E6C;
+    border-radius: 2px;
+  }
+
+  .components-checkbox-control__label {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 135.7%;
+
+    color: rgba(25, 37, 62, 0.8);
+  }
+
+  &__checkbox {
+    margin-top: 24px;
+  }
+
+  &__input {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 5px;
+
+    border: none;
+    border-bottom: 1px solid #E0E1E2;
+  }
+
+  &__link {
+    width: 100%;
+  }
+
+  &__image {
+    border-radius: 8px;
+
+    margin-top: 20px;
+  }
+
+  .components-button {
+    padding: 0;
+  }
+}
+
+.o-image {
+  width: 30%;
+  float: left;
+  margin-right: $space;
+  z-index: 999;
+  position: relative;
+}

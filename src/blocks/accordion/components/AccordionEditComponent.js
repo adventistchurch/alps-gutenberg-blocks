@@ -1,6 +1,5 @@
 import { Component, Fragment } from '@wordpress/element';
 import { RichText, BlockControls, AlignmentToolbar } from '@wordpress/block-editor';
-import { TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import {DescCard} from "../../global-components/DescCard";
 

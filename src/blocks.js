@@ -9,6 +9,7 @@
  * Webpack is compiling as the input file.
  */
 
+import './editor.scss';
 import './blocks/accordion/block.js';
 import './blocks/blockquote/block.js';
 import './blocks/content-block/block.js';
