@@ -222,8 +222,8 @@ export class MediaBlockEditComponent extends Component {
                                         </fieldset>
                                     </div>
                                 </div>
-                                <div className={"alps__media-block__text-section-meta__buttom"}>
-                                    <div className={"alps__media-block__text-section-meta__buttom__category"}>
+                                <div className={"alps__media-block__text-section-meta__bottom"}>
+                                    <div className={"alps__media-block__text-section-meta__bottom__category"}>
                                         <fieldset>
                                             <legend>{ __("Category") }</legend>
                                             <RichText
@@ -235,7 +235,7 @@ export class MediaBlockEditComponent extends Component {
                                             />
                                         </fieldset>
                                     </div>
-                                    <div className={"alps__media-block__text-section-meta__buttom__date"}>
+                                    <div className={"alps__media-block__text-section-meta__bottom__date"}>
                                         <fieldset>
                                             <legend>{ __("Date") }</legend>
                                             <RichText

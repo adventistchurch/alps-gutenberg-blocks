@@ -94,9 +94,7 @@ figure.is-selected .components-button.blocks-gallery-item__remove,
   border-radius: 4px 4px 0px 0px;
 
   display: flex;
-  //padding: 23px 0 23px 26px;
 
-  font-family: Avenir;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
@@ -124,6 +122,7 @@ figure.is-selected .components-button.blocks-gallery-item__remove,
   &__info-icon {
     padding-right: 8px;
     display: inline;
+    opacity: 0.5;
   }
 }
 
@@ -138,13 +137,12 @@ figure.is-selected .components-button.blocks-gallery-item__remove,
   }
 
   legend {
-    font-family: Avenir, normal;
-    font-weight: 800;
+    font-weight: 600;
     line-height: 135.7%;
     font-size: 18px;
-    color: rgba(25, 37, 62, 0.7);;
-    margin-left: 20px;
-    padding: 0 15px 0 15px;
+    color: rgba(25, 37, 62, 0.7);
+    margin-left: 0;
+    padding: 0 15px 0 0;
   }
 
   &__legend-cta {
@@ -156,7 +154,6 @@ figure.is-selected .components-button.blocks-gallery-item__remove,
     border-bottom: 1px solid #CCD5DE;
     padding-left: 0;
 
-    font-family: Avenir;
     font-style: normal;
     font-weight: 300;
     font-size: 16px;
@@ -173,7 +170,6 @@ figure.is-selected .components-button.blocks-gallery-item__remove,
   .block-editor-rich-text__editable {
     padding-left: 0;
 
-    font-family: Avenir;
     font-style: normal;
     font-weight: 300;
     font-size: 16px;
@@ -194,7 +190,6 @@ figure.is-selected .components-button.blocks-gallery-item__remove,
     border-radius: 8px;
     background-color: white;
 
-    font-family: Avenir;
     font-style: normal;
     font-weight: 800;
     font-size: 16px;
@@ -233,7 +228,6 @@ figure.is-selected .components-button.blocks-gallery-item__remove,
   }
 
   .components-checkbox-control__label {
-    font-family: Avenir;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
