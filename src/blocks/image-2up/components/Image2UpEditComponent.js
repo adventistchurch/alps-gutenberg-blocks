@@ -192,24 +192,26 @@ class Image2UpEditComponent extends Component {
             <Fragment>
                 { controls }
                 { noticeUI }
-                <ul className={ className }>
+                <div className={className}>
                     { header }
-                    { dropZone }
-                    { images.map( ( img, index ) => (
-                        <li className={"blocks-gallery-item"} key={ img.id || img.url }>
-                            <TwoUpImage
-                                url={ img.url }
-                                alt={ img.alt }
-                                id={ img.id }
-                                isSelected={ isSelected && this.state.selectedImage === index }
-                                onRemove={ this.onRemoveImage( index ) }
-                                onSelect={ this.onSelectImage( index ) }
-                                setAttributes={ ( attrs ) => this.setImageAttributes( index, attrs ) }
-                                caption={ img.caption }
-                            />
-                        </li>
-                    ) ) }
-                </ul>
+                    <ul style={{"display": "flex"}}>
+                        { dropZone }
+                        { images.map( ( img, index ) => (
+                            <li className={"blocks-gallery-item"} key={ img.id || img.url }>
+                                <TwoUpImage
+                                    url={ img.url }
+                                    alt={ img.alt }
+                                    id={ img.id }
+                                    isSelected={ isSelected && this.state.selectedImage === index }
+                                    onRemove={ this.onRemoveImage( index ) }
+                                    onSelect={ this.onSelectImage( index ) }
+                                    setAttributes={ ( attrs ) => this.setImageAttributes( index, attrs ) }
+                                    caption={ img.caption }
+                                />
+                            </li>
+                        ) ) }
+                    </ul>
+                </div>
                 <MediaUpload
                     onSelect={ this.onSelectImages }
                     accept="image/*"
