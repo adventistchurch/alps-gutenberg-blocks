@@ -4,12 +4,12 @@
  * CSS for both Frontend+Backend.
  */
 
-//
-//.wp-block-alps-gutenberg-blocks-image-breakout {
-//  @media (min-width: 700px) {
-//    margin-left: calc((100vw / 7) * -1);
-//  }
-//}
+
+.wp-block-alps-gutenberg-blocks-image-breakout {
+  @media (min-width: 700px) {
+    margin-left: calc((100vw / 7) * -1);
+  }
+}
 
 body.hide-sabbath .wp-block-alps-gutenberg-blocks-image-breakout {
   @media (min-width: 500px) {
