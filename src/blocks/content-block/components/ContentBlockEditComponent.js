@@ -68,7 +68,7 @@ export class ContentBlockEditComponent extends Component {
                             <RichText
                                 className={'o-heading--l contentCard__input'}
                                 tagName={'strong'}
-                                placeholder={ __('Title', 'alps-gutenberg-blocks') }
+                                placeholder={ __('Enter your Title...', 'alps-gutenberg-blocks') }
                                 keepPlaceholderOnFocus={ true }
                                 value={ attributes.title }
                                 onChange={ this.onChangeTitle }
@@ -88,7 +88,7 @@ export class ContentBlockEditComponent extends Component {
                             <TextControl
                                 className={'o-link contentCard__link'}
                                 type={'url'}
-                                placeholder={ 'http://' }
+                                placeholder={ 'https://...' }
                                 keepPlaceholderOnFocus={ true }
                                 value={ attributes.link }
                                 onChange={ this.onChangeLink }
@@ -99,7 +99,7 @@ export class ContentBlockEditComponent extends Component {
                             <RichText
                                 className={'contentCard__input'}
                                 type={'p'}
-                                placeholder={ 'Read more button. Default: READ MORE' }
+                                placeholder={ 'Default: Read More' }
                                 label={ __('Read More button', 'alps-gutenberg-blocks') }
                                 keepPlaceholderOnFocus={ true }
                                 value={ attributes.readMoreButton }

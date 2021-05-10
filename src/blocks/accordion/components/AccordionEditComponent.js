@@ -48,7 +48,7 @@ export class AccordionEdit extends Component {
                             <legend>{ __("Title") }</legend>
                             <RichText
                                 className={"contentCard__input"}
-                                placeholder={ __('Enter your Title', 'alps-gutenberg-blocks') }
+                                placeholder={ __('Enter your Title...', 'alps-gutenberg-blocks') }
                                 keepPlaceholderOnFocus={ true }
                                 value={ attributes.title }
                                 onChange={ this.onChangeTitle }
@@ -58,7 +58,7 @@ export class AccordionEdit extends Component {
                             <legend>{ __("Body") }</legend>
                             <RichText
                                 className={"contentCard__input"}
-                                placeholder={ __('Enter your Body', 'alps-gutenberg-blocks') }
+                                placeholder={ __('Enter your Body Text...', 'alps-gutenberg-blocks') }
                                 keepPlaceholderOnFocus={ true }
                                 style={{ textAlign: attributes.alignment }}
                                 value={ attributes.body }

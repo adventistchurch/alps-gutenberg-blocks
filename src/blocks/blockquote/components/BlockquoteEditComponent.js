@@ -37,18 +37,20 @@ export class BlockquoteEditComponent extends Component {
 
         return ([
             <InspectorControls>
-                <ToggleControl
-                    label={ __('Extend Quote', 'alps-gutenberg-blocks') }
-                    help={ __('Extends the quote outside the page content.', 'alps-gutenberg-blocks') }
-                    checked={ attributes.isExtendQuote }
-                    onChange={ this.setExtendQuote }
-                />
-                <ToggleControl
-                    label={ __('Strong Quote', 'alps-gutenberg-blocks') }
-                    help={ __('Set strong style for the quote content.', 'alps-gutenberg-blocks') }
-                    checked={ attributes.isStrong }
-                    onChange={ this.setStrong }
-                />
+                <div className={className + "__settings"}>
+                    <ToggleControl
+                        label={ __('Extend Quote', 'alps-gutenberg-blocks') }
+                        help={ __('Extends the quote outside the page content.', 'alps-gutenberg-blocks') }
+                        checked={ attributes.isExtendQuote }
+                        onChange={ this.setExtendQuote }
+                    />
+                    <ToggleControl
+                        label={ __('Strong Quote', 'alps-gutenberg-blocks') }
+                        help={ __('Set strong style for the quote content.', 'alps-gutenberg-blocks') }
+                        checked={ attributes.isStrong }
+                        onChange={ this.setStrong }
+                    />
+                </div>
             </InspectorControls>,
             <blockquote className={ className }>
                 <DescCard

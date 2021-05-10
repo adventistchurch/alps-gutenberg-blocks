@@ -204,7 +204,7 @@ export class MediaBlockEditComponent extends Component {
                                             <RichText
                                                 className={" contentCard__input"}
                                                 tagName={"div"}
-                                                placeholder={ __("Enter your title here...") }
+                                                placeholder={ __("Enter your Title...") }
                                                 value={ attributes.title }
                                                 onChange={ this.onChangeTitle }
                                             />
@@ -215,7 +215,7 @@ export class MediaBlockEditComponent extends Component {
                                             <legend>{ __("Description") }</legend>
                                             <RichText
                                                 className={" contentCard__input"}
-                                                placeholder={ __("Enter your Description here...") }
+                                                placeholder={ __("Enter your Description...") }
                                                 value={ attributes.description }
                                                 onChange={ this.onChangeDescription }
                                             />
@@ -229,7 +229,7 @@ export class MediaBlockEditComponent extends Component {
                                             <RichText
                                                 className={" contentCard__input"}
                                                 tagName={"div"}
-                                                placeholder={ __("Category") }
+                                                placeholder={ __("Enter your Categories...") }
                                                 value={ attributes.category }
                                                 onChange={ this.onChangeCategory }
                                             />
@@ -241,7 +241,7 @@ export class MediaBlockEditComponent extends Component {
                                             <RichText
                                                 className={" contentCard__input"}
                                                 tagName={"div"}
-                                                placeholder={"Date"}
+                                                placeholder={"Enter your Date..."}
                                                 value={ attributes.date }
                                                 onChange={ this.onChangeDate }
                                             />

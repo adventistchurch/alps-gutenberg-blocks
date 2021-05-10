@@ -149,11 +149,10 @@ class GalleryEditComponent extends Component {
                         { controls }
                         { header }
                         <MediaPlaceholder
-                            icon="format-gallery"
                             className={ className }
                             labels={ {
-                                title: __( 'Gallery', 'alps-gutenberg-blocks' ),
-                                name: __( 'images', 'alps-gutenberg-blocks' ),
+                                title: "",
+                                name: "",
                             } }
                             onSelect={ this.onSelectImages }
                             accept={"image/*"}
@@ -181,7 +180,7 @@ class GalleryEditComponent extends Component {
                                 className={ "contentCard__input" }
                                 value={ title }
                                 onChange={ this.onChangeTitle }
-                                placeholder={ __('Enter a gallery title..', 'alps-gutenberg-blocks') }
+                                placeholder={ __('Enter your Gallery Title...', 'alps-gutenberg-blocks') }
                             />
                         </fieldset>
                     </div>

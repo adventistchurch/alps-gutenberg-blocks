@@ -42,7 +42,7 @@ export class InlineSidebarEditComponent extends Component {
                                 <legend>{ __("Preface") }</legend>
                                 <RichText
                                     className={"contentCard__input"}
-                                    placeholder={ __("Enter a title preface") }
+                                    placeholder={ __("Enter your title Preface...") }
                                     value={ attributes.preface }
                                     onChange={ this.onChangePreface }
                                 />
@@ -53,7 +53,7 @@ export class InlineSidebarEditComponent extends Component {
                                 <legend>{ __("Title") }</legend>
                                 <RichText
                                     className={"contentCard__input"}
-                                    placeholder={ __("Enter your block title") }
+                                    placeholder={ __("Enter your Title...") }
                                     value={ attributes.title }
                                     onChange={ this.onChangeTitle }
                                 />

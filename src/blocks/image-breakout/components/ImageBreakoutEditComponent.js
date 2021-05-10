@@ -93,7 +93,7 @@ export class ImageBreakoutEditComponent extends Component {
                         <legend>{ __("Caption") }</legend>
                         <RichText
                             className={'o-caption contentCard__input'}
-                            placeholder={__('Caption', 'alps-gutenberg-blocks')}
+                            placeholder={__('Enter your Caption...', 'alps-gutenberg-blocks')}
                             keepPlaceholderOnFocus={true}
                             value={attributes.caption}
                             onChange={ this.onChangeCaption }

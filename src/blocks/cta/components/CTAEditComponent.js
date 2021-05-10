@@ -140,18 +140,20 @@ export class CTAEditComponent extends Component {
 
         return ([
             <InspectorControls key={'inspector'}>
-                <ToggleControl
-                    label={__('Dark Background', 'alps-gutenberg-blocks')}
-                    help={__('Makes the CTA background dark.', 'alps-gutenberg-blocks')}
-                    checked={attributes.isDark}
-                    onChange={this.updateBackgroundColor}
-                />
-                <ToggleControl
-                    label={__('Background Image', 'alps-gutenberg-blocks')}
-                    help={__('Sets the image as a background image.', 'alps-gutenberg-blocks')}
-                    checked={attributes.hasBackgroundImage}
-                    onChange={this.updateBackgroundImage}
-                />
+                <div className={ className + "__settings"}>
+                    <ToggleControl
+                        label={__('Dark Background', 'alps-gutenberg-blocks')}
+                        help={__('Makes the CTA background dark.', 'alps-gutenberg-blocks')}
+                        checked={attributes.isDark}
+                        onChange={this.updateBackgroundColor}
+                    />
+                    <ToggleControl
+                        label={__('Background Image', 'alps-gutenberg-blocks')}
+                        help={__('Sets the image as a background image.', 'alps-gutenberg-blocks')}
+                        checked={attributes.hasBackgroundImage}
+                        onChange={this.updateBackgroundImage}
+                    />
+                </div>
             </InspectorControls>,
             <BlockControls key={'controls'}>
                 <AlignmentToolbar
@@ -161,7 +163,7 @@ export class CTAEditComponent extends Component {
             </BlockControls>,
             <div className={className}>
                 <DescCard
-                    title={"CTA"}
+                    title={"Call to Action (CTA)"}
                     hasText={true}
                     hasImage={true}
                     hasImages={false}
@@ -171,7 +173,7 @@ export class CTAEditComponent extends Component {
                         <legend>{ __("Title") }</legend>
                         <RichText
                             className={'o-heading--l contentCard__input'}
-                            placeholder={__('Title', 'alps-gutenberg-blocks')}
+                            placeholder={__('Enter your Title...', 'alps-gutenberg-blocks')}
                             keepPlaceholderOnFocus={true}
                             value={attributes.title}
                             onChange={this.onChangeTitle}
@@ -182,7 +184,7 @@ export class CTAEditComponent extends Component {
                         <RichText
                             className={'o-description contentCard__input'}
                             style={{textAlign: attributes.alignment}}
-                            placeholder={__('Description', 'alps-gutenberg-blocks')}
+                            placeholder={__('Enter your Description...', 'alps-gutenberg-blocks')}
                             keepPlaceholderOnFocus={true}
                             value={attributes.description}
                             onChange={this.onChangeDescription}
@@ -197,19 +199,19 @@ export class CTAEditComponent extends Component {
                                     <TextControl
                                         type={'url'}
                                         value={attributes.button1Url}
-                                        placeholder={__('Button 1 Url - https://', 'alps-gutenberg-blocks')}
+                                        placeholder={__('https://...', 'alps-gutenberg-blocks')}
                                         keepPlaceholderOnFocus={true}
                                         onChange={this.onChangeButton1Url}
                                     />
                                     <TextControl
                                         value={attributes.button1Text}
-                                        placeholder={__('Button 1 Text', 'alps-gutenberg-blocks')}
+                                        placeholder={__('Button Label', 'alps-gutenberg-blocks')}
                                         keepPlaceholderOnFocus={true}
                                         onChange={this.onChangeButton1Text}
                                     />
                                     <div className={"contentCard__checkbox"}>
                                         <CheckboxControl
-                                            label={__('Open in new window', 'alps-gutenberg-blocks')}
+                                            label={__('Open link in a new window', 'alps-gutenberg-blocks')}
                                             checked={attributes.button1NewWindow}
                                             onChange={this.onChangeButton1NewWindow}
                                         />
@@ -224,19 +226,19 @@ export class CTAEditComponent extends Component {
                                     <TextControl
                                         type={'url'}
                                         value={attributes.button2Url}
-                                        placeholder={ __('Button 2 Url - https://', 'alps-gutenberg-blocks')}
+                                        placeholder={ __('https://...', 'alps-gutenberg-blocks')}
                                         keepPlaceholderOnFocus={true}
                                         onChange={this.onChangeButton2Url}
                                     />
                                     <TextControl
                                         value={attributes.button2Text}
-                                        placeholder={__('Button 2 Text', 'alps-gutenberg-blocks')}
+                                        placeholder={__('Button Label', 'alps-gutenberg-blocks')}
                                         keepPlaceholderOnFocus={true}
                                         onChange={this.onChangeButton2Text}
                                     />
                                     <div className={"contentCard__checkbox"}>
                                         <CheckboxControl
-                                            label={__('Open in new window', 'alps-gutenberg-blocks')}
+                                            label={__('Open link in a new window', 'alps-gutenberg-blocks')}
                                             checked={attributes.button2NewWindow}
                                             onChange={this.onChangeButton2NewWindow}
                                         />

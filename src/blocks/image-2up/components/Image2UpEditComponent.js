@@ -173,10 +173,9 @@ class Image2UpEditComponent extends Component {
                     { controls }
                     { header }
                     <MediaPlaceholder
-                        icon="format-gallery"
                         className={ className }
                         labels={ {
-                            title: __( 'Image (2up)', 'alps-gutenberg-blocks' ),
+                            title: "",
                             name: __( 'images', 'alps-gutenberg-blocks' ),
                         } }
                         onSelect={ this.onSelectImages }

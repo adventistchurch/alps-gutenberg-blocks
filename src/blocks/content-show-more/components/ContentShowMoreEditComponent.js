@@ -87,7 +87,7 @@ export class ContentShowMoreEditComponent extends Component {
                         <RichText
                             tagName={'strong'}
                             className={'o-heading--l contentCard__input'}
-                            placeholder={ __('Title', 'alps-gutenberg-blocks') }
+                            placeholder={ __('Enter your Title...', 'alps-gutenberg-blocks') }
                             keepPlaceholderOnFocus={ true }
                             value={ attributes.title }
                             onChange={ this.onChangeTitle }
@@ -97,7 +97,7 @@ export class ContentShowMoreEditComponent extends Component {
                         <legend>{ __("Description") }</legend>
                         <RichText
                             className={'contentCard__input'}
-                            placeholder={ __('Description', 'alps-gutenberg-blocks') }
+                            placeholder={ __('Enter your Description...', 'alps-gutenberg-blocks') }
                             keepPlaceholderOnFocus={ true }
                             style={ {textAlign: attributes.alignment} }
                             value={ attributes.description }
@@ -108,7 +108,7 @@ export class ContentShowMoreEditComponent extends Component {
                         <legend>{ __("Body") }</legend>
                         <RichText
                             className={'o-paragraph contentCard__input'}
-                            placeholder={ __('Body (Display on click of show more button)', 'alps-gutenberg-blocks') }
+                            placeholder={ __('Enter your Body Text... (Displays on click for Show More button)', 'alps-gutenberg-blocks') }
                             keepPlaceholderOnFocus={ true }
                             style={ {textAlign: attributes.alignment} }
                             value={ attributes.body }

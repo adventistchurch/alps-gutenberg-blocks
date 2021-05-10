@@ -43,7 +43,7 @@ export class HighlightedParagraphEditComponent extends Component {
                         <legend>{ __("Content") }</legend>
                         <RichText
                             className={'o-paragraph contentCard__input'}
-                            placeholder={ __('Content goes here...', 'alps-gutenberg-blocks') }
+                            placeholder={ __('Enter your Content...', 'alps-gutenberg-blocks') }
                             keepPlaceholderOnFocus={true}
                             style={{ textAlign: attributes.alignment }}
                             value={  attributes.content }

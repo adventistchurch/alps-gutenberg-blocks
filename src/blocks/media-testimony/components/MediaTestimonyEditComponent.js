@@ -89,7 +89,7 @@ export class MediaTestimonyEditComponent extends Component {
                         <RichText
                             tagName={'h4'}
                             className={"contentCard__input"}
-                            placeholder={ __('Enter Quote', 'alps-gutenberg-blocks')}
+                            placeholder={ __('Enter your Quote...', 'alps-gutenberg-blocks')}
                             keepPlaceholderOnFocus={true}
                             value={attributes.quote}
                             onChange={this.onChangeQuote}
@@ -112,7 +112,7 @@ export class MediaTestimonyEditComponent extends Component {
                         <div style={{"display": "flex", "width": "100%"}}>
                             <div style={{"width": "50%", "padding-right": "10px"}}>
                                 <RichText
-                                    placeholder={ __('Enter Video Title', 'alps-gutenberg-blocks')}
+                                    placeholder={ __('Enter your Video title...', 'alps-gutenberg-blocks')}
                                     className={'o-heading--l contentCard__input'}
                                     keepPlaceholderOnFocus={true}
                                     value={attributes.title}

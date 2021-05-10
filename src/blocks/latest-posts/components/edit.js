@@ -292,18 +292,18 @@ class LatestPostsEdit extends Component {
 								<RichText
 									tagName="h3"
 									className="c-block__heading-title u-theme--color--darker contentCard__input"
-									placeholder={ __('Enter a block title', 'alps-gutenberg-blocks') }
+									placeholder={ __('Enter your Title...', 'alps-gutenberg-blocks') }
 									value={ attributes.title }
 									formattingControls={ [] }
 									onChange={ (title) => setAttributes({ title }) }
 								/>
 							</fieldset>
 							<fieldset>
-								<legend>{ __("Link Label") }</legend>
+								<legend>{ __("See All Link Label") }</legend>
 								<RichText
 									tagName="a"
 									className="c-block__heading-link u-theme--color--base u-theme--link-hover--dark contentCard__input"
-									placeholder={ __('Enter a link label', 'alps-gutenberg-blocks') }
+									placeholder={ __('Enter your link label...', 'alps-gutenberg-blocks') }
 									value={ attributes.linkLabel }
 									formattingControls={ [] }
 									onChange={ (linkLabel) => setAttributes({ linkLabel }) }
@@ -314,7 +314,7 @@ class LatestPostsEdit extends Component {
 								<div style={{"width": "100%"}}>
 									<TextControl
 										type={'url'}
-										placeholder={ __('Enter url here', 'alps-gutenberg-blocks') }
+										placeholder={ __('https://...', 'alps-gutenberg-blocks') }
 										keepPlaceholderOnFocus={ true }
 										value={ attributes.linkUrl }
 										onChange={ (linkUrl) => setAttributes({ linkUrl }) }

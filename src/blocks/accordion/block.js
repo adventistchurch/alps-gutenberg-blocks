@@ -13,8 +13,8 @@ import { registerBlockType } from '@wordpress/blocks';
  */
 import './style.scss';
 import './editor.scss';
-import { AccordionEdit } from './components/edit';
-import { AccordionSave } from './components/save';
+import { AccordionEdit } from './components/AccordionEditComponent';
+import { AccordionSave } from './components/AccordionSaveComponent';
 
 registerBlockType( 'alps-gutenberg-blocks/accordion', {
   title: __('ALPS Accordion', 'alps-gutenberg-blocks'),

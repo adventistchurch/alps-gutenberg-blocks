@@ -38,7 +38,7 @@ export class MediaTestimoniesEditComponent extends Component {
                         <legend>{ __("Title") }</legend>
                         <RichText
                             tagName={'h3'}
-                            placeholder={ __('Enter Section Title', 'alps-gutenberg-blocks')}
+                            placeholder={ __('Enter your Title...', 'alps-gutenberg-blocks')}
                             className={'o-heading--l contentCard__input'}
                             keepPlaceholderOnFocus={true}
                             value={attributes.title}
