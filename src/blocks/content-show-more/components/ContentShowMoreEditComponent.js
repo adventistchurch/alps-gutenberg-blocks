@@ -4,6 +4,7 @@ import {Button, Icon} from "@wordpress/components";
 import { __ } from '@wordpress/i18n';
 import {DescCard} from "../../global-components/DescCard";
 import icons from "../../../icons/icons";
+import ScaledImage from "../../media-block/components/image-editor";
 
 export class ContentShowMoreEditComponent extends Component {
 
@@ -15,6 +16,7 @@ export class ContentShowMoreEditComponent extends Component {
         this.onChangeBody = this.onChangeBody.bind(this);
         this.onChangeAlignment = this.onChangeAlignment.bind(this);
         this.onSelectImage = this.onSelectImage.bind(this);
+        this.onRemoveImage = this.onRemoveImage.bind(this);
     }
 
     onChangeTitle(title) {
@@ -40,26 +42,39 @@ export class ContentShowMoreEditComponent extends Component {
         });
     }
 
-    getImageButton(openEvent) {
+    onRemoveImage(media) {
+        this.props.setAttributes({
+            media: null,
+            imageURL: null,
+            imageID: null
+        });
+    }
+
+    getImageButton(obj) {
 
         const { attributes } = this.props;
 
-        //TODO add styles
-
         return (
-            <Button
-                className={attributes.imageID ? 'image-button' : 'button button-large'}
-                onClick={openEvent}
-            >
-                {!attributes.imageID ?
-                    <div>
-                        <Icon style={{"margin-right": "8px"}} className={"icon"} icon={icons.upload} />
-                        { __( 'Upload Image', 'alps-gutenberg-blocks' ) }
-                    </div>
-                    :
-                    <img className={'contentCard__image'} src={attributes.imageURL} />
-                }
-            </Button>
+            <div className={attributes.alignment === "left" ? "alps__media-block__upload-image-section-left" : "alps__media-block__upload-image-section-center"}>
+                <Button
+                    className={attributes.imageID ? 'image-button' : 'button button-large'}
+                    onClick={!attributes.imageID ? obj.open : obj.close}
+                >
+                    { !attributes.imageID ?
+                        <div>
+                            <Icon style={{"margin-right": "8px"}} className={"icon"} icon={icons.upload} />
+                            { __( 'Upload Image', 'alps-gutenberg-blocks' ) }
+                        </div>
+                        :
+                        <ScaledImage
+                            url={attributes.imageURL}
+                            id={attributes.imageID}
+                            onRemove={this.onRemoveImage}
+                            setAttributes={this.props.setAttributes}
+                        />
+                    }
+                </Button>
+            </div>
         );
     }
 
@@ -122,7 +137,7 @@ export class ContentShowMoreEditComponent extends Component {
                                 onSelect={ this.onSelectImage }
                                 type={'image'}
                                 value={ attributes.imageID }
-                                render={ ({open}) => this.getImageButton(open)}
+                                render={(obj) => this.getImageButton(obj)}
                             />
                         </div>
                     </fieldset>
