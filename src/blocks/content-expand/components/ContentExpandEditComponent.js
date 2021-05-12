@@ -64,7 +64,7 @@ export class ContentExpandEditComponent extends Component {
                             placeholder={ __('Title', 'alps-gutenberg-blocks')}
                             keepPlaceholderOnFocus={true}
                             value={attributes.title}
-                            onChange={ this.onChangeTitle()}
+                            onChange={ this.onChangeTitle}
                         />
                     </fieldset>
                     <fieldset>
@@ -75,7 +75,7 @@ export class ContentExpandEditComponent extends Component {
                             keepPlaceholderOnFocus={true}
                             style={{ textAlign: attributes.alignment }}
                             value={ attributes.body}
-                            onChange={ this}
+                            onChange={ this.onChangeBody}
                         />
                     </fieldset>
                 </div>

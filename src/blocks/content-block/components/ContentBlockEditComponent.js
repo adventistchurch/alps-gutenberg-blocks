@@ -29,8 +29,9 @@ export class ContentBlockEditComponent extends Component {
         this.props.setAttributes({ link });
     }
 
-    onChangeReadMoreButton(readMoreButton) {
-        this.props.setAttributes({ readMoreButton: readMoreButton ? readMoreButton : 'Read More' });
+    onChangeReadMoreButton(newReadMoreButton) {
+        console.log("READ: " + newReadMoreButton);
+        this.props.setAttributes({ readMoreButton: newReadMoreButton ? newReadMoreButton : 'Read More' });
     }
 
     onChangeAlignment(nextAction) {

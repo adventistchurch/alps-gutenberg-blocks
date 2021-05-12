@@ -9,6 +9,8 @@ export class ContentBlockSaveComponent extends Component {
         let title = '';
         let button = '';
 
+        console.log("TTTT: " + button + " : " + attributes.readMoreButton[0] + " :" + attributes.readMoreButton.toString());
+
         if (attributes.link) {
             title =
                 <h3 className="u-theme--color--darker u-font--primary--m">
