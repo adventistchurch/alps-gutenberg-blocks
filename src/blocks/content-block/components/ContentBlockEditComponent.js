@@ -30,7 +30,6 @@ export class ContentBlockEditComponent extends Component {
     }
 
     onChangeReadMoreButton(newReadMoreButton) {
-        console.log("READ: " + newReadMoreButton);
         this.props.setAttributes({ readMoreButton: newReadMoreButton ? newReadMoreButton : 'Read More' });
     }
 
@@ -101,6 +100,7 @@ export class ContentBlockEditComponent extends Component {
                                 className={'contentCard__input'}
                                 type={'p'}
                                 placeholder={ 'Default: Read More' }
+                                allowedFormats={ [ '' ]}
                                 label={ __('Read More button', 'alps-gutenberg-blocks') }
                                 keepPlaceholderOnFocus={ true }
                                 value={ attributes.readMoreButton }
