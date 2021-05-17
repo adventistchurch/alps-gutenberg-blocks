@@ -8,13 +8,15 @@
 .wp-block-alps-gutenberg-blocks-media-testimony {
   width: 100% !important;
   margin-left: 0 !important;
-  display: flex;
-  border-left: 1px solid;
+  border: 1px solid #F3F4F6;
+  border-top: 10px solid #F3F4F6;
+  box-sizing: border-box;
+  border-radius: 4px;
 
   > * {
-    width: 50%;
+    width: 100%;
     padding: $space;
-    background-color: $c-gray--light;
+    background-color: white;
   }
 
   strong {

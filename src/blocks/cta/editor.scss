@@ -6,10 +6,13 @@
  */
 
 .wp-block-alps-gutenberg-blocks-cta {
-  background: $c-gray--light;
-  color: $c-black;
-  padding: $pad;
-  border-left: 1px solid $c-black;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px rgba(78, 100, 142, 0.15);
+
+  &__settings {
+    margin-left: 16px;
+  }
 }
 
 .o-buttons {
@@ -20,11 +23,12 @@
     width: 50%;
 
     &:first-child {
-      padding-right: $pad / 2;
+      padding-right: 28px;
     }
 
     &:last-child {
-      padding-left: $pad / 2;
+      padding-left: 28px;
+      border-left: 1px solid #CCD5DE;
     }
   }
 }

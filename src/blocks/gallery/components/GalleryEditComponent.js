@@ -1,3 +1,5 @@
+import {DescCard} from "../../global-components/DescCard";
+
 /**
  * External Dependencies
  */
@@ -107,6 +109,15 @@ class GalleryEditComponent extends Component {
         const { attributes, isSelected, className, noticeOperations, noticeUI } = this.props;
         const { images, title } = attributes;
 
+        const header = (
+            <DescCard
+                title={__("Gallery")}
+                hasText={true}
+                hasImage={true}
+                hasImages={true}
+            />
+        );
+
         const controls = (
             <BlockControls>
                 { !! images.length && (
@@ -133,39 +144,46 @@ class GalleryEditComponent extends Component {
 
         if ( images.length === 0 ) {
             return (
-                <Fragment>
-                    { controls }
-                    <MediaPlaceholder
-                        icon="format-gallery"
-                        className={ className }
-                        labels={ {
-                            title: __( 'Gallery', 'alps-gutenberg-blocks' ),
-                            name: __( 'images', 'alps-gutenberg-blocks' ),
-                        } }
-                        onSelect={ this.onSelectImages }
-                        accept={"image/*"}
-                        type={"image"}
-                        gallery
-                        multiple
-                        notices={ noticeUI }
-                        onError={ noticeOperations.createErrorNotice }
-                    />
-                </Fragment>
+                <div className={className}>
+                    <Fragment>
+                        { controls }
+                        { header }
+                        <MediaPlaceholder
+                            className={ className }
+                            labels={ {
+                                title: "",
+                                name: "",
+                            } }
+                            onSelect={ this.onSelectImages }
+                            accept={"image/*"}
+                            type={"image"}
+                            gallery
+                            multiple
+                            notices={ noticeUI }
+                            onError={ noticeOperations.createErrorNotice }
+                        />
+                    </Fragment>
+                </div>
             );
         }
 
         return (
             <Fragment>
-                <RichText
-                    tagName={"p"}
-                    className={ className }
-                    value={ title }
-                    onChange={ this.onChangeTitle }
-                    placeholder={ __('Enter a gallery title..', 'alps-gutenberg-blocks') }
-                />
                 { controls }
                 { noticeUI }
                 <ul className={ className + " wp-block-gallery alps-block-gallery" }>
+                    { header }
+                    <div className={'contentCard'}>
+                        <fieldset>
+                            <legend>{ __("Gallery Title") }</legend>
+                            <RichText
+                                className={ "contentCard__input" }
+                                value={ title }
+                                onChange={ this.onChangeTitle }
+                                placeholder={ __('Enter your Gallery Title...', 'alps-gutenberg-blocks') }
+                            />
+                        </fieldset>
+                    </div>
                     <DropZone />
                     { images.map( ( img, index ) => (
                         <li className={"blocks-gallery-item alps-gallery-item"} key={ img.id || img.url }>

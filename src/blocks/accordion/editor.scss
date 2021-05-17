@@ -6,23 +6,7 @@
  */
 
 .wp-block-alps-gutenberg-blocks-accordion {
-  background-color: $c-gray--light;
-  border-left: 1px solid black;
-  padding: $pad/2 $pad*2;
-  position: relative;
-
-  &::before {
-    display: block;
-    content: "";
-    position: absolute;
-    top: 18px;
-    left: 16px;
-    box-sizing: border-box;
-    height: 10px;
-    width: 10px;
-    border-style: solid;
-    border-color: black;
-    border-width: 0px 3px 3px 0px;
-    transform: rotate(45deg);
-  }
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px rgba(78, 100, 142, 0.15);
 }

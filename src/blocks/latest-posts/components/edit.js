@@ -34,6 +34,7 @@ import {
 	RichText,
 } from '@wordpress/block-editor';
 import { withSelect } from '@wordpress/data';
+import {DescCard} from "../../global-components/DescCard";
 
 /**
  * Module Constants
@@ -137,7 +138,7 @@ class LatestPostsEdit extends Component {
 	}
 
 	render() {
-		const { attributes, setAttributes, latestPosts } = this.props;
+		const { attributes, setAttributes, latestPosts, className } = this.props;
 		const { categoriesList } = this.state;
 		const { hideExcerpt, hidePostDate, hideCategoryName, alignRight, hideButton, hideImage, postLayout, order, orderBy, categories, tags, postsToShow } = attributes;
 
@@ -272,78 +273,99 @@ class LatestPostsEdit extends Component {
 		const dateFormat = __experimentalGetSettings().formats.date;
 
 		return (
-			<Fragment>
-				{ inspectorControls }
-				<BlockControls>
-					<Toolbar controls={ layoutControls } />
-				</BlockControls>
-				<div className="c-block__heading u-theme--border-color--darker">
-					<RichText
-						tagName="h3"
-						className="c-block__heading-title u-theme--color--darker"
-						placeholder={ __('Enter a block title', 'alps-gutenberg-blocks') }
-						value={ attributes.title }
-						formattingControls={ [] }
-						onChange={ (title) => setAttributes({ title }) }
-					/>
-					<RichText
-						tagName="a"
-						className="c-block__heading-link u-theme--color--base u-theme--link-hover--dark"
-						placeholder={ __('Enter a link label', 'alps-gutenberg-blocks') }
-						value={ attributes.linkLabel }
-						formattingControls={ [] }
-						onChange={ (linkLabel) => setAttributes({ linkLabel }) }
-					/>
-					<TextControl
-						label="See All URL"
-						placeholder={ __('Enter url here', 'alps-gutenberg-blocks') }
-						keepPlaceholderOnFocus={ true }
-						value={ attributes.linkUrl }
-						onChange={ (linkUrl) => setAttributes({ linkUrl }) }
-					/>
-				</div>
-				<ul
-					className={ classnames( this.props.className, {
-						'l-grid l-grid--3-col': postLayout === 'grid',
-						'u-align--right': alignRight,
-						'u-hide--image': hideImage,
-						'u-hide--excerpt': hideExcerpt,
-						'u-hide--date': hidePostDate,
-						'u-hide--category': hideCategoryName,
-						'u-hide--button': hideButton,
-					} ) }
-				>
-					{ displayPosts.map( ( post, i ) =>
-						<li key={ i }>
-							<div class="wp-block-alps-gutenberg-blocks-latest-posts__content">
-								<a href={ post.link } class="wp-block-alps-gutenberg-blocks-latest-posts__title" target="_blank">{ decodeEntities( post.title.rendered.trim() ) || __( '(Untitled)' ) }</a>
-								{ !hideExcerpt &&
-									<div className="wp-block-alps-gutenberg-blocks-latest-posts__excerpt">
-										[{ __('Post excerpt is visible', 'alps-gutenberg-blocks') }]
-									</div>
-								}
-								<div class="wp-block-alps-gutenberg-blocks-latest-posts__meta">
-									{ !hidePostDate &&
-										<span className="wp-block-alps-gutenberg-blocks-latest-posts__date">
-											{ dateI18n( dateFormat, post.date_gmt ) }
-										</span>
+			<div className={className}>
+				<Fragment>
+					{ inspectorControls }
+					<BlockControls>
+						<Toolbar controls={ layoutControls } />
+					</BlockControls>
+					<div className="c-block__heading u-theme--border-color--darker">
+						<DescCard
+							title={"Latest Posts"}
+							hasText={true}
+							hasImage={false}
+							hasImages={false}
+						/>
+						<div className={'contentCard'}>
+							<fieldset>
+								<legend>{ __("Title") }</legend>
+								<RichText
+									tagName="h3"
+									className="c-block__heading-title u-theme--color--darker contentCard__input"
+									placeholder={ __('Enter your Title...', 'alps-gutenberg-blocks') }
+									value={ attributes.title }
+									formattingControls={ [] }
+									onChange={ (title) => setAttributes({ title }) }
+								/>
+							</fieldset>
+							<fieldset>
+								<legend>{ __("See All Link Label") }</legend>
+								<RichText
+									tagName="a"
+									className="c-block__heading-link u-theme--color--base u-theme--link-hover--dark contentCard__input"
+									placeholder={ __('Enter your link label...', 'alps-gutenberg-blocks') }
+									value={ attributes.linkLabel }
+									formattingControls={ [] }
+									onChange={ (linkLabel) => setAttributes({ linkLabel }) }
+								/>
+							</fieldset>
+							<fieldset>
+								<legend>{ __("See All URL") }</legend>
+								<div style={{"width": "100%"}}>
+									<TextControl
+										type={'url'}
+										placeholder={ __('https://...', 'alps-gutenberg-blocks') }
+										keepPlaceholderOnFocus={ true }
+										value={ attributes.linkUrl }
+										onChange={ (linkUrl) => setAttributes({ linkUrl }) }
+									/>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+					<ul
+						className={ classnames( this.props.className, {
+							'l-grid l-grid--3-col': postLayout === 'grid',
+							'u-align--right': alignRight,
+							'u-hide--image': hideImage,
+							'u-hide--excerpt': hideExcerpt,
+							'u-hide--date': hidePostDate,
+							'u-hide--category': hideCategoryName,
+							'u-hide--button': hideButton,
+						} ) }
+					>
+						{ displayPosts.map( ( post, i ) =>
+							<li key={ i }>
+								<div class="wp-block-alps-gutenberg-blocks-latest-posts__content">
+									<a href={ post.link } class="wp-block-alps-gutenberg-blocks-latest-posts__title" target="_blank">{ decodeEntities( post.title.rendered.trim() ) || __( '(Untitled)' ) }</a>
+									{ !hideExcerpt &&
+										<div className="wp-block-alps-gutenberg-blocks-latest-posts__excerpt">
+											[{ __('Post excerpt is visible', 'alps-gutenberg-blocks') }]
+										</div>
 									}
-									{ !hideCategoryName &&
-										<span className="wp-block-alps-gutenberg-blocks-latest-posts__category">
-										  [{ __('Category name is visible', 'alps-gutenberg-blocks') }]
-										</span>
+									<div class="wp-block-alps-gutenberg-blocks-latest-posts__meta">
+										{ !hidePostDate &&
+											<span className="wp-block-alps-gutenberg-blocks-latest-posts__date">
+												{ dateI18n( dateFormat, post.date_gmt ) }
+											</span>
+										}
+										{ !hideCategoryName &&
+											<span className="wp-block-alps-gutenberg-blocks-latest-posts__category">
+											  [{ __('Category name is visible', 'alps-gutenberg-blocks') }]
+											</span>
+										}
+									</div>
+									{ !hideButton &&
+										<button className="wp-block-alps-gutenberg-blocks-latest-posts__button">
+											{ __('Read More', 'alps-gutenberg-blocks') }
+										</button>
 									}
 								</div>
-								{ !hideButton &&
-									<button className="wp-block-alps-gutenberg-blocks-latest-posts__button">
-										{ __('Read More', 'alps-gutenberg-blocks') }
-									</button>
-								}
-							</div>
-						</li>
-					) }
-				</ul>
-			</Fragment>
+							</li>
+						) }
+					</ul>
+				</Fragment>
+			</div>
 		);
 	}
 }

@@ -1,6 +1,7 @@
 import {Component} from "@wordpress/element";
 import {AlignmentToolbar, BlockControls, RichText} from "@wordpress/block-editor";
 import { __ } from '@wordpress/i18n';
+import {DescCard} from "../../global-components/DescCard";
 
 export class HighlightedParagraphEditComponent extends Component {
 
@@ -31,15 +32,25 @@ export class HighlightedParagraphEditComponent extends Component {
                 />
             </BlockControls>,
             <div className={className}>
-                <RichText
-                    tagName={'p'}
-                    className={'o-paragraph'}
-                    placeholder={ __('Content goes here...', 'alps-gutenberg-blocks') }
-                    keepPlaceholderOnFocus={true}
-                    style={{ textAlign: attributes.alignment }}
-                    value={  attributes.content }
-                    onChange={ this.onChangeContent }
+                <DescCard
+                    title={"Highlighted Paragraph"}
+                    hasText={true}
+                    hasImage={false}
+                    hasImages={false}
                 />
+                <div className={'contentCard'}>
+                    <fieldset>
+                        <legend>{ __("Content") }</legend>
+                        <RichText
+                            className={'o-paragraph contentCard__input'}
+                            placeholder={ __('Enter your Content...', 'alps-gutenberg-blocks') }
+                            keepPlaceholderOnFocus={true}
+                            style={{ textAlign: attributes.alignment }}
+                            value={  attributes.content }
+                            onChange={ this.onChangeContent }
+                        />
+                    </fieldset>
+                </div>
             </div>
         ]);
     }

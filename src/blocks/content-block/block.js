@@ -35,7 +35,9 @@ registerBlockType( 'alps-gutenberg-blocks/content-block', {
       type: 'url',
     },
     readMoreButton: {
-      type: 'string',
+      type: 'array',
+      source: 'children',
+      selector: '.c-block__button',
     },
     alignment: {
       type: 'string',

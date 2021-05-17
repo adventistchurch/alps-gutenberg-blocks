@@ -2,6 +2,8 @@
  * External Dependencies
  */
 
+import {DescCard} from "../../global-components/DescCard";
+
 /**
  * WordPress dependencies
  */
@@ -156,15 +158,24 @@ class Image2UpEditComponent extends Component {
             </BlockControls>
         );
 
+        const header = (
+            <DescCard
+                title={"Image (2UP)"}
+                hasText={true}
+                hasImage={true}
+                hasImages={true}
+            />
+        );
+
         if ( images.length === 0 ) {
             return (
                 <Fragment>
                     { controls }
+                    { header }
                     <MediaPlaceholder
-                        icon="format-gallery"
                         className={ className }
                         labels={ {
-                            title: __( 'Image (2up)', 'alps-gutenberg-blocks' ),
+                            title: "",
                             name: __( 'images', 'alps-gutenberg-blocks' ),
                         } }
                         onSelect={ this.onSelectImages }
@@ -181,23 +192,26 @@ class Image2UpEditComponent extends Component {
             <Fragment>
                 { controls }
                 { noticeUI }
-                <ul className={ className }>
-                    { dropZone }
-                    { images.map( ( img, index ) => (
-                        <li className={"blocks-gallery-item"} key={ img.id || img.url }>
-                            <TwoUpImage
-                                url={ img.url }
-                                alt={ img.alt }
-                                id={ img.id }
-                                isSelected={ isSelected && this.state.selectedImage === index }
-                                onRemove={ this.onRemoveImage( index ) }
-                                onSelect={ this.onSelectImage( index ) }
-                                setAttributes={ ( attrs ) => this.setImageAttributes( index, attrs ) }
-                                caption={ img.caption }
-                            />
-                        </li>
-                    ) ) }
-                </ul>
+                <div className={className}>
+                    { header }
+                    <ul style={{"display": "flex"}}>
+                        { dropZone }
+                        { images.map( ( img, index ) => (
+                            <li className={"blocks-gallery-item"} key={ img.id || img.url }>
+                                <TwoUpImage
+                                    url={ img.url }
+                                    alt={ img.alt }
+                                    id={ img.id }
+                                    isSelected={ isSelected && this.state.selectedImage === index }
+                                    onRemove={ this.onRemoveImage( index ) }
+                                    onSelect={ this.onSelectImage( index ) }
+                                    setAttributes={ ( attrs ) => this.setImageAttributes( index, attrs ) }
+                                    caption={ img.caption }
+                                />
+                            </li>
+                        ) ) }
+                    </ul>
+                </div>
                 <MediaUpload
                     onSelect={ this.onSelectImages }
                     accept="image/*"
