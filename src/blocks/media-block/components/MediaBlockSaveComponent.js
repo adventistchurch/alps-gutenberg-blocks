@@ -47,7 +47,7 @@ export class MediaBlockSaveComponent extends Component{
                                 { titleText }
                             </h3>
                             <p className={"c-block__description"}>
-                                { attributes.description }
+                                { [attributes.description] }
                             </p>
                         </div>
                         <div className={"c-block__meta u-theme--color--dark"}>

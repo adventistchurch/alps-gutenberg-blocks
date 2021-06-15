@@ -42,7 +42,9 @@ registerBlockType('alps-gutenberg-blocks/media-block', {
       type: 'string'
     },
     description: {
-      type: 'string'
+      type: 'array',
+      source: 'children',
+      selector: '.c-block__description',
     },
     category: {
       type: 'string'
