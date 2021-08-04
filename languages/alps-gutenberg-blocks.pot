@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-25 15:05-0500\n"
+"POT-Creation-Date: 2021-08-04 09:15-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,73 +17,77 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/blocks/content-block/block.js:18
+#: src/blocks/content-block/components/ContentBlockEditComponent.js:71
+#: src/blocks/content-show-more/components/ContentShowMoreEditComponent.js:105
+#: src/blocks/accordion/components/AccordionEditComponent.js:50
+#: src/blocks/cta/components/CTAEditComponent.js:176
+#: src/blocks/media-testimonies/components/MediaTestimoniesEditComponent.js:41
+#: src/blocks/latest-posts/components/edit.js:295
+msgid "Enter your Title..."
+msgstr ""
+
+#: src/blocks/content-block/block.js:17
 msgid "ALPS Content Block"
 msgstr ""
 
-#: src/blocks/content-block/block.js:19
+#: src/blocks/content-block/block.js:18
 msgid "Content block that highlights a row to text."
 msgstr ""
 
-#: src/blocks/content-block/block.js:61
-#: src/blocks/content-show-more/block.js:94
-#: src/blocks/content-expand/block.js:72
-#: src/blocks/accordion/components/edit.js:40 src/blocks/cta/block.js:180
-msgid "Title"
-msgstr ""
-
-#: src/blocks/content-block/block.js:71
-msgid "Write a description..."
-msgstr ""
-
-#: src/blocks/content-block/block.js:81
-msgid "Link Url"
-msgstr ""
-
-#: src/blocks/media-testimony/block.js:19
-msgid "ALPS Media Testimony Block"
-msgstr ""
-
-#: src/blocks/media-testimony/block.js:20
-msgid "Single media testimony."
-msgstr ""
-
-#: src/blocks/media-testimony/block.js:74
-msgid "Enter Quote"
-msgstr ""
-
-#: src/blocks/media-testimony/block.js:83
-msgid "Read More Link"
-msgstr ""
-
-#: src/blocks/media-testimony/block.js:103
-#: src/blocks/content-show-more/block.js:86 src/blocks/cta/block.js:163
-#: src/blocks/image-breakout/block.js:53
+#: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:65
+#: src/blocks/content-show-more/components/ContentShowMoreEditComponent.js:66
+#: src/blocks/media-block/components/MediaBlockEditComponent.js:98
+#: src/blocks/cta/components/CTAEditComponent.js:119
+#: src/blocks/image-breakout/components/ImageBreakoutEditComponent.js:49
 msgid "Upload Image"
 msgstr ""
 
-#: src/blocks/media-testimony/block.js:110
-msgid "Enter Video Title"
+#: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:92
+msgid "Enter your Quote..."
 msgstr ""
 
-#: src/blocks/media-testimony/block.js:120
-msgid "Watch Video Link"
+#: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:99
+msgid "Read More Link"
 msgstr ""
 
-#: src/blocks/content-show-more/block.js:18
+#: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:111
+msgid "Video"
+msgstr ""
+
+#: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:115
+msgid "Enter your Video title..."
+msgstr ""
+
+#: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:134
+msgid "Image"
+msgstr ""
+
+#: src/blocks/media-testimony/block.js:14
+msgid "ALPS Media Testimony Block"
+msgstr ""
+
+#: src/blocks/media-testimony/block.js:15
+msgid "Single media testimony."
+msgstr ""
+
+#: src/blocks/content-show-more/components/ContentShowMoreEditComponent.js:126
+msgid "Enter your Body Text... (Displays on click for Show More button)"
+msgstr ""
+
+#: src/blocks/content-show-more/block.js:17
 msgid "ALPS Content Show More"
 msgstr ""
 
-#: src/blocks/content-show-more/block.js:20
+#: src/blocks/content-show-more/block.js:19
 msgid "Content block that has a toggle button to show more."
 msgstr ""
 
-#: src/blocks/content-show-more/block.js:104 src/blocks/cta/block.js:190
-msgid "Description"
-msgstr ""
-
-#: src/blocks/content-show-more/block.js:115
-msgid "Body (Display on click of show more button)"
+#: src/blocks/media-block/components/image-editor.js:40
+#: src/blocks/cta/components/CTAEditComponent.js:127
+#: src/blocks/gallery/editor-image.js:134
+#: src/blocks/image-2up/editor-image.js:133
+#: src/blocks/image-breakout/components/ImageBreakoutEditComponent.js:57
+msgid "Remove Image"
 msgstr ""
 
 #: src/blocks/media-block/block.js:20
@@ -94,21 +98,24 @@ msgstr ""
 msgid "Flexible media content."
 msgstr ""
 
-#: src/blocks/content-expand/block.js:17
-msgid "ALPS Content Expand"
-msgstr ""
-
-#: src/blocks/content-expand/block.js:19
-msgid "Content block that expands the content on click."
-msgstr ""
-
-#: src/blocks/content-expand/block.js:61
+#: src/blocks/content-expand/components/ContentExpandEditComponent.js:53
 msgid "Kicker"
 msgstr ""
 
-#: src/blocks/content-expand/block.js:82
-#: src/blocks/accordion/components/edit.js:48
+#: src/blocks/content-expand/components/ContentExpandEditComponent.js:74
 msgid "Body"
+msgstr ""
+
+#: src/blocks/content-expand/block.js:13
+msgid "ALPS Content Expand"
+msgstr ""
+
+#: src/blocks/content-expand/block.js:15
+msgid "Content block that expands the content on click."
+msgstr ""
+
+#: src/blocks/accordion/components/AccordionEditComponent.js:60
+msgid "Enter your Body Text..."
 msgstr ""
 
 #: src/blocks/accordion/block.js:20
@@ -119,84 +126,46 @@ msgstr ""
 msgid "Add heading and basic text."
 msgstr ""
 
-#: src/blocks/cta/block.js:25
-msgid "ALPS CTA"
-msgstr ""
-
-#: src/blocks/cta/block.js:135
+#: src/blocks/cta/components/CTAEditComponent.js:145
 msgid "Dark Background"
 msgstr ""
 
-#: src/blocks/cta/block.js:136
+#: src/blocks/cta/components/CTAEditComponent.js:146
 msgid "Makes the CTA background dark."
 msgstr ""
 
-#: src/blocks/cta/block.js:141
-msgid "Background Image"
+#: src/blocks/cta/components/CTAEditComponent.js:202
+#: src/blocks/cta/components/CTAEditComponent.js:229
+#: src/blocks/latest-posts/components/edit.js:317
+msgid "https://..."
 msgstr ""
 
-#: src/blocks/cta/block.js:142
-msgid "Sets the image as a background image."
+#: src/blocks/cta/components/CTAEditComponent.js:214
+#: src/blocks/cta/components/CTAEditComponent.js:241
+msgid "Open link in a new window"
 msgstr ""
 
-#: src/blocks/cta/block.js:169 src/blocks/gallery/editor-image.js:134
-#: src/blocks/image-2up/editor-image.js:133
-msgid "Remove Image"
+#: src/blocks/cta/block.js:18
+msgid "ALPS CTA"
 msgstr ""
 
-#: src/blocks/cta/block.js:203
-msgid "Button 1 Url"
-msgstr ""
-
-#: src/blocks/cta/block.js:212
-msgid "Button 1 Text"
-msgstr ""
-
-#: src/blocks/cta/block.js:221 src/blocks/cta/block.js:249
-msgid "Open in new window"
-msgstr ""
-
-#: src/blocks/cta/block.js:231
-msgid "Button 2 Url"
-msgstr ""
-
-#: src/blocks/cta/block.js:240
-msgid "Button 2 Text"
-msgstr ""
-
-#: src/blocks/gallery/edit.js:40 src/blocks/image-2up/edit.js:41
-msgid "Attachment Page"
-msgstr ""
-
-#: src/blocks/gallery/edit.js:41 src/blocks/image-2up/edit.js:42
-msgid "Media File"
-msgstr ""
-
-#: src/blocks/gallery/edit.js:42 src/blocks/image-2up/edit.js:43
-msgid "None"
-msgstr ""
-
-#: src/blocks/gallery/edit.js:149
+#: src/blocks/gallery/components/GalleryEditComponent.js:134
 msgid "Edit Gallery"
 msgstr ""
 
-#: src/blocks/gallery/edit.js:169
+#: src/blocks/gallery/components/GalleryEditComponent.js:183
+msgid "Enter your Gallery Title..."
+msgstr ""
+
+#: src/blocks/gallery/components/GallerySaveComponent.js:17
 msgid "Gallery"
 msgstr ""
 
-#: src/blocks/gallery/edit.js:170 src/blocks/image-2up/edit.js:189
-msgid "images"
-msgstr ""
-
-#: src/blocks/gallery/edit.js:192
-msgid "Enter a gallery title.."
-msgstr ""
-
-#: src/blocks/gallery/block.js:20
+#: src/blocks/gallery/block.js:16
 msgid "ALPS Gallery"
 msgstr ""
 
-#: src/blocks/gallery/block.js:21
+#: src/blocks/gallery/block.js:17
 msgid "Display a gallery images in a container that expands on click."
 msgstr ""
 
@@ -205,159 +174,135 @@ msgstr ""
 msgid "Write caption…"
 msgstr ""
 
-#: src/blocks/highlighted-paragraph/block.js:17
+#: src/blocks/highlighted-paragraph/components/HighlightedParagraphEditComponent.js:46
+msgid "Enter your Content..."
+msgstr ""
+
+#: src/blocks/highlighted-paragraph/block.js:18
 msgid "ALPS Highlighted Paragraph"
 msgstr ""
 
-#: src/blocks/highlighted-paragraph/block.js:19
+#: src/blocks/highlighted-paragraph/block.js:20
 msgid "Highlight a block of text."
 msgstr ""
 
-#: src/blocks/highlighted-paragraph/block.js:55
-msgid "Content goes here..."
+#: src/blocks/blockquote/components/BlockquoteEditComponent.js:42
+msgid "Extend Quote"
+msgstr ""
+
+#: src/blocks/blockquote/components/BlockquoteEditComponent.js:43
+msgid "Extends the quote outside the page content."
+msgstr ""
+
+#: src/blocks/blockquote/components/BlockquoteEditComponent.js:67
+msgid "Write a quote..."
 msgstr ""
 
 #: src/blocks/blockquote/block.js:17
 msgid "ALPS Blockquote"
 msgstr ""
 
-#: src/blocks/blockquote/block.js:61
-msgid "Extend Quote"
-msgstr ""
-
-#: src/blocks/blockquote/block.js:62
-msgid "Extends the quote outside the page content."
-msgstr ""
-
-#: src/blocks/blockquote/block.js:69
-msgid "Strong Quote"
-msgstr ""
-
-#: src/blocks/blockquote/block.js:70
-msgid "Set strong style for the quote content."
-msgstr ""
-
-#: src/blocks/blockquote/block.js:81
-msgid "Write a quote..."
-msgstr ""
-
-#: src/blocks/blockquote/block.js:91
-msgid "Citation"
-msgstr ""
-
-#: src/blocks/media-testimonies/block.js:19
-msgid "ALPS Media Testimonies"
-msgstr ""
-
-#: src/blocks/media-testimonies/block.js:20
-msgid "Display your media testimonies."
-msgstr ""
-
-#: src/blocks/media-testimonies/block.js:44
-msgid "Enter Section Title"
-msgstr ""
-
-#: src/blocks/media-testimonies/block.js:54
+#: src/blocks/media-testimonies/components/MediaTestimoniesEditComponent.js:49
 msgid "See All Link Url"
 msgstr ""
 
-#: src/blocks/image-2up/edit.js:169
+#: src/blocks/media-testimonies/block.js:15
+msgid "ALPS Media Testimonies"
+msgstr ""
+
+#: src/blocks/media-testimonies/block.js:16
+msgid "Display your media testimonies."
+msgstr ""
+
+#: src/blocks/image-2up/components/Image2UpEditComponent.js:150
 msgid "Edit Images"
 msgstr ""
 
-#: src/blocks/image-2up/edit.js:188
-msgid "Image (2up)"
+#: src/blocks/image-2up/components/Image2UpEditComponent.js:179
+msgid "images"
 msgstr ""
 
-#: src/blocks/image-2up/block.js:10
+#: src/blocks/image-2up/block.js:18
 msgid "ALPS Image (2up)"
 msgstr ""
 
-#: src/blocks/image-2up/block.js:11
+#: src/blocks/image-2up/block.js:19
 msgid "Two images organized in a two column layout."
 msgstr ""
 
-#: src/blocks/image-breakout/block.js:18
+#: src/blocks/image-breakout/components/ImageBreakoutEditComponent.js:96
+msgid "Enter your Caption..."
+msgstr ""
+
+#: src/blocks/image-breakout/block.js:17
 msgid "ALPS Image (Breakout)"
 msgstr ""
 
-#: src/blocks/image-breakout/block.js:20
+#: src/blocks/image-breakout/block.js:19
 msgid "Image that expands the width of the page."
 msgstr ""
 
-#: src/blocks/image-breakout/block.js:60
-msgid "Caption"
-msgstr ""
-
-#: src/blocks/latest-posts/components/edit.js:183
+#: src/blocks/latest-posts/components/edit.js:184
 msgid "Latest Posts Settings"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:195
+#: src/blocks/latest-posts/components/edit.js:196
 msgid "Tags"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:201
+#: src/blocks/latest-posts/components/edit.js:202
 msgid "Hide excerpt"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:206
+#: src/blocks/latest-posts/components/edit.js:207
 msgid "Hide post date"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:211
+#: src/blocks/latest-posts/components/edit.js:212
 msgid "Hide category name"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:216
+#: src/blocks/latest-posts/components/edit.js:217
 msgid "Hide button"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:221
+#: src/blocks/latest-posts/components/edit.js:222
 msgid "Hide image"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:226
+#: src/blocks/latest-posts/components/edit.js:227
 msgid "Align the image right"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:241
+#: src/blocks/latest-posts/components/edit.js:242
 msgid "Latest Posts"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:245
+#: src/blocks/latest-posts/components/edit.js:246
 msgid "No posts found."
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:260
+#: src/blocks/latest-posts/components/edit.js:261
 msgid "List View"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:266
+#: src/blocks/latest-posts/components/edit.js:267
 msgid "Grid View"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:284
-msgid "Enter a block title"
+#: src/blocks/latest-posts/components/edit.js:306
+msgid "Enter your link label..."
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:292
-msgid "Enter a link label"
-msgstr ""
-
-#: src/blocks/latest-posts/components/edit.js:299
-msgid "Enter url here"
-msgstr ""
-
-#: src/blocks/latest-posts/components/edit.js:322
+#: src/blocks/latest-posts/components/edit.js:343
 msgid "Post excerpt is visible"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:333
+#: src/blocks/latest-posts/components/edit.js:354
 msgid "Category name is visible"
 msgstr ""
 
-#: src/blocks/latest-posts/components/edit.js:339
+#: src/blocks/latest-posts/components/edit.js:360
 msgid "Read More"
 msgstr ""
 
