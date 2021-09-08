@@ -1,0 +1,320 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-04 09:15-0400\n"
+"PO-Revision-Date: 2021-09-05 19:08+0900\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ko_KR\n"
+
+#: src/blocks/content-block/components/ContentBlockEditComponent.js:71
+#: src/blocks/content-show-more/components/ContentShowMoreEditComponent.js:105
+#: src/blocks/accordion/components/AccordionEditComponent.js:50
+#: src/blocks/cta/components/CTAEditComponent.js:176
+#: src/blocks/media-testimonies/components/MediaTestimoniesEditComponent.js:41
+#: src/blocks/latest-posts/components/edit.js:295
+msgid "Enter your Title..."
+msgstr "제목 입력..."
+
+#: src/blocks/content-block/block.js:17
+msgid "ALPS Content Block"
+msgstr "ALPS 콘텐츠 블록"
+
+#: src/blocks/content-block/block.js:18
+msgid "Content block that highlights a row to text."
+msgstr "텍스트행을 강조하는 콘텐츠 블록입니다."
+
+#: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:65
+#: src/blocks/content-show-more/components/ContentShowMoreEditComponent.js:66
+#: src/blocks/media-block/components/MediaBlockEditComponent.js:98
+#: src/blocks/cta/components/CTAEditComponent.js:119
+#: src/blocks/image-breakout/components/ImageBreakoutEditComponent.js:49
+msgid "Upload Image"
+msgstr "이미지 업로드"
+
+#: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:92
+msgid "Enter your Quote..."
+msgstr "인용구를 입력합니다…"
+
+#: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:99
+msgid "Read More Link"
+msgstr "더 보기 링크"
+
+#: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:111
+msgid "Video"
+msgstr "동영상"
+
+#: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:115
+msgid "Enter your Video title..."
+msgstr "동영상 제목 입력..."
+
+#: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:134
+msgid "Image"
+msgstr "이미지"
+
+#: src/blocks/media-testimony/block.js:14
+msgid "ALPS Media Testimony Block"
+msgstr "ALPS 미디어 증언 블록"
+
+#: src/blocks/media-testimony/block.js:15
+msgid "Single media testimony."
+msgstr "단일 미디어 증언."
+
+#: src/blocks/content-show-more/components/ContentShowMoreEditComponent.js:126
+msgid "Enter your Body Text... (Displays on click for Show More button)"
+msgstr "본문 텍스트를 입력... (클릭 중 표시 버튼 표시)"
+
+#: src/blocks/content-show-more/block.js:17
+msgid "ALPS Content Show More"
+msgstr "ALPS 콘텐츠 더 보기"
+
+#: src/blocks/content-show-more/block.js:19
+msgid "Content block that has a toggle button to show more."
+msgstr "더 많은 것을 표시할 토글 버튼이 있는 콘텐츠 블록입니다."
+
+#: src/blocks/media-block/components/image-editor.js:40
+#: src/blocks/cta/components/CTAEditComponent.js:127
+#: src/blocks/gallery/editor-image.js:134
+#: src/blocks/image-2up/editor-image.js:133
+#: src/blocks/image-breakout/components/ImageBreakoutEditComponent.js:57
+msgid "Remove Image"
+msgstr "이미지 제거"
+
+#: src/blocks/media-block/block.js:20
+msgid "ALPS Media Block"
+msgstr "ALPS 미디어 블록"
+
+#: src/blocks/media-block/block.js:21
+msgid "Flexible media content."
+msgstr "유연한 미디어 콘텐츠."
+
+#: src/blocks/content-expand/components/ContentExpandEditComponent.js:53
+msgid "Kicker"
+msgstr "첫 문장"
+
+#: src/blocks/content-expand/components/ContentExpandEditComponent.js:74
+msgid "Body"
+msgstr "본문"
+
+#: src/blocks/content-expand/block.js:13
+msgid "ALPS Content Expand"
+msgstr "ALPS 콘텐츠 더 보기"
+
+#: src/blocks/content-expand/block.js:15
+msgid "Content block that expands the content on click."
+msgstr "클릭 시 콘텐츠를 확장하는 콘텐츠 블록입니다."
+
+#: src/blocks/accordion/components/AccordionEditComponent.js:60
+msgid "Enter your Body Text..."
+msgstr "본문 텍스트를 입력..."
+
+#: src/blocks/accordion/block.js:20
+msgid "ALPS Accordion"
+msgstr "ALPS 아코디언"
+
+#: src/blocks/accordion/block.js:22
+msgid "Add heading and basic text."
+msgstr "제목과 기본 텍스트를 추가합니다."
+
+#: src/blocks/cta/components/CTAEditComponent.js:145
+msgid "Dark Background"
+msgstr "어두운 배경"
+
+#: src/blocks/cta/components/CTAEditComponent.js:146
+msgid "Makes the CTA background dark."
+msgstr "CTA 배경을 어둡게 만듭니다."
+
+#: src/blocks/cta/components/CTAEditComponent.js:202
+#: src/blocks/cta/components/CTAEditComponent.js:229
+#: src/blocks/latest-posts/components/edit.js:317
+msgid "https://..."
+msgstr "https://..."
+
+#: src/blocks/cta/components/CTAEditComponent.js:214
+#: src/blocks/cta/components/CTAEditComponent.js:241
+msgid "Open link in a new window"
+msgstr "새 창에서 링크 열기"
+
+#: src/blocks/cta/block.js:18
+msgid "ALPS CTA"
+msgstr "ALPS CTA"
+
+#: src/blocks/gallery/components/GalleryEditComponent.js:134
+msgid "Edit Gallery"
+msgstr "갤러리 편집"
+
+#: src/blocks/gallery/components/GalleryEditComponent.js:183
+msgid "Enter your Gallery Title..."
+msgstr "갤러리 제목 입력 ..."
+
+#: src/blocks/gallery/components/GallerySaveComponent.js:17
+msgid "Gallery"
+msgstr "갤러리"
+
+#: src/blocks/gallery/block.js:16
+msgid "ALPS Gallery"
+msgstr "ALPS 갤러리"
+
+#: src/blocks/gallery/block.js:17
+msgid "Display a gallery images in a container that expands on click."
+msgstr "클릭을 확장하는 컨테이너에 갤러리 이미지를 표시합니다."
+
+#: src/blocks/gallery/editor-image.js:142
+#: src/blocks/image-2up/editor-image.js:141
+msgid "Write caption…"
+msgstr "캡션 쓰기…"
+
+#: src/blocks/highlighted-paragraph/components/HighlightedParagraphEditComponent.js:46
+msgid "Enter your Content..."
+msgstr "내용 입력..."
+
+#: src/blocks/highlighted-paragraph/block.js:18
+msgid "ALPS Highlighted Paragraph"
+msgstr "ALPS 강조 단락"
+
+#: src/blocks/highlighted-paragraph/block.js:20
+msgid "Highlight a block of text."
+msgstr "텍스트 블록을 강조 표시합니다."
+
+#: src/blocks/blockquote/components/BlockquoteEditComponent.js:42
+msgid "Extend Quote"
+msgstr "인용구 확장"
+
+#: src/blocks/blockquote/components/BlockquoteEditComponent.js:43
+msgid "Extends the quote outside the page content."
+msgstr "페이지 콘텐츠 외부의 인용구를 확장합니다."
+
+#: src/blocks/blockquote/components/BlockquoteEditComponent.js:67
+msgid "Write a quote..."
+msgstr "인용구를 입력합니다…"
+
+#: src/blocks/blockquote/block.js:17
+msgid "ALPS Blockquote"
+msgstr "ALPS 블록따옴표"
+
+#: src/blocks/media-testimonies/components/MediaTestimoniesEditComponent.js:49
+msgid "See All Link Url"
+msgstr "모든 링크 URL 보기"
+
+#: src/blocks/media-testimonies/block.js:15
+msgid "ALPS Media Testimonies"
+msgstr "ALPS 미디어 증언"
+
+#: src/blocks/media-testimonies/block.js:16
+msgid "Display your media testimonies."
+msgstr "미디어 증언을 표시합니다."
+
+#: src/blocks/image-2up/components/Image2UpEditComponent.js:150
+msgid "Edit Images"
+msgstr "이미지 편집"
+
+#: src/blocks/image-2up/components/Image2UpEditComponent.js:179
+msgid "images"
+msgstr "이미지"
+
+#: src/blocks/image-2up/block.js:18
+msgid "ALPS Image (2up)"
+msgstr "ALPS 이미지 (2up)"
+
+#: src/blocks/image-2up/block.js:19
+msgid "Two images organized in a two column layout."
+msgstr "두 개의 열 레이아웃으로 구성된 두 개의 이미지입니다."
+
+#: src/blocks/image-breakout/components/ImageBreakoutEditComponent.js:96
+msgid "Enter your Caption..."
+msgstr "캡션 입력..."
+
+#: src/blocks/image-breakout/block.js:17
+msgid "ALPS Image (Breakout)"
+msgstr "ALPS 이미지 (브레이크 아웃)"
+
+#: src/blocks/image-breakout/block.js:19
+msgid "Image that expands the width of the page."
+msgstr "페이지 너비를 확장하는 이미지입니다."
+
+#: src/blocks/latest-posts/components/edit.js:184
+msgid "Latest Posts Settings"
+msgstr "최신 게시물 설정"
+
+#: src/blocks/latest-posts/components/edit.js:196
+msgid "Tags"
+msgstr "태그"
+
+#: src/blocks/latest-posts/components/edit.js:202
+msgid "Hide excerpt"
+msgstr "발췌 숨기기"
+
+#: src/blocks/latest-posts/components/edit.js:207
+msgid "Hide post date"
+msgstr "게시물 날짜 숨기기"
+
+#: src/blocks/latest-posts/components/edit.js:212
+msgid "Hide category name"
+msgstr "카테고리 이름 숨기기"
+
+#: src/blocks/latest-posts/components/edit.js:217
+msgid "Hide button"
+msgstr "버튼 숨기기"
+
+#: src/blocks/latest-posts/components/edit.js:222
+msgid "Hide image"
+msgstr "이미지 숨기기"
+
+#: src/blocks/latest-posts/components/edit.js:227
+msgid "Align the image right"
+msgstr "이미지 오른쪽 정렬"
+
+#: src/blocks/latest-posts/components/edit.js:242
+msgid "Latest Posts"
+msgstr "최근 게시물"
+
+#: src/blocks/latest-posts/components/edit.js:246
+msgid "No posts found."
+msgstr "게시물이 없습니다."
+
+#: src/blocks/latest-posts/components/edit.js:261
+msgid "List View"
+msgstr "목록형식 보기"
+
+#: src/blocks/latest-posts/components/edit.js:267
+msgid "Grid View"
+msgstr "바둑판식 보기"
+
+#: src/blocks/latest-posts/components/edit.js:306
+msgid "Enter your link label..."
+msgstr "링크 레이블을 입력..."
+
+#: src/blocks/latest-posts/components/edit.js:343
+msgid "Post excerpt is visible"
+msgstr "게시물 발췌가 표시됩니다"
+
+#: src/blocks/latest-posts/components/edit.js:354
+msgid "Category name is visible"
+msgstr "카테고리 이름이 표시됩니다"
+
+#: src/blocks/latest-posts/components/edit.js:360
+msgid "Read More"
+msgstr "더 보기"
+
+#: src/blocks/latest-posts/block.js:18
+msgid "ALPS Latest Posts"
+msgstr "ALPS 최신 게시물"
+
+#: src/blocks/latest-posts/block.js:19
+msgid "Display a list of your most recent posts."
+msgstr "가장 최신 글 목록을 보입니다."
+
+#: src/blocks/latest-posts/block.js:22
+msgid "latest posts"
+msgstr "최신 게시물"
