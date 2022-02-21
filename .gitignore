@@ -5,6 +5,7 @@ vendor/
 
 #
 dist/
+.idea
 
 # Build step artifacts
 build/
