@@ -3,6 +3,12 @@ A record of the changes made to `ALPS Gutenberg Blocks`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.4]
+### Fixed
+- Fixed ALPS Content Show More block Upload Issue. Check media.
+- Fixed ALPS Image Breakout block Upload Issue. Check media. 
+- [#77](https://github.com/adventistchurch/alps-gutenberg-blocks/issues/77)
+
 ## [2.1.3]
 ### Fixed
 - Fixed ALPS CTA block Upload Issue. Check media. [#77](https://github.com/adventistchurch/alps-gutenberg-blocks/issues/77)
