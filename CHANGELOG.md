@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [2.1.2]
 ### Fixed
+- Fixed ALPS CTA block Upload Issue. Check media. [#77](https://github.com/adventistchurch/alps-gutenberg-blocks/issues/77)
+
+## [2.1.2]
+### Fixed
 - Fixed CTA component for resizing image. [#77](https://github.com/adventistchurch/alps-gutenberg-blocks/issues/77)
 
 ## [2.1.1]
