@@ -72,7 +72,7 @@ export class HighlightBlocksEditComponent extends Component {
 						<RichText
 							className={"o-paragraph contentCard__input"}
 							placeholder={__(
-								"Enter your Body Text for Highlight Block One",
+								"Enter your Body Text for Highlight Block 1",
 								"alps-gutenberg-blocks"
 							)}
 							keepPlaceholderOnFocus={true}
@@ -86,7 +86,7 @@ export class HighlightBlocksEditComponent extends Component {
 						<RichText
 							className={"o-paragraph contentCard__input"}
 							placeholder={__(
-								"Enter your Body Text for Highlight Block Two",
+								"Enter your Body Text for Highlight Block 2 (Optional)",
 								"alps-gutenberg-blocks"
 							)}
 							keepPlaceholderOnFocus={true}
@@ -100,7 +100,7 @@ export class HighlightBlocksEditComponent extends Component {
 						<RichText
 							className={"o-paragraph contentCard__input"}
 							placeholder={__(
-								"Enter your Body Text for Highlight Block Three",
+								"Enter your Body Text for Highlight Block 3 (Optional)",
 								"alps-gutenberg-blocks"
 							)}
 							keepPlaceholderOnFocus={true}
