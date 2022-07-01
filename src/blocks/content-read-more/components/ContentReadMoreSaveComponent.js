@@ -20,8 +20,8 @@ export class ContentReadMoreSaveComponent extends Component {
 							{attributes.body}
 						</p>
 					</div>
-					<button class="o-button o-button--outline js-toggle-parent">
-						<span class="u-icon u-icon--xs u-space--half--right">
+					<button className="o-button o-button--outline js-toggle-parent">
+						<span className="u-icon u-icon--xs u-space--half--right">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10.01 10">
 								<title>o-cion</title>
 								<path

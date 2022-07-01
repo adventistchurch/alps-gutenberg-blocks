@@ -30,7 +30,7 @@ export class ContentReadMoreEditComponent extends Component {
 				<DescCard
 					title={"Content Read More"}
 					hasText={true}
-					hasImage={true}
+					hasImage={false}
 					hasImages={false}
 				/>
 				<div className={"contentCard"}>

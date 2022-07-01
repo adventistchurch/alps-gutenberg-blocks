@@ -1,20 +1,8 @@
 import { Component } from "@wordpress/element";
-import {
-	BlockControls,
-	MediaUpload,
-	AlignmentToolbar,
-	RichText,
-} from "@wordpress/block-editor";
-import {
-	Button,
-	Icon,
-	TextControl,
-	CheckboxControl,
-} from "@wordpress/components";
+import { RichText } from "@wordpress/block-editor";
+import { TextControl, CheckboxControl } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 import { DescCard } from "../../global-components/DescCard";
-import icons from "../../../icons/icons";
-import ScaledImage from "../../media-block/components/image-editor";
 
 export class HighlightBlocksEditComponent extends Component {
 	constructor() {
@@ -25,9 +13,9 @@ export class HighlightBlocksEditComponent extends Component {
 		this.onChangeBody3 = this.onChangeBody3.bind(this);
 
 		// Button 1 Section
-		this.onChangeButton1Url = this.onChangeButton1Url.bind(this);
-		this.onChangeButton1Text = this.onChangeButton1Text.bind(this);
-		this.onChangeButton1NewWindow = this.onChangeButton1NewWindow.bind(this);
+		this.onChangeButtonUrl = this.onChangeButtonUrl.bind(this);
+		this.onChangeButtonText = this.onChangeButtonText.bind(this);
+		this.onChangeButtonNewWindow = this.onChangeButtonNewWindow.bind(this);
 	}
 
 	onChangeBody1(body1) {
@@ -42,17 +30,17 @@ export class HighlightBlocksEditComponent extends Component {
 		this.props.setAttributes({ body3 });
 	}
 
-	// Button 1 Section
-	onChangeButton1Url(button1Url) {
-		this.props.setAttributes({ button1Url });
+	// Button  Section
+	onChangeButtonUrl(buttonUrl) {
+		this.props.setAttributes({ buttonUrl });
 	}
 
-	onChangeButton1Text(button1Text) {
-		this.props.setAttributes({ button1Text });
+	onChangeButtonText(buttonText) {
+		this.props.setAttributes({ buttonText });
 	}
 
-	onChangeButton1NewWindow(button1NewWindow) {
-		this.props.setAttributes({ button1NewWindow });
+	onChangeButtonNewWindow(buttonNewWindow) {
+		this.props.setAttributes({ buttonNewWindow });
 	}
 
 	render() {
@@ -63,7 +51,7 @@ export class HighlightBlocksEditComponent extends Component {
 				<DescCard
 					title={"Highlight Blocks"}
 					hasText={true}
-					hasImage={true}
+					hasImage={false}
 					hasImages={false}
 				/>
 				<div className={"contentCard"}>
@@ -117,16 +105,16 @@ export class HighlightBlocksEditComponent extends Component {
 							<div style={{ width: "100%" }}>
 								<TextControl
 									type={"url"}
-									value={attributes.button1Url}
+									value={attributes.buttonUrl}
 									placeholder={__("https://...", "alps-gutenberg-blocks")}
 									keepPlaceholderOnFocus={true}
-									onChange={this.onChangeButton1Url}
+									onChange={this.onChangeButtonUrl}
 								/>
 								<TextControl
-									value={attributes.button1Text}
+									value={attributes.buttonText}
 									placeholder={__("Button Label", "alps-gutenberg-blocks")}
 									keepPlaceholderOnFocus={true}
-									onChange={this.onChangeButton1Text}
+									onChange={this.onChangeButtonText}
 								/>
 								<div className={"contentCard__checkbox"}>
 									<CheckboxControl
@@ -134,8 +122,8 @@ export class HighlightBlocksEditComponent extends Component {
 											"Open link in a new window",
 											"alps-gutenberg-blocks"
 										)}
-										checked={attributes.button1NewWindow}
-										onChange={this.onChangeButton1NewWindow}
+										checked={attributes.buttonNewWindow}
+										onChange={this.onChangeButtonNewWindow}
 									/>
 								</div>
 							</div>

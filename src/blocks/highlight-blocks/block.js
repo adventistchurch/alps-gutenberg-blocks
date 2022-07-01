@@ -34,13 +34,13 @@ registerBlockType("alps-gutenberg-blocks/highlight-blocks", {
 		body3: {
 			type: "string",
 		},
-		button1Url: {
+		buttonUrl: {
 			type: "string",
 		},
-		button1Text: {
+		buttonText: {
 			type: "string",
 		},
-		button1NewWindow: {
+		buttonNewWindow: {
 			type: "boolean",
 			default: false,
 		},
