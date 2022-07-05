@@ -26,4 +26,5 @@ import "./blocks/media-testimony/block.js";
 import "./blocks/cta/block.js";
 import "./blocks/content-read-more/block.js";
 import "./blocks/highlight-blocks/block.js";
+import "./blocks/content-step/block.js";
 import "./blocks/split-content/block.js";
