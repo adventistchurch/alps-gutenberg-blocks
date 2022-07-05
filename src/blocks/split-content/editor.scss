@@ -1,12 +1,17 @@
-/**
- * #.# Editor Styles
- *
- * CSS for just Backend enqueued after style.scss
- * which makes it higher in priority.
- */
-
 .wp-block-alps-gutenberg-blocks-split-content {
   background-color: white;
   border-radius: 8px;
   box-shadow: 0px 0px 15px rgba(78, 100, 142, 0.15);
+}
+
+.split-content__right-content {
+  flex-direction: column;
+
+  &__image {
+    margin-top: 20px;
+
+    .contentCard__image {
+      width: 300px;
+    }
+  }
 }

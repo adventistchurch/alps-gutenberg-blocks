@@ -1,4 +1,5 @@
 import { Component } from "@wordpress/element";
+import cls from "classnames";
 
 export class SplitContentSaveComponent extends Component {
 	render() {
@@ -22,6 +23,7 @@ export class SplitContentSaveComponent extends Component {
 							</div>
 
 							<div className="c-split-highlight-content--right u-background-color--gray--light u-padding u-spacing text">
+								<img class="split-content__image" src={attributes.imageURL} />
 								<p>{attributes.bodyRight}</p>
 								<a
 									href={attributes.buttonUrl}

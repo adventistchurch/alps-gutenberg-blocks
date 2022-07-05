@@ -1,5 +1,5 @@
 /**
- * BLOCK: Split Content
+ * BLOCK: Split Content Block
  */
 
 /**
@@ -8,6 +8,9 @@
 import { __ } from "@wordpress/i18n";
 import { registerBlockType } from "@wordpress/blocks";
 
+/**
+ * Internal dependencies
+ */
 import "./style.scss";
 import "./editor.scss";
 import { SplitContentEditComponent } from "./components/SplitContentEditComponent";
@@ -21,9 +24,16 @@ registerBlockType("alps-gutenberg-blocks/split-content", {
 	),
 	icon: "welcome-write-blog",
 	category: "common",
-	html: false,
-
 	attributes: {
+		imageID: {
+			type: "number",
+		},
+		imageURL: {
+			type: "string",
+			source: "attribute",
+			attribute: "src",
+			selector: "img",
+		},
 		bodyLeft: {
 			type: "array",
 			source: "children",
@@ -45,7 +55,6 @@ registerBlockType("alps-gutenberg-blocks/split-content", {
 			default: false,
 		},
 	},
-
 	edit: SplitContentEditComponent,
 	save: SplitContentSaveComponent,
 });
