@@ -97,38 +97,34 @@ export class HighlightBlocksEditComponent extends Component {
 							onChange={this.onChangeBody3}
 						/>
 					</fieldset>
-				</div>
-				<div className={"o-buttons"}>
-					<div className={"o-button--1"}>
-						<fieldset>
-							<legend>{__("Primary Button")}</legend>
-							<div style={{ width: "100%" }}>
-								<TextControl
-									type={"url"}
-									value={attributes.buttonUrl}
-									placeholder={__("https://...", "alps-gutenberg-blocks")}
-									keepPlaceholderOnFocus={true}
-									onChange={this.onChangeButtonUrl}
+					<fieldset>
+						<legend>{__("Primary Button")}</legend>
+						<div style={{ width: "100%" }}>
+							<TextControl
+								type={"url"}
+								value={attributes.buttonUrl}
+								placeholder={__("https://...", "alps-gutenberg-blocks")}
+								keepPlaceholderOnFocus={true}
+								onChange={this.onChangeButtonUrl}
+							/>
+							<TextControl
+								value={attributes.buttonText}
+								placeholder={__("Button Label", "alps-gutenberg-blocks")}
+								keepPlaceholderOnFocus={true}
+								onChange={this.onChangeButtonText}
+							/>
+							<div className={"contentCard__checkbox"}>
+								<CheckboxControl
+									label={__(
+										"Open link in a new window",
+										"alps-gutenberg-blocks"
+									)}
+									checked={attributes.buttonNewWindow}
+									onChange={this.onChangeButtonNewWindow}
 								/>
-								<TextControl
-									value={attributes.buttonText}
-									placeholder={__("Button Label", "alps-gutenberg-blocks")}
-									keepPlaceholderOnFocus={true}
-									onChange={this.onChangeButtonText}
-								/>
-								<div className={"contentCard__checkbox"}>
-									<CheckboxControl
-										label={__(
-											"Open link in a new window",
-											"alps-gutenberg-blocks"
-										)}
-										checked={attributes.buttonNewWindow}
-										onChange={this.onChangeButtonNewWindow}
-									/>
-								</div>
 							</div>
-						</fieldset>
-					</div>
+						</div>
+					</fieldset>
 				</div>
 			</div>,
 		];

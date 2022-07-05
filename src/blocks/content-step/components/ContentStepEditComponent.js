@@ -165,17 +165,17 @@ export class ContentStepEditComponent extends Component {
 						/>
 					</fieldset>
 					<fieldset className="content-step__steps">
-						<legend>{__("Content Step Blocks")}</legend>
+						<legend>{__("Blocks")}</legend>
 						<div className="content-step__step">
 							<TextControl
 								value={attributes.stepKicker}
-								placeholder={__("Kicker - Optional", "alps-gutenberg-blocks")}
+								placeholder={__("Kicker 1 (Optional)", "alps-gutenberg-blocks")}
 								keepPlaceholderOnFocus={true}
 								onChange={this.onChangeStepKicker}
 							/>
 							<TextControl
 								value={attributes.stepText}
-								placeholder={__("Text - Optional", "alps-gutenberg-blocks")}
+								placeholder={__("Text 1 (Optional)", "alps-gutenberg-blocks")}
 								keepPlaceholderOnFocus={true}
 								onChange={this.onChangeStepText}
 							/>
@@ -183,13 +183,13 @@ export class ContentStepEditComponent extends Component {
 						<div className="content-step__step">
 							<TextControl
 								value={attributes.stepKicker2}
-								placeholder={__("Kicker 2 - Optional", "alps-gutenberg-blocks")}
+								placeholder={__("Kicker 2 (Optional)", "alps-gutenberg-blocks")}
 								keepPlaceholderOnFocus={true}
 								onChange={this.onChangeStepKicker2}
 							/>
 							<TextControl
 								value={attributes.stepText2}
-								placeholder={__("Text 2 - Optional", "alps-gutenberg-blocks")}
+								placeholder={__("Text 2 (Optional)", "alps-gutenberg-blocks")}
 								keepPlaceholderOnFocus={true}
 								onChange={this.onChangeStepText2}
 							/>
@@ -197,13 +197,13 @@ export class ContentStepEditComponent extends Component {
 						<div className="content-step__step">
 							<TextControl
 								value={attributes.stepKicker3}
-								placeholder={__("Kicker 3 - Optional", "alps-gutenberg-blocks")}
+								placeholder={__("Kicker 3 (Optional)", "alps-gutenberg-blocks")}
 								keepPlaceholderOnFocus={true}
 								onChange={this.onChangeStepKicker3}
 							/>
 							<TextControl
 								value={attributes.stepText3}
-								placeholder={__("Text 3 - Optional", "alps-gutenberg-blocks")}
+								placeholder={__("Text 3 (Optional)", "alps-gutenberg-blocks")}
 								keepPlaceholderOnFocus={true}
 								onChange={this.onChangeStepText3}
 							/>
