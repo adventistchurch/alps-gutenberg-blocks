@@ -74,6 +74,7 @@ export class ContentStepSaveComponent extends Component {
 						href={attributes.buttonUrl}
 						className="o-button o-button--primary"
 						target={btnTarget}
+						rel="noopener"
 					>
 						<span className="u-icon u-icon--xs u-space--half--right">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">

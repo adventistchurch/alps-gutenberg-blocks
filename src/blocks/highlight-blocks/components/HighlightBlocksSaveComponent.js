@@ -63,6 +63,7 @@ export class HighlightBlocksSaveComponent extends Component {
 						href={attributes.buttonUrl}
 						target={btnTarget}
 						className="o-button o-button--white"
+						rel="noopener"
 					>
 						<span className="u-icon u-icon--xs u-space--half--right">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
