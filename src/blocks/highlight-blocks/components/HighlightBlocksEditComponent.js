@@ -101,17 +101,17 @@ export class HighlightBlocksEditComponent extends Component {
 						<legend>{__("Primary Button")}</legend>
 						<div style={{ width: "100%" }}>
 							<TextControl
+								value={attributes.buttonText}
+								placeholder={__("Learn More", "alps-gutenberg-blocks")}
+								keepPlaceholderOnFocus={true}
+								onChange={this.onChangeButtonText}
+							/>
+							<TextControl
 								type={"url"}
 								value={attributes.buttonUrl}
 								placeholder={__("https://...", "alps-gutenberg-blocks")}
 								keepPlaceholderOnFocus={true}
 								onChange={this.onChangeButtonUrl}
-							/>
-							<TextControl
-								value={attributes.buttonText}
-								placeholder={__("Button Label", "alps-gutenberg-blocks")}
-								keepPlaceholderOnFocus={true}
-								onChange={this.onChangeButtonText}
 							/>
 							<div className={"contentCard__checkbox"}>
 								<CheckboxControl

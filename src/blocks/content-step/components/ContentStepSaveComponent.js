@@ -65,31 +65,29 @@ export class ContentStepSaveComponent extends Component {
 		}
 
 		return (
-			<article class="c-article l-grid-item l-grid-item--l--4-col l-grid-item--xl--3-col">
-				<div class="c-article__body u-spacing--double">
-					<div class="c-home-body-content u-spacing u-theme--border-color--base text">
-						<img class="content-step__image" src={attributes.imageURL} />
-						<p>{attributes.body}</p>
-						{steps}
-						<a
-							href={attributes.buttonUrl}
-							className="o-button o-button--primary"
-							target={btnTarget}
-						>
-							<span className="u-icon u-icon--xs u-space--half--right">
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
-									<title>o-arrow__short--right</title>
-									<path
-										d="M5,.09,3.62,1.5,6.12,4H.05V6H6.12L3.62,8.5,5,9.91,10,5Z"
-										fill="#9b9b9b"
-									></path>
-								</svg>
-							</span>
-							{btnText}
-						</a>
-					</div>
+			<div class="c-article__body u-spacing--double">
+				<div class="c-home-body-content u-spacing u-theme--border-color--base text">
+					<img class="content-step__image" src={attributes.imageURL} />
+					<p>{attributes.body}</p>
+					{steps}
+					<a
+						href={attributes.buttonUrl}
+						className="o-button o-button--primary"
+						target={btnTarget}
+					>
+						<span className="u-icon u-icon--xs u-space--half--right">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+								<title>o-arrow__short--right</title>
+								<path
+									d="M5,.09,3.62,1.5,6.12,4H.05V6H6.12L3.62,8.5,5,9.91,10,5Z"
+									fill="#9b9b9b"
+								></path>
+							</svg>
+						</span>
+						{btnText}
+					</a>
 				</div>
-			</article>
+			</div>
 		);
 	}
 }
