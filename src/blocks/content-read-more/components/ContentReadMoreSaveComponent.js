@@ -6,20 +6,18 @@ export class ContentReadMoreSaveComponent extends Component {
 		const { attributes } = this.props;
 
 		const styles = cls(
-			"c-block c-block__text u-theme--border-color--darker u-border--left c-block__text-expand u-spacing u-padding u-clear-fix can-be--dark-dark"
+			"c-block c-content-read-more c-block__text u-theme--border-color--darker u-border--left c-block__text-expand u-spacing u-padding u-clear-fix can-be--dark-dark"
 		);
 
 		return (
 			<div>
 				<div className={styles}>
-					<div className="c-block__content">
-						<p
-							className="o-paragraph"
-							style={{ textAlign: attributes.alignment }}
-						>
-							{attributes.body}
-						</p>
-					</div>
+					<p
+						className="o-paragraph"
+						style={{ textAlign: attributes.alignment }}
+					>
+						{attributes.body}
+					</p>
 					<button className="o-button o-button--outline js-toggle-parent">
 						<span className="u-icon u-icon--xs u-space--half--right">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10.01 10">
