@@ -8,7 +8,7 @@ export class BlockquoteSaveComponent extends Component {
         const { attributes } = this.props;
 
         const styles = cls(
-            'pullquote u-theme--border-color--darker--left u-theme--color--darker u-padding--right',
+            'pullquote u-theme--border-color--darker--left u-theme--color--base u-padding--right',
             {'o-pullquote--extended': attributes.isExtendQuote},
             {'o-pullquote--strong': attributes.isStrong},
         );
