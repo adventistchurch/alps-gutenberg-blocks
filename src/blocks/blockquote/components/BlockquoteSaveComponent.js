@@ -16,7 +16,10 @@ export class BlockquoteSaveComponent extends Component {
         return (
             <blockquote className={ styles }>
                 <p className="o-paragraph">{ attributes.body }</p>
-                <cite className="o-citation u-theme--color--base">{ attributes.citation }</cite>
+                {
+                    attributes.citation &&
+                    <cite className="o-citation u-theme--color--base">{ attributes.citation }</cite>
+                }
             </blockquote>
         );
     }
