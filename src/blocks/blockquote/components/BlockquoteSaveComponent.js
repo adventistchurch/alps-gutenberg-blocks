@@ -13,14 +13,13 @@ export class BlockquoteSaveComponent extends Component {
             {'o-pullquote--strong': attributes.isStrong},
         );
 
-        const citation = attributes.citation ?
-            <cite className="o-citation u-theme--color--base">{ attributes.citation }</cite> :
-            '';
-
         return (
             <blockquote className={ styles }>
                 <p className="o-paragraph">{ attributes.body }</p>
-                { citation }
+                {
+                    attributes.citation.length !== 0 &&
+                    <cite className="o-citation u-theme--color--base">{ attributes.citation }</cite>
+                }
             </blockquote>
         );
     }
