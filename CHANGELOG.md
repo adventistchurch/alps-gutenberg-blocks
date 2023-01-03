@@ -3,6 +3,12 @@ A record of the changes made to `ALPS Gutenberg Blocks`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.8]
+### Update
+- New Blocks used on Adventist.org Homepage (Content-read-more, Content-step, Highlights-blocks, aplit-content).
+- Update Media-block.
+- NOTE! - Changes From NAD repository.
+
 ## [2.1.7]
 ### Fixed
 - Fixed ALPS Blockquote empty citation field (remove previous logic).
