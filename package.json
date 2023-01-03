@@ -28,7 +28,7 @@
     "gettext-parser": "^4.0.4",
     "lodash": "^4.17.21",
     "react": "^17.0.1",
-    "react-native": "^0.63.4"
+    "react-native": "^0.64.1"
   },
   "devDependencies": {
     "@octokit/rest": "^18.0.6",
