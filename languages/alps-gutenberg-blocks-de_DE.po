@@ -8,14 +8,15 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-04 09:15-0400\n"
-"PO-Revision-Date: 2023-10-31 10:05+0300\n"
+"PO-Revision-Date: 2022-09-28 19:04+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: src/blocks/content-block/components/ContentBlockEditComponent.js:71
 #: src/blocks/content-show-more/components/ContentShowMoreEditComponent.js:105
@@ -24,15 +25,15 @@ msgstr ""
 #: src/blocks/media-testimonies/components/MediaTestimoniesEditComponent.js:41
 #: src/blocks/latest-posts/components/edit.js:295
 msgid "Enter your Title..."
-msgstr "Geben Sie Ihren Titel ein..."
+msgstr "Titel eintragen"
 
 #: src/blocks/content-block/block.js:17
 msgid "ALPS Content Block"
-msgstr "ALPS-Inhaltsblock"
+msgstr "ALPS Inhaltsblock"
 
 #: src/blocks/content-block/block.js:18
 msgid "Content block that highlights a row to text."
-msgstr "Inhaltsblock, der eine Zeile mit Text hervorhebt."
+msgstr ""
 
 #: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:65
 #: src/blocks/content-show-more/components/ContentShowMoreEditComponent.js:66
@@ -44,11 +45,11 @@ msgstr "Bild hochladen"
 
 #: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:92
 msgid "Enter your Quote..."
-msgstr "Ihr Angebot eingeben…"
+msgstr "Füge dein Zitat ein…"
 
 #: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:99
 msgid "Read More Link"
-msgstr "Mehr lesen Link"
+msgstr "Mehr erfahren Link"
 
 #: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:111
 msgid "Video"
@@ -56,31 +57,33 @@ msgstr "Video"
 
 #: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:115
 msgid "Enter your Video title..."
-msgstr "Geben Sie den Titel Ihres Videos ein…"
+msgstr "Videotitel eingeben"
 
 #: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:134
 msgid "Image"
 msgstr "Bild"
 
 #: src/blocks/media-testimony/block.js:14
+#, fuzzy
 msgid "ALPS Media Testimony Block"
-msgstr "ALPS Media Zeugenaussage-Block"
+msgstr "ALPS Media Testimony Block"
 
 #: src/blocks/media-testimony/block.js:15
+#, fuzzy
 msgid "Single media testimony."
-msgstr "Einzelnes Medienzeugnis"
+msgstr "Single media testimony."
 
 #: src/blocks/content-show-more/components/ContentShowMoreEditComponent.js:126
 msgid "Enter your Body Text... (Displays on click for Show More button)"
-msgstr "Geben Sie Ihren Nachrichtentext ein… (Wird angezeigt, wenn Sie auf die Schaltfläche Mehr anzeigen klicken)"
+msgstr "Den Haupttext eintragen… (Wird beim Klick auf ‚Mehr anzeigen‘-Button angezeigt)"
 
 #: src/blocks/content-show-more/block.js:17
 msgid "ALPS Content Show More"
-msgstr "ALPS Inhalt Mehr anzeigen"
+msgstr "ALPS Inhalt ‚mehr anzeigen‘-option"
 
 #: src/blocks/content-show-more/block.js:19
 msgid "Content block that has a toggle button to show more."
-msgstr "Inhaltsblock mit einer Umschalttaste, um mehr zu zeigen."
+msgstr "Inhaltsblock, der ein Umschaltknopf mit ‚Mehr anzeigen‘ hat"
 
 #: src/blocks/media-block/components/image-editor.js:40
 #: src/blocks/cta/components/CTAEditComponent.js:127
@@ -88,15 +91,15 @@ msgstr "Inhaltsblock mit einer Umschalttaste, um mehr zu zeigen."
 #: src/blocks/image-2up/editor-image.js:133
 #: src/blocks/image-breakout/components/ImageBreakoutEditComponent.js:57
 msgid "Remove Image"
-msgstr "Bild entfernen"
+msgstr "Bild löschen"
 
 #: src/blocks/media-block/block.js:20
 msgid "ALPS Media Block"
-msgstr "ALPS Medienblock"
+msgstr "ALPS Media Block"
 
 #: src/blocks/media-block/block.js:21
 msgid "Flexible media content."
-msgstr "Flexible Medieninhalte."
+msgstr "Flexibler Medieninhalt."
 
 #: src/blocks/content-expand/components/ContentExpandEditComponent.js:53
 msgid "Kicker"
@@ -104,27 +107,27 @@ msgstr "Kicker"
 
 #: src/blocks/content-expand/components/ContentExpandEditComponent.js:74
 msgid "Body"
-msgstr "Körper"
+msgstr "Body"
 
 #: src/blocks/content-expand/block.js:13
 msgid "ALPS Content Expand"
-msgstr "ALPS Inhalt Erweitern"
+msgstr "ALPS Inhalt erweiterbar"
 
 #: src/blocks/content-expand/block.js:15
 msgid "Content block that expands the content on click."
-msgstr "Inhaltsblock, der den Inhalt beim Anklicken ausklappt."
+msgstr "Inhaltsblock, der den Inhalt per Klick erweitert"
 
 #: src/blocks/accordion/components/AccordionEditComponent.js:60
 msgid "Enter your Body Text..."
-msgstr "Geben Sie Ihren Body Text ein…"
+msgstr "Gib deinen Haupttext ein….."
 
 #: src/blocks/accordion/block.js:20
 msgid "ALPS Accordion"
-msgstr "ALPS Akkordeon"
+msgstr "ALPS Accordion"
 
 #: src/blocks/accordion/block.js:22
 msgid "Add heading and basic text."
-msgstr "Überschrift und Grundtext hinzufügen."
+msgstr "Füge Überschrift und grundlegenden Text hinzu."
 
 #: src/blocks/cta/components/CTAEditComponent.js:145
 msgid "Dark Background"
@@ -132,7 +135,7 @@ msgstr "Dunkler Hintergrund"
 
 #: src/blocks/cta/components/CTAEditComponent.js:146
 msgid "Makes the CTA background dark."
-msgstr "Macht den CTA-Hintergrund dunkel."
+msgstr "Macht den CTA Hintergrund dunkel."
 
 #: src/blocks/cta/components/CTAEditComponent.js:202
 #: src/blocks/cta/components/CTAEditComponent.js:229
@@ -143,7 +146,7 @@ msgstr "https://…"
 #: src/blocks/cta/components/CTAEditComponent.js:214
 #: src/blocks/cta/components/CTAEditComponent.js:241
 msgid "Open link in a new window"
-msgstr "Link in einem neuen Fenster öffnen"
+msgstr "Öffnet Link in neuem Fenster"
 
 #: src/blocks/cta/block.js:18
 msgid "ALPS CTA"
@@ -155,7 +158,7 @@ msgstr "Galerie bearbeiten"
 
 #: src/blocks/gallery/components/GalleryEditComponent.js:183
 msgid "Enter your Gallery Title..."
-msgstr "Geben Sie den Titel Ihrer Galerie ein…"
+msgstr "Füge den Galerietitel ein"
 
 #: src/blocks/gallery/components/GallerySaveComponent.js:17
 msgid "Gallery"
@@ -163,120 +166,123 @@ msgstr "Galerie"
 
 #: src/blocks/gallery/block.js:16
 msgid "ALPS Gallery"
-msgstr "ALPS-Galerie"
+msgstr "ALPS Galerie"
 
 #: src/blocks/gallery/block.js:17
 msgid "Display a gallery images in a container that expands on click."
-msgstr "Zeigen Sie eine Bildergalerie in einem Container an, der sich beim Anklicken erweitert."
+msgstr "Zeige ein Galeriebild in einem Container an, der auf Klick erweiterbar ist "
 
 #: src/blocks/gallery/editor-image.js:142
 #: src/blocks/image-2up/editor-image.js:141
 msgid "Write caption…"
-msgstr "Beschriftung schreiben…"
+msgstr "Schreibe die Überschrift…"
 
 #: src/blocks/highlighted-paragraph/components/HighlightedParagraphEditComponent.js:46
 msgid "Enter your Content..."
-msgstr "Geben Sie Ihren Inhalt ein…"
+msgstr "Schreibe den Inhalt…"
 
 #: src/blocks/highlighted-paragraph/block.js:18
 msgid "ALPS Highlighted Paragraph"
-msgstr "ALPS Hervorgehobener Absatz"
+msgstr "ALPS hervorgehobener Absatz "
 
 #: src/blocks/highlighted-paragraph/block.js:20
 msgid "Highlight a block of text."
-msgstr "Markieren Sie einen Textblock."
+msgstr "Hebe ein Textblock hervor"
 
 #: src/blocks/blockquote/components/BlockquoteEditComponent.js:42
 msgid "Extend Quote"
-msgstr "Angebot verlängern"
+msgstr "Erweitere das Zitat"
 
 #: src/blocks/blockquote/components/BlockquoteEditComponent.js:43
 msgid "Extends the quote outside the page content."
-msgstr "Erweitert das Zitat außerhalb des Seiteninhalts."
+msgstr "Erweitere das Zitat außerhalb des Seiteninhalts."
 
 #: src/blocks/blockquote/components/BlockquoteEditComponent.js:67
 msgid "Write a quote..."
-msgstr "Schreiben Sie ein Zitat…"
+msgstr "Schreibe ein Zitat"
 
 #: src/blocks/blockquote/block.js:17
 msgid "ALPS Blockquote"
-msgstr "ALPS Blockquote"
+msgstr "ALPS Zitatblock"
 
 #: src/blocks/media-testimonies/components/MediaTestimoniesEditComponent.js:49
+#, fuzzy
 msgid "See All Link Url"
-msgstr "Alle Link Url anzeigen"
+msgstr "Vollständige Link-URL sehen "
 
 #: src/blocks/media-testimonies/block.js:15
 msgid "ALPS Media Testimonies"
-msgstr "ALPS Medienzeugnisse"
+msgstr "ALPS Media Testimonies"
 
 #: src/blocks/media-testimonies/block.js:16
+#, fuzzy
 msgid "Display your media testimonies."
-msgstr "Zeigen Sie Ihre Medienzeugnisse an."
+msgstr "Zeige deine Media Testimonies an."
 
 #: src/blocks/image-2up/components/Image2UpEditComponent.js:150
 msgid "Edit Images"
-msgstr "Bilder bearbeiten"
+msgstr "Bild bearbeiten"
 
 #: src/blocks/image-2up/components/Image2UpEditComponent.js:179
 msgid "images"
 msgstr "Bilder"
 
 #: src/blocks/image-2up/block.js:18
+#, fuzzy
 msgid "ALPS Image (2up)"
 msgstr "ALPS Bild (2up)"
 
 #: src/blocks/image-2up/block.js:19
 msgid "Two images organized in a two column layout."
-msgstr "Zwei Bilder, die in einem zweispaltigen Layout angeordnet sind."
+msgstr "Zwei Bilder auf 2 Spalten-Layout verteilt"
 
 #: src/blocks/image-breakout/components/ImageBreakoutEditComponent.js:96
 msgid "Enter your Caption..."
-msgstr "Geben Sie Ihre Bildunterschrift ein…"
+msgstr "Gib die Beschriftung ein… "
 
 #: src/blocks/image-breakout/block.js:17
 msgid "ALPS Image (Breakout)"
-msgstr "ALPS Image (Breakout)"
+msgstr "ALPS Bild (Breakout)"
 
 #: src/blocks/image-breakout/block.js:19
 msgid "Image that expands the width of the page."
-msgstr "Bild, das die Breite der Seite vergrößert."
+msgstr "Bild was sich über die gesamte Homepageweite zieht."
 
 #: src/blocks/latest-posts/components/edit.js:184
 msgid "Latest Posts Settings"
-msgstr "Letzte Beiträge Einstellungen"
+msgstr "Letzten Beiträge Einstellung"
 
 #: src/blocks/latest-posts/components/edit.js:196
 msgid "Tags"
-msgstr "Tags"
+msgstr "Schlagwörter"
 
 #: src/blocks/latest-posts/components/edit.js:202
 msgid "Hide excerpt"
-msgstr "Ausschnitt ausblenden"
+msgstr "Textauszug verbergen"
 
 #: src/blocks/latest-posts/components/edit.js:207
 msgid "Hide post date"
-msgstr "Beitragsdatum ausblenden"
+msgstr "Veröffentlichungsdatum verbergen"
 
 #: src/blocks/latest-posts/components/edit.js:212
 msgid "Hide category name"
-msgstr "Kategorienamen ausblenden"
+msgstr "Kategorie verbergen"
 
 #: src/blocks/latest-posts/components/edit.js:217
 msgid "Hide button"
-msgstr "Schaltfläche “Ausblenden"
+msgstr "Schaltfläche verbergen"
 
 #: src/blocks/latest-posts/components/edit.js:222
 msgid "Hide image"
-msgstr "Bild ausblenden"
+msgstr "Bild verbergen"
 
 #: src/blocks/latest-posts/components/edit.js:227
 msgid "Align the image right"
-msgstr "Das Bild rechts ausrichten"
+msgstr "Bild rechts anordnen"
 
 #: src/blocks/latest-posts/components/edit.js:242
 msgid "Latest Posts"
-msgstr "Neueste Beiträge"
+msgstr "Letzten Beiträge"
 
 #: src/blocks/latest-posts/components/edit.js:246
 msgid "No posts found."
@@ -288,11 +294,11 @@ msgstr "Listenansicht"
 
 #: src/blocks/latest-posts/components/edit.js:267
 msgid "Grid View"
-msgstr "Rasteransicht"
+msgstr "Gitteransicht"
 
 #: src/blocks/latest-posts/components/edit.js:306
 msgid "Enter your link label..."
-msgstr "Geben Sie Ihr Link-Label ein…"
+msgstr "Linkbezeichnung eingeben…"
 
 #: src/blocks/latest-posts/components/edit.js:343
 msgid "Post excerpt is visible"
@@ -304,16 +310,16 @@ msgstr "Kategoriename ist sichtbar"
 
 #: src/blocks/latest-posts/components/edit.js:360
 msgid "Read More"
-msgstr "Mehr lesen"
+msgstr "Mehr erfahren"
 
 #: src/blocks/latest-posts/block.js:18
 msgid "ALPS Latest Posts"
-msgstr "ALPS Neueste Beiträge"
+msgstr "ALPS Letzte Beiträge"
 
 #: src/blocks/latest-posts/block.js:19
 msgid "Display a list of your most recent posts."
-msgstr "Zeigen Sie eine Liste Ihrer letzten Beiträge an."
+msgstr "Zeige eine Liste deiner neusten Beiträge an."
 
 #: src/blocks/latest-posts/block.js:22
 msgid "latest posts"
-msgstr "letzte Einträge"
+msgstr "Neueste Beiträge"
