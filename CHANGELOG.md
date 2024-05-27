@@ -3,6 +3,37 @@ A record of the changes made to `ALPS Gutenberg Blocks`.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.10]
+### Fixed
+- Fix plugin build process.
+
+## [2.1.9]
+### Update
+- German language support for Gutenberg Blocks [#549](https://github.com/adventistchurch/alps-gutenberg-blocks/pull/108);
+- Add permission_callback for register_rest_route[#109](https://github.com/adventistchurch/alps-gutenberg-blocks/pull/109).
+
+## [2.1.8]
+### Update
+- New Blocks used on Adventist.org Homepage (Content-read-more, Content-step, Highlights-blocks, aplit-content).
+- Update Media-block.
+- NOTE! - Changes From NAD repository.
+
+## [2.1.7]
+### Fixed
+- Fixed ALPS Blockquote empty citation field (remove previous logic).
+- [#87](https://app.zenhub.com/workspaces/alps---core-and-wp-583365a5f9e6361b5cc5f5f6/issues/gh/adventistchurch/alps-gutenberg-blocks/87)
+
+## [2.1.6]
+### Fixed
+- Fixed ALPS Blockquote empty citation field (add new rule).
+- [#87](https://app.zenhub.com/workspaces/alps---core-and-wp-583365a5f9e6361b5cc5f5f6/issues/gh/adventistchurch/alps-gutenberg-blocks/87)
+
+## [2.1.5]
+### Fixed
+- Fixed ALPS Blockquote color for blockquote.
+- Fixed ALPS Blockquote empty citation field.
+- [#87](https://app.zenhub.com/workspaces/alps---core-and-wp-583365a5f9e6361b5cc5f5f6/issues/gh/adventistchurch/alps-gutenberg-blocks/87)
+
 ## [2.1.4]
 ### Fixed
 - Fixed ALPS Content Show More block Upload Issue. Check media.
