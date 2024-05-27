@@ -22,7 +22,7 @@ export class ImageBreakoutEditComponent extends Component {
 
     onSelect(media) {
         this.props.setAttributes({
-            url: media.sizes.large.url,
+            url: media.sizes.large === undefined ? media.url : media.sizes.large.url,
             id: media.id
         });
     }

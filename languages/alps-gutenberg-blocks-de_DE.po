@@ -1,0 +1,325 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-04 09:15-0400\n"
+"PO-Revision-Date: 2022-09-28 19:04+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#: src/blocks/content-block/components/ContentBlockEditComponent.js:71
+#: src/blocks/content-show-more/components/ContentShowMoreEditComponent.js:105
+#: src/blocks/accordion/components/AccordionEditComponent.js:50
+#: src/blocks/cta/components/CTAEditComponent.js:176
+#: src/blocks/media-testimonies/components/MediaTestimoniesEditComponent.js:41
+#: src/blocks/latest-posts/components/edit.js:295
+msgid "Enter your Title..."
+msgstr "Titel eintragen"
+
+#: src/blocks/content-block/block.js:17
+msgid "ALPS Content Block"
+msgstr "ALPS Inhaltsblock"
+
+#: src/blocks/content-block/block.js:18
+msgid "Content block that highlights a row to text."
+msgstr ""
+
+#: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:65
+#: src/blocks/content-show-more/components/ContentShowMoreEditComponent.js:66
+#: src/blocks/media-block/components/MediaBlockEditComponent.js:98
+#: src/blocks/cta/components/CTAEditComponent.js:119
+#: src/blocks/image-breakout/components/ImageBreakoutEditComponent.js:49
+msgid "Upload Image"
+msgstr "Bild hochladen"
+
+#: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:92
+msgid "Enter your Quote..."
+msgstr "Füge dein Zitat ein…"
+
+#: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:99
+msgid "Read More Link"
+msgstr "Mehr erfahren Link"
+
+#: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:111
+msgid "Video"
+msgstr "Video"
+
+#: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:115
+msgid "Enter your Video title..."
+msgstr "Videotitel eingeben"
+
+#: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:134
+msgid "Image"
+msgstr "Bild"
+
+#: src/blocks/media-testimony/block.js:14
+#, fuzzy
+msgid "ALPS Media Testimony Block"
+msgstr "ALPS Media Testimony Block"
+
+#: src/blocks/media-testimony/block.js:15
+#, fuzzy
+msgid "Single media testimony."
+msgstr "Single media testimony."
+
+#: src/blocks/content-show-more/components/ContentShowMoreEditComponent.js:126
+msgid "Enter your Body Text... (Displays on click for Show More button)"
+msgstr "Den Haupttext eintragen… (Wird beim Klick auf ‚Mehr anzeigen‘-Button angezeigt)"
+
+#: src/blocks/content-show-more/block.js:17
+msgid "ALPS Content Show More"
+msgstr "ALPS Inhalt ‚mehr anzeigen‘-option"
+
+#: src/blocks/content-show-more/block.js:19
+msgid "Content block that has a toggle button to show more."
+msgstr "Inhaltsblock, der ein Umschaltknopf mit ‚Mehr anzeigen‘ hat"
+
+#: src/blocks/media-block/components/image-editor.js:40
+#: src/blocks/cta/components/CTAEditComponent.js:127
+#: src/blocks/gallery/editor-image.js:134
+#: src/blocks/image-2up/editor-image.js:133
+#: src/blocks/image-breakout/components/ImageBreakoutEditComponent.js:57
+msgid "Remove Image"
+msgstr "Bild löschen"
+
+#: src/blocks/media-block/block.js:20
+msgid "ALPS Media Block"
+msgstr "ALPS Media Block"
+
+#: src/blocks/media-block/block.js:21
+msgid "Flexible media content."
+msgstr "Flexibler Medieninhalt."
+
+#: src/blocks/content-expand/components/ContentExpandEditComponent.js:53
+msgid "Kicker"
+msgstr "Kicker"
+
+#: src/blocks/content-expand/components/ContentExpandEditComponent.js:74
+msgid "Body"
+msgstr "Body"
+
+#: src/blocks/content-expand/block.js:13
+msgid "ALPS Content Expand"
+msgstr "ALPS Inhalt erweiterbar"
+
+#: src/blocks/content-expand/block.js:15
+msgid "Content block that expands the content on click."
+msgstr "Inhaltsblock, der den Inhalt per Klick erweitert"
+
+#: src/blocks/accordion/components/AccordionEditComponent.js:60
+msgid "Enter your Body Text..."
+msgstr "Gib deinen Haupttext ein….."
+
+#: src/blocks/accordion/block.js:20
+msgid "ALPS Accordion"
+msgstr "ALPS Accordion"
+
+#: src/blocks/accordion/block.js:22
+msgid "Add heading and basic text."
+msgstr "Füge Überschrift und grundlegenden Text hinzu."
+
+#: src/blocks/cta/components/CTAEditComponent.js:145
+msgid "Dark Background"
+msgstr "Dunkler Hintergrund"
+
+#: src/blocks/cta/components/CTAEditComponent.js:146
+msgid "Makes the CTA background dark."
+msgstr "Macht den CTA Hintergrund dunkel."
+
+#: src/blocks/cta/components/CTAEditComponent.js:202
+#: src/blocks/cta/components/CTAEditComponent.js:229
+#: src/blocks/latest-posts/components/edit.js:317
+msgid "https://..."
+msgstr "https://…"
+
+#: src/blocks/cta/components/CTAEditComponent.js:214
+#: src/blocks/cta/components/CTAEditComponent.js:241
+msgid "Open link in a new window"
+msgstr "Öffnet Link in neuem Fenster"
+
+#: src/blocks/cta/block.js:18
+msgid "ALPS CTA"
+msgstr "ALPS CTA"
+
+#: src/blocks/gallery/components/GalleryEditComponent.js:134
+msgid "Edit Gallery"
+msgstr "Galerie bearbeiten"
+
+#: src/blocks/gallery/components/GalleryEditComponent.js:183
+msgid "Enter your Gallery Title..."
+msgstr "Füge den Galerietitel ein"
+
+#: src/blocks/gallery/components/GallerySaveComponent.js:17
+msgid "Gallery"
+msgstr "Galerie"
+
+#: src/blocks/gallery/block.js:16
+msgid "ALPS Gallery"
+msgstr "ALPS Galerie"
+
+#: src/blocks/gallery/block.js:17
+msgid "Display a gallery images in a container that expands on click."
+msgstr "Zeige ein Galeriebild in einem Container an, der auf Klick erweiterbar ist "
+
+#: src/blocks/gallery/editor-image.js:142
+#: src/blocks/image-2up/editor-image.js:141
+msgid "Write caption…"
+msgstr "Schreibe die Überschrift…"
+
+#: src/blocks/highlighted-paragraph/components/HighlightedParagraphEditComponent.js:46
+msgid "Enter your Content..."
+msgstr "Schreibe den Inhalt…"
+
+#: src/blocks/highlighted-paragraph/block.js:18
+msgid "ALPS Highlighted Paragraph"
+msgstr "ALPS hervorgehobener Absatz "
+
+#: src/blocks/highlighted-paragraph/block.js:20
+msgid "Highlight a block of text."
+msgstr "Hebe ein Textblock hervor"
+
+#: src/blocks/blockquote/components/BlockquoteEditComponent.js:42
+msgid "Extend Quote"
+msgstr "Erweitere das Zitat"
+
+#: src/blocks/blockquote/components/BlockquoteEditComponent.js:43
+msgid "Extends the quote outside the page content."
+msgstr "Erweitere das Zitat außerhalb des Seiteninhalts."
+
+#: src/blocks/blockquote/components/BlockquoteEditComponent.js:67
+msgid "Write a quote..."
+msgstr "Schreibe ein Zitat"
+
+#: src/blocks/blockquote/block.js:17
+msgid "ALPS Blockquote"
+msgstr "ALPS Zitatblock"
+
+#: src/blocks/media-testimonies/components/MediaTestimoniesEditComponent.js:49
+#, fuzzy
+msgid "See All Link Url"
+msgstr "Vollständige Link-URL sehen "
+
+#: src/blocks/media-testimonies/block.js:15
+msgid "ALPS Media Testimonies"
+msgstr "ALPS Media Testimonies"
+
+#: src/blocks/media-testimonies/block.js:16
+#, fuzzy
+msgid "Display your media testimonies."
+msgstr "Zeige deine Media Testimonies an."
+
+#: src/blocks/image-2up/components/Image2UpEditComponent.js:150
+msgid "Edit Images"
+msgstr "Bild bearbeiten"
+
+#: src/blocks/image-2up/components/Image2UpEditComponent.js:179
+msgid "images"
+msgstr "Bilder"
+
+#: src/blocks/image-2up/block.js:18
+#, fuzzy
+msgid "ALPS Image (2up)"
+msgstr "ALPS Bild (2up)"
+
+#: src/blocks/image-2up/block.js:19
+msgid "Two images organized in a two column layout."
+msgstr "Zwei Bilder auf 2 Spalten-Layout verteilt"
+
+#: src/blocks/image-breakout/components/ImageBreakoutEditComponent.js:96
+msgid "Enter your Caption..."
+msgstr "Gib die Beschriftung ein… "
+
+#: src/blocks/image-breakout/block.js:17
+msgid "ALPS Image (Breakout)"
+msgstr "ALPS Bild (Breakout)"
+
+#: src/blocks/image-breakout/block.js:19
+msgid "Image that expands the width of the page."
+msgstr "Bild was sich über die gesamte Homepageweite zieht."
+
+#: src/blocks/latest-posts/components/edit.js:184
+msgid "Latest Posts Settings"
+msgstr "Letzten Beiträge Einstellung"
+
+#: src/blocks/latest-posts/components/edit.js:196
+msgid "Tags"
+msgstr "Schlagwörter"
+
+#: src/blocks/latest-posts/components/edit.js:202
+msgid "Hide excerpt"
+msgstr "Textauszug verbergen"
+
+#: src/blocks/latest-posts/components/edit.js:207
+msgid "Hide post date"
+msgstr "Veröffentlichungsdatum verbergen"
+
+#: src/blocks/latest-posts/components/edit.js:212
+msgid "Hide category name"
+msgstr "Kategorie verbergen"
+
+#: src/blocks/latest-posts/components/edit.js:217
+msgid "Hide button"
+msgstr "Schaltfläche verbergen"
+
+#: src/blocks/latest-posts/components/edit.js:222
+msgid "Hide image"
+msgstr "Bild verbergen"
+
+#: src/blocks/latest-posts/components/edit.js:227
+msgid "Align the image right"
+msgstr "Bild rechts anordnen"
+
+#: src/blocks/latest-posts/components/edit.js:242
+msgid "Latest Posts"
+msgstr "Letzten Beiträge"
+
+#: src/blocks/latest-posts/components/edit.js:246
+msgid "No posts found."
+msgstr "Keine Beiträge gefunden."
+
+#: src/blocks/latest-posts/components/edit.js:261
+msgid "List View"
+msgstr "Listenansicht"
+
+#: src/blocks/latest-posts/components/edit.js:267
+msgid "Grid View"
+msgstr "Gitteransicht"
+
+#: src/blocks/latest-posts/components/edit.js:306
+msgid "Enter your link label..."
+msgstr "Linkbezeichnung eingeben…"
+
+#: src/blocks/latest-posts/components/edit.js:343
+msgid "Post excerpt is visible"
+msgstr "Beitragsauszug ist sichtbar"
+
+#: src/blocks/latest-posts/components/edit.js:354
+msgid "Category name is visible"
+msgstr "Kategoriename ist sichtbar"
+
+#: src/blocks/latest-posts/components/edit.js:360
+msgid "Read More"
+msgstr "Mehr erfahren"
+
+#: src/blocks/latest-posts/block.js:18
+msgid "ALPS Latest Posts"
+msgstr "ALPS Letzte Beiträge"
+
+#: src/blocks/latest-posts/block.js:19
+msgid "Display a list of your most recent posts."
+msgstr "Zeige eine Liste deiner neusten Beiträge an."
+
+#: src/blocks/latest-posts/block.js:22
+msgid "latest posts"
+msgstr "Neueste Beiträge"

@@ -1,0 +1,21 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+
+.wp-block-alps-gutenberg-blocks-highlight-blocks {
+  width: calc(100vw/7 * 6 - 0.01px);
+  position: relative;
+
+
+  @media (min-width: 700px) {
+    margin-left: calc((-100vw/7) * 1);
+    margin-right: calc((100vw/7) * 1);
+  }
+  
+  .c-highlight-blocks {
+    top: 0;
+    margin: 0;
+  }
+}

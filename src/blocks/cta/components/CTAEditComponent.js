@@ -73,8 +73,9 @@ export class CTAEditComponent extends Component {
 
     // Media Section
     onSelectImage(media) {
+        console.log("TTTL: " + JSON.stringify(media));
         this.props.setAttributes({
-            imageUrl: media.sizes.large.url,
+            imageUrl: media.sizes.large === undefined ? media.url : media.sizes.large.url,
             imageId: media.id,
             blockClass: ' has-image'
         });

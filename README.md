@@ -1,4 +1,4 @@
-## ALPS Gutenbreg Plugin
+## ALPS Gutenberg Plugin
 
 This plugin is created to support the [ALPS for Wordpress](https://github.com/adventistchurch/alps-wordpress),
 to provide Gutenberg Blocks with ALPS markup.

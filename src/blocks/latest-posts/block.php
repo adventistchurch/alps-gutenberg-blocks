@@ -90,6 +90,7 @@ class LatestPostsBlock
         register_rest_route( 'alps-gutenberg-blocks', '/latest-posts/tags', [
             'methods' => 'GET',
             'callback' => [$this, 'listTags'],
+            'permission_callback' => '__return_true',
         ]);
     }
 
