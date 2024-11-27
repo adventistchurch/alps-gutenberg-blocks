@@ -82,6 +82,10 @@ registerBlockType('alps-gutenberg-blocks/latest-posts', {
             type: 'string',
             default: '',
         },
+        readMoreLabel: {
+            type: 'string',
+            default: ''
+        }
     },
 
     edit,

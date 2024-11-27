@@ -7,6 +7,11 @@ export class ContentExpandEditComponent extends Component {
     constructor() {
         super(...arguments);
 
+        this.props.setAttributes({
+            showMoreButton: __('Show More', 'alps-gutenberg-blocks'),
+            showLessButton: __('Show Less', 'alps-gutenberg-blocks')
+        })
+
         this.onChangeKicker = this.onChangeKicker.bind(this);
         this.onChangeTitle = this.onChangeTitle.bind(this);
         this.onChangeBody = this.onChangeBody.bind(this);

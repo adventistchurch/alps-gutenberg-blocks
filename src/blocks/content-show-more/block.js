@@ -48,6 +48,14 @@ registerBlockType( 'alps-gutenberg-blocks/content-show-more', {
     alignment: {
       type: 'string',
     },
+    showMoreButton: {
+      type: 'string',
+      selector: 'o-button-show-more'
+    },
+    showLessButton: {
+      type: 'string',
+      selector: 'o-button-less-more'
+    },
   },
 
   edit: ContentShowMoreEditComponent,

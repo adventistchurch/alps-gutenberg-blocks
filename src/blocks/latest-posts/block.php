@@ -77,6 +77,10 @@ class LatestPostsBlock
                         'type' => 'string',
                         'default' => '',
                     ],
+                    'readMoreLabel' => [
+                        'type' => 'string',
+                        'default' => '',
+                    ],
                 ],
                 'render_callback' => [$this, 'render'],
             ]
@@ -370,8 +374,9 @@ HTML;
 
             if ($attributes['hideButton'] != true) {
                 $list_items_markup .= sprintf(
-                    '<a href="%1$s" class="c-block__button o-button o-button--outline">Read More<span class="u-icon u-icon--m u-path-fill--base u-space--half--left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>o-arrow__long--left</title><path d="M18.29,8.59l-3.5-3.5L13.38,6.5,15.88,9H.29v2H15.88l-2.5,2.5,1.41,1.41,3.5-3.5L19.71,10Z" fill="#9b9b9b"></path></svg></span></a>',
-                    esc_html($link)
+                    '<a href="%1$s" class="c-block__button o-button o-button--outline">%2$s<span class="u-icon u-icon--m u-path-fill--base u-space--half--left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>o-arrow__long--left</title><path d="M18.29,8.59l-3.5-3.5L13.38,6.5,15.88,9H.29v2H15.88l-2.5,2.5,1.41,1.41,3.5-3.5L19.71,10Z" fill="#9b9b9b"></path></svg></span></a>',
+                    esc_html($link),
+                    $attributes['readMoreLabel']
                 );
             }
 

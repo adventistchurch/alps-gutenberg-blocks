@@ -3,106 +3,200 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-11 12:29+0300\n"
-"PO-Revision-Date: 2020-09-15 20:15+0300\n"
+"POT-Creation-Date: 2024-11-14 15:32+0300\n"
+"PO-Revision-Date: 2024-11-25 18:25+0300\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
-"Last-Translator: \n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"Language: ru\n"
+"X-Generator: Poedit 3.5\n"
 
-#: src/blocks/content-block/block.js:18
-msgid "ALPS Content Block"
-msgstr "ALPS Блок контента"
+#: src/blocks/content-block/components/ContentBlockEditComponent.js:71
+#: src/blocks/content-show-more/components/ContentShowMoreEditComponent.js:110
+#: src/blocks/accordion/components/AccordionEditComponent.js:50
+#: src/blocks/cta/components/CTAEditComponent.js:177
+#: src/blocks/media-testimonies/components/MediaTestimoniesEditComponent.js:41
+#: src/blocks/latest-posts/components/edit.js:295
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:301
+msgid "Enter your Title..."
+msgstr "Введите ваш заголовок…"
 
-#: src/blocks/content-block/block.js:19
-msgid "Content block that highlights a row to text."
-msgstr "Блок контента, выделяющий строку текста."
-
-#: src/blocks/content-block/block.js:61
-#: src/blocks/content-show-more/block.js:94
-#: src/blocks/content-expand/block.js:72
-#: src/blocks/accordion/components/edit.js:40 src/blocks/cta/block.js:180
-msgid "Title"
-msgstr "Заголовок"
-
-#: src/blocks/content-block/block.js:71
+#: src/blocks/content-block/components/ContentBlockEditComponent.js:81
+#: src/blocks/split-content/components/SplitContentEditComponent.js:124
+#: src/blocks/split-content/components/SplitContentEditComponent.js:144
+#: src/blocks/content-step/components/ContentStepEditComponent.js:160
 msgid "Write a description..."
 msgstr "Напишите описание …"
 
-#: src/blocks/content-block/block.js:81
-msgid "Link Url"
-msgstr "URL ссылки"
+#: src/blocks/content-block/components/ContentBlockEditComponent.js:104
+msgid "Read More button"
+msgstr "Читать больше"
 
-#: src/blocks/media-testimony/block.js:19
-msgid "ALPS Media Testimony Block"
-msgstr "ALPS Медиа блок свидетельства"
+#: src/blocks/content-block/block.js:17
+msgid "ALPS Content Block"
+msgstr "ALPS Блок контента"
 
-#: src/blocks/media-testimony/block.js:20
-msgid "Single media testimony."
-msgstr "Одно медиа свидетельство."
+#: src/blocks/content-block/block.js:18
+msgid "Content block that highlights a row to text."
+msgstr "Блок контента, выделяющий строку текста."
 
-#: src/blocks/media-testimony/block.js:74
-msgid "Enter Quote"
-msgstr "Введите цитату"
-
-#: src/blocks/media-testimony/block.js:83
-msgid "Read More Link"
-msgstr "Ссылка “Читать далее”"
-
-#: src/blocks/media-testimony/block.js:103
-#: src/blocks/content-show-more/block.js:86 src/blocks/cta/block.js:163
-#: src/blocks/image-breakout/block.js:53
+#: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:65
+#: src/blocks/content-show-more/components/ContentShowMoreEditComponent.js:71
+#: src/blocks/split-content/components/SplitContentEditComponent.js:90
+#: src/blocks/media-block/components/MediaBlockEditComponent.js:98
+#: src/blocks/cta/components/CTAEditComponent.js:120
+#: src/blocks/image-breakout/components/ImageBreakoutEditComponent.js:49
+#: src/blocks/content-step/components/ContentStepEditComponent.js:118
 msgid "Upload Image"
 msgstr "Загрузить изображение"
 
-#: src/blocks/media-testimony/block.js:110
-msgid "Enter Video Title"
-msgstr "Введите название видео"
+#: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:92
+msgid "Enter your Quote..."
+msgstr "Введите цитату…"
 
-#: src/blocks/media-testimony/block.js:120
-msgid "Watch Video Link"
-msgstr "Ссылка на видео"
+#: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:99
+msgid "Read More Link"
+msgstr "Ссылка “Читать далее”"
 
-#: src/blocks/content-show-more/block.js:18
+#: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:111
+msgid "Video"
+msgstr "Видео"
+
+#: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:115
+msgid "Enter your Video title..."
+msgstr "Введите название видео…"
+
+#: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:134
+msgid "Image"
+msgstr "Изображение"
+
+#: src/blocks/media-testimony/block.js:14
+msgid "ALPS Media Testimony Block"
+msgstr "ALPS Медиа блок свидетельства"
+
+#: src/blocks/media-testimony/block.js:15
+msgid "Single media testimony."
+msgstr "Одно медиа свидетельство."
+
+#: src/blocks/content-show-more/components/ContentShowMoreEditComponent.js:15
+#: src/blocks/content-expand/components/ContentExpandEditComponent.js:11
+msgid "Show More"
+msgstr "Показать больше"
+
+#: src/blocks/content-show-more/components/ContentShowMoreEditComponent.js:16
+#: src/blocks/content-expand/components/ContentExpandEditComponent.js:12
+msgid "Show Less"
+msgstr "Скрыть"
+
+#: src/blocks/content-show-more/components/ContentShowMoreEditComponent.js:120
+#: src/blocks/cta/components/CTAEditComponent.js:188
+msgid "Enter your Description..."
+msgstr "Введите описание…"
+
+#: src/blocks/content-show-more/components/ContentShowMoreEditComponent.js:131
+msgid "Enter your Body Text... (Displays on click for Show More button)"
+msgstr "Введите основной текст… (Будет показан по нажатию на кнопку “Показать больше”)"
+
+#: src/blocks/content-show-more/block.js:17
 msgid "ALPS Content Show More"
 msgstr "ALPS Контент показать больше"
 
-#: src/blocks/content-show-more/block.js:20
+#: src/blocks/content-show-more/block.js:19
 msgid "Content block that has a toggle button to show more."
 msgstr "Блок контента, в котором есть кнопка переключения, чтобы показать больше."
 
-#: src/blocks/content-show-more/block.js:104 src/blocks/cta/block.js:190
-msgid "Description"
-msgstr "Описание"
+#: src/blocks/split-content/components/SplitContentEditComponent.js:156
+#: src/blocks/highlight-blocks/components/HighlightBlocksEditComponent.js:105
+#: src/blocks/content-step/components/ContentStepEditComponent.js:217
+msgid "Learn More"
+msgstr "Изучить"
 
-#: src/blocks/content-show-more/block.js:115
-msgid "Body (Display on click of show more button)"
-msgstr "Содержимое (отображается при нажатии кнопки “Показать больше”)"
+#: src/blocks/split-content/components/SplitContentEditComponent.js:163
+#: src/blocks/cta/components/CTAEditComponent.js:203
+#: src/blocks/cta/components/CTAEditComponent.js:230
+#: src/blocks/highlight-blocks/components/HighlightBlocksEditComponent.js:112
+#: src/blocks/latest-posts/components/edit.js:317
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:323
+#: src/blocks/content-step/components/ContentStepEditComponent.js:224
+msgid "https://..."
+msgstr "https://…"
 
-#: src/blocks/content-expand/block.js:17
-msgid "ALPS Content Expand"
-msgstr "ALPS Расширение контента"
+#: src/blocks/split-content/components/SplitContentEditComponent.js:170
+#: src/blocks/cta/components/CTAEditComponent.js:215
+#: src/blocks/cta/components/CTAEditComponent.js:242
+#: src/blocks/highlight-blocks/components/HighlightBlocksEditComponent.js:119
+#: src/blocks/content-step/components/ContentStepEditComponent.js:231
+msgid "Open link in a new window"
+msgstr "Открыть ссылку в новом окне"
 
-#: src/blocks/content-expand/block.js:19
-msgid "Content block that expands the content on click."
-msgstr "Блок контента, расширяющий контент при нажатии."
+#: src/blocks/split-content/components/image-editor.js:40
+#: src/blocks/media-block/components/image-editor.js:40
+#: src/blocks/cta/components/CTAEditComponent.js:128
+#: src/blocks/gallery/editor-image.js:134
+#: src/blocks/image-2up/editor-image.js:133
+#: src/blocks/image-breakout/components/ImageBreakoutEditComponent.js:57
+#: src/blocks/content-step/components/image-editor.js:40
+msgid "Remove Image"
+msgstr "Удалить изображение"
 
-#: src/blocks/content-expand/block.js:61
+#: src/blocks/split-content/block.js:20
+msgid "ALPS Split Content"
+msgstr ""
+
+#: src/blocks/split-content/block.js:22
+msgid "Split Content block where the right side has a button."
+msgstr ""
+
+#: src/blocks/media-block/block.js:20
+msgid "ALPS Media Block"
+msgstr "ALPS Медиа блок"
+
+#: src/blocks/media-block/block.js:21
+msgid "Flexible media content."
+msgstr "Гибкий медиа контент."
+
+#: src/blocks/content-read-more/components/ContentReadMoreEditComponent.js:42
+msgid "Enter your Body Text... (Displays on click for Read More button)"
+msgstr "Введите основной текст… (Будет показан по нажатию на кнопку “Показать больше”)"
+
+#: src/blocks/content-read-more/block.js:17
+msgid "ALPS Content Read More"
+msgstr "ALPS Читать далее"
+
+#: src/blocks/content-read-more/block.js:20
+msgid "Content block that has a toggle button to read more."
+msgstr "Блок контента, в котором есть кнопка переключения, чтобы показать больше."
+
+#: src/blocks/content-expand/components/ContentExpandEditComponent.js:58
 msgid "Kicker"
 msgstr "Кикер"
 
-#: src/blocks/content-expand/block.js:82
-#: src/blocks/accordion/components/edit.js:48
+#: src/blocks/content-expand/components/ContentExpandEditComponent.js:69
+msgid "Title"
+msgstr "Заголовок"
+
+#: src/blocks/content-expand/components/ContentExpandEditComponent.js:79
 msgid "Body"
 msgstr "Содержимое"
+
+#: src/blocks/content-expand/block.js:13
+msgid "ALPS Content Expand"
+msgstr "ALPS Расширение контента"
+
+#: src/blocks/content-expand/block.js:15
+msgid "Content block that expands the content on click."
+msgstr "Блок контента, расширяющий контент при нажатии."
+
+#: src/blocks/accordion/components/AccordionEditComponent.js:60
+msgid "Enter your Body Text..."
+msgstr "Введите основной текст…"
 
 #: src/blocks/accordion/block.js:20
 msgid "ALPS Accordion"
@@ -112,84 +206,48 @@ msgstr "ALPS Аккордеон"
 msgid "Add heading and basic text."
 msgstr "Добавьте заголовок и основной текст."
 
-#: src/blocks/cta/block.js:25
-msgid "ALPS CTA"
-msgstr "ALPS Призыв к действию"
-
-#: src/blocks/cta/block.js:135
+#: src/blocks/cta/components/CTAEditComponent.js:146
 msgid "Dark Background"
 msgstr "Темный Фон"
 
-#: src/blocks/cta/block.js:136
+#: src/blocks/cta/components/CTAEditComponent.js:147
 msgid "Makes the CTA background dark."
 msgstr "Делает фон призыва к действию темным."
 
-#: src/blocks/cta/block.js:141
+#: src/blocks/cta/components/CTAEditComponent.js:152
 msgid "Background Image"
 msgstr "Фоновое изображение"
 
-#: src/blocks/cta/block.js:142
+#: src/blocks/cta/components/CTAEditComponent.js:153
 msgid "Sets the image as a background image."
 msgstr "Устанавливает изображение в качестве фонового изображения."
 
-#: src/blocks/cta/block.js:169 src/blocks/gallery/editor-image.js:134
-#: src/blocks/image-2up/editor-image.js:133
-msgid "Remove Image"
-msgstr "Удалить изображение"
+#: src/blocks/cta/components/CTAEditComponent.js:209
+#: src/blocks/cta/components/CTAEditComponent.js:236
+msgid "Button Label"
+msgstr ""
 
-#: src/blocks/cta/block.js:203
-msgid "Button 1 Url"
-msgstr "URL кнопки 1"
+#: src/blocks/cta/block.js:18
+msgid "ALPS CTA"
+msgstr "ALPS Призыв к действию"
 
-#: src/blocks/cta/block.js:212
-msgid "Button 1 Text"
-msgstr "Текст кнопки 1"
-
-#: src/blocks/cta/block.js:221 src/blocks/cta/block.js:249
-msgid "Open in new window"
-msgstr "Открыть в новом окне"
-
-#: src/blocks/cta/block.js:231
-msgid "Button 2 Url"
-msgstr "URL кнопки 2"
-
-#: src/blocks/cta/block.js:240
-msgid "Button 2 Text"
-msgstr "Текст кнопки 2"
-
-#: src/blocks/gallery/edit.js:40 src/blocks/image-2up/edit.js:41
-msgid "Attachment Page"
-msgstr "Страница вложения"
-
-#: src/blocks/gallery/edit.js:41 src/blocks/image-2up/edit.js:42
-msgid "Media File"
-msgstr "Медиа-файл"
-
-#: src/blocks/gallery/edit.js:42 src/blocks/image-2up/edit.js:43
-msgid "None"
-msgstr "Нет"
-
-#: src/blocks/gallery/edit.js:149
+#: src/blocks/gallery/components/GalleryEditComponent.js:134
 msgid "Edit Gallery"
 msgstr "Редактировать галерею"
 
-#: src/blocks/gallery/edit.js:169
+#: src/blocks/gallery/components/GalleryEditComponent.js:183
+msgid "Enter your Gallery Title..."
+msgstr "Введите название галереи."
+
+#: src/blocks/gallery/components/GallerySaveComponent.js:17
 msgid "Gallery"
 msgstr "Галерея"
 
-#: src/blocks/gallery/edit.js:170 src/blocks/image-2up/edit.js:189
-msgid "images"
-msgstr "изображения"
-
-#: src/blocks/gallery/edit.js:192
-msgid "Enter a gallery title.."
-msgstr "Введите название галереи."
-
-#: src/blocks/gallery/block.js:20
+#: src/blocks/gallery/block.js:16
 msgid "ALPS Gallery"
 msgstr "ALPS Галерея"
 
-#: src/blocks/gallery/block.js:21
+#: src/blocks/gallery/block.js:17
 msgid "Display a gallery images in a container that expands on click."
 msgstr "Отображение изображений галереи в контейнере, который расширяется при нажатии."
 
@@ -198,174 +256,227 @@ msgstr "Отображение изображений галереи в конт
 msgid "Write caption…"
 msgstr "Написать подпись…"
 
-#: src/blocks/highlighted-paragraph/block.js:17
+#: src/blocks/highlighted-paragraph/components/HighlightedParagraphEditComponent.js:46
+msgid "Enter your Content..."
+msgstr "Введите содержимое…"
+
+#: src/blocks/highlighted-paragraph/block.js:18
 msgid "ALPS Highlighted Paragraph"
 msgstr "ALPS Выделенный абзац"
 
-#: src/blocks/highlighted-paragraph/block.js:19
+#: src/blocks/highlighted-paragraph/block.js:20
 msgid "Highlight a block of text."
 msgstr "Выделите блок текста."
 
-#: src/blocks/highlighted-paragraph/block.js:55
-msgid "Content goes here..."
-msgstr "Место для контента…"
+#: src/blocks/highlight-blocks/components/HighlightBlocksEditComponent.js:63
+msgid "Enter your Body Text for Highlight Block 1"
+msgstr ""
+
+#: src/blocks/highlight-blocks/components/HighlightBlocksEditComponent.js:77
+msgid "Enter your Body Text for Highlight Block 2 (Optional)"
+msgstr ""
+
+#: src/blocks/highlight-blocks/components/HighlightBlocksEditComponent.js:91
+msgid "Enter your Body Text for Highlight Block 3 (Optional)"
+msgstr ""
+
+#: src/blocks/highlight-blocks/block.js:18
+msgid "ALPS Higlight Blocks"
+msgstr "ALPS Выделенный блок"
+
+#: src/blocks/highlight-blocks/block.js:21
+msgid "Content block that is full width that can have up to 3 text blocks within it."
+msgstr ""
+
+#: src/blocks/blockquote/components/BlockquoteEditComponent.js:42
+msgid "Extend Quote"
+msgstr "Расширить цитату"
+
+#: src/blocks/blockquote/components/BlockquoteEditComponent.js:43
+msgid "Extends the quote outside the page content."
+msgstr "Расширяет цитату за пределы контента страницы."
+
+#: src/blocks/blockquote/components/BlockquoteEditComponent.js:48
+msgid "Strong Quote"
+msgstr "Строгий стиль цитаты"
+
+#: src/blocks/blockquote/components/BlockquoteEditComponent.js:49
+msgid "Set strong style for the quote content."
+msgstr "Задайте строгий стиль для цитаты."
+
+#: src/blocks/blockquote/components/BlockquoteEditComponent.js:67
+msgid "Write a quote..."
+msgstr "Напишите цитату …"
+
+#: src/blocks/blockquote/components/BlockquoteEditComponent.js:78
+msgid "Write a citation..."
+msgstr "Напишите цитирование …"
 
 #: src/blocks/blockquote/block.js:17
 msgid "ALPS Blockquote"
 msgstr "ALPS Цитата"
 
-#: src/blocks/blockquote/block.js:61
-msgid "Extend Quote"
-msgstr "Расширить цитату"
-
-#: src/blocks/blockquote/block.js:62
-msgid "Extends the quote outside the page content."
-msgstr "Расширяет цитату за пределы контента страницы."
-
-#: src/blocks/blockquote/block.js:69
-msgid "Strong Quote"
-msgstr "Строгий стиль цитаты"
-
-#: src/blocks/blockquote/block.js:70
-msgid "Set strong style for the quote content."
-msgstr "Задайте строгий стиль для цитаты."
-
-#: src/blocks/blockquote/block.js:81
-msgid "Write a quote..."
-msgstr "Напишите цитату …"
-
-#: src/blocks/blockquote/block.js:91
-msgid "Citation"
-msgstr "Цитирование"
-
-#: src/blocks/media-testimonies/block.js:19
-msgid "ALPS Media Testimonies"
-msgstr "ALPS Медиа свидетельства"
-
-#: src/blocks/media-testimonies/block.js:20
-msgid "Display your media testimonies."
-msgstr "Отобразить медиа свидетельства."
-
-#: src/blocks/media-testimonies/block.js:44
-msgid "Enter Section Title"
-msgstr "Введите заголовок раздела"
-
-#: src/blocks/media-testimonies/block.js:54
+#: src/blocks/media-testimonies/components/MediaTestimoniesEditComponent.js:49
 msgid "See All Link Url"
 msgstr "URL ссылка “Просмотреть все”"
 
-#: src/blocks/image-2up/edit.js:169
+#: src/blocks/media-testimonies/block.js:15
+msgid "ALPS Media Testimonies"
+msgstr "ALPS Медиа блок свидетельства"
+
+#: src/blocks/media-testimonies/block.js:16
+msgid "Display your media testimonies."
+msgstr "Отобразить медиа свидетельства."
+
+#: src/blocks/image-2up/components/Image2UpEditComponent.js:150
 msgid "Edit Images"
 msgstr "Редактировать изображения"
 
-#: src/blocks/image-2up/edit.js:188
-msgid "Image (2up)"
-msgstr "Изображение (2up)"
+#: src/blocks/image-2up/components/Image2UpEditComponent.js:179
+msgid "images"
+msgstr "изображения"
 
-#: src/blocks/image-2up/block.js:10
+#: src/blocks/image-2up/block.js:18
 msgid "ALPS Image (2up)"
 msgstr "ALPS Изображение (2up)"
 
-#: src/blocks/image-2up/block.js:11
+#: src/blocks/image-2up/block.js:19
 msgid "Two images organized in a two column layout."
 msgstr "Два изображения организованы в виде двух столбцов."
 
-#: src/blocks/image-breakout/block.js:18
+#: src/blocks/image-breakout/components/ImageBreakoutEditComponent.js:96
+msgid "Enter your Caption..."
+msgstr "Введите подпись…"
+
+#: src/blocks/image-breakout/block.js:17
 msgid "ALPS Image (Breakout)"
 msgstr "ALPS Изображение (прорыв)"
 
-#: src/blocks/image-breakout/block.js:20
+#: src/blocks/image-breakout/block.js:19
 msgid "Image that expands the width of the page."
-msgstr "Изображение, увеличивающее ширину страницы."
+msgstr "“Изображение, увеличивающее ширину страницы."
 
-#: src/blocks/image-breakout/block.js:60
-msgid "Caption"
-msgstr "Подпись"
-
-#: src/blocks/latest-posts/components/edit.js:150
+#: src/blocks/latest-posts/components/edit.js:184
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:190
 msgid "Latest Posts Settings"
 msgstr "Настройки последних записей"
 
-#: src/blocks/latest-posts/components/edit.js:167
-msgid "Tag"
-msgstr "Тег"
+#: src/blocks/latest-posts/components/edit.js:196
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:202
+msgid "Tags"
+msgstr "Теги"
 
-#: src/blocks/latest-posts/components/edit.js:168
-msgid "All"
-msgstr "Все"
-
-#: src/blocks/latest-posts/components/edit.js:173
+#: src/blocks/latest-posts/components/edit.js:202
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:208
 msgid "Hide excerpt"
 msgstr "Скрыть отрывок"
 
-#: src/blocks/latest-posts/components/edit.js:178
+#: src/blocks/latest-posts/components/edit.js:207
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:213
 msgid "Hide post date"
 msgstr "Скрыть дату публикации"
 
-#: src/blocks/latest-posts/components/edit.js:183
+#: src/blocks/latest-posts/components/edit.js:212
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:218
 msgid "Hide category name"
 msgstr "Скрыть название категории"
 
-#: src/blocks/latest-posts/components/edit.js:188
+#: src/blocks/latest-posts/components/edit.js:217
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:223
 msgid "Hide button"
 msgstr "Скрыть кнопку"
 
-#: src/blocks/latest-posts/components/edit.js:193
+#: src/blocks/latest-posts/components/edit.js:222
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:228
 msgid "Hide image"
 msgstr "Скрыть изображение"
 
-#: src/blocks/latest-posts/components/edit.js:198
+#: src/blocks/latest-posts/components/edit.js:227
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:233
 msgid "Align the image right"
 msgstr "Выровнять изображение по правому краю"
 
-#: src/blocks/latest-posts/components/edit.js:213
+#: src/blocks/latest-posts/components/edit.js:242
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:248
 msgid "Latest Posts"
 msgstr "Последние записи"
 
-#: src/blocks/latest-posts/components/edit.js:217
+#: src/blocks/latest-posts/components/edit.js:246
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:252
 msgid "No posts found."
 msgstr "Записи не найдены."
 
-#: src/blocks/latest-posts/components/edit.js:232
+#: src/blocks/latest-posts/components/edit.js:261
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:267
 msgid "List View"
 msgstr "Список"
 
-#: src/blocks/latest-posts/components/edit.js:238
+#: src/blocks/latest-posts/components/edit.js:267
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:273
 msgid "Grid View"
 msgstr "Сетка"
 
-#: src/blocks/latest-posts/components/edit.js:256
-msgid "Enter a block title"
-msgstr "Введите заголовок блока"
+#: src/blocks/latest-posts/components/edit.js:306
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:312
+msgid "Enter your link label..."
+msgstr "Введите метку ссылки…"
 
-#: src/blocks/latest-posts/components/edit.js:264
-msgid "Enter a link label"
-msgstr "Введите метку ссылки"
-
-#: src/blocks/latest-posts/components/edit.js:271
-msgid "Enter url here"
-msgstr "Введите URL здесь"
-
-#: src/blocks/latest-posts/components/edit.js:294
+#: src/blocks/latest-posts/components/edit.js:343
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:349
 msgid "Post excerpt is visible"
 msgstr "Отрывок записи виден"
 
-#: src/blocks/latest-posts/components/edit.js:305
+#: src/blocks/latest-posts/components/edit.js:354
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:360
 msgid "Category name is visible"
 msgstr "Название категории видно"
 
-#: src/blocks/latest-posts/components/edit.js:311
+#: src/blocks/latest-posts/components/edit.js:360
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:59
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:366
 msgid "Read More"
 msgstr "Читать далее"
 
-#: src/blocks/latest-posts/block.js:18
+#: src/blocks/latest-posts/block.js:19
 msgid "ALPS Latest Posts"
 msgstr "ALPS Последние записи"
 
-#: src/blocks/latest-posts/block.js:19
+#: src/blocks/latest-posts/block.js:20
 msgid "Display a list of your most recent posts."
 msgstr "Отобразить список ваших последних записей."
 
-#: src/blocks/latest-posts/block.js:22
+#: src/blocks/latest-posts/block.js:23
 msgid "latest posts"
 msgstr "последние записи"
+
+#: src/blocks/content-step/components/ContentStepEditComponent.js:172
+msgid "Kicker 1 (Optional)"
+msgstr ""
+
+#: src/blocks/content-step/components/ContentStepEditComponent.js:178
+msgid "Text 1 (Optional)"
+msgstr ""
+
+#: src/blocks/content-step/components/ContentStepEditComponent.js:186
+msgid "Kicker 2 (Optional)"
+msgstr ""
+
+#: src/blocks/content-step/components/ContentStepEditComponent.js:192
+msgid "Text 2 (Optional)"
+msgstr ""
+
+#: src/blocks/content-step/components/ContentStepEditComponent.js:200
+msgid "Kicker 3 (Optional)"
+msgstr ""
+
+#: src/blocks/content-step/components/ContentStepEditComponent.js:206
+msgid "Text 3 (Optional)"
+msgstr ""
+
+#: src/blocks/content-step/block.js:20
+msgid "ALPS Content Step Block"
+msgstr ""
+
+#: src/blocks/content-step/block.js:22
+msgid "Content Step Block block where the right side has a button."
+msgstr ""

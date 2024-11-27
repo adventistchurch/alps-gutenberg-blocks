@@ -35,6 +35,14 @@ registerBlockType( 'alps-gutenberg-blocks/content-expand', {
     alignment: {
       type: 'string',
     },
+    showMoreButton: {
+      type: 'string',
+      selector: 'o-button-show-more'
+    },
+    showLessButton: {
+      type: 'string',
+      selector: 'o-button-less-more'
+    },
   },
 
   edit: ContentExpandEditComponent,

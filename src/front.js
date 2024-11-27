@@ -21,3 +21,28 @@ jQuery(function($){
         $(".wp-block-column .c-block__content").css("width", "auto");
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleButtons = document.querySelectorAll(".js-toggle-button");
+
+    toggleButtons.forEach((button) => {
+        const showMore = button.querySelector('.o-button-show-more');
+        const showLess = button.querySelector('.o-button-show-less');
+
+        showMore.style.display = 'block';
+        showLess.style.display = 'none';
+
+        button.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            const isExpanded = showMore.style.display === 'none';
+            if (isExpanded) {
+                showMore.style.display = 'block';
+                showLess.style.display = 'none';
+            } else {
+                showMore.style.display = 'none';
+                showLess.style.display = 'block';
+            }
+        });
+    });
+});

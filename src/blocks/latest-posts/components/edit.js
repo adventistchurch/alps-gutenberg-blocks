@@ -53,6 +53,10 @@ class LatestPostsEdit extends Component {
 			tagsList: [],
 		};
 
+		this.props.setAttributes({
+			readMoreLabel: __('Read More', 'alps-gutenberg-blocks')
+		})
+
 		this.toggleHideExcerpt = this.toggleHideExcerpt.bind( this );
 		this.toggleHidePostDate = this.toggleHidePostDate.bind( this );
 		this.toggleHideCategoryName = this.toggleHideCategoryName.bind( this );
