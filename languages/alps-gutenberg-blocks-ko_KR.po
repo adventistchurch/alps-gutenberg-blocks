@@ -3,29 +3,41 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-04 09:15-0400\n"
-"PO-Revision-Date: 2021-09-05 19:08+0900\n"
+"POT-Creation-Date: 2024-11-14 15:32+0300\n"
+"PO-Revision-Date: 2024-11-26 16:07+0300\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
-"Last-Translator: \n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"Language: ko_KR\n"
+"X-Generator: Poedit 3.5\n"
 
 #: src/blocks/content-block/components/ContentBlockEditComponent.js:71
-#: src/blocks/content-show-more/components/ContentShowMoreEditComponent.js:105
+#: src/blocks/content-show-more/components/ContentShowMoreEditComponent.js:110
 #: src/blocks/accordion/components/AccordionEditComponent.js:50
-#: src/blocks/cta/components/CTAEditComponent.js:176
+#: src/blocks/cta/components/CTAEditComponent.js:177
 #: src/blocks/media-testimonies/components/MediaTestimoniesEditComponent.js:41
 #: src/blocks/latest-posts/components/edit.js:295
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:301
 msgid "Enter your Title..."
-msgstr "제목 입력..."
+msgstr "제목 입력…"
+
+#: src/blocks/content-block/components/ContentBlockEditComponent.js:81
+#: src/blocks/split-content/components/SplitContentEditComponent.js:124
+#: src/blocks/split-content/components/SplitContentEditComponent.js:144
+#: src/blocks/content-step/components/ContentStepEditComponent.js:160
+msgid "Write a description..."
+msgstr "설명 작성…"
+
+#: src/blocks/content-block/components/ContentBlockEditComponent.js:104
+msgid "Read More button"
+msgstr "자세히 보기 버튼"
 
 #: src/blocks/content-block/block.js:17
 msgid "ALPS Content Block"
@@ -36,10 +48,12 @@ msgid "Content block that highlights a row to text."
 msgstr "텍스트행을 강조하는 콘텐츠 블록입니다."
 
 #: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:65
-#: src/blocks/content-show-more/components/ContentShowMoreEditComponent.js:66
+#: src/blocks/content-show-more/components/ContentShowMoreEditComponent.js:71
+#: src/blocks/split-content/components/SplitContentEditComponent.js:90
 #: src/blocks/media-block/components/MediaBlockEditComponent.js:98
-#: src/blocks/cta/components/CTAEditComponent.js:119
+#: src/blocks/cta/components/CTAEditComponent.js:120
 #: src/blocks/image-breakout/components/ImageBreakoutEditComponent.js:49
+#: src/blocks/content-step/components/ContentStepEditComponent.js:118
 msgid "Upload Image"
 msgstr "이미지 업로드"
 
@@ -57,7 +71,7 @@ msgstr "동영상"
 
 #: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:115
 msgid "Enter your Video title..."
-msgstr "동영상 제목 입력..."
+msgstr "동영상 제목 입력…"
 
 #: src/blocks/media-testimony/components/MediaTestimonyEditComponent.js:134
 msgid "Image"
@@ -71,9 +85,24 @@ msgstr "ALPS 미디어 증언 블록"
 msgid "Single media testimony."
 msgstr "단일 미디어 증언."
 
-#: src/blocks/content-show-more/components/ContentShowMoreEditComponent.js:126
+#: src/blocks/content-show-more/components/ContentShowMoreEditComponent.js:15
+#: src/blocks/content-expand/components/ContentExpandEditComponent.js:11
+msgid "Show More"
+msgstr "자세히 보기"
+
+#: src/blocks/content-show-more/components/ContentShowMoreEditComponent.js:16
+#: src/blocks/content-expand/components/ContentExpandEditComponent.js:12
+msgid "Show Less"
+msgstr "덜 보기"
+
+#: src/blocks/content-show-more/components/ContentShowMoreEditComponent.js:120
+#: src/blocks/cta/components/CTAEditComponent.js:188
+msgid "Enter your Description..."
+msgstr "설명 입력…"
+
+#: src/blocks/content-show-more/components/ContentShowMoreEditComponent.js:131
 msgid "Enter your Body Text... (Displays on click for Show More button)"
-msgstr "본문 텍스트를 입력... (클릭 중 표시 버튼 표시)"
+msgstr "본문 텍스트를 입력… (클릭 중 표시 버튼 표시)"
 
 #: src/blocks/content-show-more/block.js:17
 msgid "ALPS Content Show More"
@@ -83,13 +112,47 @@ msgstr "ALPS 콘텐츠 더 보기"
 msgid "Content block that has a toggle button to show more."
 msgstr "더 많은 것을 표시할 토글 버튼이 있는 콘텐츠 블록입니다."
 
+#: src/blocks/split-content/components/SplitContentEditComponent.js:156
+#: src/blocks/highlight-blocks/components/HighlightBlocksEditComponent.js:105
+#: src/blocks/content-step/components/ContentStepEditComponent.js:217
+msgid "Learn More"
+msgstr "자세히 알아보기"
+
+#: src/blocks/split-content/components/SplitContentEditComponent.js:163
+#: src/blocks/cta/components/CTAEditComponent.js:203
+#: src/blocks/cta/components/CTAEditComponent.js:230
+#: src/blocks/highlight-blocks/components/HighlightBlocksEditComponent.js:112
+#: src/blocks/latest-posts/components/edit.js:317
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:323
+#: src/blocks/content-step/components/ContentStepEditComponent.js:224
+msgid "https://..."
+msgstr "https://…"
+
+#: src/blocks/split-content/components/SplitContentEditComponent.js:170
+#: src/blocks/cta/components/CTAEditComponent.js:215
+#: src/blocks/cta/components/CTAEditComponent.js:242
+#: src/blocks/highlight-blocks/components/HighlightBlocksEditComponent.js:119
+#: src/blocks/content-step/components/ContentStepEditComponent.js:231
+msgid "Open link in a new window"
+msgstr "새 창에서 링크 열기"
+
+#: src/blocks/split-content/components/image-editor.js:40
 #: src/blocks/media-block/components/image-editor.js:40
-#: src/blocks/cta/components/CTAEditComponent.js:127
+#: src/blocks/cta/components/CTAEditComponent.js:128
 #: src/blocks/gallery/editor-image.js:134
 #: src/blocks/image-2up/editor-image.js:133
 #: src/blocks/image-breakout/components/ImageBreakoutEditComponent.js:57
+#: src/blocks/content-step/components/image-editor.js:40
 msgid "Remove Image"
 msgstr "이미지 제거"
+
+#: src/blocks/split-content/block.js:20
+msgid "ALPS Split Content"
+msgstr ""
+
+#: src/blocks/split-content/block.js:22
+msgid "Split Content block where the right side has a button."
+msgstr "콘텐츠 분할 블록의 오른쪽에 버튼이 있습니다."
 
 #: src/blocks/media-block/block.js:20
 msgid "ALPS Media Block"
@@ -99,11 +162,27 @@ msgstr "ALPS 미디어 블록"
 msgid "Flexible media content."
 msgstr "유연한 미디어 콘텐츠."
 
-#: src/blocks/content-expand/components/ContentExpandEditComponent.js:53
+#: src/blocks/content-read-more/components/ContentReadMoreEditComponent.js:42
+msgid "Enter your Body Text... (Displays on click for Read More button)"
+msgstr "본문 텍스트 입력… (자세히 보기 버튼 클릭 시 표시됨)"
+
+#: src/blocks/content-read-more/block.js:17
+msgid "ALPS Content Read More"
+msgstr "ALPS 콘텐츠 자세히 보기"
+
+#: src/blocks/content-read-more/block.js:20
+msgid "Content block that has a toggle button to read more."
+msgstr "자세히 보기 토글 버튼이 있는 콘텐츠 블록입니다."
+
+#: src/blocks/content-expand/components/ContentExpandEditComponent.js:58
 msgid "Kicker"
 msgstr "첫 문장"
 
-#: src/blocks/content-expand/components/ContentExpandEditComponent.js:74
+#: src/blocks/content-expand/components/ContentExpandEditComponent.js:69
+msgid "Title"
+msgstr ""
+
+#: src/blocks/content-expand/components/ContentExpandEditComponent.js:79
 msgid "Body"
 msgstr "본문"
 
@@ -117,7 +196,7 @@ msgstr "클릭 시 콘텐츠를 확장하는 콘텐츠 블록입니다."
 
 #: src/blocks/accordion/components/AccordionEditComponent.js:60
 msgid "Enter your Body Text..."
-msgstr "본문 텍스트를 입력..."
+msgstr "본문 텍스트를 입력…"
 
 #: src/blocks/accordion/block.js:20
 msgid "ALPS Accordion"
@@ -127,24 +206,26 @@ msgstr "ALPS 아코디언"
 msgid "Add heading and basic text."
 msgstr "제목과 기본 텍스트를 추가합니다."
 
-#: src/blocks/cta/components/CTAEditComponent.js:145
+#: src/blocks/cta/components/CTAEditComponent.js:146
 msgid "Dark Background"
 msgstr "어두운 배경"
 
-#: src/blocks/cta/components/CTAEditComponent.js:146
+#: src/blocks/cta/components/CTAEditComponent.js:147
 msgid "Makes the CTA background dark."
 msgstr "CTA 배경을 어둡게 만듭니다."
 
-#: src/blocks/cta/components/CTAEditComponent.js:202
-#: src/blocks/cta/components/CTAEditComponent.js:229
-#: src/blocks/latest-posts/components/edit.js:317
-msgid "https://..."
-msgstr "https://..."
+#: src/blocks/cta/components/CTAEditComponent.js:152
+msgid "Background Image"
+msgstr "배경 이미지"
 
-#: src/blocks/cta/components/CTAEditComponent.js:214
-#: src/blocks/cta/components/CTAEditComponent.js:241
-msgid "Open link in a new window"
-msgstr "새 창에서 링크 열기"
+#: src/blocks/cta/components/CTAEditComponent.js:153
+msgid "Sets the image as a background image."
+msgstr "이미지를 배경 이미지로 설정합니다."
+
+#: src/blocks/cta/components/CTAEditComponent.js:209
+#: src/blocks/cta/components/CTAEditComponent.js:236
+msgid "Button Label"
+msgstr "버튼 레이블"
 
 #: src/blocks/cta/block.js:18
 msgid "ALPS CTA"
@@ -156,7 +237,7 @@ msgstr "갤러리 편집"
 
 #: src/blocks/gallery/components/GalleryEditComponent.js:183
 msgid "Enter your Gallery Title..."
-msgstr "갤러리 제목 입력 ..."
+msgstr "갤러리 제목 입력 …"
 
 #: src/blocks/gallery/components/GallerySaveComponent.js:17
 msgid "Gallery"
@@ -177,7 +258,7 @@ msgstr "캡션 쓰기…"
 
 #: src/blocks/highlighted-paragraph/components/HighlightedParagraphEditComponent.js:46
 msgid "Enter your Content..."
-msgstr "내용 입력..."
+msgstr "내용 입력…"
 
 #: src/blocks/highlighted-paragraph/block.js:18
 msgid "ALPS Highlighted Paragraph"
@@ -187,6 +268,26 @@ msgstr "ALPS 강조 단락"
 msgid "Highlight a block of text."
 msgstr "텍스트 블록을 강조 표시합니다."
 
+#: src/blocks/highlight-blocks/components/HighlightBlocksEditComponent.js:63
+msgid "Enter your Body Text for Highlight Block 1"
+msgstr ""
+
+#: src/blocks/highlight-blocks/components/HighlightBlocksEditComponent.js:77
+msgid "Enter your Body Text for Highlight Block 2 (Optional)"
+msgstr ""
+
+#: src/blocks/highlight-blocks/components/HighlightBlocksEditComponent.js:91
+msgid "Enter your Body Text for Highlight Block 3 (Optional)"
+msgstr ""
+
+#: src/blocks/highlight-blocks/block.js:18
+msgid "ALPS Higlight Blocks"
+msgstr "ALPS 하이드라이트 블록"
+
+#: src/blocks/highlight-blocks/block.js:21
+msgid "Content block that is full width that can have up to 3 text blocks within it."
+msgstr "최대 3개의 텍스트 블록을 포함할 수 있는 전체 너비의 콘텐츠 블록입니다."
+
 #: src/blocks/blockquote/components/BlockquoteEditComponent.js:42
 msgid "Extend Quote"
 msgstr "인용구 확장"
@@ -195,9 +296,21 @@ msgstr "인용구 확장"
 msgid "Extends the quote outside the page content."
 msgstr "페이지 콘텐츠 외부의 인용구를 확장합니다."
 
+#: src/blocks/blockquote/components/BlockquoteEditComponent.js:48
+msgid "Strong Quote"
+msgstr "강력한 견적"
+
+#: src/blocks/blockquote/components/BlockquoteEditComponent.js:49
+msgid "Set strong style for the quote content."
+msgstr "견적 콘텐츠에 강력한 스타일을 설정하세요."
+
 #: src/blocks/blockquote/components/BlockquoteEditComponent.js:67
 msgid "Write a quote..."
 msgstr "인용구를 입력합니다…"
+
+#: src/blocks/blockquote/components/BlockquoteEditComponent.js:78
+msgid "Write a citation..."
+msgstr "인용문 작성하기…"
 
 #: src/blocks/blockquote/block.js:17
 msgid "ALPS Blockquote"
@@ -233,7 +346,7 @@ msgstr "두 개의 열 레이아웃으로 구성된 두 개의 이미지입니�
 
 #: src/blocks/image-breakout/components/ImageBreakoutEditComponent.js:96
 msgid "Enter your Caption..."
-msgstr "캡션 입력..."
+msgstr "캡션 입력…"
 
 #: src/blocks/image-breakout/block.js:17
 msgid "ALPS Image (Breakout)"
@@ -244,77 +357,126 @@ msgid "Image that expands the width of the page."
 msgstr "페이지 너비를 확장하는 이미지입니다."
 
 #: src/blocks/latest-posts/components/edit.js:184
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:190
 msgid "Latest Posts Settings"
 msgstr "최신 게시물 설정"
 
 #: src/blocks/latest-posts/components/edit.js:196
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:202
 msgid "Tags"
 msgstr "태그"
 
 #: src/blocks/latest-posts/components/edit.js:202
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:208
 msgid "Hide excerpt"
 msgstr "발췌 숨기기"
 
 #: src/blocks/latest-posts/components/edit.js:207
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:213
 msgid "Hide post date"
 msgstr "게시물 날짜 숨기기"
 
 #: src/blocks/latest-posts/components/edit.js:212
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:218
 msgid "Hide category name"
 msgstr "카테고리 이름 숨기기"
 
 #: src/blocks/latest-posts/components/edit.js:217
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:223
 msgid "Hide button"
 msgstr "버튼 숨기기"
 
 #: src/blocks/latest-posts/components/edit.js:222
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:228
 msgid "Hide image"
 msgstr "이미지 숨기기"
 
 #: src/blocks/latest-posts/components/edit.js:227
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:233
 msgid "Align the image right"
 msgstr "이미지 오른쪽 정렬"
 
 #: src/blocks/latest-posts/components/edit.js:242
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:248
 msgid "Latest Posts"
 msgstr "최근 게시물"
 
 #: src/blocks/latest-posts/components/edit.js:246
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:252
 msgid "No posts found."
 msgstr "게시물이 없습니다."
 
 #: src/blocks/latest-posts/components/edit.js:261
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:267
 msgid "List View"
 msgstr "목록형식 보기"
 
 #: src/blocks/latest-posts/components/edit.js:267
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:273
 msgid "Grid View"
 msgstr "바둑판식 보기"
 
 #: src/blocks/latest-posts/components/edit.js:306
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:312
 msgid "Enter your link label..."
-msgstr "링크 레이블을 입력..."
+msgstr "링크 레이블을 입력…"
 
 #: src/blocks/latest-posts/components/edit.js:343
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:349
 msgid "Post excerpt is visible"
 msgstr "게시물 발췌가 표시됩니다"
 
 #: src/blocks/latest-posts/components/edit.js:354
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:360
 msgid "Category name is visible"
 msgstr "카테고리 이름이 표시됩니다"
 
 #: src/blocks/latest-posts/components/edit.js:360
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:59
+#: src/blocks/latest-posts/components/LatestPostsEditComponent.js:366
 msgid "Read More"
 msgstr "더 보기"
 
-#: src/blocks/latest-posts/block.js:18
+#: src/blocks/latest-posts/block.js:19
 msgid "ALPS Latest Posts"
 msgstr "ALPS 최신 게시물"
 
-#: src/blocks/latest-posts/block.js:19
+#: src/blocks/latest-posts/block.js:20
 msgid "Display a list of your most recent posts."
 msgstr "가장 최신 글 목록을 보입니다."
 
-#: src/blocks/latest-posts/block.js:22
+#: src/blocks/latest-posts/block.js:23
 msgid "latest posts"
-msgstr "최신 게시물"
+msgstr "latest posts"
+
+#: src/blocks/content-step/components/ContentStepEditComponent.js:172
+msgid "Kicker 1 (Optional)"
+msgstr ""
+
+#: src/blocks/content-step/components/ContentStepEditComponent.js:178
+msgid "Text 1 (Optional)"
+msgstr ""
+
+#: src/blocks/content-step/components/ContentStepEditComponent.js:186
+msgid "Kicker 2 (Optional)"
+msgstr ""
+
+#: src/blocks/content-step/components/ContentStepEditComponent.js:192
+msgid "Text 2 (Optional)"
+msgstr ""
+
+#: src/blocks/content-step/components/ContentStepEditComponent.js:200
+msgid "Kicker 3 (Optional)"
+msgstr ""
+
+#: src/blocks/content-step/components/ContentStepEditComponent.js:206
+msgid "Text 3 (Optional)"
+msgstr ""
+
+#: src/blocks/content-step/block.js:20
+msgid "ALPS Content Step Block"
+msgstr ""
+
+#: src/blocks/content-step/block.js:22
+msgid "Content Step Block block where the right side has a button."
+msgstr "콘텐츠 단계 블록 오른쪽에 버튼이 있는 블록입니다."
