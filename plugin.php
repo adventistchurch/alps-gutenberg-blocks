@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define('ALPS_GUTENBERG_VERSION', '2.1.10');
+define('ALPS_GUTENBERG_VERSION', '2.1.11');
 define('ALPS_GUTENBERG_NAME', 'alps-gutenberg-blocks');
 
 if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
