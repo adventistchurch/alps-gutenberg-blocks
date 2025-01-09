@@ -1,7 +1,7 @@
 {
   "name": "alps/gutenberg",
   "type": "wordpress-plugin",
-  "version": "2.1.10",
+  "version": "2.1.11",
   "description": "Creates custom blocks in Gutenberg specific to the ALPS v3 theme.",
   "homepage": "https://github.com/adventistchurch/alps-gutenberg-blocks",
   "config": {
