@@ -138,8 +138,6 @@ class LatestPostsBlock
         $recent_posts = wp_get_recent_posts($args);
 
         $list_items_markup = '';
-        $theme_options = get_option('alps_theme_settings');
-        $hide_sidebar = $theme_options['index_hide_sidebar'];
 
         // Set block heading
         $headingTitle = $attributes['title'];

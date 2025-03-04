@@ -5,7 +5,7 @@
  * Description: Creates custom blocks in Gutenberg specific to the ALPS v3 theme.
  * Author: Seventh-day Adventist Church
  * Author URI: https://adventist.io/themes
- * Version: 2.1.11
+ * Version: 2.1.12
  */
 
 // Exit if accessed directly.
